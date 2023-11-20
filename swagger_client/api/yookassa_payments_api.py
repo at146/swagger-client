@@ -44,7 +44,7 @@ class YookassaPaymentsApi:
 
 
     @validate_call
-    def insert_api_v1_yookassa_payments_post(
+    async def insert_api_v1_yookassa_payments_post(
         self,
         yookassa_payment_insert: YookassaPaymentInsert,
         _request_timeout: Union[
@@ -100,11 +100,11 @@ class YookassaPaymentsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -112,7 +112,7 @@ class YookassaPaymentsApi:
 
 
     @validate_call
-    def insert_api_v1_yookassa_payments_post_with_http_info(
+    async def insert_api_v1_yookassa_payments_post_with_http_info(
         self,
         yookassa_payment_insert: YookassaPaymentInsert,
         _request_timeout: Union[
@@ -168,11 +168,11 @@ class YookassaPaymentsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -180,7 +180,7 @@ class YookassaPaymentsApi:
 
 
     @validate_call
-    def insert_api_v1_yookassa_payments_post_without_preload_content(
+    async def insert_api_v1_yookassa_payments_post_without_preload_content(
         self,
         yookassa_payment_insert: YookassaPaymentInsert,
         _request_timeout: Union[
@@ -236,7 +236,7 @@ class YookassaPaymentsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

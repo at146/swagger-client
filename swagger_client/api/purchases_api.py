@@ -49,7 +49,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def delete_purchase_api_v1_purchases_purchase_id_delete(
+    async def delete_purchase_api_v1_purchases_purchase_id_delete(
         self,
         purchase_id: StrictInt,
         _request_timeout: Union[
@@ -105,11 +105,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -117,7 +117,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def delete_purchase_api_v1_purchases_purchase_id_delete_with_http_info(
+    async def delete_purchase_api_v1_purchases_purchase_id_delete_with_http_info(
         self,
         purchase_id: StrictInt,
         _request_timeout: Union[
@@ -173,11 +173,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -185,7 +185,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def delete_purchase_api_v1_purchases_purchase_id_delete_without_preload_content(
+    async def delete_purchase_api_v1_purchases_purchase_id_delete_without_preload_content(
         self,
         purchase_id: StrictInt,
         _request_timeout: Union[
@@ -241,7 +241,7 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -311,7 +311,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_all_api_v1_purchases_get(
+    async def get_all_api_v1_purchases_get(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -367,11 +367,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -379,7 +379,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_all_api_v1_purchases_get_with_http_info(
+    async def get_all_api_v1_purchases_get_with_http_info(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -435,11 +435,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -447,7 +447,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_all_api_v1_purchases_get_without_preload_content(
+    async def get_all_api_v1_purchases_get_without_preload_content(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -503,7 +503,7 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -575,7 +575,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_count_api_v1_purchases_token_status_count_get(
+    async def get_count_api_v1_purchases_token_status_count_get(
         self,
         token: StrictStr,
         status: StrictInt,
@@ -635,11 +635,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -647,7 +647,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_count_api_v1_purchases_token_status_count_get_with_http_info(
+    async def get_count_api_v1_purchases_token_status_count_get_with_http_info(
         self,
         token: StrictStr,
         status: StrictInt,
@@ -707,11 +707,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -719,7 +719,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_count_api_v1_purchases_token_status_count_get_without_preload_content(
+    async def get_count_api_v1_purchases_token_status_count_get_without_preload_content(
         self,
         token: StrictStr,
         status: StrictInt,
@@ -779,7 +779,7 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -852,7 +852,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_purchase_by_id_api_v1_purchases_purchase_id_get(
+    async def get_purchase_by_id_api_v1_purchases_purchase_id_get(
         self,
         purchase_id: StrictInt,
         token: StrictStr,
@@ -928,11 +928,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -940,7 +940,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_purchase_by_id_api_v1_purchases_purchase_id_get_with_http_info(
+    async def get_purchase_by_id_api_v1_purchases_purchase_id_get_with_http_info(
         self,
         purchase_id: StrictInt,
         token: StrictStr,
@@ -1016,11 +1016,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1028,7 +1028,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def get_purchase_by_id_api_v1_purchases_purchase_id_get_without_preload_content(
+    async def get_purchase_by_id_api_v1_purchases_purchase_id_get_without_preload_content(
         self,
         purchase_id: StrictInt,
         token: StrictStr,
@@ -1104,7 +1104,7 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1199,7 +1199,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def update_only_api_v1_purchases_put(
+    async def update_only_api_v1_purchases_put(
         self,
         update_purchase: UpdatePurchase,
         _request_timeout: Union[
@@ -1255,11 +1255,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1267,7 +1267,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def update_only_api_v1_purchases_put_with_http_info(
+    async def update_only_api_v1_purchases_put_with_http_info(
         self,
         update_purchase: UpdatePurchase,
         _request_timeout: Union[
@@ -1323,11 +1323,11 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1335,7 +1335,7 @@ class PurchasesApi:
 
 
     @validate_call
-    def update_only_api_v1_purchases_put_without_preload_content(
+    async def update_only_api_v1_purchases_put_without_preload_content(
         self,
         update_purchase: UpdatePurchase,
         _request_timeout: Union[
@@ -1391,7 +1391,7 @@ class PurchasesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

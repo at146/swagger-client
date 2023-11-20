@@ -46,14 +46,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     token = 'token_example' # str | 
 
     try:
         # Get All Ids Users
-        api_response = api_instance.get_all_ids_users_api_v1_users_bots_ids_get(token)
+        api_response = await api_instance.get_all_ids_users_api_v1_users_bots_ids_get(token)
         print("The response of UsersBotsApi->get_all_ids_users_api_v1_users_bots_ids_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -122,14 +122,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     token = 'token_example' # str | 
 
     try:
         # Get Count
-        api_response = api_instance.get_count_api_v1_users_bots_count_get(token)
+        api_response = await api_instance.get_count_api_v1_users_bots_count_get(token)
         print("The response of UsersBotsApi->get_count_api_v1_users_bots_count_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -199,7 +199,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     user_id = 56 # int | 
@@ -210,7 +210,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Only User Bot
-        api_response = api_instance.get_only_user_bot_api_v1_users_bots_user_id_only_get(user_id, token, partner=partner, user=user, stock=stock)
+        api_response = await api_instance.get_only_user_bot_api_v1_users_bots_user_id_only_get(user_id, token, partner=partner, user=user, stock=stock)
         print("The response of UsersBotsApi->get_only_user_bot_api_v1_users_bots_user_id_only_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -284,7 +284,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     user_id = 56 # int | 
@@ -294,7 +294,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get User Bot
-        api_response = api_instance.get_user_bot_api_v1_users_bots_user_id_get(user_id, token, first_name, username=username)
+        api_response = await api_instance.get_user_bot_api_v1_users_bots_user_id_get(user_id, token, first_name, username=username)
         print("The response of UsersBotsApi->get_user_bot_api_v1_users_bots_user_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -367,7 +367,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     user_id = 56 # int | 
@@ -378,7 +378,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get User Bot Start
-        api_response = api_instance.get_user_bot_start_api_v1_users_bots_user_id_start_get(user_id, token, first_name, username=username, subscribe_channel=subscribe_channel)
+        api_response = await api_instance.get_user_bot_start_api_v1_users_bots_user_id_start_get(user_id, token, first_name, username=username, subscribe_channel=subscribe_channel)
         print("The response of UsersBotsApi->get_user_bot_start_api_v1_users_bots_user_id_start_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -452,7 +452,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     user_id = 56 # int | 
@@ -460,7 +460,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get User Client Bot
-        api_response = api_instance.get_user_client_bot_api_v1_users_bots_user_id_client_get(user_id, token)
+        api_response = await api_instance.get_user_client_bot_api_v1_users_bots_user_id_client_get(user_id, token)
         print("The response of UsersBotsApi->get_user_client_bot_api_v1_users_bots_user_id_client_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -531,14 +531,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.UsersBotsApi(api_client)
     update_user_bot_mess = swagger_client.UpdateUserBotMess() # UpdateUserBotMess | 
 
     try:
         # Update Last Mess
-        api_response = api_instance.update_last_mess_api_v1_users_bots_mess_put(update_user_bot_mess)
+        api_response = await api_instance.update_last_mess_api_v1_users_bots_mess_put(update_user_bot_mess)
         print("The response of UsersBotsApi->update_last_mess_api_v1_users_bots_mess_put:\n")
         pprint(api_response)
     except Exception as e:

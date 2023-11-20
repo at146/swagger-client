@@ -44,14 +44,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BotsApi(api_client)
     token = 'token_example' # str | 
 
     try:
         # Get Bot
-        api_response = api_instance.get_bot_api_v1_bots_token_get(token)
+        api_response = await api_instance.get_bot_api_v1_bots_token_get(token)
         print("The response of BotsApi->get_bot_api_v1_bots_token_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -121,13 +121,13 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BotsApi(api_client)
 
     try:
         # Get Bots
-        api_response = api_instance.get_bots_api_v1_bots_get()
+        api_response = await api_instance.get_bots_api_v1_bots_get()
         print("The response of BotsApi->get_bots_api_v1_bots_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -192,13 +192,13 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BotsApi(api_client)
 
     try:
         # Get Tokens Multibot
-        api_response = api_instance.get_tokens_multibot_api_v1_bots_multibot_tokens_get()
+        api_response = await api_instance.get_tokens_multibot_api_v1_bots_multibot_tokens_get()
         print("The response of BotsApi->get_tokens_multibot_api_v1_bots_multibot_tokens_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -264,14 +264,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BotsApi(api_client)
     bot_base = swagger_client.BotBase() # BotBase | 
 
     try:
         # Insert Or Nothing
-        api_response = api_instance.insert_or_nothing_api_v1_bots_post(bot_base)
+        api_response = await api_instance.insert_or_nothing_api_v1_bots_post(bot_base)
         print("The response of BotsApi->insert_or_nothing_api_v1_bots_post:\n")
         pprint(api_response)
     except Exception as e:

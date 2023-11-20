@@ -41,14 +41,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.WaybillsApi(api_client)
     waybill_update = swagger_client.WaybillUpdate() # WaybillUpdate | 
 
     try:
         # Update
-        api_response = api_instance.update_api_v1_waybills_put(waybill_update)
+        api_response = await api_instance.update_api_v1_waybills_put(waybill_update)
         print("The response of WaybillsApi->update_api_v1_waybills_put:\n")
         pprint(api_response)
     except Exception as e:

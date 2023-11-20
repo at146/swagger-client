@@ -40,13 +40,13 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.CategoriesApi(api_client)
 
     try:
         # Get Categories Name
-        api_response = api_instance.get_categories_name_api_v1_categories_get()
+        api_response = await api_instance.get_categories_name_api_v1_categories_get()
         print("The response of CategoriesApi->get_categories_name_api_v1_categories_get:\n")
         pprint(api_response)
     except Exception as e:

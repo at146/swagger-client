@@ -49,7 +49,7 @@ class MessagesTgApi:
 
 
     @validate_call
-    def get_api_v1_messages_tg_name_get(
+    async def get_api_v1_messages_tg_name_get(
         self,
         name: StrictStr,
         token: StrictStr,
@@ -109,11 +109,11 @@ class MessagesTgApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -121,7 +121,7 @@ class MessagesTgApi:
 
 
     @validate_call
-    def get_api_v1_messages_tg_name_get_with_http_info(
+    async def get_api_v1_messages_tg_name_get_with_http_info(
         self,
         name: StrictStr,
         token: StrictStr,
@@ -181,11 +181,11 @@ class MessagesTgApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -193,7 +193,7 @@ class MessagesTgApi:
 
 
     @validate_call
-    def get_api_v1_messages_tg_name_get_without_preload_content(
+    async def get_api_v1_messages_tg_name_get_without_preload_content(
         self,
         name: StrictStr,
         token: StrictStr,
@@ -253,7 +253,7 @@ class MessagesTgApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -328,7 +328,7 @@ class MessagesTgApi:
 
 
     @validate_call
-    def insert_or_update_api_v1_messages_tg_post(
+    async def insert_or_update_api_v1_messages_tg_post(
         self,
         token: StrictStr,
         insert_message_tg: InsertMessageTg,
@@ -388,11 +388,11 @@ class MessagesTgApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -400,7 +400,7 @@ class MessagesTgApi:
 
 
     @validate_call
-    def insert_or_update_api_v1_messages_tg_post_with_http_info(
+    async def insert_or_update_api_v1_messages_tg_post_with_http_info(
         self,
         token: StrictStr,
         insert_message_tg: InsertMessageTg,
@@ -460,11 +460,11 @@ class MessagesTgApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -472,7 +472,7 @@ class MessagesTgApi:
 
 
     @validate_call
-    def insert_or_update_api_v1_messages_tg_post_without_preload_content(
+    async def insert_or_update_api_v1_messages_tg_post_without_preload_content(
         self,
         token: StrictStr,
         insert_message_tg: InsertMessageTg,
@@ -532,7 +532,7 @@ class MessagesTgApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

@@ -49,7 +49,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_bot_api_v1_bots_token_get(
+    async def get_bot_api_v1_bots_token_get(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -105,11 +105,11 @@ class BotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -117,7 +117,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_bot_api_v1_bots_token_get_with_http_info(
+    async def get_bot_api_v1_bots_token_get_with_http_info(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -173,11 +173,11 @@ class BotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -185,7 +185,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_bot_api_v1_bots_token_get_without_preload_content(
+    async def get_bot_api_v1_bots_token_get_without_preload_content(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -241,7 +241,7 @@ class BotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -311,7 +311,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_bots_api_v1_bots_get(
+    async def get_bots_api_v1_bots_get(
         self,
         _request_timeout: Union[
             None,
@@ -362,11 +362,11 @@ class BotsApi:
             '200': "List[BotBaseDb]"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -374,7 +374,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_bots_api_v1_bots_get_with_http_info(
+    async def get_bots_api_v1_bots_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -425,11 +425,11 @@ class BotsApi:
             '200': "List[BotBaseDb]"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -437,7 +437,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_bots_api_v1_bots_get_without_preload_content(
+    async def get_bots_api_v1_bots_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -488,7 +488,7 @@ class BotsApi:
             '200': "List[BotBaseDb]"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -555,7 +555,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_tokens_multibot_api_v1_bots_multibot_tokens_get(
+    async def get_tokens_multibot_api_v1_bots_multibot_tokens_get(
         self,
         _request_timeout: Union[
             None,
@@ -606,11 +606,11 @@ class BotsApi:
             '200': "List[object]"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -618,7 +618,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_tokens_multibot_api_v1_bots_multibot_tokens_get_with_http_info(
+    async def get_tokens_multibot_api_v1_bots_multibot_tokens_get_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -669,11 +669,11 @@ class BotsApi:
             '200': "List[object]"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -681,7 +681,7 @@ class BotsApi:
 
 
     @validate_call
-    def get_tokens_multibot_api_v1_bots_multibot_tokens_get_without_preload_content(
+    async def get_tokens_multibot_api_v1_bots_multibot_tokens_get_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -732,7 +732,7 @@ class BotsApi:
             '200': "List[object]"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -799,7 +799,7 @@ class BotsApi:
 
 
     @validate_call
-    def insert_or_nothing_api_v1_bots_post(
+    async def insert_or_nothing_api_v1_bots_post(
         self,
         bot_base: BotBase,
         _request_timeout: Union[
@@ -855,11 +855,11 @@ class BotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -867,7 +867,7 @@ class BotsApi:
 
 
     @validate_call
-    def insert_or_nothing_api_v1_bots_post_with_http_info(
+    async def insert_or_nothing_api_v1_bots_post_with_http_info(
         self,
         bot_base: BotBase,
         _request_timeout: Union[
@@ -923,11 +923,11 @@ class BotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -935,7 +935,7 @@ class BotsApi:
 
 
     @validate_call
-    def insert_or_nothing_api_v1_bots_post_without_preload_content(
+    async def insert_or_nothing_api_v1_bots_post_without_preload_content(
         self,
         bot_base: BotBase,
         _request_timeout: Union[
@@ -991,7 +991,7 @@ class BotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

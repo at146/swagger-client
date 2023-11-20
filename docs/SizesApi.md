@@ -42,14 +42,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.SizesApi(api_client)
     size_id = 56 # int | 
 
     try:
         # Get Size By Id
-        api_response = api_instance.get_size_by_id_api_v1_sizes_size_id_get(size_id)
+        api_response = await api_instance.get_size_by_id_api_v1_sizes_size_id_get(size_id)
         print("The response of SizesApi->get_size_by_id_api_v1_sizes_size_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -119,14 +119,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.SizesApi(api_client)
     category = '' # str |  (optional) (default to '')
 
     try:
         # Get Sizes
-        api_response = api_instance.get_sizes_api_v1_sizes_get(category=category)
+        api_response = await api_instance.get_sizes_api_v1_sizes_get(category=category)
         print("The response of SizesApi->get_sizes_api_v1_sizes_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -195,14 +195,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.SizesApi(api_client)
     body = None # object | 
 
     try:
         # Insert Or Nothing
-        api_response = api_instance.insert_or_nothing_api_v1_sizes_post(body)
+        api_response = await api_instance.insert_or_nothing_api_v1_sizes_post(body)
         print("The response of SizesApi->insert_or_nothing_api_v1_sizes_post:\n")
         pprint(api_response)
     except Exception as e:

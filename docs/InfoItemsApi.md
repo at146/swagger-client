@@ -43,7 +43,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.InfoItemsApi(api_client)
     token = 'token_example' # str | 
@@ -51,7 +51,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Insert Or Update
-        api_response = api_instance.insert_or_update_api_v1_info_items_token_post(token, info_item_insert)
+        api_response = await api_instance.insert_or_update_api_v1_info_items_token_post(token, info_item_insert)
         print("The response of InfoItemsApi->insert_or_update_api_v1_info_items_token_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -122,7 +122,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.InfoItemsApi(api_client)
     token = 'token_example' # str | 
@@ -130,7 +130,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Update
-        api_response = api_instance.update_api_v1_info_items_token_put(token, info_item_update)
+        api_response = await api_instance.update_api_v1_info_items_token_put(token, info_item_update)
         print("The response of InfoItemsApi->update_api_v1_info_items_token_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -201,7 +201,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.InfoItemsApi(api_client)
     token = 'token_example' # str | 
@@ -209,7 +209,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Update New
-        api_response = api_instance.update_new_api_v1_info_items_token_new_put(token, info_item_update_new)
+        api_response = await api_instance.update_new_api_v1_info_items_token_new_put(token, info_item_update_new)
         print("The response of InfoItemsApi->update_new_api_v1_info_items_token_new_put:\n")
         pprint(api_response)
     except Exception as e:

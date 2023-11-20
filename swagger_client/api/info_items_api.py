@@ -50,7 +50,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def insert_or_update_api_v1_info_items_token_post(
+    async def insert_or_update_api_v1_info_items_token_post(
         self,
         token: StrictStr,
         info_item_insert: InfoItemInsert,
@@ -110,11 +110,11 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -122,7 +122,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def insert_or_update_api_v1_info_items_token_post_with_http_info(
+    async def insert_or_update_api_v1_info_items_token_post_with_http_info(
         self,
         token: StrictStr,
         info_item_insert: InfoItemInsert,
@@ -182,11 +182,11 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -194,7 +194,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def insert_or_update_api_v1_info_items_token_post_without_preload_content(
+    async def insert_or_update_api_v1_info_items_token_post_without_preload_content(
         self,
         token: StrictStr,
         info_item_insert: InfoItemInsert,
@@ -254,7 +254,7 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -340,7 +340,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def update_api_v1_info_items_token_put(
+    async def update_api_v1_info_items_token_put(
         self,
         token: StrictStr,
         info_item_update: InfoItemUpdate,
@@ -400,11 +400,11 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -412,7 +412,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def update_api_v1_info_items_token_put_with_http_info(
+    async def update_api_v1_info_items_token_put_with_http_info(
         self,
         token: StrictStr,
         info_item_update: InfoItemUpdate,
@@ -472,11 +472,11 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -484,7 +484,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def update_api_v1_info_items_token_put_without_preload_content(
+    async def update_api_v1_info_items_token_put_without_preload_content(
         self,
         token: StrictStr,
         info_item_update: InfoItemUpdate,
@@ -544,7 +544,7 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -630,7 +630,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def update_new_api_v1_info_items_token_new_put(
+    async def update_new_api_v1_info_items_token_new_put(
         self,
         token: StrictStr,
         info_item_update_new: InfoItemUpdateNew,
@@ -690,11 +690,11 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -702,7 +702,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def update_new_api_v1_info_items_token_new_put_with_http_info(
+    async def update_new_api_v1_info_items_token_new_put_with_http_info(
         self,
         token: StrictStr,
         info_item_update_new: InfoItemUpdateNew,
@@ -762,11 +762,11 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -774,7 +774,7 @@ class InfoItemsApi:
 
 
     @validate_call
-    def update_new_api_v1_info_items_token_new_put_without_preload_content(
+    async def update_new_api_v1_info_items_token_new_put_without_preload_content(
         self,
         token: StrictStr,
         info_item_update_new: InfoItemUpdateNew,
@@ -834,7 +834,7 @@ class InfoItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

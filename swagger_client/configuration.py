@@ -163,6 +163,10 @@ conf = swagger_client.Configuration(
            Set this to the SNI value expected by the server.
         """
 
+        self.connection_pool_maxsize = 100
+        """This value is passed to the aiohttp to limit simultaneous connections.
+           Default values is 100, None means no-limit.
+        """
 
         self.proxy = None
         """Proxy URL

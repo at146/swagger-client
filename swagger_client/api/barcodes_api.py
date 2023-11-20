@@ -46,7 +46,7 @@ class BarcodesApi:
 
 
     @validate_call
-    def insert_api_v1_barcodes_post(
+    async def insert_api_v1_barcodes_post(
         self,
         barcode_insert: BarcodeInsert,
         _request_timeout: Union[
@@ -102,11 +102,11 @@ class BarcodesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -114,7 +114,7 @@ class BarcodesApi:
 
 
     @validate_call
-    def insert_api_v1_barcodes_post_with_http_info(
+    async def insert_api_v1_barcodes_post_with_http_info(
         self,
         barcode_insert: BarcodeInsert,
         _request_timeout: Union[
@@ -170,11 +170,11 @@ class BarcodesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -182,7 +182,7 @@ class BarcodesApi:
 
 
     @validate_call
-    def insert_api_v1_barcodes_post_without_preload_content(
+    async def insert_api_v1_barcodes_post_without_preload_content(
         self,
         barcode_insert: BarcodeInsert,
         _request_timeout: Union[
@@ -238,7 +238,7 @@ class BarcodesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

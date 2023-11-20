@@ -48,7 +48,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def delete_api_v1_deliveries_cdek_delete(
+    async def delete_api_v1_deliveries_cdek_delete(
         self,
         delivery_cdek_id: StrictInt,
         _request_timeout: Union[
@@ -104,11 +104,11 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -116,7 +116,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def delete_api_v1_deliveries_cdek_delete_with_http_info(
+    async def delete_api_v1_deliveries_cdek_delete_with_http_info(
         self,
         delivery_cdek_id: StrictInt,
         _request_timeout: Union[
@@ -172,11 +172,11 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -184,7 +184,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def delete_api_v1_deliveries_cdek_delete_without_preload_content(
+    async def delete_api_v1_deliveries_cdek_delete_without_preload_content(
         self,
         delivery_cdek_id: StrictInt,
         _request_timeout: Union[
@@ -240,7 +240,7 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -312,7 +312,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def insert_api_v1_deliveries_cdek_post(
+    async def insert_api_v1_deliveries_cdek_post(
         self,
         body: Dict[str, Any],
         _request_timeout: Union[
@@ -368,11 +368,11 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -380,7 +380,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def insert_api_v1_deliveries_cdek_post_with_http_info(
+    async def insert_api_v1_deliveries_cdek_post_with_http_info(
         self,
         body: Dict[str, Any],
         _request_timeout: Union[
@@ -436,11 +436,11 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -448,7 +448,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def insert_api_v1_deliveries_cdek_post_without_preload_content(
+    async def insert_api_v1_deliveries_cdek_post_without_preload_content(
         self,
         body: Dict[str, Any],
         _request_timeout: Union[
@@ -504,7 +504,7 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -587,7 +587,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def update_api_v1_deliveries_cdek_put(
+    async def update_api_v1_deliveries_cdek_put(
         self,
         delivery_cdek_update: DeliveryCdekUpdate,
         _request_timeout: Union[
@@ -643,11 +643,11 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -655,7 +655,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def update_api_v1_deliveries_cdek_put_with_http_info(
+    async def update_api_v1_deliveries_cdek_put_with_http_info(
         self,
         delivery_cdek_update: DeliveryCdekUpdate,
         _request_timeout: Union[
@@ -711,11 +711,11 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -723,7 +723,7 @@ class DeliveriesCdekApi:
 
 
     @validate_call
-    def update_api_v1_deliveries_cdek_put_without_preload_content(
+    async def update_api_v1_deliveries_cdek_put_without_preload_content(
         self,
         delivery_cdek_update: DeliveryCdekUpdate,
         _request_timeout: Union[
@@ -779,7 +779,7 @@ class DeliveriesCdekApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

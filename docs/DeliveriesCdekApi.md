@@ -42,14 +42,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.DeliveriesCdekApi(api_client)
     delivery_cdek_id = 56 # int | 
 
     try:
         # Delete
-        api_response = api_instance.delete_api_v1_deliveries_cdek_delete(delivery_cdek_id)
+        api_response = await api_instance.delete_api_v1_deliveries_cdek_delete(delivery_cdek_id)
         print("The response of DeliveriesCdekApi->delete_api_v1_deliveries_cdek_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -118,14 +118,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.DeliveriesCdekApi(api_client)
     body = None # object | 
 
     try:
         # Insert
-        api_response = api_instance.insert_api_v1_deliveries_cdek_post(body)
+        api_response = await api_instance.insert_api_v1_deliveries_cdek_post(body)
         print("The response of DeliveriesCdekApi->insert_api_v1_deliveries_cdek_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -195,14 +195,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.DeliveriesCdekApi(api_client)
     delivery_cdek_update = swagger_client.DeliveryCdekUpdate() # DeliveryCdekUpdate | 
 
     try:
         # Update
-        api_response = api_instance.update_api_v1_deliveries_cdek_put(delivery_cdek_update)
+        api_response = await api_instance.update_api_v1_deliveries_cdek_put(delivery_cdek_update)
         print("The response of DeliveriesCdekApi->update_api_v1_deliveries_cdek_put:\n")
         pprint(api_response)
     except Exception as e:

@@ -74,14 +74,14 @@ configuration = swagger_client.Configuration(
 
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BarcodesApi(api_client)
     barcode_insert = swagger_client.BarcodeInsert() # BarcodeInsert | 
 
     try:
         # Insert
-        api_response = api_instance.insert_api_v1_barcodes_post(barcode_insert)
+        api_response = await api_instance.insert_api_v1_barcodes_post(barcode_insert)
         print("The response of BarcodesApi->insert_api_v1_barcodes_post:\n")
         pprint(api_response)
     except ApiException as e:

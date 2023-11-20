@@ -51,7 +51,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     limit = 50 # int |  (optional) (default to 50)
@@ -59,7 +59,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get All
-        api_response = api_instance.get_all_api_v1_items_get(limit=limit, offset=offset)
+        api_response = await api_instance.get_all_api_v1_items_get(limit=limit, offset=offset)
         print("The response of ItemsApi->get_all_api_v1_items_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -130,14 +130,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     category = 'category_example' # str | 
 
     try:
         # Get Brands And Counts
-        api_response = api_instance.get_brands_and_counts_api_v1_items_category_brands_counts_get(category)
+        api_response = await api_instance.get_brands_and_counts_api_v1_items_category_brands_counts_get(category)
         print("The response of ItemsApi->get_brands_and_counts_api_v1_items_category_brands_counts_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -207,7 +207,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     code = 'code_example' # str | 
@@ -217,7 +217,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Item
-        api_response = api_instance.get_item_api_v1_items_code_token_one_get(code, token, active=active, size_id=size_id)
+        api_response = await api_instance.get_item_api_v1_items_code_token_one_get(code, token, active=active, size_id=size_id)
         print("The response of ItemsApi->get_item_api_v1_items_code_token_one_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -290,7 +290,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     code = 'code_example' # str | 
@@ -301,7 +301,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Item New
-        api_response = api_instance.get_item_new_api_v1_items_code_token_one_new_get(code, token, dimension=dimension, category=category, centimeter=centimeter)
+        api_response = await api_instance.get_item_new_api_v1_items_code_token_one_new_get(code, token, dimension=dimension, category=category, centimeter=centimeter)
         print("The response of ItemsApi->get_item_new_api_v1_items_code_token_one_new_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -375,7 +375,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     code = 'code_example' # str | 
@@ -385,7 +385,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Item Selectinload Size
-        api_response = api_instance.get_item_selectinload_size_api_v1_items_code_token_load_size_get(code, token, like=like, sneaker=sneaker)
+        api_response = await api_instance.get_item_selectinload_size_api_v1_items_code_token_load_size_get(code, token, like=like, sneaker=sneaker)
         print("The response of ItemsApi->get_item_selectinload_size_api_v1_items_code_token_load_size_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -457,7 +457,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     token = 'token_example' # str | 
@@ -470,7 +470,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Items Action New Codes
-        api_response = api_instance.get_items_action_new_codes_api_v1_items_token_all_new_codes_get(token, action, category=category, size=size, color=color, season=season, sneaker=sneaker)
+        api_response = await api_instance.get_items_action_new_codes_api_v1_items_token_all_new_codes_get(token, action, category=category, size=size, color=color, season=season, sneaker=sneaker)
         print("The response of ItemsApi->get_items_action_new_codes_api_v1_items_token_all_new_codes_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -545,7 +545,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     category = 'category_example' # str | 
@@ -554,7 +554,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Items Codes
-        api_response = api_instance.get_items_codes_api_v1_items_category_brand_codes_get(category, brand, model=model)
+        api_response = await api_instance.get_items_codes_api_v1_items_category_brand_codes_get(category, brand, model=model)
         print("The response of ItemsApi->get_items_codes_api_v1_items_category_brand_codes_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -626,7 +626,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     category = 'category_example' # str | 
@@ -634,7 +634,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Models And Counts
-        api_response = api_instance.get_models_and_counts_api_v1_items_category_brand_models_counts_get(category, brand)
+        api_response = await api_instance.get_models_and_counts_api_v1_items_category_brand_models_counts_get(category, brand)
         print("The response of ItemsApi->get_models_and_counts_api_v1_items_category_brand_models_counts_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -704,7 +704,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.ItemsApi(api_client)
     category = 'category_example' # str | 
@@ -712,7 +712,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Models
-        api_response = api_instance.get_models_api_v1_items_category_brand_models_get(category, brand)
+        api_response = await api_instance.get_models_api_v1_items_category_brand_models_get(category, brand)
         print("The response of ItemsApi->get_models_api_v1_items_category_brand_models_get:\n")
         pprint(api_response)
     except Exception as e:

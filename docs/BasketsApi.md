@@ -46,14 +46,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     basket_id = 56 # int | 
 
     try:
         # Delete One Basket
-        api_response = api_instance.delete_one_basket_api_v1_baskets_basket_id_delete(basket_id)
+        api_response = await api_instance.delete_one_basket_api_v1_baskets_basket_id_delete(basket_id)
         print("The response of BasketsApi->delete_one_basket_api_v1_baskets_basket_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -122,14 +122,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     user_bot_id = 56 # int | 
 
     try:
         # Delete User Basket
-        api_response = api_instance.delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(user_bot_id)
+        api_response = await api_instance.delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(user_bot_id)
         print("The response of BasketsApi->delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -199,7 +199,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     user_id = 56 # int | 
@@ -208,7 +208,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Basket
-        api_response = api_instance.get_basket_api_v1_baskets_get(user_id, token, item)
+        api_response = await api_instance.get_basket_api_v1_baskets_get(user_id, token, item)
         print("The response of BasketsApi->get_basket_api_v1_baskets_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -279,7 +279,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     user_id = 56 # int | 
@@ -287,7 +287,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Count Basket
-        api_response = api_instance.get_count_basket_api_v1_baskets_all_count_get(user_id, token)
+        api_response = await api_instance.get_count_basket_api_v1_baskets_all_count_get(user_id, token)
         print("The response of BasketsApi->get_count_basket_api_v1_baskets_all_count_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -357,7 +357,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     user_id = 56 # int | 
@@ -365,7 +365,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get List Id Basket
-        api_response = api_instance.get_list_id_basket_api_v1_baskets_all_list_id_get(user_id, token)
+        api_response = await api_instance.get_list_id_basket_api_v1_baskets_all_list_id_get(user_id, token)
         print("The response of BasketsApi->get_list_id_basket_api_v1_baskets_all_list_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -436,7 +436,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     basket_id = 56 # int | 
@@ -444,7 +444,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get One Basket
-        api_response = api_instance.get_one_basket_api_v1_baskets_basket_id_get(basket_id, token)
+        api_response = await api_instance.get_one_basket_api_v1_baskets_basket_id_get(basket_id, token)
         print("The response of BasketsApi->get_one_basket_api_v1_baskets_basket_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -515,14 +515,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BasketsApi(api_client)
     insert_basket = swagger_client.InsertBasket() # InsertBasket | 
 
     try:
         # Insert
-        api_response = api_instance.insert_api_v1_baskets_post(insert_basket)
+        api_response = await api_instance.insert_api_v1_baskets_post(insert_basket)
         print("The response of BasketsApi->insert_api_v1_baskets_post:\n")
         pprint(api_response)
     except Exception as e:

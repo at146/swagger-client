@@ -42,7 +42,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.MessagesTgApi(api_client)
     name = 'name_example' # str | 
@@ -50,7 +50,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get
-        api_response = api_instance.get_api_v1_messages_tg_name_get(name, token)
+        api_response = await api_instance.get_api_v1_messages_tg_name_get(name, token)
         print("The response of MessagesTgApi->get_api_v1_messages_tg_name_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -121,7 +121,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.MessagesTgApi(api_client)
     token = 'token_example' # str | 
@@ -129,7 +129,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Insert Or Update
-        api_response = api_instance.insert_or_update_api_v1_messages_tg_post(token, insert_message_tg)
+        api_response = await api_instance.insert_or_update_api_v1_messages_tg_post(token, insert_message_tg)
         print("The response of MessagesTgApi->insert_or_update_api_v1_messages_tg_post:\n")
         pprint(api_response)
     except Exception as e:

@@ -26,6 +26,7 @@ PYTHON_REQUIRES = ">=3.7"
 REQUIRES = [
     "urllib3 >= 1.25.3, < 2.1.0",
     "python-dateutil",
+    "aiohttp >= 3.0.0",
     "pydantic >= 2",
     "typing-extensions >= 4.7.1",
 ]

@@ -42,14 +42,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.SchedulersApi(api_client)
     scheduler_id = 56 # int | 
 
     try:
         # Delete
-        api_response = api_instance.delete_api_v1_schedulers_scheduler_id_delete(scheduler_id)
+        api_response = await api_instance.delete_api_v1_schedulers_scheduler_id_delete(scheduler_id)
         print("The response of SchedulersApi->delete_api_v1_schedulers_scheduler_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -119,14 +119,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.SchedulersApi(api_client)
     token = 'token_example' # str | 
 
     try:
         # Get
-        api_response = api_instance.get_api_v1_schedulers_get(token)
+        api_response = await api_instance.get_api_v1_schedulers_get(token)
         print("The response of SchedulersApi->get_api_v1_schedulers_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -196,14 +196,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.SchedulersApi(api_client)
     insert_scheduler = swagger_client.InsertScheduler() # InsertScheduler | 
 
     try:
         # Insert
-        api_response = api_instance.insert_api_v1_schedulers_post(insert_scheduler)
+        api_response = await api_instance.insert_api_v1_schedulers_post(insert_scheduler)
         print("The response of SchedulersApi->insert_api_v1_schedulers_post:\n")
         pprint(api_response)
     except Exception as e:

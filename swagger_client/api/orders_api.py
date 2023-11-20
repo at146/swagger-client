@@ -49,7 +49,7 @@ class OrdersApi:
 
 
     @validate_call
-    def delete_order_api_v1_orders_order_id_delete(
+    async def delete_order_api_v1_orders_order_id_delete(
         self,
         order_id: StrictInt,
         _request_timeout: Union[
@@ -105,11 +105,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -117,7 +117,7 @@ class OrdersApi:
 
 
     @validate_call
-    def delete_order_api_v1_orders_order_id_delete_with_http_info(
+    async def delete_order_api_v1_orders_order_id_delete_with_http_info(
         self,
         order_id: StrictInt,
         _request_timeout: Union[
@@ -173,11 +173,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -185,7 +185,7 @@ class OrdersApi:
 
 
     @validate_call
-    def delete_order_api_v1_orders_order_id_delete_without_preload_content(
+    async def delete_order_api_v1_orders_order_id_delete_without_preload_content(
         self,
         order_id: StrictInt,
         _request_timeout: Union[
@@ -241,7 +241,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -311,7 +311,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_active_orders_api_v1_orders_get(
+    async def get_active_orders_api_v1_orders_get(
         self,
         dropshipping: StrictBool,
         token: StrictStr,
@@ -375,11 +375,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -387,7 +387,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_active_orders_api_v1_orders_get_with_http_info(
+    async def get_active_orders_api_v1_orders_get_with_http_info(
         self,
         dropshipping: StrictBool,
         token: StrictStr,
@@ -451,11 +451,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -463,7 +463,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_active_orders_api_v1_orders_get_without_preload_content(
+    async def get_active_orders_api_v1_orders_get_without_preload_content(
         self,
         dropshipping: StrictBool,
         token: StrictStr,
@@ -527,7 +527,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -609,7 +609,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_count_orders_api_v1_orders_count_get(
+    async def get_count_orders_api_v1_orders_count_get(
         self,
         status: StrictInt,
         token: StrictStr,
@@ -669,11 +669,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -681,7 +681,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_count_orders_api_v1_orders_count_get_with_http_info(
+    async def get_count_orders_api_v1_orders_count_get_with_http_info(
         self,
         status: StrictInt,
         token: StrictStr,
@@ -741,11 +741,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -753,7 +753,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_count_orders_api_v1_orders_count_get_without_preload_content(
+    async def get_count_orders_api_v1_orders_count_get_without_preload_content(
         self,
         status: StrictInt,
         token: StrictStr,
@@ -813,7 +813,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -890,7 +890,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(
+    async def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(
         self,
         user_id: StrictInt,
         status: StrictInt,
@@ -954,11 +954,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -966,7 +966,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_with_http_info(
+    async def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_with_http_info(
         self,
         user_id: StrictInt,
         status: StrictInt,
@@ -1030,11 +1030,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1042,7 +1042,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_without_preload_content(
+    async def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_without_preload_content(
         self,
         user_id: StrictInt,
         status: StrictInt,
@@ -1106,7 +1106,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1186,7 +1186,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_order_by_id_api_v1_orders_order_id_get(
+    async def get_order_by_id_api_v1_orders_order_id_get(
         self,
         order_id: StrictInt,
         purchases: Optional[StrictBool] = None,
@@ -1266,11 +1266,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1278,7 +1278,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_order_by_id_api_v1_orders_order_id_get_with_http_info(
+    async def get_order_by_id_api_v1_orders_order_id_get_with_http_info(
         self,
         order_id: StrictInt,
         purchases: Optional[StrictBool] = None,
@@ -1358,11 +1358,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1370,7 +1370,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_order_by_id_api_v1_orders_order_id_get_without_preload_content(
+    async def get_order_by_id_api_v1_orders_order_id_get_without_preload_content(
         self,
         order_id: StrictInt,
         purchases: Optional[StrictBool] = None,
@@ -1450,7 +1450,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1550,7 +1550,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_user_orders_api_v1_orders_users_user_id_get(
+    async def get_user_orders_api_v1_orders_users_user_id_get(
         self,
         user_id: StrictInt,
         purchase_status: StrictInt,
@@ -1614,11 +1614,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1626,7 +1626,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_user_orders_api_v1_orders_users_user_id_get_with_http_info(
+    async def get_user_orders_api_v1_orders_users_user_id_get_with_http_info(
         self,
         user_id: StrictInt,
         purchase_status: StrictInt,
@@ -1690,11 +1690,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1702,7 +1702,7 @@ class OrdersApi:
 
 
     @validate_call
-    def get_user_orders_api_v1_orders_users_user_id_get_without_preload_content(
+    async def get_user_orders_api_v1_orders_users_user_id_get_without_preload_content(
         self,
         user_id: StrictInt,
         purchase_status: StrictInt,
@@ -1766,7 +1766,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1846,7 +1846,7 @@ class OrdersApi:
 
 
     @validate_call
-    def insert_order_api_v1_orders_post(
+    async def insert_order_api_v1_orders_post(
         self,
         token: StrictStr,
         insert_order: InsertOrder,
@@ -1906,11 +1906,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1918,7 +1918,7 @@ class OrdersApi:
 
 
     @validate_call
-    def insert_order_api_v1_orders_post_with_http_info(
+    async def insert_order_api_v1_orders_post_with_http_info(
         self,
         token: StrictStr,
         insert_order: InsertOrder,
@@ -1978,11 +1978,11 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1990,7 +1990,7 @@ class OrdersApi:
 
 
     @validate_call
-    def insert_order_api_v1_orders_post_without_preload_content(
+    async def insert_order_api_v1_orders_post_without_preload_content(
         self,
         token: StrictStr,
         insert_order: InsertOrder,
@@ -2050,7 +2050,7 @@ class OrdersApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

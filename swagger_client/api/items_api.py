@@ -50,7 +50,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_all_api_v1_items_get(
+    async def get_all_api_v1_items_get(
         self,
         limit: Optional[StrictInt] = None,
         offset: Optional[StrictInt] = None,
@@ -111,11 +111,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -123,7 +123,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_all_api_v1_items_get_with_http_info(
+    async def get_all_api_v1_items_get_with_http_info(
         self,
         limit: Optional[StrictInt] = None,
         offset: Optional[StrictInt] = None,
@@ -184,11 +184,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -196,7 +196,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_all_api_v1_items_get_without_preload_content(
+    async def get_all_api_v1_items_get_without_preload_content(
         self,
         limit: Optional[StrictInt] = None,
         offset: Optional[StrictInt] = None,
@@ -257,7 +257,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -334,7 +334,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_brands_and_counts_api_v1_items_category_brands_counts_get(
+    async def get_brands_and_counts_api_v1_items_category_brands_counts_get(
         self,
         category: StrictStr,
         _request_timeout: Union[
@@ -390,11 +390,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -402,7 +402,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_brands_and_counts_api_v1_items_category_brands_counts_get_with_http_info(
+    async def get_brands_and_counts_api_v1_items_category_brands_counts_get_with_http_info(
         self,
         category: StrictStr,
         _request_timeout: Union[
@@ -458,11 +458,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -470,7 +470,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_brands_and_counts_api_v1_items_category_brands_counts_get_without_preload_content(
+    async def get_brands_and_counts_api_v1_items_category_brands_counts_get_without_preload_content(
         self,
         category: StrictStr,
         _request_timeout: Union[
@@ -526,7 +526,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -596,7 +596,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_api_v1_items_code_token_one_get(
+    async def get_item_api_v1_items_code_token_one_get(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -664,11 +664,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -676,7 +676,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_api_v1_items_code_token_one_get_with_http_info(
+    async def get_item_api_v1_items_code_token_one_get_with_http_info(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -744,11 +744,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -756,7 +756,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_api_v1_items_code_token_one_get_without_preload_content(
+    async def get_item_api_v1_items_code_token_one_get_without_preload_content(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -824,7 +824,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -907,7 +907,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_new_api_v1_items_code_token_one_new_get(
+    async def get_item_new_api_v1_items_code_token_one_new_get(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -979,11 +979,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -991,7 +991,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_new_api_v1_items_code_token_one_new_get_with_http_info(
+    async def get_item_new_api_v1_items_code_token_one_new_get_with_http_info(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -1063,11 +1063,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1075,7 +1075,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_new_api_v1_items_code_token_one_new_get_without_preload_content(
+    async def get_item_new_api_v1_items_code_token_one_new_get_without_preload_content(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -1147,7 +1147,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1235,7 +1235,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_selectinload_size_api_v1_items_code_token_load_size_get(
+    async def get_item_selectinload_size_api_v1_items_code_token_load_size_get(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -1303,11 +1303,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1315,7 +1315,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_selectinload_size_api_v1_items_code_token_load_size_get_with_http_info(
+    async def get_item_selectinload_size_api_v1_items_code_token_load_size_get_with_http_info(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -1383,11 +1383,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1395,7 +1395,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_item_selectinload_size_api_v1_items_code_token_load_size_get_without_preload_content(
+    async def get_item_selectinload_size_api_v1_items_code_token_load_size_get_without_preload_content(
         self,
         code: StrictStr,
         token: StrictStr,
@@ -1463,7 +1463,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1546,7 +1546,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_items_action_new_codes_api_v1_items_token_all_new_codes_get(
+    async def get_items_action_new_codes_api_v1_items_token_all_new_codes_get(
         self,
         token: StrictStr,
         action: StrictStr,
@@ -1626,11 +1626,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1638,7 +1638,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_items_action_new_codes_api_v1_items_token_all_new_codes_get_with_http_info(
+    async def get_items_action_new_codes_api_v1_items_token_all_new_codes_get_with_http_info(
         self,
         token: StrictStr,
         action: StrictStr,
@@ -1718,11 +1718,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1730,7 +1730,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_items_action_new_codes_api_v1_items_token_all_new_codes_get_without_preload_content(
+    async def get_items_action_new_codes_api_v1_items_token_all_new_codes_get_without_preload_content(
         self,
         token: StrictStr,
         action: StrictStr,
@@ -1810,7 +1810,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1910,7 +1910,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_items_codes_api_v1_items_category_brand_codes_get(
+    async def get_items_codes_api_v1_items_category_brand_codes_get(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -1974,11 +1974,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1986,7 +1986,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_items_codes_api_v1_items_category_brand_codes_get_with_http_info(
+    async def get_items_codes_api_v1_items_category_brand_codes_get_with_http_info(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2050,11 +2050,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2062,7 +2062,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_items_codes_api_v1_items_category_brand_codes_get_without_preload_content(
+    async def get_items_codes_api_v1_items_category_brand_codes_get_without_preload_content(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2126,7 +2126,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2204,7 +2204,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_models_and_counts_api_v1_items_category_brand_models_counts_get(
+    async def get_models_and_counts_api_v1_items_category_brand_models_counts_get(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2264,11 +2264,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2276,7 +2276,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_models_and_counts_api_v1_items_category_brand_models_counts_get_with_http_info(
+    async def get_models_and_counts_api_v1_items_category_brand_models_counts_get_with_http_info(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2336,11 +2336,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2348,7 +2348,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_models_and_counts_api_v1_items_category_brand_models_counts_get_without_preload_content(
+    async def get_models_and_counts_api_v1_items_category_brand_models_counts_get_without_preload_content(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2408,7 +2408,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -2481,7 +2481,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_models_api_v1_items_category_brand_models_get(
+    async def get_models_api_v1_items_category_brand_models_get(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2541,11 +2541,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2553,7 +2553,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_models_api_v1_items_category_brand_models_get_with_http_info(
+    async def get_models_api_v1_items_category_brand_models_get_with_http_info(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2613,11 +2613,11 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -2625,7 +2625,7 @@ class ItemsApi:
 
 
     @validate_call
-    def get_models_api_v1_items_category_brand_models_get_without_preload_content(
+    async def get_models_api_v1_items_category_brand_models_get_without_preload_content(
         self,
         category: StrictStr,
         brand: StrictStr,
@@ -2685,7 +2685,7 @@ class ItemsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

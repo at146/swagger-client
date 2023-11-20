@@ -49,7 +49,7 @@ class BasketsApi:
 
 
     @validate_call
-    def delete_one_basket_api_v1_baskets_basket_id_delete(
+    async def delete_one_basket_api_v1_baskets_basket_id_delete(
         self,
         basket_id: StrictInt,
         _request_timeout: Union[
@@ -105,11 +105,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -117,7 +117,7 @@ class BasketsApi:
 
 
     @validate_call
-    def delete_one_basket_api_v1_baskets_basket_id_delete_with_http_info(
+    async def delete_one_basket_api_v1_baskets_basket_id_delete_with_http_info(
         self,
         basket_id: StrictInt,
         _request_timeout: Union[
@@ -173,11 +173,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -185,7 +185,7 @@ class BasketsApi:
 
 
     @validate_call
-    def delete_one_basket_api_v1_baskets_basket_id_delete_without_preload_content(
+    async def delete_one_basket_api_v1_baskets_basket_id_delete_without_preload_content(
         self,
         basket_id: StrictInt,
         _request_timeout: Union[
@@ -241,7 +241,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -311,7 +311,7 @@ class BasketsApi:
 
 
     @validate_call
-    def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(
+    async def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(
         self,
         user_bot_id: StrictInt,
         _request_timeout: Union[
@@ -367,11 +367,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -379,7 +379,7 @@ class BasketsApi:
 
 
     @validate_call
-    def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_with_http_info(
+    async def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_with_http_info(
         self,
         user_bot_id: StrictInt,
         _request_timeout: Union[
@@ -435,11 +435,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -447,7 +447,7 @@ class BasketsApi:
 
 
     @validate_call
-    def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_without_preload_content(
+    async def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_without_preload_content(
         self,
         user_bot_id: StrictInt,
         _request_timeout: Union[
@@ -503,7 +503,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -573,7 +573,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_basket_api_v1_baskets_get(
+    async def get_basket_api_v1_baskets_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -637,11 +637,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -649,7 +649,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_basket_api_v1_baskets_get_with_http_info(
+    async def get_basket_api_v1_baskets_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -713,11 +713,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -725,7 +725,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_basket_api_v1_baskets_get_without_preload_content(
+    async def get_basket_api_v1_baskets_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -789,7 +789,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -871,7 +871,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_count_basket_api_v1_baskets_all_count_get(
+    async def get_count_basket_api_v1_baskets_all_count_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -931,11 +931,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -943,7 +943,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_count_basket_api_v1_baskets_all_count_get_with_http_info(
+    async def get_count_basket_api_v1_baskets_all_count_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1003,11 +1003,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1015,7 +1015,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_count_basket_api_v1_baskets_all_count_get_without_preload_content(
+    async def get_count_basket_api_v1_baskets_all_count_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1075,7 +1075,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1152,7 +1152,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_list_id_basket_api_v1_baskets_all_list_id_get(
+    async def get_list_id_basket_api_v1_baskets_all_list_id_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1212,11 +1212,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1224,7 +1224,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_list_id_basket_api_v1_baskets_all_list_id_get_with_http_info(
+    async def get_list_id_basket_api_v1_baskets_all_list_id_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1284,11 +1284,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1296,7 +1296,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_list_id_basket_api_v1_baskets_all_list_id_get_without_preload_content(
+    async def get_list_id_basket_api_v1_baskets_all_list_id_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1356,7 +1356,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1433,7 +1433,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_one_basket_api_v1_baskets_basket_id_get(
+    async def get_one_basket_api_v1_baskets_basket_id_get(
         self,
         basket_id: StrictInt,
         token: StrictStr,
@@ -1493,11 +1493,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1505,7 +1505,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_one_basket_api_v1_baskets_basket_id_get_with_http_info(
+    async def get_one_basket_api_v1_baskets_basket_id_get_with_http_info(
         self,
         basket_id: StrictInt,
         token: StrictStr,
@@ -1565,11 +1565,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1577,7 +1577,7 @@ class BasketsApi:
 
 
     @validate_call
-    def get_one_basket_api_v1_baskets_basket_id_get_without_preload_content(
+    async def get_one_basket_api_v1_baskets_basket_id_get_without_preload_content(
         self,
         basket_id: StrictInt,
         token: StrictStr,
@@ -1637,7 +1637,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1712,7 +1712,7 @@ class BasketsApi:
 
 
     @validate_call
-    def insert_api_v1_baskets_post(
+    async def insert_api_v1_baskets_post(
         self,
         insert_basket: InsertBasket,
         _request_timeout: Union[
@@ -1768,11 +1768,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1780,7 +1780,7 @@ class BasketsApi:
 
 
     @validate_call
-    def insert_api_v1_baskets_post_with_http_info(
+    async def insert_api_v1_baskets_post_with_http_info(
         self,
         insert_basket: InsertBasket,
         _request_timeout: Union[
@@ -1836,11 +1836,11 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1848,7 +1848,7 @@ class BasketsApi:
 
 
     @validate_call
-    def insert_api_v1_baskets_post_without_preload_content(
+    async def insert_api_v1_baskets_post_without_preload_content(
         self,
         insert_basket: InsertBasket,
         _request_timeout: Union[
@@ -1904,7 +1904,7 @@ class BasketsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

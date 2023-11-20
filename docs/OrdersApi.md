@@ -46,14 +46,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     order_id = 56 # int | 
 
     try:
         # Delete Order
-        api_response = api_instance.delete_order_api_v1_orders_order_id_delete(order_id)
+        api_response = await api_instance.delete_order_api_v1_orders_order_id_delete(order_id)
         print("The response of OrdersApi->delete_order_api_v1_orders_order_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -123,7 +123,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     dropshipping = True # bool | 
@@ -132,7 +132,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Active Orders
-        api_response = api_instance.get_active_orders_api_v1_orders_get(dropshipping, token, user_id=user_id)
+        api_response = await api_instance.get_active_orders_api_v1_orders_get(dropshipping, token, user_id=user_id)
         print("The response of OrdersApi->get_active_orders_api_v1_orders_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -203,7 +203,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     status = 56 # int | 
@@ -211,7 +211,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Count Orders
-        api_response = api_instance.get_count_orders_api_v1_orders_count_get(status, token)
+        api_response = await api_instance.get_count_orders_api_v1_orders_count_get(status, token)
         print("The response of OrdersApi->get_count_orders_api_v1_orders_count_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -281,7 +281,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     user_id = 56 # int | 
@@ -290,7 +290,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Count Orders By User Id
-        api_response = api_instance.get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(user_id, status, token)
+        api_response = await api_instance.get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(user_id, status, token)
         print("The response of OrdersApi->get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -362,7 +362,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     order_id = 56 # int | 
@@ -375,7 +375,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Order By Id
-        api_response = api_instance.get_order_by_id_api_v1_orders_order_id_get(order_id, purchases=purchases, item=item, size=size, user_bot=user_bot, partner=partner, order_by_purchases=order_by_purchases)
+        api_response = await api_instance.get_order_by_id_api_v1_orders_order_id_get(order_id, purchases=purchases, item=item, size=size, user_bot=user_bot, partner=partner, order_by_purchases=order_by_purchases)
         print("The response of OrdersApi->get_order_by_id_api_v1_orders_order_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -451,7 +451,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     user_id = 56 # int | 
@@ -460,7 +460,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get User Orders
-        api_response = api_instance.get_user_orders_api_v1_orders_users_user_id_get(user_id, purchase_status, token)
+        api_response = await api_instance.get_user_orders_api_v1_orders_users_user_id_get(user_id, purchase_status, token)
         print("The response of OrdersApi->get_user_orders_api_v1_orders_users_user_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -533,7 +533,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
     token = 'token_example' # str | 
@@ -541,7 +541,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Insert Order
-        api_response = api_instance.insert_order_api_v1_orders_post(token, insert_order)
+        api_response = await api_instance.insert_order_api_v1_orders_post(token, insert_order)
         print("The response of OrdersApi->insert_order_api_v1_orders_post:\n")
         pprint(api_response)
     except Exception as e:

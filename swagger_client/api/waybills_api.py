@@ -46,7 +46,7 @@ class WaybillsApi:
 
 
     @validate_call
-    def update_api_v1_waybills_put(
+    async def update_api_v1_waybills_put(
         self,
         waybill_update: WaybillUpdate,
         _request_timeout: Union[
@@ -102,11 +102,11 @@ class WaybillsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -114,7 +114,7 @@ class WaybillsApi:
 
 
     @validate_call
-    def update_api_v1_waybills_put_with_http_info(
+    async def update_api_v1_waybills_put_with_http_info(
         self,
         waybill_update: WaybillUpdate,
         _request_timeout: Union[
@@ -170,11 +170,11 @@ class WaybillsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -182,7 +182,7 @@ class WaybillsApi:
 
 
     @validate_call
-    def update_api_v1_waybills_put_without_preload_content(
+    async def update_api_v1_waybills_put_without_preload_content(
         self,
         waybill_update: WaybillUpdate,
         _request_timeout: Union[
@@ -238,7 +238,7 @@ class WaybillsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

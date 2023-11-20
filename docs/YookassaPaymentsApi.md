@@ -41,14 +41,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.YookassaPaymentsApi(api_client)
     yookassa_payment_insert = swagger_client.YookassaPaymentInsert() # YookassaPaymentInsert | 
 
     try:
         # Insert
-        api_response = api_instance.insert_api_v1_yookassa_payments_post(yookassa_payment_insert)
+        api_response = await api_instance.insert_api_v1_yookassa_payments_post(yookassa_payment_insert)
         print("The response of YookassaPaymentsApi->insert_api_v1_yookassa_payments_post:\n")
         pprint(api_response)
     except Exception as e:

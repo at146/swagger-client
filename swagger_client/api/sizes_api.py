@@ -48,7 +48,7 @@ class SizesApi:
 
 
     @validate_call
-    def get_size_by_id_api_v1_sizes_size_id_get(
+    async def get_size_by_id_api_v1_sizes_size_id_get(
         self,
         size_id: StrictInt,
         _request_timeout: Union[
@@ -104,11 +104,11 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -116,7 +116,7 @@ class SizesApi:
 
 
     @validate_call
-    def get_size_by_id_api_v1_sizes_size_id_get_with_http_info(
+    async def get_size_by_id_api_v1_sizes_size_id_get_with_http_info(
         self,
         size_id: StrictInt,
         _request_timeout: Union[
@@ -172,11 +172,11 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -184,7 +184,7 @@ class SizesApi:
 
 
     @validate_call
-    def get_size_by_id_api_v1_sizes_size_id_get_without_preload_content(
+    async def get_size_by_id_api_v1_sizes_size_id_get_without_preload_content(
         self,
         size_id: StrictInt,
         _request_timeout: Union[
@@ -240,7 +240,7 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -310,7 +310,7 @@ class SizesApi:
 
 
     @validate_call
-    def get_sizes_api_v1_sizes_get(
+    async def get_sizes_api_v1_sizes_get(
         self,
         category: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -366,11 +366,11 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -378,7 +378,7 @@ class SizesApi:
 
 
     @validate_call
-    def get_sizes_api_v1_sizes_get_with_http_info(
+    async def get_sizes_api_v1_sizes_get_with_http_info(
         self,
         category: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -434,11 +434,11 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -446,7 +446,7 @@ class SizesApi:
 
 
     @validate_call
-    def get_sizes_api_v1_sizes_get_without_preload_content(
+    async def get_sizes_api_v1_sizes_get_without_preload_content(
         self,
         category: Optional[StrictStr] = None,
         _request_timeout: Union[
@@ -502,7 +502,7 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -574,7 +574,7 @@ class SizesApi:
 
 
     @validate_call
-    def insert_or_nothing_api_v1_sizes_post(
+    async def insert_or_nothing_api_v1_sizes_post(
         self,
         body: Dict[str, Any],
         _request_timeout: Union[
@@ -630,11 +630,11 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -642,7 +642,7 @@ class SizesApi:
 
 
     @validate_call
-    def insert_or_nothing_api_v1_sizes_post_with_http_info(
+    async def insert_or_nothing_api_v1_sizes_post_with_http_info(
         self,
         body: Dict[str, Any],
         _request_timeout: Union[
@@ -698,11 +698,11 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -710,7 +710,7 @@ class SizesApi:
 
 
     @validate_call
-    def insert_or_nothing_api_v1_sizes_post_without_preload_content(
+    async def insert_or_nothing_api_v1_sizes_post_without_preload_content(
         self,
         body: Dict[str, Any],
         _request_timeout: Union[
@@ -766,7 +766,7 @@ class SizesApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

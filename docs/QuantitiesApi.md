@@ -40,14 +40,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.QuantitiesApi(api_client)
     body = None # object | 
 
     try:
         # Insert Or Update
-        api_response = api_instance.insert_or_update_api_v1_quantities_merge_post(body)
+        api_response = await api_instance.insert_or_update_api_v1_quantities_merge_post(body)
         print("The response of QuantitiesApi->insert_or_update_api_v1_quantities_merge_post:\n")
         pprint(api_response)
     except Exception as e:

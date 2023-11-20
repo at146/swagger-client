@@ -50,7 +50,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_all_ids_users_api_v1_users_bots_ids_get(
+    async def get_all_ids_users_api_v1_users_bots_ids_get(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -106,11 +106,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -118,7 +118,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_all_ids_users_api_v1_users_bots_ids_get_with_http_info(
+    async def get_all_ids_users_api_v1_users_bots_ids_get_with_http_info(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -174,11 +174,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -186,7 +186,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_all_ids_users_api_v1_users_bots_ids_get_without_preload_content(
+    async def get_all_ids_users_api_v1_users_bots_ids_get_without_preload_content(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -242,7 +242,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -314,7 +314,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_count_api_v1_users_bots_count_get(
+    async def get_count_api_v1_users_bots_count_get(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -370,11 +370,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -382,7 +382,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_count_api_v1_users_bots_count_get_with_http_info(
+    async def get_count_api_v1_users_bots_count_get_with_http_info(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -438,11 +438,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -450,7 +450,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_count_api_v1_users_bots_count_get_without_preload_content(
+    async def get_count_api_v1_users_bots_count_get_without_preload_content(
         self,
         token: StrictStr,
         _request_timeout: Union[
@@ -506,7 +506,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -578,7 +578,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_only_user_bot_api_v1_users_bots_user_id_only_get(
+    async def get_only_user_bot_api_v1_users_bots_user_id_only_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -650,11 +650,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -662,7 +662,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_only_user_bot_api_v1_users_bots_user_id_only_get_with_http_info(
+    async def get_only_user_bot_api_v1_users_bots_user_id_only_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -734,11 +734,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -746,7 +746,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_only_user_bot_api_v1_users_bots_user_id_only_get_without_preload_content(
+    async def get_only_user_bot_api_v1_users_bots_user_id_only_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -818,7 +818,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -908,7 +908,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_bot_api_v1_users_bots_user_id_get(
+    async def get_user_bot_api_v1_users_bots_user_id_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -976,11 +976,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -988,7 +988,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_bot_api_v1_users_bots_user_id_get_with_http_info(
+    async def get_user_bot_api_v1_users_bots_user_id_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1056,11 +1056,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1068,7 +1068,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_bot_api_v1_users_bots_user_id_get_without_preload_content(
+    async def get_user_bot_api_v1_users_bots_user_id_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1136,7 +1136,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1221,7 +1221,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_bot_start_api_v1_users_bots_user_id_start_get(
+    async def get_user_bot_start_api_v1_users_bots_user_id_start_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1293,11 +1293,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1305,7 +1305,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_bot_start_api_v1_users_bots_user_id_start_get_with_http_info(
+    async def get_user_bot_start_api_v1_users_bots_user_id_start_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1377,11 +1377,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1389,7 +1389,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_bot_start_api_v1_users_bots_user_id_start_get_without_preload_content(
+    async def get_user_bot_start_api_v1_users_bots_user_id_start_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1461,7 +1461,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1551,7 +1551,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_client_bot_api_v1_users_bots_user_id_client_get(
+    async def get_user_client_bot_api_v1_users_bots_user_id_client_get(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1611,11 +1611,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1623,7 +1623,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_client_bot_api_v1_users_bots_user_id_client_get_with_http_info(
+    async def get_user_client_bot_api_v1_users_bots_user_id_client_get_with_http_info(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1683,11 +1683,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1695,7 +1695,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def get_user_client_bot_api_v1_users_bots_user_id_client_get_without_preload_content(
+    async def get_user_client_bot_api_v1_users_bots_user_id_client_get_without_preload_content(
         self,
         user_id: StrictInt,
         token: StrictStr,
@@ -1755,7 +1755,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -1830,7 +1830,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def update_last_mess_api_v1_users_bots_mess_put(
+    async def update_last_mess_api_v1_users_bots_mess_put(
         self,
         update_user_bot_mess: UpdateUserBotMess,
         _request_timeout: Union[
@@ -1886,11 +1886,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1898,7 +1898,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def update_last_mess_api_v1_users_bots_mess_put_with_http_info(
+    async def update_last_mess_api_v1_users_bots_mess_put_with_http_info(
         self,
         update_user_bot_mess: UpdateUserBotMess,
         _request_timeout: Union[
@@ -1954,11 +1954,11 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -1966,7 +1966,7 @@ class UsersBotsApi:
 
 
     @validate_call
-    def update_last_mess_api_v1_users_bots_mess_put_without_preload_content(
+    async def update_last_mess_api_v1_users_bots_mess_put_without_preload_content(
         self,
         update_user_bot_mess: UpdateUserBotMess,
         _request_timeout: Union[
@@ -2022,7 +2022,7 @@ class UsersBotsApi:
             '422': "HTTPValidationError"
             
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

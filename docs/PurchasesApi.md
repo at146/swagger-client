@@ -44,14 +44,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.PurchasesApi(api_client)
     purchase_id = 56 # int | 
 
     try:
         # Delete Purchase
-        api_response = api_instance.delete_purchase_api_v1_purchases_purchase_id_delete(purchase_id)
+        api_response = await api_instance.delete_purchase_api_v1_purchases_purchase_id_delete(purchase_id)
         print("The response of PurchasesApi->delete_purchase_api_v1_purchases_purchase_id_delete:\n")
         pprint(api_response)
     except Exception as e:
@@ -121,14 +121,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.PurchasesApi(api_client)
     token = 'token_example' # str | 
 
     try:
         # Get All
-        api_response = api_instance.get_all_api_v1_purchases_get(token)
+        api_response = await api_instance.get_all_api_v1_purchases_get(token)
         print("The response of PurchasesApi->get_all_api_v1_purchases_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -197,7 +197,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.PurchasesApi(api_client)
     token = 'token_example' # str | 
@@ -205,7 +205,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Count
-        api_response = api_instance.get_count_api_v1_purchases_token_status_count_get(token, status)
+        api_response = await api_instance.get_count_api_v1_purchases_token_status_count_get(token, status)
         print("The response of PurchasesApi->get_count_api_v1_purchases_token_status_count_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -276,7 +276,7 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.PurchasesApi(api_client)
     purchase_id = 56 # int | 
@@ -288,7 +288,7 @@ with swagger_client.ApiClient(configuration) as api_client:
 
     try:
         # Get Purchase By Id
-        api_response = api_instance.get_purchase_by_id_api_v1_purchases_purchase_id_get(purchase_id, token, delivery_cdek=delivery_cdek, waybill=waybill, stock=stock, user_stock=user_stock)
+        api_response = await api_instance.get_purchase_by_id_api_v1_purchases_purchase_id_get(purchase_id, token, delivery_cdek=delivery_cdek, waybill=waybill, stock=stock, user_stock=user_stock)
         print("The response of PurchasesApi->get_purchase_by_id_api_v1_purchases_purchase_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -363,14 +363,14 @@ configuration = swagger_client.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with swagger_client.ApiClient(configuration) as api_client:
+async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.PurchasesApi(api_client)
     update_purchase = swagger_client.UpdatePurchase() # UpdatePurchase | 
 
     try:
         # Update Only
-        api_response = api_instance.update_only_api_v1_purchases_put(update_purchase)
+        api_response = await api_instance.update_only_api_v1_purchases_put(update_purchase)
         print("The response of PurchasesApi->update_only_api_v1_purchases_put:\n")
         pprint(api_response)
     except Exception as e:
