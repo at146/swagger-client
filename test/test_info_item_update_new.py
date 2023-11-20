@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.info_item_update_new import InfoItemUpdateNew
+
 
 class TestInfoItemUpdateNew(unittest.TestCase):
     """InfoItemUpdateNew unit test stubs"""

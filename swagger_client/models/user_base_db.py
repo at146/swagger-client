@@ -13,15 +13,17 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictInt, StrictStr
+
 from swagger_client.models.stock_base import StockBase
 from swagger_client.models.user_bot_base import UserBotBase
+
 try:
     from typing import Self
 except ImportError:
@@ -135,5 +137,3 @@ class UserBaseDb(BaseModel):
             "users_bots": [UserBotBase.from_dict(_item) for _item in obj.get("users_bots")] if obj.get("users_bots") is not None else None
         })
         return _obj
-
-

@@ -12,30 +12,29 @@
 """  # noqa: E501
 
 
-import atexit
 import datetime
-from dateutil.parser import parse
 import json
 import mimetypes
 import os
 import re
 import tempfile
-
+from typing import List, Optional, Tuple
 from urllib.parse import quote
-from typing import Tuple, Optional, List
 
-from swagger_client.configuration import Configuration
-from swagger_client.api_response import ApiResponse
+from dateutil.parser import parse
+
 import swagger_client.models
 from swagger_client import rest
+from swagger_client.api_response import ApiResponse
+from swagger_client.configuration import Configuration
 from swagger_client.exceptions import (
-    ApiValueError,
     ApiException,
+    ApiValueError,
     BadRequestException,
-    UnauthorizedException,
     ForbiddenException,
     NotFoundException,
-    ServiceException
+    ServiceException,
+    UnauthorizedException,
 )
 
 

@@ -33,5 +33,3 @@ insert_order_dict = insert_order_instance.to_dict()
 insert_order_form_dict = insert_order.from_dict(insert_order_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

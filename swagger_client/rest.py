@@ -181,8 +181,3 @@ class RESTClientObject:
         r = await self.pool_manager.request(**args)
 
         return RESTResponse(r)
-
-
-
-
-

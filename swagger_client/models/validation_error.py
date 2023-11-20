@@ -13,14 +13,16 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List
+
 from pydantic import BaseModel, StrictStr
+
 from swagger_client.models.location_inner import LocationInner
+
 try:
     from typing import Self
 except ImportError:
@@ -95,5 +97,3 @@ class ValidationError(BaseModel):
             "type": obj.get("type")
         })
         return _obj
-
-

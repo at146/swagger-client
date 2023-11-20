@@ -13,15 +13,18 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictInt
+
 from swagger_client.models.message_tg_base import MessageTgBase
 from swagger_client.models.user_bot_base import UserBotBase
+
 try:
     from typing import Self
 except ImportError:
@@ -131,5 +134,3 @@ class SchedulerBaseDb(BaseModel):
             "messages_tg": MessageTgBase.from_dict(obj.get("messages_tg")) if obj.get("messages_tg") is not None else None
         })
         return _obj
-
-

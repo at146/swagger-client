@@ -28,5 +28,3 @@ info_item_insert_dict = info_item_insert_instance.to_dict()
 info_item_insert_form_dict = info_item_insert.from_dict(info_item_insert_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

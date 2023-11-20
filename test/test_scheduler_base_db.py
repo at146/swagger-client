@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.scheduler_base_db import SchedulerBaseDb
+
 
 class TestSchedulerBaseDb(unittest.TestCase):
     """SchedulerBaseDb unit test stubs"""

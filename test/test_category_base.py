@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.category_base import CategoryBase
+
 
 class TestCategoryBase(unittest.TestCase):
     """CategoryBase unit test stubs"""

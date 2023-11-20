@@ -13,14 +13,16 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
+
 from swagger_client.models.basket_base_db import BasketBaseDb
+
 try:
     from typing import Self
 except ImportError:
@@ -139,5 +141,3 @@ class InsertOrder(BaseModel):
             "basket": [BasketBaseDb.from_dict(_item) for _item in obj.get("basket")] if obj.get("basket") is not None else None
         })
         return _obj
-
-

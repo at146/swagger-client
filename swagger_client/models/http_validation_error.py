@@ -13,14 +13,16 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel
+
 from swagger_client.models.validation_error import ValidationError
+
 try:
     from typing import Self
 except ImportError:
@@ -91,5 +93,3 @@ class HTTPValidationError(BaseModel):
             "detail": [ValidationError.from_dict(_item) for _item in obj.get("detail")] if obj.get("detail") is not None else None
         })
         return _obj
-
-

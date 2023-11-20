@@ -13,13 +13,14 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictStr
+
 try:
     from typing import Self
 except ImportError:
@@ -95,5 +96,3 @@ class CentimeterBase(BaseModel):
             "value": obj.get("value")
         })
         return _obj
-
-

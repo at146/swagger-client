@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.basket_base_db import BasketBaseDb
+
 
 class TestBasketBaseDb(unittest.TestCase):
     """BasketBaseDb unit test stubs"""

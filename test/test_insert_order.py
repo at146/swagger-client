@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.insert_order import InsertOrder
+
 
 class TestInsertOrder(unittest.TestCase):
     """InsertOrder unit test stubs"""

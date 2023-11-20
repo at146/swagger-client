@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.stock_base import StockBase
+
 
 class TestStockBase(unittest.TestCase):
     """StockBase unit test stubs"""

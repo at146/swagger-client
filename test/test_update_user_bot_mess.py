@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
+
 
 class TestUpdateUserBotMess(unittest.TestCase):
     """UpdateUserBotMess unit test stubs"""

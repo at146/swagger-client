@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.waybill_update import WaybillUpdate
+
 
 class TestWaybillUpdate(unittest.TestCase):
     """WaybillUpdate unit test stubs"""

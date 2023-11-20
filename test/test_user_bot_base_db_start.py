@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
+
 
 class TestUserBotBaseDbStart(unittest.TestCase):
     """UserBotBaseDbStart unit test stubs"""

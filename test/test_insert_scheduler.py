@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.insert_scheduler import InsertScheduler
+
 
 class TestInsertScheduler(unittest.TestCase):
     """InsertScheduler unit test stubs"""

@@ -17,4 +17,3 @@ from swagger_client.api.sizes_api import SizesApi
 from swagger_client.api.users_bots_api import UsersBotsApi
 from swagger_client.api.waybills_api import WaybillsApi
 from swagger_client.api.yookassa_payments_api import YookassaPaymentsApi
-

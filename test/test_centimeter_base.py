@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.centimeter_base import CentimeterBase
+
 
 class TestCentimeterBase(unittest.TestCase):
     """CentimeterBase unit test stubs"""

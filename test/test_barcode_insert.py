@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.barcode_insert import BarcodeInsert
+
 
 class TestBarcodeInsert(unittest.TestCase):
     """BarcodeInsert unit test stubs"""

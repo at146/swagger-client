@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.delivery_cdek_update import DeliveryCdekUpdate
+
 
 class TestDeliveryCdekUpdate(unittest.TestCase):
     """DeliveryCdekUpdate unit test stubs"""

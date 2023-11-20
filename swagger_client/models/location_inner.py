@@ -13,16 +13,21 @@
 
 
 from __future__ import annotations
-from inspect import getfullargspec
+
 import json
 import pprint
 import re  # noqa: F401
+from typing import TYPE_CHECKING, Any, Dict, List, Optional, Union
 
-from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, ValidationError, field_validator
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from pydantic import (
+    BaseModel,
+    StrictInt,
+    StrictStr,
+    ValidationError,
+    field_validator,
+)
 from typing_extensions import Literal
-from pydantic import StrictStr, Field
+
 try:
     from typing import Self
 except ImportError:
@@ -140,5 +145,3 @@ class LocationInner(BaseModel):
     def to_str(self) -> str:
         """Returns the string representation of the actual instance"""
         return pprint.pformat(self.model_dump())
-
-

@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.message_tg_base import MessageTgBase
+
 
 class TestMessageTgBase(unittest.TestCase):
     """MessageTgBase unit test stubs"""

@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.validation_error import ValidationError
+
 
 class TestValidationError(unittest.TestCase):
     """ValidationError unit test stubs"""

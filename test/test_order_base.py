@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.order_base import OrderBase
+
 
 class TestOrderBase(unittest.TestCase):
     """OrderBase unit test stubs"""

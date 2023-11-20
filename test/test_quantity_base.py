@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.quantity_base import QuantityBase
+
 
 class TestQuantityBase(unittest.TestCase):
     """QuantityBase unit test stubs"""

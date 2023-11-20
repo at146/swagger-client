@@ -27,5 +27,3 @@ delivery_cdek_update_dict = delivery_cdek_update_instance.to_dict()
 delivery_cdek_update_form_dict = delivery_cdek_update.from_dict(delivery_cdek_update_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.partner_base import PartnerBase
+
 
 class TestPartnerBase(unittest.TestCase):
     """PartnerBase unit test stubs"""

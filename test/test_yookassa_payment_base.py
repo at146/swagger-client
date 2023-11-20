@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.yookassa_payment_base import YookassaPaymentBase
+
 
 class TestYookassaPaymentBase(unittest.TestCase):
     """YookassaPaymentBase unit test stubs"""

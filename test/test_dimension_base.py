@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.dimension_base import DimensionBase
+
 
 class TestDimensionBase(unittest.TestCase):
     """DimensionBase unit test stubs"""

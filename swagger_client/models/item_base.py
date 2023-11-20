@@ -13,13 +13,15 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
+
 try:
     from typing import Self
 except ImportError:
@@ -228,5 +230,3 @@ class ItemBase(BaseModel):
             "photo_path_tg": obj.get("photo_path_tg")
         })
         return _obj
-
-

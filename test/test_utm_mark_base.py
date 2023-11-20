@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.utm_mark_base import UtmMarkBase
+
 
 class TestUtmMarkBase(unittest.TestCase):
     """UtmMarkBase unit test stubs"""

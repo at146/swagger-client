@@ -45,7 +45,6 @@ select = [
     "I", # imports
     "C",
     "PLW",
-#    "UP",
 ]
 
 fix = true

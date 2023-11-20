@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.location_inner import LocationInner
+
 
 class TestLocationInner(unittest.TestCase):
     """LocationInner unit test stubs"""

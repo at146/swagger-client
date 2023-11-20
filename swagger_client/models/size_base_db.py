@@ -13,14 +13,16 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictInt, StrictStr
+
 from swagger_client.models.quantity_base import QuantityBase
+
 try:
     from typing import Self
 except ImportError:
@@ -110,5 +112,3 @@ class SizeBaseDb(BaseModel):
             "quantities": [QuantityBase.from_dict(_item) for _item in obj.get("quantities")] if obj.get("quantities") is not None else None
         })
         return _obj
-
-

@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.brand_count import BrandCount
+
 
 class TestBrandCount(unittest.TestCase):
     """BrandCount unit test stubs"""

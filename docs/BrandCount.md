@@ -25,5 +25,3 @@ brand_count_dict = brand_count_instance.to_dict()
 brand_count_form_dict = brand_count.from_dict(brand_count_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

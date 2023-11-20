@@ -13,13 +13,14 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
-
 from typing import Any, ClassVar, Dict, List
+
 from pydantic import BaseModel, StrictStr
+
 try:
     from typing import Self
 except ImportError:
@@ -85,5 +86,3 @@ class WaybillUpdate(BaseModel):
             "tg_file_id": obj.get("tg_file_id")
         })
         return _obj
-
-

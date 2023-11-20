@@ -12,26 +12,24 @@
 """  # noqa: E501
 
 
-import io
-import warnings
 
-from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Dict, List, Optional, Tuple, Union, Any
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
 
 try:
     from typing import Annotated
 except ImportError:
     from typing_extensions import Annotated
 
-from pydantic import StrictBool, StrictInt, StrictStr
-
 from typing import Any, List, Optional
 
-from swagger_client.models.insert_order import InsertOrder
-from swagger_client.models.order_base_db import OrderBaseDb
+from pydantic import StrictBool, StrictInt, StrictStr
 
 from swagger_client.api_client import ApiClient
 from swagger_client.api_response import ApiResponse
+from swagger_client.models.insert_order import InsertOrder
+from swagger_client.models.order_base_db import OrderBaseDb
 from swagger_client.rest import RESTResponseType
 
 
@@ -2133,5 +2131,3 @@ class OrdersApi:
             _host=_host,
             _request_auth=_request_auth
         )
-
-

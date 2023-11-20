@@ -27,5 +27,3 @@ info_item_update_new_dict = info_item_update_new_instance.to_dict()
 info_item_update_new_form_dict = info_item_update_new.from_dict(info_item_update_new_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

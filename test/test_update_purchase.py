@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.update_purchase import UpdatePurchase
+
 
 class TestUpdatePurchase(unittest.TestCase):
     """UpdatePurchase unit test stubs"""

@@ -27,5 +27,3 @@ insert_basket_dict = insert_basket_instance.to_dict()
 insert_basket_form_dict = insert_basket.from_dict(insert_basket_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

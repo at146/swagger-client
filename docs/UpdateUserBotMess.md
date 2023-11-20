@@ -26,5 +26,3 @@ update_user_bot_mess_dict = update_user_bot_mess_instance.to_dict()
 update_user_bot_mess_form_dict = update_user_bot_mess.from_dict(update_user_bot_mess_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
-

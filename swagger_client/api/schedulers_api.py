@@ -12,26 +12,24 @@
 """  # noqa: E501
 
 
-import io
-import warnings
 
-from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
-from typing import Dict, List, Optional, Tuple, Union, Any
+from typing import Any, Dict, List, Optional, Tuple, Union
+
+from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
 
 try:
     from typing import Annotated
 except ImportError:
     from typing_extensions import Annotated
 
-from pydantic import StrictInt, StrictStr
-
 from typing import Any, List
 
-from swagger_client.models.insert_scheduler import InsertScheduler
-from swagger_client.models.scheduler_base_db import SchedulerBaseDb
+from pydantic import StrictInt, StrictStr
 
 from swagger_client.api_client import ApiClient
 from swagger_client.api_response import ApiResponse
+from swagger_client.models.insert_scheduler import InsertScheduler
+from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 from swagger_client.rest import RESTResponseType
 
 
@@ -845,5 +843,3 @@ class SchedulersApi:
             _host=_host,
             _request_auth=_request_auth
         )
-
-

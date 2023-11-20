@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.model_count import ModelCount
+
 
 class TestModelCount(unittest.TestCase):
     """ModelCount unit test stubs"""

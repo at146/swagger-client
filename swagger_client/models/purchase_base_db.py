@@ -13,18 +13,21 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
+
 from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.order_base import OrderBase
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.yookassa_payment_base import YookassaPaymentBase
+
 try:
     from typing import Self
 except ImportError:
@@ -304,5 +307,3 @@ class PurchaseBaseDb(BaseModel):
             "yookassa_payment": YookassaPaymentBase.from_dict(obj.get("yookassa_payment")) if obj.get("yookassa_payment") is not None else None
         })
         return _obj
-
-

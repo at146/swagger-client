@@ -13,16 +13,19 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictInt, StrictStr
+
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.user_bot_base import UserBotBase
+
 try:
     from typing import Self
 except ImportError:
@@ -156,5 +159,3 @@ class BasketBaseDb(BaseModel):
             "item": ItemBase.from_dict(obj.get("item")) if obj.get("item") is not None else None
         })
         return _obj
-
-

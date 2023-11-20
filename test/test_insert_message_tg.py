@@ -13,9 +13,9 @@
 
 
 import unittest
-import datetime
 
 from swagger_client.models.insert_message_tg import InsertMessageTg
+
 
 class TestInsertMessageTg(unittest.TestCase):
     """InsertMessageTg unit test stubs"""

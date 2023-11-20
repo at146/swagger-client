@@ -13,13 +13,15 @@
 
 
 from __future__ import annotations
+
+import json
 import pprint
 import re  # noqa: F401
-import json
-
 from datetime import datetime
 from typing import Any, ClassVar, Dict, List, Optional
+
 from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
+
 try:
     from typing import Self
 except ImportError:
@@ -165,5 +167,3 @@ class OrderBase(BaseModel):
             "paid": obj.get("paid")
         })
         return _obj
-
-
