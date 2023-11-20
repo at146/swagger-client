@@ -10,7 +10,7 @@ keywords = ["OpenAPI", "OpenAPI-Generator", "Rest DB"]
 include = ["swagger_client/py.typed"]
 
 [tool.poetry.dependencies]
-python = "^3.7"
+python = "3.11.5"
 
 urllib3 = ">= 1.25.3"
 python-dateutil = ">=2.8.2"
@@ -23,9 +23,56 @@ pytest = ">=7.2.1"
 tox = ">=3.9.0"
 flake8 = ">=4.0.0"
 
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.1.6"
+pre-commit = "^3.5.0"
+
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
+[tool.ruff]
+#line-length = 120
+
+select = [
+    "E",
+    "F",
+    "T10",
+    "T20",
+    "Q",
+    "B",
+    "PLC",
+    "I", # imports
+    "C",
+    "PLW",
+#    "UP",
+]
+
+fix = true
+#fixable = ["I001", "F541"]
+
+# ERA COM D G TRY ANN PLR DTZ PLC I PTH TD ISC FIX UP RUF FBT C SIM A EM BLE PLW S TCH
+
+
+ignore = [
+    "E501",
+    "E721",
+    "F811",
+    "B904",
+    "C409",
+    "PLW2901",
+    "C901", # mccabe - code complecity
+    "Q000",
+    "RET505"
+]
+
+#exclude = [
+#    ".git",
+#    "migrations"
+#]
+
+
+target-version = "py311"
 
 [tool.pylint.'MESSAGES CONTROL']
 extension-pkg-whitelist = "pydantic"
