@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **category_id** | **str** |  | [optional] 
 **manufacturer_country** | **str** |  | [optional] 
 **material** | **str** |  | [optional] 
-**dimension_id** | **int** |  | [optional] 
+**dimension_id** | **str** |  | [optional] 
 **photo_path_tg** | **str** |  | [optional] 
 **quantities** | [**List[QuantityBaseDb]**](QuantityBaseDb.md) |  | [optional] 
 **category** | [**CategoryBase**](CategoryBase.md) |  | [optional] 

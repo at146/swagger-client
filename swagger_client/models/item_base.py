@@ -50,7 +50,7 @@ class ItemBase(BaseModel):
     category_id: Optional[StrictStr] = None
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
-    dimension_id: Optional[StrictInt] = None
+    dimension_id: Optional[StrictStr] = None
     photo_path_tg: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "code", "changed", "active", "brand", "model", "title", "retail_price", "drop_price", "link", "photos", "season", "color", "discount_price", "new", "code_hash", "category_id", "manufacturer_country", "material", "dimension_id", "photo_path_tg"]
 

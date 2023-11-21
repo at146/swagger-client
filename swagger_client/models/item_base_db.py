@@ -54,7 +54,7 @@ class ItemBaseDb(BaseModel):
     category_id: Optional[StrictStr] = None
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
-    dimension_id: Optional[StrictInt] = None
+    dimension_id: Optional[StrictStr] = None
     photo_path_tg: Optional[StrictStr] = None
     quantities: Optional[List[QuantityBaseDb]] = None
     category: Optional[CategoryBase] = None
