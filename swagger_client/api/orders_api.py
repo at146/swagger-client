@@ -1846,7 +1846,6 @@ class OrdersApi:
     @validate_call
     async def insert_order_api_v1_orders_post(
         self,
-        token: StrictStr,
         insert_order: InsertOrder,
         _request_timeout: Union[
             None,
@@ -1864,8 +1863,6 @@ class OrdersApi:
         """Insert Order
 
 
-        :param token: (required)
-        :type token: str
         :param insert_order: (required)
         :type insert_order: InsertOrder
         :param _request_timeout: timeout setting for this request. If one
@@ -1891,7 +1888,6 @@ class OrdersApi:
         """ # noqa: E501
 
         _param = self._insert_order_api_v1_orders_post_serialize(
-            token=token,
             insert_order=insert_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1918,7 +1914,6 @@ class OrdersApi:
     @validate_call
     async def insert_order_api_v1_orders_post_with_http_info(
         self,
-        token: StrictStr,
         insert_order: InsertOrder,
         _request_timeout: Union[
             None,
@@ -1936,8 +1931,6 @@ class OrdersApi:
         """Insert Order
 
 
-        :param token: (required)
-        :type token: str
         :param insert_order: (required)
         :type insert_order: InsertOrder
         :param _request_timeout: timeout setting for this request. If one
@@ -1963,7 +1956,6 @@ class OrdersApi:
         """ # noqa: E501
 
         _param = self._insert_order_api_v1_orders_post_serialize(
-            token=token,
             insert_order=insert_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -1990,7 +1982,6 @@ class OrdersApi:
     @validate_call
     async def insert_order_api_v1_orders_post_without_preload_content(
         self,
-        token: StrictStr,
         insert_order: InsertOrder,
         _request_timeout: Union[
             None,
@@ -2008,8 +1999,6 @@ class OrdersApi:
         """Insert Order
 
 
-        :param token: (required)
-        :type token: str
         :param insert_order: (required)
         :type insert_order: InsertOrder
         :param _request_timeout: timeout setting for this request. If one
@@ -2035,7 +2024,6 @@ class OrdersApi:
         """ # noqa: E501
 
         _param = self._insert_order_api_v1_orders_post_serialize(
-            token=token,
             insert_order=insert_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -2057,7 +2045,6 @@ class OrdersApi:
 
     def _insert_order_api_v1_orders_post_serialize(
         self,
-        token,
         insert_order,
         _request_auth,
         _content_type,
@@ -2080,10 +2067,6 @@ class OrdersApi:
 
         # process the path parameters
         # process the query parameters
-        if token is not None:
-            
-            _query_params.append(('token', token))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter

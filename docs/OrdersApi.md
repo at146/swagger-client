@@ -499,7 +499,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_order_api_v1_orders_post**
-> OrderBaseDb insert_order_api_v1_orders_post(token, insert_order)
+> OrderBaseDb insert_order_api_v1_orders_post(insert_order)
 
 Insert Order
 
@@ -536,12 +536,11 @@ configuration = swagger_client.Configuration(
 async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.OrdersApi(api_client)
-    token = 'token_example' # str | 
     insert_order = swagger_client.InsertOrder() # InsertOrder | 
 
     try:
         # Insert Order
-        api_response = await api_instance.insert_order_api_v1_orders_post(token, insert_order)
+        api_response = await api_instance.insert_order_api_v1_orders_post(insert_order)
         print("The response of OrdersApi->insert_order_api_v1_orders_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -554,7 +553,6 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **token** | **str**|  | 
  **insert_order** | [**InsertOrder**](InsertOrder.md)|  | 
 
 ### Return type
