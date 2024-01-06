@@ -21,6 +21,7 @@ Delete One Basket
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -64,6 +65,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **basket_id** | **int**|  | 
@@ -82,6 +84,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -97,6 +100,7 @@ Delete User Basket
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -140,6 +144,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_bot_id** | **int**|  | 
@@ -158,6 +163,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -173,6 +179,7 @@ Get Basket
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -219,6 +226,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**|  | 
@@ -239,6 +247,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -254,6 +263,7 @@ Get Count Basket
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -298,6 +308,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**|  | 
@@ -317,6 +328,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -332,6 +344,7 @@ Get List Id Basket
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -376,6 +389,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**|  | 
@@ -395,6 +409,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -410,6 +425,7 @@ Get One Basket
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -455,6 +471,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **basket_id** | **int**|  | 
@@ -474,6 +491,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -489,6 +507,7 @@ Insert
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -533,6 +552,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insert_basket** | [**InsertBasket**](InsertBasket.md)|  | 
@@ -551,6 +571,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |

@@ -19,6 +19,7 @@ Delete Purchase
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -62,6 +63,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **purchase_id** | **int**|  | 
@@ -80,6 +82,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -95,6 +98,7 @@ Get All
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -139,6 +143,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **str**|  | 
@@ -157,6 +162,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -172,6 +178,7 @@ Get Count
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -216,6 +223,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **str**|  | 
@@ -235,6 +243,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -250,6 +259,7 @@ Get Purchase By Id
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -299,6 +309,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **purchase_id** | **int**|  | 
@@ -322,6 +333,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -337,6 +349,7 @@ Update Only
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -381,6 +394,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **update_purchase** | [**UpdatePurchase**](UpdatePurchase.md)|  | 
@@ -399,6 +413,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |

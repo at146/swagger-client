@@ -18,6 +18,7 @@ Get Bot
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -62,6 +63,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **str**|  | 
@@ -80,6 +82,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -95,6 +98,7 @@ Get Bots
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -137,6 +141,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -153,6 +158,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -167,6 +173,7 @@ Get Tokens Multibot
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -208,6 +215,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -224,6 +232,7 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -238,6 +247,7 @@ Insert Or Nothing
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -282,6 +292,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bot_base** | [**BotBase**](BotBase.md)|  | 
@@ -300,6 +311,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |

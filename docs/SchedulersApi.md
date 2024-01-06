@@ -17,6 +17,7 @@ Delete
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -60,6 +61,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **scheduler_id** | **int**|  | 
@@ -78,6 +80,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -93,6 +96,7 @@ Get
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -137,6 +141,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **str**|  | 
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -170,6 +176,7 @@ Insert
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -214,6 +221,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insert_scheduler** | [**InsertScheduler**](InsertScheduler.md)|  | 
@@ -232,6 +240,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |

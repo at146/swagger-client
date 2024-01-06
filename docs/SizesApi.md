@@ -17,6 +17,7 @@ Get Size By Id
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -60,6 +61,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **size_id** | **int**|  | 
@@ -78,6 +80,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -93,6 +96,7 @@ Get Sizes
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -137,6 +141,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category** | **str**|  | [optional] [default to &#39;&#39;]
@@ -155,6 +160,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |
@@ -170,6 +176,7 @@ Insert Or Nothing
 ### Example
 
 * Basic Authentication (HTTPBasic):
+
 ```python
 import time
 import os
@@ -213,6 +220,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **object**|  | 
@@ -231,6 +239,7 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
+
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful Response |  -  |

@@ -99,8 +99,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -167,8 +166,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -235,8 +233,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -257,7 +254,6 @@ class DeliveriesCdekApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            
         }
 
         _path_params: Dict[str, str] = {}
@@ -363,8 +359,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -431,8 +426,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -499,8 +493,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -521,7 +514,6 @@ class DeliveriesCdekApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            
         }
 
         _path_params: Dict[str, str] = {}
@@ -638,8 +630,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -706,8 +697,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -774,8 +764,7 @@ class DeliveriesCdekApi:
 
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "object",
-            '422': "HTTPValidationError"
-            
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -796,7 +785,6 @@ class DeliveriesCdekApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            
         }
 
         _path_params: Dict[str, str] = {}

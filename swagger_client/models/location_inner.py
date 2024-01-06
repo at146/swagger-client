@@ -51,7 +51,8 @@ class LocationInner(BaseModel):
     any_of_schemas: List[str] = Literal[LOCATIONINNER_ANY_OF_SCHEMAS]
 
     model_config = {
-        "validate_assignment": True
+        "validate_assignment": True,
+        "protected_namespaces": (),
     }
 
     def __init__(self, *args, **kwargs) -> None:

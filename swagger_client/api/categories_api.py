@@ -91,8 +91,7 @@ class CategoriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object"
-            
+            '200': "object",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -154,8 +153,7 @@ class CategoriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object"
-            
+            '200': "object",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -217,8 +215,7 @@ class CategoriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object"
-            
+            '200': "object",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -238,7 +235,6 @@ class CategoriesApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
-            
         }
 
         _path_params: Dict[str, str] = {}
