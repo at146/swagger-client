@@ -24,6 +24,9 @@ pytest = ">=7.2.1"
 tox = ">=3.9.0"
 flake8 = ">=4.0.0"
 
+[tool.poetry.group.dev]
+optional = true
+
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.1.6"
 pre-commit = "^3.5.0"
