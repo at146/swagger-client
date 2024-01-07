@@ -116,6 +116,7 @@ Class | Method | HTTP request | Description
 *InfoItemsApi* | [**update_new_api_v1_info_items_token_new_put**](docs/InfoItemsApi.md#update_new_api_v1_info_items_token_new_put) | **PUT** /api/v1/info-items/{token}/new | Update New
 *ItemsApi* | [**get_all_api_v1_items_get**](docs/ItemsApi.md#get_all_api_v1_items_get) | **GET** /api/v1/items | Get All
 *ItemsApi* | [**get_brands_and_counts_api_v1_items_category_brands_counts_get**](docs/ItemsApi.md#get_brands_and_counts_api_v1_items_category_brands_counts_get) | **GET** /api/v1/items/{category}/brands-counts | Get Brands And Counts
+*ItemsApi* | [**get_count_brand_api_v1_items_category_brand_count_get**](docs/ItemsApi.md#get_count_brand_api_v1_items_category_brand_count_get) | **GET** /api/v1/items/{category}/{brand}/count | Get Count Brand
 *ItemsApi* | [**get_item_api_v1_items_code_token_one_get**](docs/ItemsApi.md#get_item_api_v1_items_code_token_one_get) | **GET** /api/v1/items/{code}/{token}/one | Get Item
 *ItemsApi* | [**get_item_new_api_v1_items_code_token_one_new_get**](docs/ItemsApi.md#get_item_new_api_v1_items_code_token_one_new_get) | **GET** /api/v1/items/{code}/{token}/one_new | Get Item New
 *ItemsApi* | [**get_item_selectinload_size_api_v1_items_code_token_load_size_get**](docs/ItemsApi.md#get_item_selectinload_size_api_v1_items_code_token_load_size_get) | **GET** /api/v1/items/{code}/{token}/load-size | Get Item Selectinload Size
