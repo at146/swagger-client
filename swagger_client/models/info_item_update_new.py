@@ -26,22 +26,28 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class InfoItemUpdateNew(BaseModel):
     """
     InfoItemUpdateNew
-    """ # noqa: E501
+    """  # noqa: E501
+
     code: StrictStr
     retail_price: Optional[StrictInt] = None
     link: Optional[StrictStr] = None
     discount_price: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["code", "retail_price", "link", "discount_price"]
+    __properties: ClassVar[List[str]] = [
+        "code",
+        "retail_price",
+        "link",
+        "discount_price",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -69,24 +75,23 @@ class InfoItemUpdateNew(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if retail_price (nullable) is None
         # and model_fields_set contains the field
         if self.retail_price is None and "retail_price" in self.model_fields_set:
-            _dict['retail_price'] = None
+            _dict["retail_price"] = None
 
         # set to None if link (nullable) is None
         # and model_fields_set contains the field
         if self.link is None and "link" in self.model_fields_set:
-            _dict['link'] = None
+            _dict["link"] = None
 
         # set to None if discount_price (nullable) is None
         # and model_fields_set contains the field
         if self.discount_price is None and "discount_price" in self.model_fields_set:
-            _dict['discount_price'] = None
+            _dict["discount_price"] = None
 
         return _dict
 
@@ -99,10 +104,12 @@ class InfoItemUpdateNew(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "retail_price": obj.get("retail_price"),
-            "link": obj.get("link"),
-            "discount_price": obj.get("discount_price")
-        })
+        _obj = cls.model_validate(
+            {
+                "code": obj.get("code"),
+                "retail_price": obj.get("retail_price"),
+                "link": obj.get("link"),
+                "discount_price": obj.get("discount_price"),
+            }
+        )
         return _obj

@@ -33,7 +33,9 @@ class TestBasketsApi(unittest.TestCase):
         """
         pass
 
-    def test_delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(self) -> None:
+    def test_delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(
+        self,
+    ) -> None:
         """Test case for delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete
 
         Delete User Basket
@@ -76,5 +78,5 @@ class TestBasketsApi(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

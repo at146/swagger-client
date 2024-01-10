@@ -30,24 +30,32 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class SchedulerBaseDb(BaseModel):
     """
     SchedulerBaseDb
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     messages_tg_id: Optional[StrictInt] = None
     users_bots_id: Optional[StrictInt] = None
     trigger_datetime: Optional[datetime] = None
     users_bots: Optional[UserBotBase] = None
     messages_tg: Optional[MessageTgBase] = None
-    __properties: ClassVar[List[str]] = ["id", "messages_tg_id", "users_bots_id", "trigger_datetime", "users_bots", "messages_tg"]
+    __properties: ClassVar[List[str]] = [
+        "id",
+        "messages_tg_id",
+        "users_bots_id",
+        "trigger_datetime",
+        "users_bots",
+        "messages_tg",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -75,45 +83,47 @@ class SchedulerBaseDb(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of users_bots
         if self.users_bots:
-            _dict['users_bots'] = self.users_bots.to_dict()
+            _dict["users_bots"] = self.users_bots.to_dict()
         # override the default output from pydantic by calling `to_dict()` of messages_tg
         if self.messages_tg:
-            _dict['messages_tg'] = self.messages_tg.to_dict()
+            _dict["messages_tg"] = self.messages_tg.to_dict()
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if messages_tg_id (nullable) is None
         # and model_fields_set contains the field
         if self.messages_tg_id is None and "messages_tg_id" in self.model_fields_set:
-            _dict['messages_tg_id'] = None
+            _dict["messages_tg_id"] = None
 
         # set to None if users_bots_id (nullable) is None
         # and model_fields_set contains the field
         if self.users_bots_id is None and "users_bots_id" in self.model_fields_set:
-            _dict['users_bots_id'] = None
+            _dict["users_bots_id"] = None
 
         # set to None if trigger_datetime (nullable) is None
         # and model_fields_set contains the field
-        if self.trigger_datetime is None and "trigger_datetime" in self.model_fields_set:
-            _dict['trigger_datetime'] = None
+        if (
+            self.trigger_datetime is None
+            and "trigger_datetime" in self.model_fields_set
+        ):
+            _dict["trigger_datetime"] = None
 
         # set to None if users_bots (nullable) is None
         # and model_fields_set contains the field
         if self.users_bots is None and "users_bots" in self.model_fields_set:
-            _dict['users_bots'] = None
+            _dict["users_bots"] = None
 
         # set to None if messages_tg (nullable) is None
         # and model_fields_set contains the field
         if self.messages_tg is None and "messages_tg" in self.model_fields_set:
-            _dict['messages_tg'] = None
+            _dict["messages_tg"] = None
 
         return _dict
 
@@ -126,12 +136,18 @@ class SchedulerBaseDb(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "messages_tg_id": obj.get("messages_tg_id"),
-            "users_bots_id": obj.get("users_bots_id"),
-            "trigger_datetime": obj.get("trigger_datetime"),
-            "users_bots": UserBotBase.from_dict(obj.get("users_bots")) if obj.get("users_bots") is not None else None,
-            "messages_tg": MessageTgBase.from_dict(obj.get("messages_tg")) if obj.get("messages_tg") is not None else None
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "messages_tg_id": obj.get("messages_tg_id"),
+                "users_bots_id": obj.get("users_bots_id"),
+                "trigger_datetime": obj.get("trigger_datetime"),
+                "users_bots": UserBotBase.from_dict(obj.get("users_bots"))
+                if obj.get("users_bots") is not None
+                else None,
+                "messages_tg": MessageTgBase.from_dict(obj.get("messages_tg"))
+                if obj.get("messages_tg") is not None
+                else None,
+            }
+        )
         return _obj

@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class YookassaPaymentInsert(BaseModel):
     """
     YookassaPaymentInsert
-    """ # noqa: E501
+    """  # noqa: E501
+
     purchase_id: StrictInt
     payment_id: StrictStr
     status: StrictStr
@@ -41,7 +43,6 @@ class YookassaPaymentInsert(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -69,8 +70,7 @@ class YookassaPaymentInsert(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -84,10 +84,12 @@ class YookassaPaymentInsert(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "purchase_id": obj.get("purchase_id"),
-            "payment_id": obj.get("payment_id"),
-            "status": obj.get("status"),
-            "email": obj.get("email")
-        })
+        _obj = cls.model_validate(
+            {
+                "purchase_id": obj.get("purchase_id"),
+                "payment_id": obj.get("payment_id"),
+                "status": obj.get("status"),
+                "email": obj.get("email"),
+            }
+        )
         return _obj

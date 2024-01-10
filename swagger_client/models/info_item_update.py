@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class InfoItemUpdate(BaseModel):
     """
     InfoItemUpdate
-    """ # noqa: E501
+    """  # noqa: E501
+
     code: StrictStr
     photo_tg_id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["code", "photo_tg_id"]
@@ -39,7 +41,6 @@ class InfoItemUpdate(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -67,14 +68,13 @@ class InfoItemUpdate(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if photo_tg_id (nullable) is None
         # and model_fields_set contains the field
         if self.photo_tg_id is None and "photo_tg_id" in self.model_fields_set:
-            _dict['photo_tg_id'] = None
+            _dict["photo_tg_id"] = None
 
         return _dict
 
@@ -87,8 +87,7 @@ class InfoItemUpdate(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "photo_tg_id": obj.get("photo_tg_id")
-        })
+        _obj = cls.model_validate(
+            {"code": obj.get("code"), "photo_tg_id": obj.get("photo_tg_id")}
+        )
         return _obj

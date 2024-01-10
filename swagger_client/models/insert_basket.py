@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class InsertBasket(BaseModel):
     """
     InsertBasket
-    """ # noqa: E501
+    """  # noqa: E501
+
     user_bot_id: StrictInt
     size_id: StrictInt
     price: StrictInt
@@ -41,7 +43,6 @@ class InsertBasket(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -69,8 +70,7 @@ class InsertBasket(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -84,10 +84,12 @@ class InsertBasket(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "user_bot_id": obj.get("user_bot_id"),
-            "size_id": obj.get("size_id"),
-            "price": obj.get("price"),
-            "code": obj.get("code")
-        })
+        _obj = cls.model_validate(
+            {
+                "user_bot_id": obj.get("user_bot_id"),
+                "size_id": obj.get("size_id"),
+                "price": obj.get("price"),
+                "code": obj.get("code"),
+            }
+        )
         return _obj

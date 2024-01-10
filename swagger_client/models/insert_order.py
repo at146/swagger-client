@@ -28,10 +28,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class InsertOrder(BaseModel):
     """
     InsertOrder
-    """ # noqa: E501
+    """  # noqa: E501
+
     buyer: StrictStr
     delivery: Optional[StrictStr] = None
     address: Optional[StrictStr] = None
@@ -42,14 +44,24 @@ class InsertOrder(BaseModel):
     user_id: StrictInt
     pod: Optional[StrictInt] = None
     basket: List[BasketBaseDb]
-    __properties: ClassVar[List[str]] = ["buyer", "delivery", "address", "phone", "checking", "comment", "partner", "user_id", "pod", "basket"]
+    __properties: ClassVar[List[str]] = [
+        "buyer",
+        "delivery",
+        "address",
+        "phone",
+        "checking",
+        "comment",
+        "partner",
+        "user_id",
+        "pod",
+        "basket",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -77,8 +89,7 @@ class InsertOrder(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of each item in basket (list)
@@ -87,36 +98,36 @@ class InsertOrder(BaseModel):
             for _item in self.basket:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['basket'] = _items
+            _dict["basket"] = _items
         # set to None if delivery (nullable) is None
         # and model_fields_set contains the field
         if self.delivery is None and "delivery" in self.model_fields_set:
-            _dict['delivery'] = None
+            _dict["delivery"] = None
 
         # set to None if address (nullable) is None
         # and model_fields_set contains the field
         if self.address is None and "address" in self.model_fields_set:
-            _dict['address'] = None
+            _dict["address"] = None
 
         # set to None if phone (nullable) is None
         # and model_fields_set contains the field
         if self.phone is None and "phone" in self.model_fields_set:
-            _dict['phone'] = None
+            _dict["phone"] = None
 
         # set to None if comment (nullable) is None
         # and model_fields_set contains the field
         if self.comment is None and "comment" in self.model_fields_set:
-            _dict['comment'] = None
+            _dict["comment"] = None
 
         # set to None if partner (nullable) is None
         # and model_fields_set contains the field
         if self.partner is None and "partner" in self.model_fields_set:
-            _dict['partner'] = None
+            _dict["partner"] = None
 
         # set to None if pod (nullable) is None
         # and model_fields_set contains the field
         if self.pod is None and "pod" in self.model_fields_set:
-            _dict['pod'] = None
+            _dict["pod"] = None
 
         return _dict
 
@@ -129,16 +140,20 @@ class InsertOrder(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "buyer": obj.get("buyer"),
-            "delivery": obj.get("delivery"),
-            "address": obj.get("address"),
-            "phone": obj.get("phone"),
-            "checking": obj.get("checking"),
-            "comment": obj.get("comment"),
-            "partner": obj.get("partner"),
-            "user_id": obj.get("user_id"),
-            "pod": obj.get("pod"),
-            "basket": [BasketBaseDb.from_dict(_item) for _item in obj.get("basket")] if obj.get("basket") is not None else None
-        })
+        _obj = cls.model_validate(
+            {
+                "buyer": obj.get("buyer"),
+                "delivery": obj.get("delivery"),
+                "address": obj.get("address"),
+                "phone": obj.get("phone"),
+                "checking": obj.get("checking"),
+                "comment": obj.get("comment"),
+                "partner": obj.get("partner"),
+                "user_id": obj.get("user_id"),
+                "pod": obj.get("pod"),
+                "basket": [BasketBaseDb.from_dict(_item) for _item in obj.get("basket")]
+                if obj.get("basket") is not None
+                else None,
+            }
+        )
         return _obj

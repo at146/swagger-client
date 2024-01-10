@@ -27,21 +27,26 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class InsertScheduler(BaseModel):
     """
     InsertScheduler
-    """ # noqa: E501
+    """  # noqa: E501
+
     messages_tg_id: StrictInt
     user_bot_id: StrictInt
     trigger_datetime: datetime
-    __properties: ClassVar[List[str]] = ["messages_tg_id", "user_bot_id", "trigger_datetime"]
+    __properties: ClassVar[List[str]] = [
+        "messages_tg_id",
+        "user_bot_id",
+        "trigger_datetime",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -69,8 +74,7 @@ class InsertScheduler(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -84,9 +88,11 @@ class InsertScheduler(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "messages_tg_id": obj.get("messages_tg_id"),
-            "user_bot_id": obj.get("user_bot_id"),
-            "trigger_datetime": obj.get("trigger_datetime")
-        })
+        _obj = cls.model_validate(
+            {
+                "messages_tg_id": obj.get("messages_tg_id"),
+                "user_bot_id": obj.get("user_bot_id"),
+                "trigger_datetime": obj.get("trigger_datetime"),
+            }
+        )
         return _obj

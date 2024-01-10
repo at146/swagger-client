@@ -26,23 +26,30 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class StockBase(BaseModel):
     """
     StockBase
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     user_id: Optional[StrictInt] = None
     number: Optional[StrictInt] = None
     shipment_point: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "name", "user_id", "number", "shipment_point"]
+    __properties: ClassVar[List[str]] = [
+        "id",
+        "name",
+        "user_id",
+        "number",
+        "shipment_point",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -70,34 +77,33 @@ class StockBase(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
+            _dict["name"] = None
 
         # set to None if user_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict['user_id'] = None
+            _dict["user_id"] = None
 
         # set to None if number (nullable) is None
         # and model_fields_set contains the field
         if self.number is None and "number" in self.model_fields_set:
-            _dict['number'] = None
+            _dict["number"] = None
 
         # set to None if shipment_point (nullable) is None
         # and model_fields_set contains the field
         if self.shipment_point is None and "shipment_point" in self.model_fields_set:
-            _dict['shipment_point'] = None
+            _dict["shipment_point"] = None
 
         return _dict
 
@@ -110,11 +116,13 @@ class StockBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "user_id": obj.get("user_id"),
-            "number": obj.get("number"),
-            "shipment_point": obj.get("shipment_point")
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "name": obj.get("name"),
+                "user_id": obj.get("user_id"),
+                "number": obj.get("number"),
+                "shipment_point": obj.get("shipment_point"),
+            }
+        )
         return _obj

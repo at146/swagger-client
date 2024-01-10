@@ -47,7 +47,9 @@ class TestOrdersApi(unittest.TestCase):
         """
         pass
 
-    def test_get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(self) -> None:
+    def test_get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(
+        self,
+    ) -> None:
         """Test case for get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get
 
         Get Count Orders By User Id
@@ -76,5 +78,5 @@ class TestOrdersApi(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

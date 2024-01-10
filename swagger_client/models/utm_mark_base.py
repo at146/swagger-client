@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class UtmMarkBase(BaseModel):
     """
     UtmMarkBase
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     affiliate_program_id: Optional[StrictInt] = None
@@ -40,7 +42,6 @@ class UtmMarkBase(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -68,24 +69,26 @@ class UtmMarkBase(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
+            _dict["name"] = None
 
         # set to None if affiliate_program_id (nullable) is None
         # and model_fields_set contains the field
-        if self.affiliate_program_id is None and "affiliate_program_id" in self.model_fields_set:
-            _dict['affiliate_program_id'] = None
+        if (
+            self.affiliate_program_id is None
+            and "affiliate_program_id" in self.model_fields_set
+        ):
+            _dict["affiliate_program_id"] = None
 
         return _dict
 
@@ -98,9 +101,11 @@ class UtmMarkBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "affiliate_program_id": obj.get("affiliate_program_id")
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "name": obj.get("name"),
+                "affiliate_program_id": obj.get("affiliate_program_id"),
+            }
+        )
         return _obj

@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class UpdateUserBotMess(BaseModel):
     """
     UpdateUserBotMess
-    """ # noqa: E501
+    """  # noqa: E501
+
     user_id: StrictInt
     token: StrictStr
     message_id: StrictInt
@@ -40,7 +42,6 @@ class UpdateUserBotMess(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -68,8 +69,7 @@ class UpdateUserBotMess(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -83,9 +83,11 @@ class UpdateUserBotMess(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "user_id": obj.get("user_id"),
-            "token": obj.get("token"),
-            "message_id": obj.get("message_id")
-        })
+        _obj = cls.model_validate(
+            {
+                "user_id": obj.get("user_id"),
+                "token": obj.get("token"),
+                "message_id": obj.get("message_id"),
+            }
+        )
         return _obj

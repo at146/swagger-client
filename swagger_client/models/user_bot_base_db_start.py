@@ -32,10 +32,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class UserBotBaseDbStart(BaseModel):
     """
     UserBotBaseDbStart
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     user_id: Optional[StrictInt] = None
     bot_token: Optional[StrictStr] = None
@@ -50,14 +52,28 @@ class UserBotBaseDbStart(BaseModel):
     utm_mark: Optional[UtmMarkBase] = None
     orders: Optional[List[OrderBase]] = None
     new_user_start: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id", "user", "bot", "partner", "utm_mark", "orders", "new_user_start"]
+    __properties: ClassVar[List[str]] = [
+        "id",
+        "user_id",
+        "bot_token",
+        "last_mess",
+        "items",
+        "new_user",
+        "subscribe_channel",
+        "utm_mark_id",
+        "user",
+        "bot",
+        "partner",
+        "utm_mark",
+        "orders",
+        "new_user_start",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -85,98 +101,100 @@ class UserBotBaseDbStart(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of user
         if self.user:
-            _dict['user'] = self.user.to_dict()
+            _dict["user"] = self.user.to_dict()
         # override the default output from pydantic by calling `to_dict()` of bot
         if self.bot:
-            _dict['bot'] = self.bot.to_dict()
+            _dict["bot"] = self.bot.to_dict()
         # override the default output from pydantic by calling `to_dict()` of partner
         if self.partner:
-            _dict['partner'] = self.partner.to_dict()
+            _dict["partner"] = self.partner.to_dict()
         # override the default output from pydantic by calling `to_dict()` of utm_mark
         if self.utm_mark:
-            _dict['utm_mark'] = self.utm_mark.to_dict()
+            _dict["utm_mark"] = self.utm_mark.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in orders (list)
         _items = []
         if self.orders:
             for _item in self.orders:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['orders'] = _items
+            _dict["orders"] = _items
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if user_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict['user_id'] = None
+            _dict["user_id"] = None
 
         # set to None if bot_token (nullable) is None
         # and model_fields_set contains the field
         if self.bot_token is None and "bot_token" in self.model_fields_set:
-            _dict['bot_token'] = None
+            _dict["bot_token"] = None
 
         # set to None if last_mess (nullable) is None
         # and model_fields_set contains the field
         if self.last_mess is None and "last_mess" in self.model_fields_set:
-            _dict['last_mess'] = None
+            _dict["last_mess"] = None
 
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
-            _dict['items'] = None
+            _dict["items"] = None
 
         # set to None if new_user (nullable) is None
         # and model_fields_set contains the field
         if self.new_user is None and "new_user" in self.model_fields_set:
-            _dict['new_user'] = None
+            _dict["new_user"] = None
 
         # set to None if subscribe_channel (nullable) is None
         # and model_fields_set contains the field
-        if self.subscribe_channel is None and "subscribe_channel" in self.model_fields_set:
-            _dict['subscribe_channel'] = None
+        if (
+            self.subscribe_channel is None
+            and "subscribe_channel" in self.model_fields_set
+        ):
+            _dict["subscribe_channel"] = None
 
         # set to None if utm_mark_id (nullable) is None
         # and model_fields_set contains the field
         if self.utm_mark_id is None and "utm_mark_id" in self.model_fields_set:
-            _dict['utm_mark_id'] = None
+            _dict["utm_mark_id"] = None
 
         # set to None if user (nullable) is None
         # and model_fields_set contains the field
         if self.user is None and "user" in self.model_fields_set:
-            _dict['user'] = None
+            _dict["user"] = None
 
         # set to None if bot (nullable) is None
         # and model_fields_set contains the field
         if self.bot is None and "bot" in self.model_fields_set:
-            _dict['bot'] = None
+            _dict["bot"] = None
 
         # set to None if partner (nullable) is None
         # and model_fields_set contains the field
         if self.partner is None and "partner" in self.model_fields_set:
-            _dict['partner'] = None
+            _dict["partner"] = None
 
         # set to None if utm_mark (nullable) is None
         # and model_fields_set contains the field
         if self.utm_mark is None and "utm_mark" in self.model_fields_set:
-            _dict['utm_mark'] = None
+            _dict["utm_mark"] = None
 
         # set to None if orders (nullable) is None
         # and model_fields_set contains the field
         if self.orders is None and "orders" in self.model_fields_set:
-            _dict['orders'] = None
+            _dict["orders"] = None
 
         # set to None if new_user_start (nullable) is None
         # and model_fields_set contains the field
         if self.new_user_start is None and "new_user_start" in self.model_fields_set:
-            _dict['new_user_start'] = None
+            _dict["new_user_start"] = None
 
         return _dict
 
@@ -189,20 +207,32 @@ class UserBotBaseDbStart(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "user_id": obj.get("user_id"),
-            "bot_token": obj.get("bot_token"),
-            "last_mess": obj.get("last_mess"),
-            "items": obj.get("items"),
-            "new_user": obj.get("new_user"),
-            "subscribe_channel": obj.get("subscribe_channel"),
-            "utm_mark_id": obj.get("utm_mark_id"),
-            "user": UserBaseDb.from_dict(obj.get("user")) if obj.get("user") is not None else None,
-            "bot": BotBase.from_dict(obj.get("bot")) if obj.get("bot") is not None else None,
-            "partner": PartnerBase.from_dict(obj.get("partner")) if obj.get("partner") is not None else None,
-            "utm_mark": UtmMarkBase.from_dict(obj.get("utm_mark")) if obj.get("utm_mark") is not None else None,
-            "orders": [OrderBase.from_dict(_item) for _item in obj.get("orders")] if obj.get("orders") is not None else None,
-            "new_user_start": obj.get("new_user_start")
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "user_id": obj.get("user_id"),
+                "bot_token": obj.get("bot_token"),
+                "last_mess": obj.get("last_mess"),
+                "items": obj.get("items"),
+                "new_user": obj.get("new_user"),
+                "subscribe_channel": obj.get("subscribe_channel"),
+                "utm_mark_id": obj.get("utm_mark_id"),
+                "user": UserBaseDb.from_dict(obj.get("user"))
+                if obj.get("user") is not None
+                else None,
+                "bot": BotBase.from_dict(obj.get("bot"))
+                if obj.get("bot") is not None
+                else None,
+                "partner": PartnerBase.from_dict(obj.get("partner"))
+                if obj.get("partner") is not None
+                else None,
+                "utm_mark": UtmMarkBase.from_dict(obj.get("utm_mark"))
+                if obj.get("utm_mark") is not None
+                else None,
+                "orders": [OrderBase.from_dict(_item) for _item in obj.get("orders")]
+                if obj.get("orders") is not None
+                else None,
+                "new_user_start": obj.get("new_user_start"),
+            }
+        )
         return _obj

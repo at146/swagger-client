@@ -33,7 +33,9 @@ class TestItemsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_brands_and_counts_api_v1_items_category_brands_counts_get(self) -> None:
+    def test_get_brands_and_counts_api_v1_items_category_brands_counts_get(
+        self,
+    ) -> None:
         """Test case for get_brands_and_counts_api_v1_items_category_brands_counts_get
 
         Get Brands And Counts
@@ -54,14 +56,18 @@ class TestItemsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_item_selectinload_size_api_v1_items_code_token_load_size_get(self) -> None:
+    def test_get_item_selectinload_size_api_v1_items_code_token_load_size_get(
+        self,
+    ) -> None:
         """Test case for get_item_selectinload_size_api_v1_items_code_token_load_size_get
 
         Get Item Selectinload Size
         """
         pass
 
-    def test_get_items_action_new_codes_api_v1_items_token_all_new_codes_get(self) -> None:
+    def test_get_items_action_new_codes_api_v1_items_token_all_new_codes_get(
+        self,
+    ) -> None:
         """Test case for get_items_action_new_codes_api_v1_items_token_all_new_codes_get
 
         Get Items Action New Codes
@@ -75,7 +81,9 @@ class TestItemsApi(unittest.TestCase):
         """
         pass
 
-    def test_get_models_and_counts_api_v1_items_category_brand_models_counts_get(self) -> None:
+    def test_get_models_and_counts_api_v1_items_category_brand_models_counts_get(
+        self,
+    ) -> None:
         """Test case for get_models_and_counts_api_v1_items_category_brand_models_counts_get
 
         Get Models And Counts
@@ -90,5 +98,5 @@ class TestItemsApi(unittest.TestCase):
         pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()

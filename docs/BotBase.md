@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **channel_url** | **str** |  | [optional] 
 **info_url** | **str** |  | [optional] 
 **comments_url** | **str** |  | [optional] 
+**allowed_updates** | **List[str]** |  | [optional] 
 
 ## Example
 

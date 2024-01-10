@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class WaybillUpdate(BaseModel):
     """
     WaybillUpdate
-    """ # noqa: E501
+    """  # noqa: E501
+
     waybill_id: StrictStr
     tg_file_id: StrictStr
     __properties: ClassVar[List[str]] = ["waybill_id", "tg_file_id"]
@@ -39,7 +41,6 @@ class WaybillUpdate(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -67,8 +68,7 @@ class WaybillUpdate(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -82,8 +82,7 @@ class WaybillUpdate(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "waybill_id": obj.get("waybill_id"),
-            "tg_file_id": obj.get("tg_file_id")
-        })
+        _obj = cls.model_validate(
+            {"waybill_id": obj.get("waybill_id"), "tg_file_id": obj.get("tg_file_id")}
+        )
         return _obj

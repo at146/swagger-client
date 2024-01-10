@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class BarcodeInsert(BaseModel):
     """
     BarcodeInsert
-    """ # noqa: E501
+    """  # noqa: E501
+
     delivery_cdek_id: StrictInt
     barcode_id: StrictStr
     tg_file_id: StrictStr
@@ -40,7 +42,6 @@ class BarcodeInsert(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -68,8 +69,7 @@ class BarcodeInsert(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -83,9 +83,11 @@ class BarcodeInsert(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "delivery_cdek_id": obj.get("delivery_cdek_id"),
-            "barcode_id": obj.get("barcode_id"),
-            "tg_file_id": obj.get("tg_file_id")
-        })
+        _obj = cls.model_validate(
+            {
+                "delivery_cdek_id": obj.get("delivery_cdek_id"),
+                "barcode_id": obj.get("barcode_id"),
+                "tg_file_id": obj.get("tg_file_id"),
+            }
+        )
         return _obj

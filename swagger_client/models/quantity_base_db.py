@@ -30,10 +30,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class QuantityBaseDb(BaseModel):
     """
     QuantityBaseDb
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictStr] = None
     item_id: Optional[StrictStr] = None
     stock_id: Optional[StrictStr] = None
@@ -43,14 +45,23 @@ class QuantityBaseDb(BaseModel):
     stock: Optional[StockBase] = None
     size: Optional[SizeBase] = None
     centimeter: Optional[CentimeterBase] = None
-    __properties: ClassVar[List[str]] = ["id", "item_id", "stock_id", "size_id", "count", "centimeter_id", "stock", "size", "centimeter"]
+    __properties: ClassVar[List[str]] = [
+        "id",
+        "item_id",
+        "stock_id",
+        "size_id",
+        "count",
+        "centimeter_id",
+        "stock",
+        "size",
+        "centimeter",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -78,63 +89,62 @@ class QuantityBaseDb(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of stock
         if self.stock:
-            _dict['stock'] = self.stock.to_dict()
+            _dict["stock"] = self.stock.to_dict()
         # override the default output from pydantic by calling `to_dict()` of size
         if self.size:
-            _dict['size'] = self.size.to_dict()
+            _dict["size"] = self.size.to_dict()
         # override the default output from pydantic by calling `to_dict()` of centimeter
         if self.centimeter:
-            _dict['centimeter'] = self.centimeter.to_dict()
+            _dict["centimeter"] = self.centimeter.to_dict()
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if item_id (nullable) is None
         # and model_fields_set contains the field
         if self.item_id is None and "item_id" in self.model_fields_set:
-            _dict['item_id'] = None
+            _dict["item_id"] = None
 
         # set to None if stock_id (nullable) is None
         # and model_fields_set contains the field
         if self.stock_id is None and "stock_id" in self.model_fields_set:
-            _dict['stock_id'] = None
+            _dict["stock_id"] = None
 
         # set to None if size_id (nullable) is None
         # and model_fields_set contains the field
         if self.size_id is None and "size_id" in self.model_fields_set:
-            _dict['size_id'] = None
+            _dict["size_id"] = None
 
         # set to None if count (nullable) is None
         # and model_fields_set contains the field
         if self.count is None and "count" in self.model_fields_set:
-            _dict['count'] = None
+            _dict["count"] = None
 
         # set to None if centimeter_id (nullable) is None
         # and model_fields_set contains the field
         if self.centimeter_id is None and "centimeter_id" in self.model_fields_set:
-            _dict['centimeter_id'] = None
+            _dict["centimeter_id"] = None
 
         # set to None if stock (nullable) is None
         # and model_fields_set contains the field
         if self.stock is None and "stock" in self.model_fields_set:
-            _dict['stock'] = None
+            _dict["stock"] = None
 
         # set to None if size (nullable) is None
         # and model_fields_set contains the field
         if self.size is None and "size" in self.model_fields_set:
-            _dict['size'] = None
+            _dict["size"] = None
 
         # set to None if centimeter (nullable) is None
         # and model_fields_set contains the field
         if self.centimeter is None and "centimeter" in self.model_fields_set:
-            _dict['centimeter'] = None
+            _dict["centimeter"] = None
 
         return _dict
 
@@ -147,15 +157,23 @@ class QuantityBaseDb(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "item_id": obj.get("item_id"),
-            "stock_id": obj.get("stock_id"),
-            "size_id": obj.get("size_id"),
-            "count": obj.get("count"),
-            "centimeter_id": obj.get("centimeter_id"),
-            "stock": StockBase.from_dict(obj.get("stock")) if obj.get("stock") is not None else None,
-            "size": SizeBase.from_dict(obj.get("size")) if obj.get("size") is not None else None,
-            "centimeter": CentimeterBase.from_dict(obj.get("centimeter")) if obj.get("centimeter") is not None else None
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "item_id": obj.get("item_id"),
+                "stock_id": obj.get("stock_id"),
+                "size_id": obj.get("size_id"),
+                "count": obj.get("count"),
+                "centimeter_id": obj.get("centimeter_id"),
+                "stock": StockBase.from_dict(obj.get("stock"))
+                if obj.get("stock") is not None
+                else None,
+                "size": SizeBase.from_dict(obj.get("size"))
+                if obj.get("size") is not None
+                else None,
+                "centimeter": CentimeterBase.from_dict(obj.get("centimeter"))
+                if obj.get("centimeter") is not None
+                else None,
+            }
+        )
         return _obj

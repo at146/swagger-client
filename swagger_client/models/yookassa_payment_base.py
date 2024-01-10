@@ -26,24 +26,32 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class YookassaPaymentBase(BaseModel):
     """
     YookassaPaymentBase
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     purchase_id: Optional[StrictInt] = None
     payment_id: Optional[StrictStr] = None
     status: Optional[StrictStr] = None
     captured_at: Optional[StrictStr] = None
     email: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "purchase_id", "payment_id", "status", "captured_at", "email"]
+    __properties: ClassVar[List[str]] = [
+        "id",
+        "purchase_id",
+        "payment_id",
+        "status",
+        "captured_at",
+        "email",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -71,39 +79,38 @@ class YookassaPaymentBase(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if purchase_id (nullable) is None
         # and model_fields_set contains the field
         if self.purchase_id is None and "purchase_id" in self.model_fields_set:
-            _dict['purchase_id'] = None
+            _dict["purchase_id"] = None
 
         # set to None if payment_id (nullable) is None
         # and model_fields_set contains the field
         if self.payment_id is None and "payment_id" in self.model_fields_set:
-            _dict['payment_id'] = None
+            _dict["payment_id"] = None
 
         # set to None if status (nullable) is None
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
-            _dict['status'] = None
+            _dict["status"] = None
 
         # set to None if captured_at (nullable) is None
         # and model_fields_set contains the field
         if self.captured_at is None and "captured_at" in self.model_fields_set:
-            _dict['captured_at'] = None
+            _dict["captured_at"] = None
 
         # set to None if email (nullable) is None
         # and model_fields_set contains the field
         if self.email is None and "email" in self.model_fields_set:
-            _dict['email'] = None
+            _dict["email"] = None
 
         return _dict
 
@@ -116,12 +123,14 @@ class YookassaPaymentBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "purchase_id": obj.get("purchase_id"),
-            "payment_id": obj.get("payment_id"),
-            "status": obj.get("status"),
-            "captured_at": obj.get("captured_at"),
-            "email": obj.get("email")
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "purchase_id": obj.get("purchase_id"),
+                "payment_id": obj.get("payment_id"),
+                "status": obj.get("status"),
+                "captured_at": obj.get("captured_at"),
+                "email": obj.get("email"),
+            }
+        )
         return _obj

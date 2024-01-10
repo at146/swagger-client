@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class ModelCount(BaseModel):
     """
     ModelCount
-    """ # noqa: E501
+    """  # noqa: E501
+
     model: StrictStr
     count: StrictInt
     __properties: ClassVar[List[str]] = ["model", "count"]
@@ -39,7 +41,6 @@ class ModelCount(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -67,8 +68,7 @@ class ModelCount(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         return _dict
@@ -82,8 +82,7 @@ class ModelCount(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "model": obj.get("model"),
-            "count": obj.get("count")
-        })
+        _obj = cls.model_validate(
+            {"model": obj.get("model"), "count": obj.get("count")}
+        )
         return _obj

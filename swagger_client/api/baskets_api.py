@@ -12,7 +12,6 @@
 """  # noqa: E501
 
 
-
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
@@ -45,7 +44,6 @@ class BasketsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
     @validate_call
     async def delete_one_basket_api_v1_baskets_basket_id_delete(
         self,
@@ -54,9 +52,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -88,30 +85,28 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_one_basket_api_v1_baskets_basket_id_delete_serialize(
             basket_id=basket_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def delete_one_basket_api_v1_baskets_basket_id_delete_with_http_info(
@@ -121,9 +116,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -155,30 +149,28 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_one_basket_api_v1_baskets_basket_id_delete_serialize(
             basket_id=basket_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def delete_one_basket_api_v1_baskets_basket_id_delete_without_preload_content(
@@ -188,9 +180,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -222,26 +213,24 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_one_basket_api_v1_baskets_basket_id_delete_serialize(
             basket_id=basket_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _delete_one_basket_api_v1_baskets_basket_id_delete_serialize(
         self,
@@ -251,11 +240,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -266,29 +253,23 @@ class BasketsApi:
 
         # process the path parameters
         if basket_id is not None:
-            _path_params['basket_id'] = basket_id
+            _path_params["basket_id"] = basket_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/api/v1/baskets/{basket_id}',
+            method="DELETE",
+            resource_path="/api/v1/baskets/{basket_id}",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -298,11 +279,8 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(
@@ -312,9 +290,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -346,30 +323,28 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_serialize(
             user_bot_id=user_bot_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_with_http_info(
@@ -379,9 +354,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -413,30 +387,28 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_serialize(
             user_bot_id=user_bot_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_without_preload_content(
@@ -446,9 +418,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -480,26 +451,24 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_serialize(
             user_bot_id=user_bot_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete_serialize(
         self,
@@ -509,11 +478,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -524,29 +491,23 @@ class BasketsApi:
 
         # process the path parameters
         if user_bot_id is not None:
-            _path_params['user_bot_id'] = user_bot_id
+            _path_params["user_bot_id"] = user_bot_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/api/v1/baskets/users_bots/{user_bot_id}',
+            method="DELETE",
+            resource_path="/api/v1/baskets/users_bots/{user_bot_id}",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -556,11 +517,8 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_basket_api_v1_baskets_get(
@@ -572,9 +530,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -610,7 +567,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_basket_api_v1_baskets_get_serialize(
             user_id=user_id,
@@ -619,23 +576,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[BasketBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[BasketBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_basket_api_v1_baskets_get_with_http_info(
@@ -647,9 +602,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -685,7 +639,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_basket_api_v1_baskets_get_serialize(
             user_id=user_id,
@@ -694,23 +648,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[BasketBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[BasketBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_basket_api_v1_baskets_get_without_preload_content(
@@ -722,9 +674,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -760,7 +711,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_basket_api_v1_baskets_get_serialize(
             user_id=user_id,
@@ -769,19 +720,17 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[BasketBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[BasketBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_basket_api_v1_baskets_get_serialize(
         self,
@@ -793,11 +742,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -809,38 +756,29 @@ class BasketsApi:
         # process the path parameters
         # process the query parameters
         if user_id is not None:
-            
-            _query_params.append(('user_id', user_id))
-            
+            _query_params.append(("user_id", user_id))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         if item is not None:
-            
-            _query_params.append(('item', item))
-            
+            _query_params.append(("item", item))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/baskets',
+            method="GET",
+            resource_path="/api/v1/baskets",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -850,11 +788,8 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_count_basket_api_v1_baskets_all_count_get(
@@ -865,9 +800,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -901,7 +835,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_basket_api_v1_baskets_all_count_get_serialize(
             user_id=user_id,
@@ -909,23 +843,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_count_basket_api_v1_baskets_all_count_get_with_http_info(
@@ -936,9 +868,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -972,7 +903,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_basket_api_v1_baskets_all_count_get_serialize(
             user_id=user_id,
@@ -980,23 +911,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_count_basket_api_v1_baskets_all_count_get_without_preload_content(
@@ -1007,9 +936,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1043,7 +971,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_basket_api_v1_baskets_all_count_get_serialize(
             user_id=user_id,
@@ -1051,19 +979,17 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_count_basket_api_v1_baskets_all_count_get_serialize(
         self,
@@ -1074,11 +1000,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1090,34 +1014,26 @@ class BasketsApi:
         # process the path parameters
         # process the query parameters
         if user_id is not None:
-            
-            _query_params.append(('user_id', user_id))
-            
+            _query_params.append(("user_id", user_id))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/baskets/all/count',
+            method="GET",
+            resource_path="/api/v1/baskets/all/count",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1127,11 +1043,8 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_list_id_basket_api_v1_baskets_all_list_id_get(
@@ -1142,9 +1055,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1178,7 +1090,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_list_id_basket_api_v1_baskets_all_list_id_get_serialize(
             user_id=user_id,
@@ -1186,23 +1098,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[int]",
-            '422': "HTTPValidationError",
+            "200": "List[int]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_list_id_basket_api_v1_baskets_all_list_id_get_with_http_info(
@@ -1213,9 +1123,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1249,7 +1158,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_list_id_basket_api_v1_baskets_all_list_id_get_serialize(
             user_id=user_id,
@@ -1257,23 +1166,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[int]",
-            '422': "HTTPValidationError",
+            "200": "List[int]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_list_id_basket_api_v1_baskets_all_list_id_get_without_preload_content(
@@ -1284,9 +1191,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1320,7 +1226,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_list_id_basket_api_v1_baskets_all_list_id_get_serialize(
             user_id=user_id,
@@ -1328,19 +1234,17 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[int]",
-            '422': "HTTPValidationError",
+            "200": "List[int]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_list_id_basket_api_v1_baskets_all_list_id_get_serialize(
         self,
@@ -1351,11 +1255,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1367,34 +1269,26 @@ class BasketsApi:
         # process the path parameters
         # process the query parameters
         if user_id is not None:
-            
-            _query_params.append(('user_id', user_id))
-            
+            _query_params.append(("user_id", user_id))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/baskets/all/list_id',
+            method="GET",
+            resource_path="/api/v1/baskets/all/list_id",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1404,11 +1298,8 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_one_basket_api_v1_baskets_basket_id_get(
@@ -1419,9 +1310,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1455,7 +1345,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_one_basket_api_v1_baskets_basket_id_get_serialize(
             basket_id=basket_id,
@@ -1463,23 +1353,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasketBaseDb",
-            '422': "HTTPValidationError",
+            "200": "BasketBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_one_basket_api_v1_baskets_basket_id_get_with_http_info(
@@ -1490,9 +1378,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1526,7 +1413,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_one_basket_api_v1_baskets_basket_id_get_serialize(
             basket_id=basket_id,
@@ -1534,23 +1421,21 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasketBaseDb",
-            '422': "HTTPValidationError",
+            "200": "BasketBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_one_basket_api_v1_baskets_basket_id_get_without_preload_content(
@@ -1561,9 +1446,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1597,7 +1481,7 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_one_basket_api_v1_baskets_basket_id_get_serialize(
             basket_id=basket_id,
@@ -1605,19 +1489,17 @@ class BasketsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "BasketBaseDb",
-            '422': "HTTPValidationError",
+            "200": "BasketBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_one_basket_api_v1_baskets_basket_id_get_serialize(
         self,
@@ -1628,11 +1510,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1643,33 +1523,26 @@ class BasketsApi:
 
         # process the path parameters
         if basket_id is not None:
-            _path_params['basket_id'] = basket_id
+            _path_params["basket_id"] = basket_id
         # process the query parameters
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/baskets/{basket_id}',
+            method="GET",
+            resource_path="/api/v1/baskets/{basket_id}",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1679,11 +1552,8 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def insert_api_v1_baskets_post(
@@ -1693,9 +1563,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1727,30 +1596,28 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._insert_api_v1_baskets_post_serialize(
             insert_basket=insert_basket,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def insert_api_v1_baskets_post_with_http_info(
@@ -1760,9 +1627,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1794,30 +1660,28 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._insert_api_v1_baskets_post_serialize(
             insert_basket=insert_basket,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def insert_api_v1_baskets_post_without_preload_content(
@@ -1827,9 +1691,8 @@ class BasketsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1861,26 +1724,24 @@ class BasketsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._insert_api_v1_baskets_post_serialize(
             insert_basket=insert_basket,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _insert_api_v1_baskets_post_serialize(
         self,
@@ -1890,11 +1751,9 @@ class BasketsApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1911,36 +1770,27 @@ class BasketsApi:
         if insert_basket is not None:
             _body_params = insert_basket
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
         # set the HTTP header `Content-Type`
         if _content_type:
-            _header_params['Content-Type'] = _content_type
+            _header_params["Content-Type"] = _content_type
         else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
+            _default_content_type = self.api_client.select_header_content_type(
+                ["application/json"]
             )
             if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
+                _header_params["Content-Type"] = _default_content_type
 
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/v1/baskets',
+            method="POST",
+            resource_path="/api/v1/baskets",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1950,5 +1800,5 @@ class BasketsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )

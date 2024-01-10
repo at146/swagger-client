@@ -28,10 +28,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class ValidationError(BaseModel):
     """
     ValidationError
-    """ # noqa: E501
+    """  # noqa: E501
+
     loc: List[LocationInner]
     msg: StrictStr
     type: StrictStr
@@ -42,7 +44,6 @@ class ValidationError(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -70,8 +71,7 @@ class ValidationError(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of each item in loc (list)
@@ -80,7 +80,7 @@ class ValidationError(BaseModel):
             for _item in self.loc:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['loc'] = _items
+            _dict["loc"] = _items
         return _dict
 
     @classmethod
@@ -92,9 +92,13 @@ class ValidationError(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "loc": [LocationInner.from_dict(_item) for _item in obj.get("loc")] if obj.get("loc") is not None else None,
-            "msg": obj.get("msg"),
-            "type": obj.get("type")
-        })
+        _obj = cls.model_validate(
+            {
+                "loc": [LocationInner.from_dict(_item) for _item in obj.get("loc")]
+                if obj.get("loc") is not None
+                else None,
+                "msg": obj.get("msg"),
+                "type": obj.get("type"),
+            }
+        )
         return _obj

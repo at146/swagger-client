@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class MessageTgBase(BaseModel):
     """
     MessageTgBase
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     name: Optional[StrictStr] = None
     bot_token: Optional[StrictStr] = None
@@ -42,7 +44,6 @@ class MessageTgBase(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -70,34 +71,33 @@ class MessageTgBase(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
-            _dict['name'] = None
+            _dict["name"] = None
 
         # set to None if bot_token (nullable) is None
         # and model_fields_set contains the field
         if self.bot_token is None and "bot_token" in self.model_fields_set:
-            _dict['bot_token'] = None
+            _dict["bot_token"] = None
 
         # set to None if video_id (nullable) is None
         # and model_fields_set contains the field
         if self.video_id is None and "video_id" in self.model_fields_set:
-            _dict['video_id'] = None
+            _dict["video_id"] = None
 
         # set to None if text (nullable) is None
         # and model_fields_set contains the field
         if self.text is None and "text" in self.model_fields_set:
-            _dict['text'] = None
+            _dict["text"] = None
 
         return _dict
 
@@ -110,11 +110,13 @@ class MessageTgBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "name": obj.get("name"),
-            "bot_token": obj.get("bot_token"),
-            "video_id": obj.get("video_id"),
-            "text": obj.get("text")
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "name": obj.get("name"),
+                "bot_token": obj.get("bot_token"),
+                "video_id": obj.get("video_id"),
+                "text": obj.get("text"),
+            }
+        )
         return _obj

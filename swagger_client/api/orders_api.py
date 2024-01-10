@@ -12,7 +12,6 @@
 """  # noqa: E501
 
 
-
 from typing import Any, Dict, List, Optional, Tuple, Union
 
 from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
@@ -45,7 +44,6 @@ class OrdersApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
-
     @validate_call
     async def delete_order_api_v1_orders_order_id_delete(
         self,
@@ -54,9 +52,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -88,30 +85,28 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_order_api_v1_orders_order_id_delete_serialize(
             order_id=order_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def delete_order_api_v1_orders_order_id_delete_with_http_info(
@@ -121,9 +116,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -155,30 +149,28 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_order_api_v1_orders_order_id_delete_serialize(
             order_id=order_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def delete_order_api_v1_orders_order_id_delete_without_preload_content(
@@ -188,9 +180,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -222,26 +213,24 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._delete_order_api_v1_orders_order_id_delete_serialize(
             order_id=order_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
-            '422': "HTTPValidationError",
+            "200": "object",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _delete_order_api_v1_orders_order_id_delete_serialize(
         self,
@@ -251,11 +240,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -266,29 +253,23 @@ class OrdersApi:
 
         # process the path parameters
         if order_id is not None:
-            _path_params['order_id'] = order_id
+            _path_params["order_id"] = order_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='DELETE',
-            resource_path='/api/v1/orders/{order_id}',
+            method="DELETE",
+            resource_path="/api/v1/orders/{order_id}",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -298,11 +279,8 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_active_orders_api_v1_orders_get(
@@ -314,9 +292,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -352,7 +329,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_active_orders_api_v1_orders_get_serialize(
             dropshipping=dropshipping,
@@ -361,23 +338,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OrderBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[OrderBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_active_orders_api_v1_orders_get_with_http_info(
@@ -389,9 +364,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -427,7 +401,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_active_orders_api_v1_orders_get_serialize(
             dropshipping=dropshipping,
@@ -436,23 +410,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OrderBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[OrderBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_active_orders_api_v1_orders_get_without_preload_content(
@@ -464,9 +436,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -502,7 +473,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_active_orders_api_v1_orders_get_serialize(
             dropshipping=dropshipping,
@@ -511,19 +482,17 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OrderBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[OrderBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_active_orders_api_v1_orders_get_serialize(
         self,
@@ -535,11 +504,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -551,38 +518,29 @@ class OrdersApi:
         # process the path parameters
         # process the query parameters
         if dropshipping is not None:
-            
-            _query_params.append(('dropshipping', dropshipping))
-            
+            _query_params.append(("dropshipping", dropshipping))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         if user_id is not None:
-            
-            _query_params.append(('user_id', user_id))
-            
+            _query_params.append(("user_id", user_id))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/orders',
+            method="GET",
+            resource_path="/api/v1/orders",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -592,11 +550,8 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_count_orders_api_v1_orders_count_get(
@@ -607,9 +562,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -643,7 +597,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_orders_api_v1_orders_count_get_serialize(
             status=status,
@@ -651,23 +605,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_count_orders_api_v1_orders_count_get_with_http_info(
@@ -678,9 +630,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -714,7 +665,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_orders_api_v1_orders_count_get_serialize(
             status=status,
@@ -722,23 +673,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_count_orders_api_v1_orders_count_get_without_preload_content(
@@ -749,9 +698,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -785,7 +733,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_orders_api_v1_orders_count_get_serialize(
             status=status,
@@ -793,19 +741,17 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_count_orders_api_v1_orders_count_get_serialize(
         self,
@@ -816,11 +762,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -832,34 +776,26 @@ class OrdersApi:
         # process the path parameters
         # process the query parameters
         if status is not None:
-            
-            _query_params.append(('status', status))
-            
+            _query_params.append(("status", status))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/orders/count',
+            method="GET",
+            resource_path="/api/v1/orders/count",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -869,11 +805,8 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(
@@ -885,9 +818,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -923,7 +855,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_serialize(
             user_id=user_id,
@@ -932,23 +864,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_with_http_info(
@@ -960,9 +890,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -998,7 +927,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_serialize(
             user_id=user_id,
@@ -1007,23 +936,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_without_preload_content(
@@ -1035,9 +962,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1073,7 +999,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_serialize(
             user_id=user_id,
@@ -1082,19 +1008,17 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "int",
-            '422': "HTTPValidationError",
+            "200": "int",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get_serialize(
         self,
@@ -1106,11 +1030,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1121,37 +1043,29 @@ class OrdersApi:
 
         # process the path parameters
         if user_id is not None:
-            _path_params['user_id'] = user_id
+            _path_params["user_id"] = user_id
         # process the query parameters
         if status is not None:
-            
-            _query_params.append(('status', status))
-            
+            _query_params.append(("status", status))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/orders/users/{user_id}/count',
+            method="GET",
+            resource_path="/api/v1/orders/users/{user_id}/count",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1161,11 +1075,8 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_order_by_id_api_v1_orders_order_id_get(
@@ -1181,9 +1092,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1227,7 +1137,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_order_by_id_api_v1_orders_order_id_get_serialize(
             order_id=order_id,
@@ -1240,23 +1150,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrderBaseDb",
-            '422': "HTTPValidationError",
+            "200": "OrderBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_order_by_id_api_v1_orders_order_id_get_with_http_info(
@@ -1272,9 +1180,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1318,7 +1225,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_order_by_id_api_v1_orders_order_id_get_serialize(
             order_id=order_id,
@@ -1331,23 +1238,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrderBaseDb",
-            '422': "HTTPValidationError",
+            "200": "OrderBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_order_by_id_api_v1_orders_order_id_get_without_preload_content(
@@ -1363,9 +1268,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1409,7 +1313,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_order_by_id_api_v1_orders_order_id_get_serialize(
             order_id=order_id,
@@ -1422,19 +1326,17 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrderBaseDb",
-            '422': "HTTPValidationError",
+            "200": "OrderBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_order_by_id_api_v1_orders_order_id_get_serialize(
         self,
@@ -1450,11 +1352,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1465,53 +1365,41 @@ class OrdersApi:
 
         # process the path parameters
         if order_id is not None:
-            _path_params['order_id'] = order_id
+            _path_params["order_id"] = order_id
         # process the query parameters
         if purchases is not None:
-            
-            _query_params.append(('purchases', purchases))
-            
+            _query_params.append(("purchases", purchases))
+
         if item is not None:
-            
-            _query_params.append(('item', item))
-            
+            _query_params.append(("item", item))
+
         if size is not None:
-            
-            _query_params.append(('size', size))
-            
+            _query_params.append(("size", size))
+
         if user_bot is not None:
-            
-            _query_params.append(('user_bot', user_bot))
-            
+            _query_params.append(("user_bot", user_bot))
+
         if partner is not None:
-            
-            _query_params.append(('partner', partner))
-            
+            _query_params.append(("partner", partner))
+
         if order_by_purchases is not None:
-            
-            _query_params.append(('order_by_purchases', order_by_purchases))
-            
+            _query_params.append(("order_by_purchases", order_by_purchases))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/orders/{order_id}',
+            method="GET",
+            resource_path="/api/v1/orders/{order_id}",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1521,11 +1409,8 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def get_user_orders_api_v1_orders_users_user_id_get(
@@ -1537,9 +1422,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1575,7 +1459,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_user_orders_api_v1_orders_users_user_id_get_serialize(
             user_id=user_id,
@@ -1584,23 +1468,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OrderBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[OrderBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def get_user_orders_api_v1_orders_users_user_id_get_with_http_info(
@@ -1612,9 +1494,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1650,7 +1531,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_user_orders_api_v1_orders_users_user_id_get_serialize(
             user_id=user_id,
@@ -1659,23 +1540,21 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OrderBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[OrderBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def get_user_orders_api_v1_orders_users_user_id_get_without_preload_content(
@@ -1687,9 +1566,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1725,7 +1603,7 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._get_user_orders_api_v1_orders_users_user_id_get_serialize(
             user_id=user_id,
@@ -1734,19 +1612,17 @@ class OrdersApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[OrderBaseDb]",
-            '422': "HTTPValidationError",
+            "200": "List[OrderBaseDb]",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _get_user_orders_api_v1_orders_users_user_id_get_serialize(
         self,
@@ -1758,11 +1634,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1773,37 +1647,29 @@ class OrdersApi:
 
         # process the path parameters
         if user_id is not None:
-            _path_params['user_id'] = user_id
+            _path_params["user_id"] = user_id
         # process the query parameters
         if purchase_status is not None:
-            
-            _query_params.append(('purchase_status', purchase_status))
-            
+            _query_params.append(("purchase_status", purchase_status))
+
         if token is not None:
-            
-            _query_params.append(('token', token))
-            
+            _query_params.append(("token", token))
+
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
-
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='GET',
-            resource_path='/api/v1/orders/users/{user_id}',
+            method="GET",
+            resource_path="/api/v1/orders/users/{user_id}",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1813,11 +1679,8 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )
-
-
-
 
     @validate_call
     async def insert_order_api_v1_orders_post(
@@ -1827,9 +1690,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1861,30 +1723,28 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._insert_order_api_v1_orders_post_serialize(
             insert_order=insert_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrderBaseDb",
-            '422': "HTTPValidationError",
+            "200": "OrderBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
-
 
     @validate_call
     async def insert_order_api_v1_orders_post_with_http_info(
@@ -1894,9 +1754,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1928,30 +1787,28 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._insert_order_api_v1_orders_post_serialize(
             insert_order=insert_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrderBaseDb",
-            '422': "HTTPValidationError",
+            "200": "OrderBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
-
 
     @validate_call
     async def insert_order_api_v1_orders_post_without_preload_content(
@@ -1961,9 +1818,8 @@ class OrdersApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)],
-                Annotated[StrictFloat, Field(gt=0)]
-            ]
+                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
+            ],
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1995,26 +1851,24 @@ class OrdersApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """ # noqa: E501
+        """  # noqa: E501
 
         _param = self._insert_order_api_v1_orders_post_serialize(
             insert_order=insert_order,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index
+            _host_index=_host_index,
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "OrderBaseDb",
-            '422': "HTTPValidationError",
+            "200": "OrderBaseDb",
+            "422": "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param,
-            _request_timeout=_request_timeout
+            *_param, _request_timeout=_request_timeout
         )
         return response_data.response
-
 
     def _insert_order_api_v1_orders_post_serialize(
         self,
@@ -2024,11 +1878,9 @@ class OrdersApi:
         _headers,
         _host_index,
     ) -> Tuple:
-
         _host = None
 
-        _collection_formats: Dict[str, str] = {
-        }
+        _collection_formats: Dict[str, str] = {}
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -2045,36 +1897,27 @@ class OrdersApi:
         if insert_order is not None:
             _body_params = insert_order
 
-
         # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            [
-                'application/json'
-            ]
+        _header_params["Accept"] = self.api_client.select_header_accept(
+            ["application/json"]
         )
 
         # set the HTTP header `Content-Type`
         if _content_type:
-            _header_params['Content-Type'] = _content_type
+            _header_params["Content-Type"] = _content_type
         else:
-            _default_content_type = (
-                self.api_client.select_header_content_type(
-                    [
-                        'application/json'
-                    ]
-                )
+            _default_content_type = self.api_client.select_header_content_type(
+                ["application/json"]
             )
             if _default_content_type is not None:
-                _header_params['Content-Type'] = _default_content_type
+                _header_params["Content-Type"] = _default_content_type
 
         # authentication setting
-        _auth_settings: List[str] = [
-            'HTTPBasic'
-        ]
+        _auth_settings: List[str] = ["HTTPBasic"]
 
         return self.api_client.param_serialize(
-            method='POST',
-            resource_path='/api/v1/orders',
+            method="POST",
+            resource_path="/api/v1/orders",
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2084,5 +1927,5 @@ class OrdersApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth
+            _request_auth=_request_auth,
         )

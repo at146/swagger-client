@@ -26,10 +26,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class SizeBase(BaseModel):
     """
     SizeBase
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     value: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "value"]
@@ -39,7 +41,6 @@ class SizeBase(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -67,19 +68,18 @@ class SizeBase(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if value (nullable) is None
         # and model_fields_set contains the field
         if self.value is None and "value" in self.model_fields_set:
-            _dict['value'] = None
+            _dict["value"] = None
 
         return _dict
 
@@ -92,8 +92,5 @@ class SizeBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "value": obj.get("value")
-        })
+        _obj = cls.model_validate({"id": obj.get("id"), "value": obj.get("value")})
         return _obj

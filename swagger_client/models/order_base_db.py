@@ -30,10 +30,12 @@ try:
 except ImportError:
     from typing_extensions import Self
 
+
 class OrderBaseDb(BaseModel):
     """
     OrderBaseDb
-    """ # noqa: E501
+    """  # noqa: E501
+
     id: Optional[StrictInt] = None
     created: Optional[datetime] = None
     user_bot_id: Optional[StrictInt] = None
@@ -48,14 +50,28 @@ class OrderBaseDb(BaseModel):
     paid: Optional[StrictBool] = None
     purchases: Optional[List[PurchaseBaseDb]] = None
     user_bot: Optional[UserBotBaseDb] = None
-    __properties: ClassVar[List[str]] = ["id", "created", "user_bot_id", "buyer", "delivery", "address", "phone", "checking", "payment_receipt", "comment", "partner", "paid", "purchases", "user_bot"]
+    __properties: ClassVar[List[str]] = [
+        "id",
+        "created",
+        "user_bot_id",
+        "buyer",
+        "delivery",
+        "address",
+        "phone",
+        "checking",
+        "payment_receipt",
+        "comment",
+        "partner",
+        "paid",
+        "purchases",
+        "user_bot",
+    ]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
-
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -83,8 +99,7 @@ class OrderBaseDb(BaseModel):
         """
         _dict = self.model_dump(
             by_alias=True,
-            exclude={
-            },
+            exclude={},
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of each item in purchases (list)
@@ -93,79 +108,79 @@ class OrderBaseDb(BaseModel):
             for _item in self.purchases:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['purchases'] = _items
+            _dict["purchases"] = _items
         # override the default output from pydantic by calling `to_dict()` of user_bot
         if self.user_bot:
-            _dict['user_bot'] = self.user_bot.to_dict()
+            _dict["user_bot"] = self.user_bot.to_dict()
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
+            _dict["id"] = None
 
         # set to None if created (nullable) is None
         # and model_fields_set contains the field
         if self.created is None and "created" in self.model_fields_set:
-            _dict['created'] = None
+            _dict["created"] = None
 
         # set to None if user_bot_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_bot_id is None and "user_bot_id" in self.model_fields_set:
-            _dict['user_bot_id'] = None
+            _dict["user_bot_id"] = None
 
         # set to None if buyer (nullable) is None
         # and model_fields_set contains the field
         if self.buyer is None and "buyer" in self.model_fields_set:
-            _dict['buyer'] = None
+            _dict["buyer"] = None
 
         # set to None if delivery (nullable) is None
         # and model_fields_set contains the field
         if self.delivery is None and "delivery" in self.model_fields_set:
-            _dict['delivery'] = None
+            _dict["delivery"] = None
 
         # set to None if address (nullable) is None
         # and model_fields_set contains the field
         if self.address is None and "address" in self.model_fields_set:
-            _dict['address'] = None
+            _dict["address"] = None
 
         # set to None if phone (nullable) is None
         # and model_fields_set contains the field
         if self.phone is None and "phone" in self.model_fields_set:
-            _dict['phone'] = None
+            _dict["phone"] = None
 
         # set to None if checking (nullable) is None
         # and model_fields_set contains the field
         if self.checking is None and "checking" in self.model_fields_set:
-            _dict['checking'] = None
+            _dict["checking"] = None
 
         # set to None if payment_receipt (nullable) is None
         # and model_fields_set contains the field
         if self.payment_receipt is None and "payment_receipt" in self.model_fields_set:
-            _dict['payment_receipt'] = None
+            _dict["payment_receipt"] = None
 
         # set to None if comment (nullable) is None
         # and model_fields_set contains the field
         if self.comment is None and "comment" in self.model_fields_set:
-            _dict['comment'] = None
+            _dict["comment"] = None
 
         # set to None if partner (nullable) is None
         # and model_fields_set contains the field
         if self.partner is None and "partner" in self.model_fields_set:
-            _dict['partner'] = None
+            _dict["partner"] = None
 
         # set to None if paid (nullable) is None
         # and model_fields_set contains the field
         if self.paid is None and "paid" in self.model_fields_set:
-            _dict['paid'] = None
+            _dict["paid"] = None
 
         # set to None if purchases (nullable) is None
         # and model_fields_set contains the field
         if self.purchases is None and "purchases" in self.model_fields_set:
-            _dict['purchases'] = None
+            _dict["purchases"] = None
 
         # set to None if user_bot (nullable) is None
         # and model_fields_set contains the field
         if self.user_bot is None and "user_bot" in self.model_fields_set:
-            _dict['user_bot'] = None
+            _dict["user_bot"] = None
 
         return _dict
 
@@ -178,20 +193,28 @@ class OrderBaseDb(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "created": obj.get("created"),
-            "user_bot_id": obj.get("user_bot_id"),
-            "buyer": obj.get("buyer"),
-            "delivery": obj.get("delivery"),
-            "address": obj.get("address"),
-            "phone": obj.get("phone"),
-            "checking": obj.get("checking"),
-            "payment_receipt": obj.get("payment_receipt"),
-            "comment": obj.get("comment"),
-            "partner": obj.get("partner"),
-            "paid": obj.get("paid"),
-            "purchases": [PurchaseBaseDb.from_dict(_item) for _item in obj.get("purchases")] if obj.get("purchases") is not None else None,
-            "user_bot": UserBotBaseDb.from_dict(obj.get("user_bot")) if obj.get("user_bot") is not None else None
-        })
+        _obj = cls.model_validate(
+            {
+                "id": obj.get("id"),
+                "created": obj.get("created"),
+                "user_bot_id": obj.get("user_bot_id"),
+                "buyer": obj.get("buyer"),
+                "delivery": obj.get("delivery"),
+                "address": obj.get("address"),
+                "phone": obj.get("phone"),
+                "checking": obj.get("checking"),
+                "payment_receipt": obj.get("payment_receipt"),
+                "comment": obj.get("comment"),
+                "partner": obj.get("partner"),
+                "paid": obj.get("paid"),
+                "purchases": [
+                    PurchaseBaseDb.from_dict(_item) for _item in obj.get("purchases")
+                ]
+                if obj.get("purchases") is not None
+                else None,
+                "user_bot": UserBotBaseDb.from_dict(obj.get("user_bot"))
+                if obj.get("user_bot") is not None
+                else None,
+            }
+        )
         return _obj
