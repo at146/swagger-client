@@ -13,41 +13,31 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class UpdatePurchase(BaseModel):
     """
     UpdatePurchase
-    """  # noqa: E501
-
+    """ # noqa: E501
     purchase_id: StrictInt
     add_info: Optional[StrictStr] = None
     add_photo: Optional[StrictStr] = None
     status: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = [
-        "purchase_id",
-        "add_info",
-        "add_photo",
-        "status",
-    ]
+    __properties: ClassVar[List[str]] = ["purchase_id", "add_info", "add_photo", "status"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -59,7 +49,7 @@ class UpdatePurchase(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of UpdatePurchase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -73,30 +63,33 @@ class UpdatePurchase(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if add_info (nullable) is None
         # and model_fields_set contains the field
         if self.add_info is None and "add_info" in self.model_fields_set:
-            _dict["add_info"] = None
+            _dict['add_info'] = None
 
         # set to None if add_photo (nullable) is None
         # and model_fields_set contains the field
         if self.add_photo is None and "add_photo" in self.model_fields_set:
-            _dict["add_photo"] = None
+            _dict['add_photo'] = None
 
         # set to None if status (nullable) is None
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
-            _dict["status"] = None
+            _dict['status'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of UpdatePurchase from a dict"""
         if obj is None:
             return None
@@ -104,12 +97,12 @@ class UpdatePurchase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "purchase_id": obj.get("purchase_id"),
-                "add_info": obj.get("add_info"),
-                "add_photo": obj.get("add_photo"),
-                "status": obj.get("status"),
-            }
-        )
+        _obj = cls.model_validate({
+            "purchase_id": obj.get("purchase_id"),
+            "add_info": obj.get("add_info"),
+            "add_photo": obj.get("add_photo"),
+            "status": obj.get("status")
+        })
         return _obj
+
+

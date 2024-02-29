@@ -13,30 +13,23 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
+import json
+
 from datetime import datetime
-from typing import Any, ClassVar, Dict, List, Optional
-
 from pydantic import BaseModel, StrictInt, StrictStr
-
+from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.user_bot_base import UserBotBase
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Optional, Set
+from typing_extensions import Self
 
 class BasketBaseDb(BaseModel):
     """
     BasketBaseDb
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictInt] = None
     created: Optional[datetime] = None
     item_code: Optional[StrictStr] = None
@@ -46,23 +39,14 @@ class BasketBaseDb(BaseModel):
     user_bot: Optional[UserBotBase] = None
     size: Optional[SizeBase] = None
     item: Optional[ItemBase] = None
-    __properties: ClassVar[List[str]] = [
-        "id",
-        "created",
-        "item_code",
-        "price",
-        "user_bot_id",
-        "size_id",
-        "user_bot",
-        "size",
-        "item",
-    ]
+    __properties: ClassVar[List[str]] = ["id", "created", "item_code", "price", "user_bot_id", "size_id", "user_bot", "size", "item"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -74,7 +58,7 @@ class BasketBaseDb(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of BasketBaseDb from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -88,69 +72,72 @@ class BasketBaseDb(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of user_bot
         if self.user_bot:
-            _dict["user_bot"] = self.user_bot.to_dict()
+            _dict['user_bot'] = self.user_bot.to_dict()
         # override the default output from pydantic by calling `to_dict()` of size
         if self.size:
-            _dict["size"] = self.size.to_dict()
+            _dict['size'] = self.size.to_dict()
         # override the default output from pydantic by calling `to_dict()` of item
         if self.item:
-            _dict["item"] = self.item.to_dict()
+            _dict['item'] = self.item.to_dict()
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if created (nullable) is None
         # and model_fields_set contains the field
         if self.created is None and "created" in self.model_fields_set:
-            _dict["created"] = None
+            _dict['created'] = None
 
         # set to None if item_code (nullable) is None
         # and model_fields_set contains the field
         if self.item_code is None and "item_code" in self.model_fields_set:
-            _dict["item_code"] = None
+            _dict['item_code'] = None
 
         # set to None if price (nullable) is None
         # and model_fields_set contains the field
         if self.price is None and "price" in self.model_fields_set:
-            _dict["price"] = None
+            _dict['price'] = None
 
         # set to None if user_bot_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_bot_id is None and "user_bot_id" in self.model_fields_set:
-            _dict["user_bot_id"] = None
+            _dict['user_bot_id'] = None
 
         # set to None if size_id (nullable) is None
         # and model_fields_set contains the field
         if self.size_id is None and "size_id" in self.model_fields_set:
-            _dict["size_id"] = None
+            _dict['size_id'] = None
 
         # set to None if user_bot (nullable) is None
         # and model_fields_set contains the field
         if self.user_bot is None and "user_bot" in self.model_fields_set:
-            _dict["user_bot"] = None
+            _dict['user_bot'] = None
 
         # set to None if size (nullable) is None
         # and model_fields_set contains the field
         if self.size is None and "size" in self.model_fields_set:
-            _dict["size"] = None
+            _dict['size'] = None
 
         # set to None if item (nullable) is None
         # and model_fields_set contains the field
         if self.item is None and "item" in self.model_fields_set:
-            _dict["item"] = None
+            _dict['item'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of BasketBaseDb from a dict"""
         if obj is None:
             return None
@@ -158,23 +145,17 @@ class BasketBaseDb(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "created": obj.get("created"),
-                "item_code": obj.get("item_code"),
-                "price": obj.get("price"),
-                "user_bot_id": obj.get("user_bot_id"),
-                "size_id": obj.get("size_id"),
-                "user_bot": UserBotBase.from_dict(obj.get("user_bot"))
-                if obj.get("user_bot") is not None
-                else None,
-                "size": SizeBase.from_dict(obj.get("size"))
-                if obj.get("size") is not None
-                else None,
-                "item": ItemBase.from_dict(obj.get("item"))
-                if obj.get("item") is not None
-                else None,
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "created": obj.get("created"),
+            "item_code": obj.get("item_code"),
+            "price": obj.get("price"),
+            "user_bot_id": obj.get("user_bot_id"),
+            "size_id": obj.get("size_id"),
+            "user_bot": UserBotBase.from_dict(obj["user_bot"]) if obj.get("user_bot") is not None else None,
+            "size": SizeBase.from_dict(obj["size"]) if obj.get("size") is not None else None,
+            "item": ItemBase.from_dict(obj["item"]) if obj.get("item") is not None else None
+        })
         return _obj
+
+

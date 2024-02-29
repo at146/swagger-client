@@ -26,12 +26,14 @@ from swagger_client.api.info_items_api import InfoItemsApi
 from swagger_client.api.items_api import ItemsApi
 from swagger_client.api.messages_tg_api import MessagesTgApi
 from swagger_client.api.orders_api import OrdersApi
+from swagger_client.api.partners_api import PartnersApi
 from swagger_client.api.purchases_api import PurchasesApi
 from swagger_client.api.quantities_api import QuantitiesApi
 from swagger_client.api.schedulers_api import SchedulersApi
 from swagger_client.api.sizes_api import SizesApi
 from swagger_client.api.users_bots_api import UsersBotsApi
 from swagger_client.api.waybills_api import WaybillsApi
+from swagger_client.api.webhook_api import WebhookApi
 from swagger_client.api.yookassa_payments_api import YookassaPaymentsApi
 
 # import ApiClient
@@ -46,12 +48,17 @@ from swagger_client.exceptions import ApiAttributeError
 from swagger_client.exceptions import ApiException
 
 # import models into sdk package
+from swagger_client.models.attributes import Attributes
+from swagger_client.models.attributes_order_status import AttributesOrderStatus
+from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser
+from swagger_client.models.attributes_print_form import AttributesPrintForm
 from swagger_client.models.barcode_insert import BarcodeInsert
 from swagger_client.models.basket_base_db import BasketBaseDb
 from swagger_client.models.bot_base import BotBase
 from swagger_client.models.bot_base_db import BotBaseDb
 from swagger_client.models.brand_count import BrandCount
 from swagger_client.models.category_base import CategoryBase
+from swagger_client.models.cdek_webhook import CdekWebhook
 from swagger_client.models.centimeter_base import CentimeterBase
 from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
 from swagger_client.models.delivery_cdek_update import DeliveryCdekUpdate
@@ -75,6 +82,7 @@ from swagger_client.models.partner_base import PartnerBase
 from swagger_client.models.purchase_base_db import PurchaseBaseDb
 from swagger_client.models.quantity_base import QuantityBase
 from swagger_client.models.quantity_base_db import QuantityBaseDb
+from swagger_client.models.related_entities import RelatedEntities
 from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.size_base_db import SizeBaseDb

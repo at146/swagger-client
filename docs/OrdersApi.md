@@ -23,8 +23,6 @@ Delete Order
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -102,8 +100,6 @@ Get Active Orders
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.order_base_db import OrderBaseDb
 from swagger_client.rest import ApiException
@@ -186,8 +182,6 @@ Get Count Orders
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -267,8 +261,6 @@ Get Count Orders By User Id
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -350,8 +342,6 @@ Get Order By Id
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.order_base_db import OrderBaseDb
 from swagger_client.rest import ApiException
@@ -442,8 +432,6 @@ Get User Orders
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.order_base_db import OrderBaseDb
 from swagger_client.rest import ApiException
@@ -526,8 +514,6 @@ Insert Order
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.insert_order import InsertOrder
 from swagger_client.models.order_base_db import OrderBaseDb
@@ -596,3 +582,4 @@ Name | Type | Description  | Notes
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

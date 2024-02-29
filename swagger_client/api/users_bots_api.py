@@ -11,25 +11,19 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
+import warnings
+from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
-
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
-
-try:
-    from typing import Annotated
-except ImportError:
-    from typing_extensions import Annotated
-
-from typing import Any, List, Optional
+from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
-
-from swagger_client.api_client import ApiClient
-from swagger_client.api_response import ApiResponse
+from typing import Optional
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
 from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
+
+from swagger_client.api_client import ApiClient, RequestSerialized
+from swagger_client.api_response import ApiResponse
 from swagger_client.rest import RESTResponseType
 
 
@@ -45,6 +39,7 @@ class UsersBotsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+
     @validate_call
     async def get_all_ids_users_api_v1_users_bots_ids_get(
         self,
@@ -53,8 +48,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -86,28 +82,30 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_ids_users_api_v1_users_bots_ids_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[int]",
-            "422": "HTTPValidationError",
+            '200': "List[int]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_all_ids_users_api_v1_users_bots_ids_get_with_http_info(
@@ -117,8 +115,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -150,28 +149,30 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_ids_users_api_v1_users_bots_ids_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[int]",
-            "422": "HTTPValidationError",
+            '200': "List[int]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_all_ids_users_api_v1_users_bots_ids_get_without_preload_content(
@@ -181,8 +182,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -214,24 +216,26 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_ids_users_api_v1_users_bots_ids_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[int]",
-            "422": "HTTPValidationError",
+            '200': "List[int]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_all_ids_users_api_v1_users_bots_ids_get_serialize(
         self,
@@ -240,10 +244,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -255,23 +261,30 @@ class UsersBotsApi:
         # process the path parameters
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/users_bots/ids",
+            method='GET',
+            resource_path='/api/v1/users_bots/ids',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -281,8 +294,11 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_count_api_v1_users_bots_count_get(
@@ -292,8 +308,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -325,28 +342,30 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_api_v1_users_bots_count_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_count_api_v1_users_bots_count_get_with_http_info(
@@ -356,8 +375,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -389,28 +409,30 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_api_v1_users_bots_count_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_count_api_v1_users_bots_count_get_without_preload_content(
@@ -420,8 +442,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -453,24 +476,26 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_api_v1_users_bots_count_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_count_api_v1_users_bots_count_get_serialize(
         self,
@@ -479,10 +504,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -494,23 +521,30 @@ class UsersBotsApi:
         # process the path parameters
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/users_bots/count",
+            method='GET',
+            resource_path='/api/v1/users_bots/count',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -520,8 +554,11 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_only_user_bot_api_v1_users_bots_user_id_only_get(
@@ -535,8 +572,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -576,7 +614,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_only_user_bot_api_v1_users_bots_user_id_only_get_serialize(
             user_id=user_id,
@@ -587,21 +625,23 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_only_user_bot_api_v1_users_bots_user_id_only_get_with_http_info(
@@ -615,8 +655,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -656,7 +697,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_only_user_bot_api_v1_users_bots_user_id_only_get_serialize(
             user_id=user_id,
@@ -667,21 +708,23 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_only_user_bot_api_v1_users_bots_user_id_only_get_without_preload_content(
@@ -695,8 +738,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -736,7 +780,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_only_user_bot_api_v1_users_bots_user_id_only_get_serialize(
             user_id=user_id,
@@ -747,17 +791,19 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_only_user_bot_api_v1_users_bots_user_id_only_get_serialize(
         self,
@@ -770,10 +816,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -784,35 +832,45 @@ class UsersBotsApi:
 
         # process the path parameters
         if user_id is not None:
-            _path_params["user_id"] = user_id
+            _path_params['user_id'] = user_id
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         if partner is not None:
-            _query_params.append(("partner", partner))
-
+            
+            _query_params.append(('partner', partner))
+            
         if user is not None:
-            _query_params.append(("user", user))
-
+            
+            _query_params.append(('user', user))
+            
         if stock is not None:
-            _query_params.append(("stock", stock))
-
+            
+            _query_params.append(('stock', stock))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/users_bots/{user_id}/only",
+            method='GET',
+            resource_path='/api/v1/users_bots/{user_id}/only',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -822,8 +880,11 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_user_bot_api_v1_users_bots_user_id_get(
@@ -836,8 +897,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -875,7 +937,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_user_bot_api_v1_users_bots_user_id_get_serialize(
             user_id=user_id,
@@ -885,21 +947,23 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_user_bot_api_v1_users_bots_user_id_get_with_http_info(
@@ -912,8 +976,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -951,7 +1016,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_user_bot_api_v1_users_bots_user_id_get_serialize(
             user_id=user_id,
@@ -961,21 +1026,23 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_user_bot_api_v1_users_bots_user_id_get_without_preload_content(
@@ -988,8 +1055,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1027,7 +1095,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_user_bot_api_v1_users_bots_user_id_get_serialize(
             user_id=user_id,
@@ -1037,17 +1105,19 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_user_bot_api_v1_users_bots_user_id_get_serialize(
         self,
@@ -1059,10 +1129,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1073,32 +1145,41 @@ class UsersBotsApi:
 
         # process the path parameters
         if user_id is not None:
-            _path_params["user_id"] = user_id
+            _path_params['user_id'] = user_id
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         if first_name is not None:
-            _query_params.append(("first_name", first_name))
-
+            
+            _query_params.append(('first_name', first_name))
+            
         if username is not None:
-            _query_params.append(("username", username))
-
+            
+            _query_params.append(('username', username))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/users_bots/{user_id}",
+            method='GET',
+            resource_path='/api/v1/users_bots/{user_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1108,8 +1189,11 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_user_bot_start_api_v1_users_bots_user_id_start_get(
@@ -1123,8 +1207,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1164,7 +1249,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_user_bot_start_api_v1_users_bots_user_id_start_get_serialize(
             user_id=user_id,
@@ -1175,21 +1260,23 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDbStart",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDbStart",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_user_bot_start_api_v1_users_bots_user_id_start_get_with_http_info(
@@ -1203,8 +1290,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1244,7 +1332,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_user_bot_start_api_v1_users_bots_user_id_start_get_serialize(
             user_id=user_id,
@@ -1255,21 +1343,23 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDbStart",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDbStart",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_user_bot_start_api_v1_users_bots_user_id_start_get_without_preload_content(
@@ -1283,8 +1373,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1324,7 +1415,7 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_user_bot_start_api_v1_users_bots_user_id_start_get_serialize(
             user_id=user_id,
@@ -1335,17 +1426,19 @@ class UsersBotsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDbStart",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDbStart",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_user_bot_start_api_v1_users_bots_user_id_start_get_serialize(
         self,
@@ -1358,10 +1451,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1372,35 +1467,45 @@ class UsersBotsApi:
 
         # process the path parameters
         if user_id is not None:
-            _path_params["user_id"] = user_id
+            _path_params['user_id'] = user_id
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         if first_name is not None:
-            _query_params.append(("first_name", first_name))
-
+            
+            _query_params.append(('first_name', first_name))
+            
         if username is not None:
-            _query_params.append(("username", username))
-
+            
+            _query_params.append(('username', username))
+            
         if subscribe_channel is not None:
-            _query_params.append(("subscribe_channel", subscribe_channel))
-
+            
+            _query_params.append(('subscribe_channel', subscribe_channel))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/users_bots/{user_id}/start",
+            method='GET',
+            resource_path='/api/v1/users_bots/{user_id}/start',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1410,8 +1515,11 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_user_client_bot_api_v1_users_bots_user_id_client_get(
@@ -1422,8 +1530,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1457,31 +1566,31 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
-        _param = (
-            self._get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
-                user_id=user_id,
-                token=token,
-                _request_auth=_request_auth,
-                _content_type=_content_type,
-                _headers=_headers,
-                _host_index=_host_index,
-            )
+        _param = self._get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
+            user_id=user_id,
+            token=token,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_user_client_bot_api_v1_users_bots_user_id_client_get_with_http_info(
@@ -1492,8 +1601,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1527,31 +1637,31 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
-        _param = (
-            self._get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
-                user_id=user_id,
-                token=token,
-                _request_auth=_request_auth,
-                _content_type=_content_type,
-                _headers=_headers,
-                _host_index=_host_index,
-            )
+        _param = self._get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
+            user_id=user_id,
+            token=token,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_user_client_bot_api_v1_users_bots_user_id_client_get_without_preload_content(
@@ -1562,8 +1672,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1597,27 +1708,27 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
-        _param = (
-            self._get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
-                user_id=user_id,
-                token=token,
-                _request_auth=_request_auth,
-                _content_type=_content_type,
-                _headers=_headers,
-                _host_index=_host_index,
-            )
+        _param = self._get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
+            user_id=user_id,
+            token=token,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "UserBotBaseDb",
-            "422": "HTTPValidationError",
+            '200': "UserBotBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_user_client_bot_api_v1_users_bots_user_id_client_get_serialize(
         self,
@@ -1627,10 +1738,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1641,26 +1754,33 @@ class UsersBotsApi:
 
         # process the path parameters
         if user_id is not None:
-            _path_params["user_id"] = user_id
+            _path_params['user_id'] = user_id
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/users_bots/{user_id}/client",
+            method='GET',
+            resource_path='/api/v1/users_bots/{user_id}/client',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1670,8 +1790,11 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def update_last_mess_api_v1_users_bots_mess_put(
@@ -1681,8 +1804,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1714,28 +1838,30 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._update_last_mess_api_v1_users_bots_mess_put_serialize(
             update_user_bot_mess=update_user_bot_mess,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def update_last_mess_api_v1_users_bots_mess_put_with_http_info(
@@ -1745,8 +1871,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1778,28 +1905,30 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._update_last_mess_api_v1_users_bots_mess_put_serialize(
             update_user_bot_mess=update_user_bot_mess,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def update_last_mess_api_v1_users_bots_mess_put_without_preload_content(
@@ -1809,8 +1938,9 @@ class UsersBotsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1842,24 +1972,26 @@ class UsersBotsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._update_last_mess_api_v1_users_bots_mess_put_serialize(
             update_user_bot_mess=update_user_bot_mess,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _update_last_mess_api_v1_users_bots_mess_put_serialize(
         self,
@@ -1868,10 +2000,12 @@ class UsersBotsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1888,27 +2022,36 @@ class UsersBotsApi:
         if update_user_bot_mess is not None:
             _body_params = update_user_bot_mess
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
         # set the HTTP header `Content-Type`
         if _content_type:
-            _header_params["Content-Type"] = _content_type
+            _header_params['Content-Type'] = _content_type
         else:
-            _default_content_type = self.api_client.select_header_content_type(
-                ["application/json"]
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
             if _default_content_type is not None:
-                _header_params["Content-Type"] = _default_content_type
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="PUT",
-            resource_path="/api/v1/users_bots/mess",
+            method='PUT',
+            resource_path='/api/v1/users_bots/mess',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1918,5 +2061,7 @@ class UsersBotsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+

@@ -13,43 +13,32 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class StockBase(BaseModel):
     """
     StockBase
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictStr] = None
     name: Optional[StrictStr] = None
     user_id: Optional[StrictInt] = None
     number: Optional[StrictInt] = None
     shipment_point: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = [
-        "id",
-        "name",
-        "user_id",
-        "number",
-        "shipment_point",
-    ]
+    __properties: ClassVar[List[str]] = ["id", "name", "user_id", "number", "shipment_point"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -61,7 +50,7 @@ class StockBase(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of StockBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -75,40 +64,43 @@ class StockBase(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if name (nullable) is None
         # and model_fields_set contains the field
         if self.name is None and "name" in self.model_fields_set:
-            _dict["name"] = None
+            _dict['name'] = None
 
         # set to None if user_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict["user_id"] = None
+            _dict['user_id'] = None
 
         # set to None if number (nullable) is None
         # and model_fields_set contains the field
         if self.number is None and "number" in self.model_fields_set:
-            _dict["number"] = None
+            _dict['number'] = None
 
         # set to None if shipment_point (nullable) is None
         # and model_fields_set contains the field
         if self.shipment_point is None and "shipment_point" in self.model_fields_set:
-            _dict["shipment_point"] = None
+            _dict['shipment_point'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of StockBase from a dict"""
         if obj is None:
             return None
@@ -116,13 +108,13 @@ class StockBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "name": obj.get("name"),
-                "user_id": obj.get("user_id"),
-                "number": obj.get("number"),
-                "shipment_point": obj.get("shipment_point"),
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "name": obj.get("name"),
+            "user_id": obj.get("user_id"),
+            "number": obj.get("number"),
+            "shipment_point": obj.get("shipment_point")
+        })
         return _obj
+
+

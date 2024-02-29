@@ -13,27 +13,20 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
+from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.quantity_base import QuantityBase
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Optional, Set
+from typing_extensions import Self
 
 class SizeBaseDb(BaseModel):
     """
     SizeBaseDb
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictInt] = None
     value: Optional[StrictStr] = None
     quantities: Optional[List[QuantityBase]] = None
@@ -45,6 +38,7 @@ class SizeBaseDb(BaseModel):
         "protected_namespaces": (),
     }
 
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -55,7 +49,7 @@ class SizeBaseDb(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of SizeBaseDb from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -69,9 +63,12 @@ class SizeBaseDb(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of each item in quantities (list)
@@ -80,26 +77,26 @@ class SizeBaseDb(BaseModel):
             for _item in self.quantities:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict["quantities"] = _items
+            _dict['quantities'] = _items
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if value (nullable) is None
         # and model_fields_set contains the field
         if self.value is None and "value" in self.model_fields_set:
-            _dict["value"] = None
+            _dict['value'] = None
 
         # set to None if quantities (nullable) is None
         # and model_fields_set contains the field
         if self.quantities is None and "quantities" in self.model_fields_set:
-            _dict["quantities"] = None
+            _dict['quantities'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of SizeBaseDb from a dict"""
         if obj is None:
             return None
@@ -107,15 +104,11 @@ class SizeBaseDb(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "value": obj.get("value"),
-                "quantities": [
-                    QuantityBase.from_dict(_item) for _item in obj.get("quantities")
-                ]
-                if obj.get("quantities") is not None
-                else None,
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "value": obj.get("value"),
+            "quantities": [QuantityBase.from_dict(_item) for _item in obj["quantities"]] if obj.get("quantities") is not None else None
+        })
         return _obj
+
+

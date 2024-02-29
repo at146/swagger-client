@@ -5,4 +5,3 @@
 # The patterns follow closely to .gitignore or .dockerignore.
 
 .gitignore
-.github/workflows/python.yml

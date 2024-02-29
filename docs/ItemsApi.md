@@ -28,8 +28,6 @@ Get All
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.rest import ApiException
@@ -110,8 +108,6 @@ Get Brands And Counts
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.brand_count import BrandCount
 from swagger_client.rest import ApiException
@@ -190,8 +186,6 @@ Get Count Brand
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -271,8 +265,6 @@ Get Item
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.rest import ApiException
@@ -357,8 +349,6 @@ Get Item New
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.rest import ApiException
@@ -445,8 +435,6 @@ Get Item Selectinload Size
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.rest import ApiException
@@ -531,8 +519,6 @@ Get Items Action New Codes
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -622,8 +608,6 @@ Get Items Codes
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -705,8 +689,6 @@ Get Models And Counts
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.model_count import ModelCount
 from swagger_client.rest import ApiException
@@ -787,8 +769,6 @@ Get Models
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -857,3 +837,4 @@ Name | Type | Description  | Notes
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

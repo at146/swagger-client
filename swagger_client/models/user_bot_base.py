@@ -13,25 +13,19 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class UserBotBase(BaseModel):
     """
     UserBotBase
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictInt] = None
     user_id: Optional[StrictInt] = None
     bot_token: Optional[StrictStr] = None
@@ -40,22 +34,14 @@ class UserBotBase(BaseModel):
     new_user: Optional[StrictBool] = None
     subscribe_channel: Optional[StrictBool] = None
     utm_mark_id: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = [
-        "id",
-        "user_id",
-        "bot_token",
-        "last_mess",
-        "items",
-        "new_user",
-        "subscribe_channel",
-        "utm_mark_id",
-    ]
+    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -67,7 +53,7 @@ class UserBotBase(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of UserBotBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -81,58 +67,58 @@ class UserBotBase(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if user_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict["user_id"] = None
+            _dict['user_id'] = None
 
         # set to None if bot_token (nullable) is None
         # and model_fields_set contains the field
         if self.bot_token is None and "bot_token" in self.model_fields_set:
-            _dict["bot_token"] = None
+            _dict['bot_token'] = None
 
         # set to None if last_mess (nullable) is None
         # and model_fields_set contains the field
         if self.last_mess is None and "last_mess" in self.model_fields_set:
-            _dict["last_mess"] = None
+            _dict['last_mess'] = None
 
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
-            _dict["items"] = None
+            _dict['items'] = None
 
         # set to None if new_user (nullable) is None
         # and model_fields_set contains the field
         if self.new_user is None and "new_user" in self.model_fields_set:
-            _dict["new_user"] = None
+            _dict['new_user'] = None
 
         # set to None if subscribe_channel (nullable) is None
         # and model_fields_set contains the field
-        if (
-            self.subscribe_channel is None
-            and "subscribe_channel" in self.model_fields_set
-        ):
-            _dict["subscribe_channel"] = None
+        if self.subscribe_channel is None and "subscribe_channel" in self.model_fields_set:
+            _dict['subscribe_channel'] = None
 
         # set to None if utm_mark_id (nullable) is None
         # and model_fields_set contains the field
         if self.utm_mark_id is None and "utm_mark_id" in self.model_fields_set:
-            _dict["utm_mark_id"] = None
+            _dict['utm_mark_id'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of UserBotBase from a dict"""
         if obj is None:
             return None
@@ -140,16 +126,16 @@ class UserBotBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "user_id": obj.get("user_id"),
-                "bot_token": obj.get("bot_token"),
-                "last_mess": obj.get("last_mess"),
-                "items": obj.get("items"),
-                "new_user": obj.get("new_user"),
-                "subscribe_channel": obj.get("subscribe_channel"),
-                "utm_mark_id": obj.get("utm_mark_id"),
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "user_id": obj.get("user_id"),
+            "bot_token": obj.get("bot_token"),
+            "last_mess": obj.get("last_mess"),
+            "items": obj.get("items"),
+            "new_user": obj.get("new_user"),
+            "subscribe_channel": obj.get("subscribe_channel"),
+            "utm_mark_id": obj.get("utm_mark_id")
+        })
         return _obj
+
+

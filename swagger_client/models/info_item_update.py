@@ -13,25 +13,19 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class InfoItemUpdate(BaseModel):
     """
     InfoItemUpdate
-    """  # noqa: E501
-
+    """ # noqa: E501
     code: StrictStr
     photo_tg_id: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["code", "photo_tg_id"]
@@ -41,6 +35,7 @@ class InfoItemUpdate(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -52,7 +47,7 @@ class InfoItemUpdate(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of InfoItemUpdate from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -66,20 +61,23 @@ class InfoItemUpdate(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if photo_tg_id (nullable) is None
         # and model_fields_set contains the field
         if self.photo_tg_id is None and "photo_tg_id" in self.model_fields_set:
-            _dict["photo_tg_id"] = None
+            _dict['photo_tg_id'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of InfoItemUpdate from a dict"""
         if obj is None:
             return None
@@ -87,7 +85,10 @@ class InfoItemUpdate(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {"code": obj.get("code"), "photo_tg_id": obj.get("photo_tg_id")}
-        )
+        _obj = cls.model_validate({
+            "code": obj.get("code"),
+            "photo_tg_id": obj.get("photo_tg_id")
+        })
         return _obj
+
+

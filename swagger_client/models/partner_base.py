@@ -13,25 +13,19 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class PartnerBase(BaseModel):
     """
     PartnerBase
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictInt] = None
     user_bot_id: Optional[StrictInt] = None
     reserve_balance: Optional[StrictStr] = None
@@ -39,21 +33,14 @@ class PartnerBase(BaseModel):
     telephone: Optional[StrictStr] = None
     full_name: Optional[StrictStr] = None
     bank_name: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = [
-        "id",
-        "user_bot_id",
-        "reserve_balance",
-        "card_number",
-        "telephone",
-        "full_name",
-        "bank_name",
-    ]
+    __properties: ClassVar[List[str]] = ["id", "user_bot_id", "reserve_balance", "card_number", "telephone", "full_name", "bank_name"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -65,7 +52,7 @@ class PartnerBase(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of PartnerBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -79,50 +66,53 @@ class PartnerBase(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if user_bot_id (nullable) is None
         # and model_fields_set contains the field
         if self.user_bot_id is None and "user_bot_id" in self.model_fields_set:
-            _dict["user_bot_id"] = None
+            _dict['user_bot_id'] = None
 
         # set to None if reserve_balance (nullable) is None
         # and model_fields_set contains the field
         if self.reserve_balance is None and "reserve_balance" in self.model_fields_set:
-            _dict["reserve_balance"] = None
+            _dict['reserve_balance'] = None
 
         # set to None if card_number (nullable) is None
         # and model_fields_set contains the field
         if self.card_number is None and "card_number" in self.model_fields_set:
-            _dict["card_number"] = None
+            _dict['card_number'] = None
 
         # set to None if telephone (nullable) is None
         # and model_fields_set contains the field
         if self.telephone is None and "telephone" in self.model_fields_set:
-            _dict["telephone"] = None
+            _dict['telephone'] = None
 
         # set to None if full_name (nullable) is None
         # and model_fields_set contains the field
         if self.full_name is None and "full_name" in self.model_fields_set:
-            _dict["full_name"] = None
+            _dict['full_name'] = None
 
         # set to None if bank_name (nullable) is None
         # and model_fields_set contains the field
         if self.bank_name is None and "bank_name" in self.model_fields_set:
-            _dict["bank_name"] = None
+            _dict['bank_name'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of PartnerBase from a dict"""
         if obj is None:
             return None
@@ -130,15 +120,15 @@ class PartnerBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "user_bot_id": obj.get("user_bot_id"),
-                "reserve_balance": obj.get("reserve_balance"),
-                "card_number": obj.get("card_number"),
-                "telephone": obj.get("telephone"),
-                "full_name": obj.get("full_name"),
-                "bank_name": obj.get("bank_name"),
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "user_bot_id": obj.get("user_bot_id"),
+            "reserve_balance": obj.get("reserve_balance"),
+            "card_number": obj.get("card_number"),
+            "telephone": obj.get("telephone"),
+            "full_name": obj.get("full_name"),
+            "bank_name": obj.get("bank_name")
+        })
         return _obj
+
+

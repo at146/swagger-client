@@ -13,45 +13,33 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class QuantityBase(BaseModel):
     """
     QuantityBase
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictStr] = None
     item_id: Optional[StrictStr] = None
     stock_id: Optional[StrictStr] = None
     size_id: Optional[StrictInt] = None
     count: Optional[StrictInt] = None
     centimeter_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = [
-        "id",
-        "item_id",
-        "stock_id",
-        "size_id",
-        "count",
-        "centimeter_id",
-    ]
+    __properties: ClassVar[List[str]] = ["id", "item_id", "stock_id", "size_id", "count", "centimeter_id"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -63,7 +51,7 @@ class QuantityBase(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of QuantityBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -77,45 +65,48 @@ class QuantityBase(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if item_id (nullable) is None
         # and model_fields_set contains the field
         if self.item_id is None and "item_id" in self.model_fields_set:
-            _dict["item_id"] = None
+            _dict['item_id'] = None
 
         # set to None if stock_id (nullable) is None
         # and model_fields_set contains the field
         if self.stock_id is None and "stock_id" in self.model_fields_set:
-            _dict["stock_id"] = None
+            _dict['stock_id'] = None
 
         # set to None if size_id (nullable) is None
         # and model_fields_set contains the field
         if self.size_id is None and "size_id" in self.model_fields_set:
-            _dict["size_id"] = None
+            _dict['size_id'] = None
 
         # set to None if count (nullable) is None
         # and model_fields_set contains the field
         if self.count is None and "count" in self.model_fields_set:
-            _dict["count"] = None
+            _dict['count'] = None
 
         # set to None if centimeter_id (nullable) is None
         # and model_fields_set contains the field
         if self.centimeter_id is None and "centimeter_id" in self.model_fields_set:
-            _dict["centimeter_id"] = None
+            _dict['centimeter_id'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of QuantityBase from a dict"""
         if obj is None:
             return None
@@ -123,14 +114,14 @@ class QuantityBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "item_id": obj.get("item_id"),
-                "stock_id": obj.get("stock_id"),
-                "size_id": obj.get("size_id"),
-                "count": obj.get("count"),
-                "centimeter_id": obj.get("centimeter_id"),
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "item_id": obj.get("item_id"),
+            "stock_id": obj.get("stock_id"),
+            "size_id": obj.get("size_id"),
+            "count": obj.get("count"),
+            "centimeter_id": obj.get("centimeter_id")
+        })
         return _obj
+
+

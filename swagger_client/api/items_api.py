@@ -11,25 +11,19 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
+import warnings
+from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
-
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
-
-try:
-    from typing import Annotated
-except ImportError:
-    from typing_extensions import Annotated
-
-from typing import Any, List, Optional
+from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
-
-from swagger_client.api_client import ApiClient
-from swagger_client.api_response import ApiResponse
+from typing import Optional
 from swagger_client.models.brand_count import BrandCount
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.models.model_count import ModelCount
+
+from swagger_client.api_client import ApiClient, RequestSerialized
+from swagger_client.api_response import ApiResponse
 from swagger_client.rest import RESTResponseType
 
 
@@ -45,6 +39,7 @@ class ItemsApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+
     @validate_call
     async def get_all_api_v1_items_get(
         self,
@@ -54,8 +49,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -90,7 +86,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_api_v1_items_get_serialize(
             limit=limit,
@@ -98,21 +94,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[ItemBaseDb]",
-            "422": "HTTPValidationError",
+            '200': "List[ItemBaseDb]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_all_api_v1_items_get_with_http_info(
@@ -123,8 +121,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -159,7 +158,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_api_v1_items_get_serialize(
             limit=limit,
@@ -167,21 +166,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[ItemBaseDb]",
-            "422": "HTTPValidationError",
+            '200': "List[ItemBaseDb]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_all_api_v1_items_get_without_preload_content(
@@ -192,8 +193,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -228,7 +230,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_api_v1_items_get_serialize(
             limit=limit,
@@ -236,17 +238,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[ItemBaseDb]",
-            "422": "HTTPValidationError",
+            '200': "List[ItemBaseDb]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_all_api_v1_items_get_serialize(
         self,
@@ -256,10 +260,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -271,26 +277,34 @@ class ItemsApi:
         # process the path parameters
         # process the query parameters
         if limit is not None:
-            _query_params.append(("limit", limit))
-
+            
+            _query_params.append(('limit', limit))
+            
         if offset is not None:
-            _query_params.append(("offset", offset))
-
+            
+            _query_params.append(('offset', offset))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items",
+            method='GET',
+            resource_path='/api/v1/items',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -300,8 +314,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_brands_and_counts_api_v1_items_category_brands_counts_get(
@@ -311,8 +328,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -344,28 +362,30 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_brands_and_counts_api_v1_items_category_brands_counts_get_serialize(
             category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[BrandCount]",
-            "422": "HTTPValidationError",
+            '200': "List[BrandCount]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_brands_and_counts_api_v1_items_category_brands_counts_get_with_http_info(
@@ -375,8 +395,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -408,28 +429,30 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_brands_and_counts_api_v1_items_category_brands_counts_get_serialize(
             category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[BrandCount]",
-            "422": "HTTPValidationError",
+            '200': "List[BrandCount]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_brands_and_counts_api_v1_items_category_brands_counts_get_without_preload_content(
@@ -439,8 +462,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -472,24 +496,26 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_brands_and_counts_api_v1_items_category_brands_counts_get_serialize(
             category=category,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[BrandCount]",
-            "422": "HTTPValidationError",
+            '200': "List[BrandCount]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_brands_and_counts_api_v1_items_category_brands_counts_get_serialize(
         self,
@@ -498,10 +524,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -512,23 +540,29 @@ class ItemsApi:
 
         # process the path parameters
         if category is not None:
-            _path_params["category"] = category
+            _path_params['category'] = category
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{category}/brands-counts",
+            method='GET',
+            resource_path='/api/v1/items/{category}/brands-counts',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -538,8 +572,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_count_brand_api_v1_items_category_brand_count_get(
@@ -550,8 +587,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -585,7 +623,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_brand_api_v1_items_category_brand_count_get_serialize(
             category=category,
@@ -593,21 +631,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_count_brand_api_v1_items_category_brand_count_get_with_http_info(
@@ -618,8 +658,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -653,7 +694,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_brand_api_v1_items_category_brand_count_get_serialize(
             category=category,
@@ -661,21 +702,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_count_brand_api_v1_items_category_brand_count_get_without_preload_content(
@@ -686,8 +729,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -721,7 +765,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_brand_api_v1_items_category_brand_count_get_serialize(
             category=category,
@@ -729,17 +773,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_count_brand_api_v1_items_category_brand_count_get_serialize(
         self,
@@ -749,10 +795,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -763,25 +811,31 @@ class ItemsApi:
 
         # process the path parameters
         if category is not None:
-            _path_params["category"] = category
+            _path_params['category'] = category
         if brand is not None:
-            _path_params["brand"] = brand
+            _path_params['brand'] = brand
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{category}/{brand}/count",
+            method='GET',
+            resource_path='/api/v1/items/{category}/{brand}/count',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -791,8 +845,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_item_api_v1_items_code_token_one_get(
@@ -805,8 +862,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -844,7 +902,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_api_v1_items_code_token_one_get_serialize(
             code=code,
@@ -854,21 +912,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_item_api_v1_items_code_token_one_get_with_http_info(
@@ -881,8 +941,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -920,7 +981,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_api_v1_items_code_token_one_get_serialize(
             code=code,
@@ -930,21 +991,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_item_api_v1_items_code_token_one_get_without_preload_content(
@@ -957,8 +1020,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -996,7 +1060,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_api_v1_items_code_token_one_get_serialize(
             code=code,
@@ -1006,17 +1070,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_item_api_v1_items_code_token_one_get_serialize(
         self,
@@ -1028,10 +1094,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1042,31 +1110,39 @@ class ItemsApi:
 
         # process the path parameters
         if code is not None:
-            _path_params["code"] = code
+            _path_params['code'] = code
         if token is not None:
-            _path_params["token"] = token
+            _path_params['token'] = token
         # process the query parameters
         if active is not None:
-            _query_params.append(("active", active))
-
+            
+            _query_params.append(('active', active))
+            
         if size_id is not None:
-            _query_params.append(("size_id", size_id))
-
+            
+            _query_params.append(('size_id', size_id))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{code}/{token}/one",
+            method='GET',
+            resource_path='/api/v1/items/{code}/{token}/one',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1076,8 +1152,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_item_new_api_v1_items_code_token_one_new_get(
@@ -1091,8 +1170,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1132,7 +1212,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_new_api_v1_items_code_token_one_new_get_serialize(
             code=code,
@@ -1143,21 +1223,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_item_new_api_v1_items_code_token_one_new_get_with_http_info(
@@ -1171,8 +1253,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1212,7 +1295,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_new_api_v1_items_code_token_one_new_get_serialize(
             code=code,
@@ -1223,21 +1306,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_item_new_api_v1_items_code_token_one_new_get_without_preload_content(
@@ -1251,8 +1336,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1292,7 +1378,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_new_api_v1_items_code_token_one_new_get_serialize(
             code=code,
@@ -1303,17 +1389,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_item_new_api_v1_items_code_token_one_new_get_serialize(
         self,
@@ -1326,10 +1414,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1340,34 +1430,43 @@ class ItemsApi:
 
         # process the path parameters
         if code is not None:
-            _path_params["code"] = code
+            _path_params['code'] = code
         if token is not None:
-            _path_params["token"] = token
+            _path_params['token'] = token
         # process the query parameters
         if dimension is not None:
-            _query_params.append(("dimension", dimension))
-
+            
+            _query_params.append(('dimension', dimension))
+            
         if category is not None:
-            _query_params.append(("category", category))
-
+            
+            _query_params.append(('category', category))
+            
         if centimeter is not None:
-            _query_params.append(("centimeter", centimeter))
-
+            
+            _query_params.append(('centimeter', centimeter))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{code}/{token}/one_new",
+            method='GET',
+            resource_path='/api/v1/items/{code}/{token}/one_new',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1377,8 +1476,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_item_selectinload_size_api_v1_items_code_token_load_size_get(
@@ -1391,8 +1493,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1430,7 +1533,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_selectinload_size_api_v1_items_code_token_load_size_get_serialize(
             code=code,
@@ -1440,21 +1543,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_item_selectinload_size_api_v1_items_code_token_load_size_get_with_http_info(
@@ -1467,8 +1572,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1506,7 +1612,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_selectinload_size_api_v1_items_code_token_load_size_get_serialize(
             code=code,
@@ -1516,21 +1622,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_item_selectinload_size_api_v1_items_code_token_load_size_get_without_preload_content(
@@ -1543,8 +1651,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1582,7 +1691,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_item_selectinload_size_api_v1_items_code_token_load_size_get_serialize(
             code=code,
@@ -1592,17 +1701,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "ItemBaseDb",
-            "422": "HTTPValidationError",
+            '200': "ItemBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_item_selectinload_size_api_v1_items_code_token_load_size_get_serialize(
         self,
@@ -1614,10 +1725,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1628,31 +1741,39 @@ class ItemsApi:
 
         # process the path parameters
         if code is not None:
-            _path_params["code"] = code
+            _path_params['code'] = code
         if token is not None:
-            _path_params["token"] = token
+            _path_params['token'] = token
         # process the query parameters
         if like is not None:
-            _query_params.append(("like", like))
-
+            
+            _query_params.append(('like', like))
+            
         if sneaker is not None:
-            _query_params.append(("sneaker", sneaker))
-
+            
+            _query_params.append(('sneaker', sneaker))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{code}/{token}/load-size",
+            method='GET',
+            resource_path='/api/v1/items/{code}/{token}/load-size',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1662,8 +1783,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_items_action_new_codes_api_v1_items_token_all_new_codes_get(
@@ -1679,8 +1803,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1724,7 +1849,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_items_action_new_codes_api_v1_items_token_all_new_codes_get_serialize(
             token=token,
@@ -1737,21 +1862,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[str]",
-            "422": "HTTPValidationError",
+            '200': "List[str]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_items_action_new_codes_api_v1_items_token_all_new_codes_get_with_http_info(
@@ -1767,8 +1894,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1812,7 +1940,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_items_action_new_codes_api_v1_items_token_all_new_codes_get_serialize(
             token=token,
@@ -1825,21 +1953,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[str]",
-            "422": "HTTPValidationError",
+            '200': "List[str]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_items_action_new_codes_api_v1_items_token_all_new_codes_get_without_preload_content(
@@ -1855,8 +1985,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1900,7 +2031,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_items_action_new_codes_api_v1_items_token_all_new_codes_get_serialize(
             token=token,
@@ -1913,17 +2044,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[str]",
-            "422": "HTTPValidationError",
+            '200': "List[str]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_items_action_new_codes_api_v1_items_token_all_new_codes_get_serialize(
         self,
@@ -1938,10 +2071,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1952,41 +2087,53 @@ class ItemsApi:
 
         # process the path parameters
         if token is not None:
-            _path_params["token"] = token
+            _path_params['token'] = token
         # process the query parameters
         if action is not None:
-            _query_params.append(("action", action))
-
+            
+            _query_params.append(('action', action))
+            
         if category is not None:
-            _query_params.append(("category", category))
-
+            
+            _query_params.append(('category', category))
+            
         if size is not None:
-            _query_params.append(("size", size))
-
+            
+            _query_params.append(('size', size))
+            
         if color is not None:
-            _query_params.append(("color", color))
-
+            
+            _query_params.append(('color', color))
+            
         if season is not None:
-            _query_params.append(("season", season))
-
+            
+            _query_params.append(('season', season))
+            
         if sneaker is not None:
-            _query_params.append(("sneaker", sneaker))
-
+            
+            _query_params.append(('sneaker', sneaker))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{token}/all_new_codes",
+            method='GET',
+            resource_path='/api/v1/items/{token}/all_new_codes',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1996,8 +2143,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_items_codes_api_v1_items_category_brand_codes_get(
@@ -2009,8 +2159,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2046,7 +2197,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_items_codes_api_v1_items_category_brand_codes_get_serialize(
             category=category,
@@ -2055,21 +2206,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[object]",
-            "422": "HTTPValidationError",
+            '200': "List[object]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_items_codes_api_v1_items_category_brand_codes_get_with_http_info(
@@ -2081,8 +2234,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2118,7 +2272,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_items_codes_api_v1_items_category_brand_codes_get_serialize(
             category=category,
@@ -2127,21 +2281,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[object]",
-            "422": "HTTPValidationError",
+            '200': "List[object]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_items_codes_api_v1_items_category_brand_codes_get_without_preload_content(
@@ -2153,8 +2309,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2190,7 +2347,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_items_codes_api_v1_items_category_brand_codes_get_serialize(
             category=category,
@@ -2199,17 +2356,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[object]",
-            "422": "HTTPValidationError",
+            '200': "List[object]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_items_codes_api_v1_items_category_brand_codes_get_serialize(
         self,
@@ -2220,10 +2379,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -2234,28 +2395,35 @@ class ItemsApi:
 
         # process the path parameters
         if category is not None:
-            _path_params["category"] = category
+            _path_params['category'] = category
         if brand is not None:
-            _path_params["brand"] = brand
+            _path_params['brand'] = brand
         # process the query parameters
         if model is not None:
-            _query_params.append(("model", model))
-
+            
+            _query_params.append(('model', model))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{category}/{brand}/codes",
+            method='GET',
+            resource_path='/api/v1/items/{category}/{brand}/codes',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2265,8 +2433,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_models_and_counts_api_v1_items_category_brand_models_counts_get(
@@ -2277,8 +2448,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2312,7 +2484,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
             category=category,
@@ -2320,21 +2492,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[ModelCount]",
-            "422": "HTTPValidationError",
+            '200': "List[ModelCount]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_models_and_counts_api_v1_items_category_brand_models_counts_get_with_http_info(
@@ -2345,8 +2519,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2380,7 +2555,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
             category=category,
@@ -2388,21 +2563,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[ModelCount]",
-            "422": "HTTPValidationError",
+            '200': "List[ModelCount]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_models_and_counts_api_v1_items_category_brand_models_counts_get_without_preload_content(
@@ -2413,8 +2590,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2448,7 +2626,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
             category=category,
@@ -2456,17 +2634,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[ModelCount]",
-            "422": "HTTPValidationError",
+            '200': "List[ModelCount]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
         self,
@@ -2476,10 +2656,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -2490,25 +2672,31 @@ class ItemsApi:
 
         # process the path parameters
         if category is not None:
-            _path_params["category"] = category
+            _path_params['category'] = category
         if brand is not None:
-            _path_params["brand"] = brand
+            _path_params['brand'] = brand
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{category}/{brand}/models-counts",
+            method='GET',
+            resource_path='/api/v1/items/{category}/{brand}/models-counts',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2518,8 +2706,11 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_models_api_v1_items_category_brand_models_get(
@@ -2530,8 +2721,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2565,7 +2757,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_models_api_v1_items_category_brand_models_get_serialize(
             category=category,
@@ -2573,21 +2765,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_models_api_v1_items_category_brand_models_get_with_http_info(
@@ -2598,8 +2792,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2633,7 +2828,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_models_api_v1_items_category_brand_models_get_serialize(
             category=category,
@@ -2641,21 +2836,23 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_models_api_v1_items_category_brand_models_get_without_preload_content(
@@ -2666,8 +2863,9 @@ class ItemsApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -2701,7 +2899,7 @@ class ItemsApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_models_api_v1_items_category_brand_models_get_serialize(
             category=category,
@@ -2709,17 +2907,19 @@ class ItemsApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_models_api_v1_items_category_brand_models_get_serialize(
         self,
@@ -2729,10 +2929,12 @@ class ItemsApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -2743,25 +2945,31 @@ class ItemsApi:
 
         # process the path parameters
         if category is not None:
-            _path_params["category"] = category
+            _path_params['category'] = category
         if brand is not None:
-            _path_params["brand"] = brand
+            _path_params['brand'] = brand
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/items/{category}/{brand}/models",
+            method='GET',
+            resource_path='/api/v1/items/{category}/{brand}/models',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2771,5 +2979,7 @@ class ItemsApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+

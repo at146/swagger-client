@@ -28,3 +28,5 @@ yookassa_payment_insert_dict = yookassa_payment_insert_instance.to_dict()
 yookassa_payment_insert_form_dict = yookassa_payment_insert.from_dict(yookassa_payment_insert_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

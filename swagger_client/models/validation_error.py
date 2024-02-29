@@ -13,27 +13,20 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List
+import json
 
 from pydantic import BaseModel, StrictStr
-
+from typing import Any, ClassVar, Dict, List
 from swagger_client.models.location_inner import LocationInner
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Optional, Set
+from typing_extensions import Self
 
 class ValidationError(BaseModel):
     """
     ValidationError
-    """  # noqa: E501
-
+    """ # noqa: E501
     loc: List[LocationInner]
     msg: StrictStr
     type: StrictStr
@@ -45,6 +38,7 @@ class ValidationError(BaseModel):
         "protected_namespaces": (),
     }
 
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -55,7 +49,7 @@ class ValidationError(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of ValidationError from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -69,9 +63,12 @@ class ValidationError(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # override the default output from pydantic by calling `to_dict()` of each item in loc (list)
@@ -80,11 +77,11 @@ class ValidationError(BaseModel):
             for _item in self.loc:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict["loc"] = _items
+            _dict['loc'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of ValidationError from a dict"""
         if obj is None:
             return None
@@ -92,13 +89,11 @@ class ValidationError(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "loc": [LocationInner.from_dict(_item) for _item in obj.get("loc")]
-                if obj.get("loc") is not None
-                else None,
-                "msg": obj.get("msg"),
-                "type": obj.get("type"),
-            }
-        )
+        _obj = cls.model_validate({
+            "loc": [LocationInner.from_dict(_item) for _item in obj["loc"]] if obj.get("loc") is not None else None,
+            "msg": obj.get("msg"),
+            "type": obj.get("type")
+        })
         return _obj
+
+

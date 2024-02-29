@@ -13,25 +13,19 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List
+from typing import Optional, Set
+from typing_extensions import Self
 
 class UpdateUserBotMess(BaseModel):
     """
     UpdateUserBotMess
-    """  # noqa: E501
-
+    """ # noqa: E501
     user_id: StrictInt
     token: StrictStr
     message_id: StrictInt
@@ -43,6 +37,7 @@ class UpdateUserBotMess(BaseModel):
         "protected_namespaces": (),
     }
 
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -53,7 +48,7 @@ class UpdateUserBotMess(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of UpdateUserBotMess from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -67,15 +62,18 @@ class UpdateUserBotMess(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of UpdateUserBotMess from a dict"""
         if obj is None:
             return None
@@ -83,11 +81,11 @@ class UpdateUserBotMess(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "user_id": obj.get("user_id"),
-                "token": obj.get("token"),
-                "message_id": obj.get("message_id"),
-            }
-        )
+        _obj = cls.model_validate({
+            "user_id": obj.get("user_id"),
+            "token": obj.get("token"),
+            "message_id": obj.get("message_id")
+        })
         return _obj
+
+

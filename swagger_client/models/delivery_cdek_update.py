@@ -13,41 +13,31 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List, Optional
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class DeliveryCdekUpdate(BaseModel):
     """
     DeliveryCdekUpdate
-    """  # noqa: E501
-
+    """ # noqa: E501
     delivery_cdek_id: StrictInt
     status_delivery: Optional[StrictStr] = None
     photo_tg_file_id: Optional[StrictStr] = None
     invoice_tg_file_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = [
-        "delivery_cdek_id",
-        "status_delivery",
-        "photo_tg_file_id",
-        "invoice_tg_file_id",
-    ]
+    __properties: ClassVar[List[str]] = ["delivery_cdek_id", "status_delivery", "photo_tg_file_id", "invoice_tg_file_id"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -59,7 +49,7 @@ class DeliveryCdekUpdate(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of DeliveryCdekUpdate from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -73,36 +63,33 @@ class DeliveryCdekUpdate(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if status_delivery (nullable) is None
         # and model_fields_set contains the field
         if self.status_delivery is None and "status_delivery" in self.model_fields_set:
-            _dict["status_delivery"] = None
+            _dict['status_delivery'] = None
 
         # set to None if photo_tg_file_id (nullable) is None
         # and model_fields_set contains the field
-        if (
-            self.photo_tg_file_id is None
-            and "photo_tg_file_id" in self.model_fields_set
-        ):
-            _dict["photo_tg_file_id"] = None
+        if self.photo_tg_file_id is None and "photo_tg_file_id" in self.model_fields_set:
+            _dict['photo_tg_file_id'] = None
 
         # set to None if invoice_tg_file_id (nullable) is None
         # and model_fields_set contains the field
-        if (
-            self.invoice_tg_file_id is None
-            and "invoice_tg_file_id" in self.model_fields_set
-        ):
-            _dict["invoice_tg_file_id"] = None
+        if self.invoice_tg_file_id is None and "invoice_tg_file_id" in self.model_fields_set:
+            _dict['invoice_tg_file_id'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of DeliveryCdekUpdate from a dict"""
         if obj is None:
             return None
@@ -110,12 +97,12 @@ class DeliveryCdekUpdate(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "delivery_cdek_id": obj.get("delivery_cdek_id"),
-                "status_delivery": obj.get("status_delivery"),
-                "photo_tg_file_id": obj.get("photo_tg_file_id"),
-                "invoice_tg_file_id": obj.get("invoice_tg_file_id"),
-            }
-        )
+        _obj = cls.model_validate({
+            "delivery_cdek_id": obj.get("delivery_cdek_id"),
+            "status_delivery": obj.get("status_delivery"),
+            "photo_tg_file_id": obj.get("photo_tg_file_id"),
+            "invoice_tg_file_id": obj.get("invoice_tg_file_id")
+        })
         return _obj
+
+

@@ -11,24 +11,18 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
+import warnings
+from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
-
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, validate_call
-
-try:
-    from typing import Annotated
-except ImportError:
-    from typing_extensions import Annotated
-
-from typing import Any, List, Optional
+from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
-
-from swagger_client.api_client import ApiClient
-from swagger_client.api_response import ApiResponse
+from typing import Optional
 from swagger_client.models.purchase_base_db import PurchaseBaseDb
 from swagger_client.models.update_purchase import UpdatePurchase
+
+from swagger_client.api_client import ApiClient, RequestSerialized
+from swagger_client.api_response import ApiResponse
 from swagger_client.rest import RESTResponseType
 
 
@@ -44,6 +38,7 @@ class PurchasesApi:
             api_client = ApiClient.get_default()
         self.api_client = api_client
 
+
     @validate_call
     async def delete_purchase_api_v1_purchases_purchase_id_delete(
         self,
@@ -52,8 +47,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -85,28 +81,30 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._delete_purchase_api_v1_purchases_purchase_id_delete_serialize(
             purchase_id=purchase_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def delete_purchase_api_v1_purchases_purchase_id_delete_with_http_info(
@@ -116,8 +114,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -149,28 +148,30 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._delete_purchase_api_v1_purchases_purchase_id_delete_serialize(
             purchase_id=purchase_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def delete_purchase_api_v1_purchases_purchase_id_delete_without_preload_content(
@@ -180,8 +181,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -213,24 +215,26 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._delete_purchase_api_v1_purchases_purchase_id_delete_serialize(
             purchase_id=purchase_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _delete_purchase_api_v1_purchases_purchase_id_delete_serialize(
         self,
@@ -239,10 +243,12 @@ class PurchasesApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -253,23 +259,29 @@ class PurchasesApi:
 
         # process the path parameters
         if purchase_id is not None:
-            _path_params["purchase_id"] = purchase_id
+            _path_params['purchase_id'] = purchase_id
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="DELETE",
-            resource_path="/api/v1/purchases/{purchase_id}",
+            method='DELETE',
+            resource_path='/api/v1/purchases/{purchase_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -279,8 +291,11 @@ class PurchasesApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_all_api_v1_purchases_get(
@@ -290,8 +305,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -323,28 +339,30 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_api_v1_purchases_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[PurchaseBaseDb]",
-            "422": "HTTPValidationError",
+            '200': "List[PurchaseBaseDb]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_all_api_v1_purchases_get_with_http_info(
@@ -354,8 +372,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -387,28 +406,30 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_api_v1_purchases_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[PurchaseBaseDb]",
-            "422": "HTTPValidationError",
+            '200': "List[PurchaseBaseDb]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_all_api_v1_purchases_get_without_preload_content(
@@ -418,8 +439,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -451,24 +473,26 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_all_api_v1_purchases_get_serialize(
             token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "List[PurchaseBaseDb]",
-            "422": "HTTPValidationError",
+            '200': "List[PurchaseBaseDb]",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_all_api_v1_purchases_get_serialize(
         self,
@@ -477,10 +501,12 @@ class PurchasesApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -492,23 +518,30 @@ class PurchasesApi:
         # process the path parameters
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/purchases",
+            method='GET',
+            resource_path='/api/v1/purchases',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -518,8 +551,11 @@ class PurchasesApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_count_api_v1_purchases_token_status_count_get(
@@ -530,8 +566,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -565,7 +602,7 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_api_v1_purchases_token_status_count_get_serialize(
             token=token,
@@ -573,21 +610,23 @@ class PurchasesApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_count_api_v1_purchases_token_status_count_get_with_http_info(
@@ -598,8 +637,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -633,7 +673,7 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_api_v1_purchases_token_status_count_get_serialize(
             token=token,
@@ -641,21 +681,23 @@ class PurchasesApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_count_api_v1_purchases_token_status_count_get_without_preload_content(
@@ -666,8 +708,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -701,7 +744,7 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_count_api_v1_purchases_token_status_count_get_serialize(
             token=token,
@@ -709,17 +752,19 @@ class PurchasesApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "int",
-            "422": "HTTPValidationError",
+            '200': "int",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_count_api_v1_purchases_token_status_count_get_serialize(
         self,
@@ -729,10 +774,12 @@ class PurchasesApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -743,25 +790,31 @@ class PurchasesApi:
 
         # process the path parameters
         if token is not None:
-            _path_params["token"] = token
+            _path_params['token'] = token
         if status is not None:
-            _path_params["status"] = status
+            _path_params['status'] = status
         # process the query parameters
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/purchases/{token}/{status}/count",
+            method='GET',
+            resource_path='/api/v1/purchases/{token}/{status}/count',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -771,8 +824,11 @@ class PurchasesApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def get_purchase_by_id_api_v1_purchases_purchase_id_get(
@@ -787,8 +843,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -830,7 +887,7 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_purchase_by_id_api_v1_purchases_purchase_id_get_serialize(
             purchase_id=purchase_id,
@@ -842,21 +899,23 @@ class PurchasesApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "PurchaseBaseDb",
-            "422": "HTTPValidationError",
+            '200': "PurchaseBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def get_purchase_by_id_api_v1_purchases_purchase_id_get_with_http_info(
@@ -871,8 +930,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -914,7 +974,7 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_purchase_by_id_api_v1_purchases_purchase_id_get_serialize(
             purchase_id=purchase_id,
@@ -926,21 +986,23 @@ class PurchasesApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "PurchaseBaseDb",
-            "422": "HTTPValidationError",
+            '200': "PurchaseBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def get_purchase_by_id_api_v1_purchases_purchase_id_get_without_preload_content(
@@ -955,8 +1017,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -998,7 +1061,7 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._get_purchase_by_id_api_v1_purchases_purchase_id_get_serialize(
             purchase_id=purchase_id,
@@ -1010,17 +1073,19 @@ class PurchasesApi:
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "PurchaseBaseDb",
-            "422": "HTTPValidationError",
+            '200': "PurchaseBaseDb",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _get_purchase_by_id_api_v1_purchases_purchase_id_get_serialize(
         self,
@@ -1034,10 +1099,12 @@ class PurchasesApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1048,38 +1115,49 @@ class PurchasesApi:
 
         # process the path parameters
         if purchase_id is not None:
-            _path_params["purchase_id"] = purchase_id
+            _path_params['purchase_id'] = purchase_id
         # process the query parameters
         if token is not None:
-            _query_params.append(("token", token))
-
+            
+            _query_params.append(('token', token))
+            
         if delivery_cdek is not None:
-            _query_params.append(("delivery_cdek", delivery_cdek))
-
+            
+            _query_params.append(('delivery_cdek', delivery_cdek))
+            
         if waybill is not None:
-            _query_params.append(("waybill", waybill))
-
+            
+            _query_params.append(('waybill', waybill))
+            
         if stock is not None:
-            _query_params.append(("stock", stock))
-
+            
+            _query_params.append(('stock', stock))
+            
         if user_stock is not None:
-            _query_params.append(("user_stock", user_stock))
-
+            
+            _query_params.append(('user_stock', user_stock))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
+
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="GET",
-            resource_path="/api/v1/purchases/{purchase_id}",
+            method='GET',
+            resource_path='/api/v1/purchases/{purchase_id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1089,8 +1167,11 @@ class PurchasesApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+
+
 
     @validate_call
     async def update_only_api_v1_purchases_put(
@@ -1100,8 +1181,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1133,28 +1215,30 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._update_only_api_v1_purchases_put_serialize(
             update_purchase=update_purchase,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         ).data
+
 
     @validate_call
     async def update_only_api_v1_purchases_put_with_http_info(
@@ -1164,8 +1248,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1197,28 +1282,30 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._update_only_api_v1_purchases_put_serialize(
             update_purchase=update_purchase,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
         )
+
 
     @validate_call
     async def update_only_api_v1_purchases_put_without_preload_content(
@@ -1228,8 +1315,9 @@ class PurchasesApi:
             None,
             Annotated[StrictFloat, Field(gt=0)],
             Tuple[
-                Annotated[StrictFloat, Field(gt=0)], Annotated[StrictFloat, Field(gt=0)]
-            ],
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
         ] = None,
         _request_auth: Optional[Dict[StrictStr, Any]] = None,
         _content_type: Optional[StrictStr] = None,
@@ -1261,24 +1349,26 @@ class PurchasesApi:
                             in the spec for a single request.
         :type _host_index: int, optional
         :return: Returns the result object.
-        """  # noqa: E501
+        """ # noqa: E501
 
         _param = self._update_only_api_v1_purchases_put_serialize(
             update_purchase=update_purchase,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
-            _host_index=_host_index,
+            _host_index=_host_index
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            "200": "object",
-            "422": "HTTPValidationError",
+            '200': "object",
+            '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
-            *_param, _request_timeout=_request_timeout
+            *_param,
+            _request_timeout=_request_timeout
         )
         return response_data.response
+
 
     def _update_only_api_v1_purchases_put_serialize(
         self,
@@ -1287,10 +1377,12 @@ class PurchasesApi:
         _content_type,
         _headers,
         _host_index,
-    ) -> Tuple:
+    ) -> RequestSerialized:
+
         _host = None
 
-        _collection_formats: Dict[str, str] = {}
+        _collection_formats: Dict[str, str] = {
+        }
 
         _path_params: Dict[str, str] = {}
         _query_params: List[Tuple[str, str]] = []
@@ -1307,27 +1399,36 @@ class PurchasesApi:
         if update_purchase is not None:
             _body_params = update_purchase
 
+
         # set the HTTP header `Accept`
-        _header_params["Accept"] = self.api_client.select_header_accept(
-            ["application/json"]
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json'
+            ]
         )
 
         # set the HTTP header `Content-Type`
         if _content_type:
-            _header_params["Content-Type"] = _content_type
+            _header_params['Content-Type'] = _content_type
         else:
-            _default_content_type = self.api_client.select_header_content_type(
-                ["application/json"]
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
             )
             if _default_content_type is not None:
-                _header_params["Content-Type"] = _default_content_type
+                _header_params['Content-Type'] = _default_content_type
 
         # authentication setting
-        _auth_settings: List[str] = ["HTTPBasic"]
+        _auth_settings: List[str] = [
+            'HTTPBasic'
+        ]
 
         return self.api_client.param_serialize(
-            method="PUT",
-            resource_path="/api/v1/purchases",
+            method='PUT',
+            resource_path='/api/v1/purchases',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1337,5 +1438,7 @@ class PurchasesApi:
             auth_settings=_auth_settings,
             collection_formats=_collection_formats,
             _host=_host,
-            _request_auth=_request_auth,
+            _request_auth=_request_auth
         )
+
+

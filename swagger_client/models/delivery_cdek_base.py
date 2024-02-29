@@ -13,26 +13,20 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
+import json
+
 from datetime import datetime
-from typing import Any, ClassVar, Dict, List, Optional
-
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List, Optional
+from typing import Optional, Set
+from typing_extensions import Self
 
 class DeliveryCdekBase(BaseModel):
     """
     DeliveryCdekBase
-    """  # noqa: E501
-
+    """ # noqa: E501
     id: Optional[StrictInt] = None
     uuid_id: Optional[StrictStr] = None
     tariff_code: Optional[StrictInt] = None
@@ -46,27 +40,14 @@ class DeliveryCdekBase(BaseModel):
     courier_to_location: Optional[StrictStr] = None
     stock_id: Optional[StrictStr] = None
     comment_sender: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = [
-        "id",
-        "uuid_id",
-        "tariff_code",
-        "delivery_point",
-        "create_datetime",
-        "status",
-        "status_cdek",
-        "cdek_number",
-        "photo_tg_file_id",
-        "invoice_tg_file_id",
-        "courier_to_location",
-        "stock_id",
-        "comment_sender",
-    ]
+    __properties: ClassVar[List[str]] = ["id", "uuid_id", "tariff_code", "delivery_point", "create_datetime", "status", "status_cdek", "cdek_number", "photo_tg_file_id", "invoice_tg_file_id", "courier_to_location", "stock_id", "comment_sender"]
 
     model_config = {
         "populate_by_name": True,
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -78,7 +59,7 @@ class DeliveryCdekBase(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of DeliveryCdekBase from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -92,89 +73,83 @@ class DeliveryCdekBase(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         # set to None if id (nullable) is None
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
-            _dict["id"] = None
+            _dict['id'] = None
 
         # set to None if uuid_id (nullable) is None
         # and model_fields_set contains the field
         if self.uuid_id is None and "uuid_id" in self.model_fields_set:
-            _dict["uuid_id"] = None
+            _dict['uuid_id'] = None
 
         # set to None if tariff_code (nullable) is None
         # and model_fields_set contains the field
         if self.tariff_code is None and "tariff_code" in self.model_fields_set:
-            _dict["tariff_code"] = None
+            _dict['tariff_code'] = None
 
         # set to None if delivery_point (nullable) is None
         # and model_fields_set contains the field
         if self.delivery_point is None and "delivery_point" in self.model_fields_set:
-            _dict["delivery_point"] = None
+            _dict['delivery_point'] = None
 
         # set to None if create_datetime (nullable) is None
         # and model_fields_set contains the field
         if self.create_datetime is None and "create_datetime" in self.model_fields_set:
-            _dict["create_datetime"] = None
+            _dict['create_datetime'] = None
 
         # set to None if status (nullable) is None
         # and model_fields_set contains the field
         if self.status is None and "status" in self.model_fields_set:
-            _dict["status"] = None
+            _dict['status'] = None
 
         # set to None if status_cdek (nullable) is None
         # and model_fields_set contains the field
         if self.status_cdek is None and "status_cdek" in self.model_fields_set:
-            _dict["status_cdek"] = None
+            _dict['status_cdek'] = None
 
         # set to None if cdek_number (nullable) is None
         # and model_fields_set contains the field
         if self.cdek_number is None and "cdek_number" in self.model_fields_set:
-            _dict["cdek_number"] = None
+            _dict['cdek_number'] = None
 
         # set to None if photo_tg_file_id (nullable) is None
         # and model_fields_set contains the field
-        if (
-            self.photo_tg_file_id is None
-            and "photo_tg_file_id" in self.model_fields_set
-        ):
-            _dict["photo_tg_file_id"] = None
+        if self.photo_tg_file_id is None and "photo_tg_file_id" in self.model_fields_set:
+            _dict['photo_tg_file_id'] = None
 
         # set to None if invoice_tg_file_id (nullable) is None
         # and model_fields_set contains the field
-        if (
-            self.invoice_tg_file_id is None
-            and "invoice_tg_file_id" in self.model_fields_set
-        ):
-            _dict["invoice_tg_file_id"] = None
+        if self.invoice_tg_file_id is None and "invoice_tg_file_id" in self.model_fields_set:
+            _dict['invoice_tg_file_id'] = None
 
         # set to None if courier_to_location (nullable) is None
         # and model_fields_set contains the field
-        if (
-            self.courier_to_location is None
-            and "courier_to_location" in self.model_fields_set
-        ):
-            _dict["courier_to_location"] = None
+        if self.courier_to_location is None and "courier_to_location" in self.model_fields_set:
+            _dict['courier_to_location'] = None
 
         # set to None if stock_id (nullable) is None
         # and model_fields_set contains the field
         if self.stock_id is None and "stock_id" in self.model_fields_set:
-            _dict["stock_id"] = None
+            _dict['stock_id'] = None
 
         # set to None if comment_sender (nullable) is None
         # and model_fields_set contains the field
         if self.comment_sender is None and "comment_sender" in self.model_fields_set:
-            _dict["comment_sender"] = None
+            _dict['comment_sender'] = None
 
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of DeliveryCdekBase from a dict"""
         if obj is None:
             return None
@@ -182,21 +157,21 @@ class DeliveryCdekBase(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "id": obj.get("id"),
-                "uuid_id": obj.get("uuid_id"),
-                "tariff_code": obj.get("tariff_code"),
-                "delivery_point": obj.get("delivery_point"),
-                "create_datetime": obj.get("create_datetime"),
-                "status": obj.get("status"),
-                "status_cdek": obj.get("status_cdek"),
-                "cdek_number": obj.get("cdek_number"),
-                "photo_tg_file_id": obj.get("photo_tg_file_id"),
-                "invoice_tg_file_id": obj.get("invoice_tg_file_id"),
-                "courier_to_location": obj.get("courier_to_location"),
-                "stock_id": obj.get("stock_id"),
-                "comment_sender": obj.get("comment_sender"),
-            }
-        )
+        _obj = cls.model_validate({
+            "id": obj.get("id"),
+            "uuid_id": obj.get("uuid_id"),
+            "tariff_code": obj.get("tariff_code"),
+            "delivery_point": obj.get("delivery_point"),
+            "create_datetime": obj.get("create_datetime"),
+            "status": obj.get("status"),
+            "status_cdek": obj.get("status_cdek"),
+            "cdek_number": obj.get("cdek_number"),
+            "photo_tg_file_id": obj.get("photo_tg_file_id"),
+            "invoice_tg_file_id": obj.get("invoice_tg_file_id"),
+            "courier_to_location": obj.get("courier_to_location"),
+            "stock_id": obj.get("stock_id"),
+            "comment_sender": obj.get("comment_sender")
+        })
         return _obj
+
+

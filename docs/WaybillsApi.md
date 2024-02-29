@@ -17,8 +17,6 @@ Update
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.waybill_update import WaybillUpdate
 from swagger_client.rest import ApiException
@@ -86,3 +84,4 @@ Name | Type | Description  | Notes
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

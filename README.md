@@ -50,7 +50,6 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import time
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -133,6 +132,7 @@ Class | Method | HTTP request | Description
 *OrdersApi* | [**get_order_by_id_api_v1_orders_order_id_get**](docs/OrdersApi.md#get_order_by_id_api_v1_orders_order_id_get) | **GET** /api/v1/orders/{order_id} | Get Order By Id
 *OrdersApi* | [**get_user_orders_api_v1_orders_users_user_id_get**](docs/OrdersApi.md#get_user_orders_api_v1_orders_users_user_id_get) | **GET** /api/v1/orders/users/{user_id} | Get User Orders
 *OrdersApi* | [**insert_order_api_v1_orders_post**](docs/OrdersApi.md#insert_order_api_v1_orders_post) | **POST** /api/v1/orders | Insert Order
+*PartnersApi* | [**get_partners_user_id_api_v1_partners_get**](docs/PartnersApi.md#get_partners_user_id_api_v1_partners_get) | **GET** /api/v1/partners | Get Partners User Id
 *PurchasesApi* | [**delete_purchase_api_v1_purchases_purchase_id_delete**](docs/PurchasesApi.md#delete_purchase_api_v1_purchases_purchase_id_delete) | **DELETE** /api/v1/purchases/{purchase_id} | Delete Purchase
 *PurchasesApi* | [**get_all_api_v1_purchases_get**](docs/PurchasesApi.md#get_all_api_v1_purchases_get) | **GET** /api/v1/purchases | Get All
 *PurchasesApi* | [**get_count_api_v1_purchases_token_status_count_get**](docs/PurchasesApi.md#get_count_api_v1_purchases_token_status_count_get) | **GET** /api/v1/purchases/{token}/{status}/count | Get Count
@@ -153,17 +153,23 @@ Class | Method | HTTP request | Description
 *UsersBotsApi* | [**get_user_client_bot_api_v1_users_bots_user_id_client_get**](docs/UsersBotsApi.md#get_user_client_bot_api_v1_users_bots_user_id_client_get) | **GET** /api/v1/users_bots/{user_id}/client | Get User Client Bot
 *UsersBotsApi* | [**update_last_mess_api_v1_users_bots_mess_put**](docs/UsersBotsApi.md#update_last_mess_api_v1_users_bots_mess_put) | **PUT** /api/v1/users_bots/mess | Update Last Mess
 *WaybillsApi* | [**update_api_v1_waybills_put**](docs/WaybillsApi.md#update_api_v1_waybills_put) | **PUT** /api/v1/waybills | Update
+*WebhookApi* | [**webhook_from_cdek_api_v1_webhook_cdek_post**](docs/WebhookApi.md#webhook_from_cdek_api_v1_webhook_cdek_post) | **POST** /api/v1/webhook/cdek | Webhook From Cdek
 *YookassaPaymentsApi* | [**insert_api_v1_yookassa_payments_post**](docs/YookassaPaymentsApi.md#insert_api_v1_yookassa_payments_post) | **POST** /api/v1/yookassa-payments | Insert
 
 
 ## Documentation For Models
 
+ - [Attributes](docs/Attributes.md)
+ - [AttributesOrderStatus](docs/AttributesOrderStatus.md)
+ - [AttributesPrealertCloser](docs/AttributesPrealertCloser.md)
+ - [AttributesPrintForm](docs/AttributesPrintForm.md)
  - [BarcodeInsert](docs/BarcodeInsert.md)
  - [BasketBaseDb](docs/BasketBaseDb.md)
  - [BotBase](docs/BotBase.md)
  - [BotBaseDb](docs/BotBaseDb.md)
  - [BrandCount](docs/BrandCount.md)
  - [CategoryBase](docs/CategoryBase.md)
+ - [CdekWebhook](docs/CdekWebhook.md)
  - [CentimeterBase](docs/CentimeterBase.md)
  - [DeliveryCdekBase](docs/DeliveryCdekBase.md)
  - [DeliveryCdekUpdate](docs/DeliveryCdekUpdate.md)
@@ -187,6 +193,7 @@ Class | Method | HTTP request | Description
  - [PurchaseBaseDb](docs/PurchaseBaseDb.md)
  - [QuantityBase](docs/QuantityBase.md)
  - [QuantityBaseDb](docs/QuantityBaseDb.md)
+ - [RelatedEntities](docs/RelatedEntities.md)
  - [SchedulerBaseDb](docs/SchedulerBaseDb.md)
  - [SizeBase](docs/SizeBase.md)
  - [SizeBaseDb](docs/SizeBaseDb.md)
@@ -216,3 +223,7 @@ Authentication schemes defined for the API:
 
 
 ## Author
+
+
+
+

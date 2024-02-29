@@ -13,25 +13,19 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List
+import json
 
 from pydantic import BaseModel, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List
+from typing import Optional, Set
+from typing_extensions import Self
 
 class WaybillUpdate(BaseModel):
     """
     WaybillUpdate
-    """  # noqa: E501
-
+    """ # noqa: E501
     waybill_id: StrictStr
     tg_file_id: StrictStr
     __properties: ClassVar[List[str]] = ["waybill_id", "tg_file_id"]
@@ -41,6 +35,7 @@ class WaybillUpdate(BaseModel):
         "validate_assignment": True,
         "protected_namespaces": (),
     }
+
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
@@ -52,7 +47,7 @@ class WaybillUpdate(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of WaybillUpdate from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -66,15 +61,18 @@ class WaybillUpdate(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of WaybillUpdate from a dict"""
         if obj is None:
             return None
@@ -82,7 +80,10 @@ class WaybillUpdate(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {"waybill_id": obj.get("waybill_id"), "tg_file_id": obj.get("tg_file_id")}
-        )
+        _obj = cls.model_validate({
+            "waybill_id": obj.get("waybill_id"),
+            "tg_file_id": obj.get("tg_file_id")
+        })
         return _obj
+
+

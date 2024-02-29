@@ -23,8 +23,6 @@ Delete One Basket
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -102,8 +100,6 @@ Delete User Basket
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -181,8 +177,6 @@ Get Basket
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.basket_base_db import BasketBaseDb
 from swagger_client.rest import ApiException
@@ -265,8 +259,6 @@ Get Count Basket
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -346,8 +338,6 @@ Get List Id Basket
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -427,8 +417,6 @@ Get One Basket
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.basket_base_db import BasketBaseDb
 from swagger_client.rest import ApiException
@@ -509,8 +497,6 @@ Insert
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.insert_basket import InsertBasket
 from swagger_client.rest import ApiException
@@ -578,3 +564,4 @@ Name | Type | Description  | Notes
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

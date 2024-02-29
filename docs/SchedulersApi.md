@@ -19,8 +19,6 @@ Delete
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -98,8 +96,6 @@ Get
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 from swagger_client.rest import ApiException
@@ -178,8 +174,6 @@ Insert
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.insert_scheduler import InsertScheduler
 from swagger_client.rest import ApiException
@@ -247,3 +241,4 @@ Name | Type | Description  | Notes
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

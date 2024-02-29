@@ -37,3 +37,5 @@ delivery_cdek_base_dict = delivery_cdek_base_instance.to_dict()
 delivery_cdek_base_form_dict = delivery_cdek_base.from_dict(delivery_cdek_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

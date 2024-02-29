@@ -23,8 +23,6 @@ Get All Ids Users
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -102,8 +100,6 @@ Get Count
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -181,8 +177,6 @@ Get Only User Bot
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
 from swagger_client.rest import ApiException
@@ -269,8 +263,6 @@ Get User Bot
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
 from swagger_client.rest import ApiException
@@ -355,8 +347,6 @@ Get User Bot Start
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
 from swagger_client.rest import ApiException
@@ -443,8 +433,6 @@ Get User Client Bot
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
 from swagger_client.rest import ApiException
@@ -525,8 +513,6 @@ Update Last Mess
 * Basic Authentication (HTTPBasic):
 
 ```python
-import time
-import os
 import swagger_client
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
 from swagger_client.rest import ApiException
@@ -594,3 +580,4 @@ Name | Type | Description  | Notes
 **422** | Validation Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

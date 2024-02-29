@@ -13,25 +13,19 @@
 
 
 from __future__ import annotations
-
-import json
 import pprint
 import re  # noqa: F401
-from typing import Any, ClassVar, Dict, List
+import json
 
 from pydantic import BaseModel, StrictInt, StrictStr
-
-try:
-    from typing import Self
-except ImportError:
-    from typing_extensions import Self
-
+from typing import Any, ClassVar, Dict, List
+from typing import Optional, Set
+from typing_extensions import Self
 
 class InsertBasket(BaseModel):
     """
     InsertBasket
-    """  # noqa: E501
-
+    """ # noqa: E501
     user_bot_id: StrictInt
     size_id: StrictInt
     price: StrictInt
@@ -44,6 +38,7 @@ class InsertBasket(BaseModel):
         "protected_namespaces": (),
     }
 
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.model_dump(by_alias=True))
@@ -54,7 +49,7 @@ class InsertBasket(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Self:
+    def from_json(cls, json_str: str) -> Optional[Self]:
         """Create an instance of InsertBasket from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
@@ -68,15 +63,18 @@ class InsertBasket(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         """
+        excluded_fields: Set[str] = set([
+        ])
+
         _dict = self.model_dump(
             by_alias=True,
-            exclude={},
+            exclude=excluded_fields,
             exclude_none=True,
         )
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Dict) -> Self:
+    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
         """Create an instance of InsertBasket from a dict"""
         if obj is None:
             return None
@@ -84,12 +82,12 @@ class InsertBasket(BaseModel):
         if not isinstance(obj, dict):
             return cls.model_validate(obj)
 
-        _obj = cls.model_validate(
-            {
-                "user_bot_id": obj.get("user_bot_id"),
-                "size_id": obj.get("size_id"),
-                "price": obj.get("price"),
-                "code": obj.get("code"),
-            }
-        )
+        _obj = cls.model_validate({
+            "user_bot_id": obj.get("user_bot_id"),
+            "size_id": obj.get("size_id"),
+            "price": obj.get("price"),
+            "code": obj.get("code")
+        })
         return _obj
+
+

@@ -14,12 +14,17 @@
 
 
 # import models into model package
+from swagger_client.models.attributes import Attributes
+from swagger_client.models.attributes_order_status import AttributesOrderStatus
+from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser
+from swagger_client.models.attributes_print_form import AttributesPrintForm
 from swagger_client.models.barcode_insert import BarcodeInsert
 from swagger_client.models.basket_base_db import BasketBaseDb
 from swagger_client.models.bot_base import BotBase
 from swagger_client.models.bot_base_db import BotBaseDb
 from swagger_client.models.brand_count import BrandCount
 from swagger_client.models.category_base import CategoryBase
+from swagger_client.models.cdek_webhook import CdekWebhook
 from swagger_client.models.centimeter_base import CentimeterBase
 from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
 from swagger_client.models.delivery_cdek_update import DeliveryCdekUpdate
@@ -43,6 +48,7 @@ from swagger_client.models.partner_base import PartnerBase
 from swagger_client.models.purchase_base_db import PurchaseBaseDb
 from swagger_client.models.quantity_base import QuantityBase
 from swagger_client.models.quantity_base_db import QuantityBaseDb
+from swagger_client.models.related_entities import RelatedEntities
 from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.size_base_db import SizeBaseDb
