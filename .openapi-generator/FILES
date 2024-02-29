@@ -154,12 +154,4 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_attributes.py
-test/test_attributes_order_status.py
-test/test_attributes_prealert_closer.py
-test/test_attributes_print_form.py
-test/test_cdek_webhook.py
-test/test_partners_api.py
-test/test_related_entities.py
-test/test_webhook_api.py
 tox.ini

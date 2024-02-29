@@ -1,0 +1,1 @@
+openapi-generator-cli generate --generator-name python --library asyncio --input-spec https://sneakershopping.ru/api/v1/openapi.json --git-repo-id "swagger-client" --git-user-id "AlexName1" --release-note "init" --package-name swagger_client --output /home/alex_linux/my_code/swagger-client

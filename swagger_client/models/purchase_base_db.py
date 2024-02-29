@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
@@ -33,27 +32,19 @@ class PurchaseBaseDb(BaseModel):
     PurchaseBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    created: Optional[datetime] = None
-    buyer: Optional[StrictStr] = None
     code: Optional[StrictStr] = None
     price: Optional[StrictInt] = None
-    delivery: Optional[StrictStr] = None
-    address: Optional[StrictStr] = None
-    phone: Optional[StrictStr] = None
-    checking: Optional[StrictBool] = None
     pod: Optional[StrictInt] = None
     invoice: Optional[StrictStr] = None
     comment: Optional[StrictStr] = None
     status: Optional[StrictInt] = None
     add_info: Optional[StrictStr] = None
-    user_id: Optional[StrictInt] = None
     add_photo: Optional[StrictStr] = None
     partner: Optional[StrictBool] = None
     paid: Optional[StrictBool] = None
     delivery_cdek_id: Optional[StrictInt] = None
     approve_size: Optional[StrictBool] = None
     size_id: Optional[StrictInt] = None
-    bot_id: Optional[StrictInt] = None
     order_id: Optional[StrictInt] = None
     delivery_cdek_photo_tg_file_id: Optional[StrictStr] = None
     item: Optional[ItemBase] = None
@@ -61,7 +52,7 @@ class PurchaseBaseDb(BaseModel):
     delivery_cdek: Optional[DeliveryCdekBase] = None
     size: Optional[SizeBase] = None
     yookassa_payment: Optional[YookassaPaymentBase] = None
-    __properties: ClassVar[List[str]] = ["id", "created", "buyer", "code", "price", "delivery", "address", "phone", "checking", "pod", "invoice", "comment", "status", "add_info", "user_id", "add_photo", "partner", "paid", "delivery_cdek_id", "approve_size", "size_id", "bot_id", "order_id", "delivery_cdek_photo_tg_file_id", "item", "order", "delivery_cdek", "size", "yookassa_payment"]
+    __properties: ClassVar[List[str]] = ["id", "code", "price", "pod", "invoice", "comment", "status", "add_info", "add_photo", "partner", "paid", "delivery_cdek_id", "approve_size", "size_id", "order_id", "delivery_cdek_photo_tg_file_id", "item", "order", "delivery_cdek", "size", "yookassa_payment"]
 
     model_config = {
         "populate_by_name": True,
@@ -122,16 +113,6 @@ class PurchaseBaseDb(BaseModel):
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
 
-        # set to None if created (nullable) is None
-        # and model_fields_set contains the field
-        if self.created is None and "created" in self.model_fields_set:
-            _dict['created'] = None
-
-        # set to None if buyer (nullable) is None
-        # and model_fields_set contains the field
-        if self.buyer is None and "buyer" in self.model_fields_set:
-            _dict['buyer'] = None
-
         # set to None if code (nullable) is None
         # and model_fields_set contains the field
         if self.code is None and "code" in self.model_fields_set:
@@ -141,26 +122,6 @@ class PurchaseBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.price is None and "price" in self.model_fields_set:
             _dict['price'] = None
-
-        # set to None if delivery (nullable) is None
-        # and model_fields_set contains the field
-        if self.delivery is None and "delivery" in self.model_fields_set:
-            _dict['delivery'] = None
-
-        # set to None if address (nullable) is None
-        # and model_fields_set contains the field
-        if self.address is None and "address" in self.model_fields_set:
-            _dict['address'] = None
-
-        # set to None if phone (nullable) is None
-        # and model_fields_set contains the field
-        if self.phone is None and "phone" in self.model_fields_set:
-            _dict['phone'] = None
-
-        # set to None if checking (nullable) is None
-        # and model_fields_set contains the field
-        if self.checking is None and "checking" in self.model_fields_set:
-            _dict['checking'] = None
 
         # set to None if pod (nullable) is None
         # and model_fields_set contains the field
@@ -186,11 +147,6 @@ class PurchaseBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.add_info is None and "add_info" in self.model_fields_set:
             _dict['add_info'] = None
-
-        # set to None if user_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict['user_id'] = None
 
         # set to None if add_photo (nullable) is None
         # and model_fields_set contains the field
@@ -221,11 +177,6 @@ class PurchaseBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.size_id is None and "size_id" in self.model_fields_set:
             _dict['size_id'] = None
-
-        # set to None if bot_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.bot_id is None and "bot_id" in self.model_fields_set:
-            _dict['bot_id'] = None
 
         # set to None if order_id (nullable) is None
         # and model_fields_set contains the field
@@ -275,27 +226,19 @@ class PurchaseBaseDb(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "created": obj.get("created"),
-            "buyer": obj.get("buyer"),
             "code": obj.get("code"),
             "price": obj.get("price"),
-            "delivery": obj.get("delivery"),
-            "address": obj.get("address"),
-            "phone": obj.get("phone"),
-            "checking": obj.get("checking"),
             "pod": obj.get("pod"),
             "invoice": obj.get("invoice"),
             "comment": obj.get("comment"),
             "status": obj.get("status"),
             "add_info": obj.get("add_info"),
-            "user_id": obj.get("user_id"),
             "add_photo": obj.get("add_photo"),
             "partner": obj.get("partner"),
             "paid": obj.get("paid"),
             "delivery_cdek_id": obj.get("delivery_cdek_id"),
             "approve_size": obj.get("approve_size"),
             "size_id": obj.get("size_id"),
-            "bot_id": obj.get("bot_id"),
             "order_id": obj.get("order_id"),
             "delivery_cdek_photo_tg_file_id": obj.get("delivery_cdek_photo_tg_file_id"),
             "item": ItemBase.from_dict(obj["item"]) if obj.get("item") is not None else None,
