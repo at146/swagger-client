@@ -154,7 +154,7 @@ Class | Method | HTTP request | Description
 *UsersBotsApi* | [**get_user_client_bot_api_v1_users_bots_user_id_client_get**](docs/UsersBotsApi.md#get_user_client_bot_api_v1_users_bots_user_id_client_get) | **GET** /api/v1/users_bots/{user_id}/client | Get User Client Bot
 *UsersBotsApi* | [**update_last_mess_api_v1_users_bots_mess_put**](docs/UsersBotsApi.md#update_last_mess_api_v1_users_bots_mess_put) | **PUT** /api/v1/users_bots/mess | Update Last Mess
 *UsersProdavecKrossovokApi* | [**get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get**](docs/UsersProdavecKrossovokApi.md#get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get) | **GET** /api/v1/users-prodavec-krossovok/{user_id} | Get User Prodavec Krossovok
-*UsersProdavecKrossovokApi* | [**insert_order_api_v1_users_prodavec_krossovok_post**](docs/UsersProdavecKrossovokApi.md#insert_order_api_v1_users_prodavec_krossovok_post) | **POST** /api/v1/users-prodavec-krossovok | Insert Order
+*UsersProdavecKrossovokApi* | [**insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post**](docs/UsersProdavecKrossovokApi.md#insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post) | **POST** /api/v1/users-prodavec-krossovok | Insert User Prodavec Krossovok
 *WaybillsApi* | [**update_api_v1_waybills_put**](docs/WaybillsApi.md#update_api_v1_waybills_put) | **PUT** /api/v1/waybills | Update
 *WebhookApi* | [**webhook_from_cdek_api_v1_webhook_cdek_post**](docs/WebhookApi.md#webhook_from_cdek_api_v1_webhook_cdek_post) | **POST** /api/v1/webhook/cdek | Webhook From Cdek
 *YookassaPaymentsApi* | [**insert_api_v1_yookassa_payments_post**](docs/YookassaPaymentsApi.md#insert_api_v1_yookassa_payments_post) | **POST** /api/v1/yookassa-payments | Insert

@@ -332,7 +332,7 @@ class UsersProdavecKrossovokApi:
 
 
     @validate_call
-    async def insert_order_api_v1_users_prodavec_krossovok_post(
+    async def insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post(
         self,
         insert_user_prodavec_krossovok: InsertUserProdavecKrossovok,
         _request_timeout: Union[
@@ -348,7 +348,7 @@ class UsersProdavecKrossovokApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> UserProdavecKrossovokBaseDb:
-        """Insert Order
+        """Insert User Prodavec Krossovok
 
 
         :param insert_user_prodavec_krossovok: (required)
@@ -375,7 +375,7 @@ class UsersProdavecKrossovokApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._insert_order_api_v1_users_prodavec_krossovok_post_serialize(
+        _param = self._insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post_serialize(
             insert_user_prodavec_krossovok=insert_user_prodavec_krossovok,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -399,7 +399,7 @@ class UsersProdavecKrossovokApi:
 
 
     @validate_call
-    async def insert_order_api_v1_users_prodavec_krossovok_post_with_http_info(
+    async def insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post_with_http_info(
         self,
         insert_user_prodavec_krossovok: InsertUserProdavecKrossovok,
         _request_timeout: Union[
@@ -415,7 +415,7 @@ class UsersProdavecKrossovokApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[UserProdavecKrossovokBaseDb]:
-        """Insert Order
+        """Insert User Prodavec Krossovok
 
 
         :param insert_user_prodavec_krossovok: (required)
@@ -442,7 +442,7 @@ class UsersProdavecKrossovokApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._insert_order_api_v1_users_prodavec_krossovok_post_serialize(
+        _param = self._insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post_serialize(
             insert_user_prodavec_krossovok=insert_user_prodavec_krossovok,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -466,7 +466,7 @@ class UsersProdavecKrossovokApi:
 
 
     @validate_call
-    async def insert_order_api_v1_users_prodavec_krossovok_post_without_preload_content(
+    async def insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post_without_preload_content(
         self,
         insert_user_prodavec_krossovok: InsertUserProdavecKrossovok,
         _request_timeout: Union[
@@ -482,7 +482,7 @@ class UsersProdavecKrossovokApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """Insert Order
+        """Insert User Prodavec Krossovok
 
 
         :param insert_user_prodavec_krossovok: (required)
@@ -509,7 +509,7 @@ class UsersProdavecKrossovokApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._insert_order_api_v1_users_prodavec_krossovok_post_serialize(
+        _param = self._insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post_serialize(
             insert_user_prodavec_krossovok=insert_user_prodavec_krossovok,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -528,7 +528,7 @@ class UsersProdavecKrossovokApi:
         return response_data.response
 
 
-    def _insert_order_api_v1_users_prodavec_krossovok_post_serialize(
+    def _insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post_serialize(
         self,
         insert_user_prodavec_krossovok,
         _request_auth,

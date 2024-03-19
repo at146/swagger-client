@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get**](UsersProdavecKrossovokApi.md#get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get) | **GET** /api/v1/users-prodavec-krossovok/{user_id} | Get User Prodavec Krossovok
-[**insert_order_api_v1_users_prodavec_krossovok_post**](UsersProdavecKrossovokApi.md#insert_order_api_v1_users_prodavec_krossovok_post) | **POST** /api/v1/users-prodavec-krossovok | Insert Order
+[**insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post**](UsersProdavecKrossovokApi.md#insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post) | **POST** /api/v1/users-prodavec-krossovok | Insert User Prodavec Krossovok
 
 
 # **get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get**
@@ -90,10 +90,10 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **insert_order_api_v1_users_prodavec_krossovok_post**
-> UserProdavecKrossovokBaseDb insert_order_api_v1_users_prodavec_krossovok_post(insert_user_prodavec_krossovok)
+# **insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post**
+> UserProdavecKrossovokBaseDb insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post(insert_user_prodavec_krossovok)
 
-Insert Order
+Insert User Prodavec Krossovok
 
 ### Example
 
@@ -130,12 +130,12 @@ async with swagger_client.ApiClient(configuration) as api_client:
     insert_user_prodavec_krossovok = swagger_client.InsertUserProdavecKrossovok() # InsertUserProdavecKrossovok | 
 
     try:
-        # Insert Order
-        api_response = await api_instance.insert_order_api_v1_users_prodavec_krossovok_post(insert_user_prodavec_krossovok)
-        print("The response of UsersProdavecKrossovokApi->insert_order_api_v1_users_prodavec_krossovok_post:\n")
+        # Insert User Prodavec Krossovok
+        api_response = await api_instance.insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post(insert_user_prodavec_krossovok)
+        print("The response of UsersProdavecKrossovokApi->insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsersProdavecKrossovokApi->insert_order_api_v1_users_prodavec_krossovok_post: %s\n" % e)
+        print("Exception when calling UsersProdavecKrossovokApi->insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post: %s\n" % e)
 ```
 
 
