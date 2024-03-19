@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of AttributesOrderStatus from a JSON string
 attributes_order_status_instance = AttributesOrderStatus.from_json(json)
 # print the JSON string representation of the object
-print AttributesOrderStatus.to_json()
+print(AttributesOrderStatus.to_json())
 
 # convert the object into a dict
 attributes_order_status_dict = attributes_order_status_instance.to_dict()

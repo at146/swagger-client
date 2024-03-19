@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of SizeBaseDb from a JSON string
 size_base_db_instance = SizeBaseDb.from_json(json)
 # print the JSON string representation of the object
-print SizeBaseDb.to_json()
+print(SizeBaseDb.to_json())
 
 # convert the object into a dict
 size_base_db_dict = size_base_db_instance.to_dict()

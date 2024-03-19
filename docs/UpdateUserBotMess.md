@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of UpdateUserBotMess from a JSON string
 update_user_bot_mess_instance = UpdateUserBotMess.from_json(json)
 # print the JSON string representation of the object
-print UpdateUserBotMess.to_json()
+print(UpdateUserBotMess.to_json())
 
 # convert the object into a dict
 update_user_bot_mess_dict = update_user_bot_mess_instance.to_dict()

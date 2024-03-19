@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of QuantityBase from a JSON string
 quantity_base_instance = QuantityBase.from_json(json)
 # print the JSON string representation of the object
-print QuantityBase.to_json()
+print(QuantityBase.to_json())
 
 # convert the object into a dict
 quantity_base_dict = quantity_base_instance.to_dict()

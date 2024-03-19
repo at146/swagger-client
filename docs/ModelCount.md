@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of ModelCount from a JSON string
 model_count_instance = ModelCount.from_json(json)
 # print the JSON string representation of the object
-print ModelCount.to_json()
+print(ModelCount.to_json())
 
 # convert the object into a dict
 model_count_dict = model_count_instance.to_dict()

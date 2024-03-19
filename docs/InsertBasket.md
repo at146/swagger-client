@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of InsertBasket from a JSON string
 insert_basket_instance = InsertBasket.from_json(json)
 # print the JSON string representation of the object
-print InsertBasket.to_json()
+print(InsertBasket.to_json())
 
 # convert the object into a dict
 insert_basket_dict = insert_basket_instance.to_dict()

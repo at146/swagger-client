@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of OrderBase from a JSON string
 order_base_instance = OrderBase.from_json(json)
 # print the JSON string representation of the object
-print OrderBase.to_json()
+print(OrderBase.to_json())
 
 # convert the object into a dict
 order_base_dict = order_base_instance.to_dict()

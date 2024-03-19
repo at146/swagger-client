@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of AttributesPrintForm from a JSON string
 attributes_print_form_instance = AttributesPrintForm.from_json(json)
 # print the JSON string representation of the object
-print AttributesPrintForm.to_json()
+print(AttributesPrintForm.to_json())
 
 # convert the object into a dict
 attributes_print_form_dict = attributes_print_form_instance.to_dict()

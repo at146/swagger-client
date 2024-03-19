@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of InfoItemUpdate from a JSON string
 info_item_update_instance = InfoItemUpdate.from_json(json)
 # print the JSON string representation of the object
-print InfoItemUpdate.to_json()
+print(InfoItemUpdate.to_json())
 
 # convert the object into a dict
 info_item_update_dict = info_item_update_instance.to_dict()

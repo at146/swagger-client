@@ -31,6 +31,7 @@ docs/InsertBasket.md
 docs/InsertMessageTg.md
 docs/InsertOrder.md
 docs/InsertScheduler.md
+docs/InsertUserProdavecKrossovok.md
 docs/ItemBase.md
 docs/ItemBaseDb.md
 docs/ItemsApi.md
@@ -61,7 +62,9 @@ docs/UserBaseDb.md
 docs/UserBotBase.md
 docs/UserBotBaseDb.md
 docs/UserBotBaseDbStart.md
+docs/UserProdavecKrossovokBaseDb.md
 docs/UsersBotsApi.md
+docs/UsersProdavecKrossovokApi.md
 docs/UtmMarkBase.md
 docs/ValidationError.md
 docs/WaybillUpdate.md
@@ -92,6 +95,7 @@ swagger_client/api/quantities_api.py
 swagger_client/api/schedulers_api.py
 swagger_client/api/sizes_api.py
 swagger_client/api/users_bots_api.py
+swagger_client/api/users_prodavec_krossovok_api.py
 swagger_client/api/waybills_api.py
 swagger_client/api/webhook_api.py
 swagger_client/api/yookassa_payments_api.py
@@ -123,6 +127,7 @@ swagger_client/models/insert_basket.py
 swagger_client/models/insert_message_tg.py
 swagger_client/models/insert_order.py
 swagger_client/models/insert_scheduler.py
+swagger_client/models/insert_user_prodavec_krossovok.py
 swagger_client/models/item_base.py
 swagger_client/models/item_base_db.py
 swagger_client/models/location_inner.py
@@ -145,6 +150,7 @@ swagger_client/models/user_base_db.py
 swagger_client/models/user_bot_base.py
 swagger_client/models/user_bot_base_db.py
 swagger_client/models/user_bot_base_db_start.py
+swagger_client/models/user_prodavec_krossovok_base_db.py
 swagger_client/models/utm_mark_base.py
 swagger_client/models/validation_error.py
 swagger_client/models/waybill_update.py
@@ -154,4 +160,7 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
+test/test_insert_user_prodavec_krossovok.py
+test/test_user_prodavec_krossovok_base_db.py
+test/test_users_prodavec_krossovok_api.py
 tox.ini

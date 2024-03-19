@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of CategoryBase from a JSON string
 category_base_instance = CategoryBase.from_json(json)
 # print the JSON string representation of the object
-print CategoryBase.to_json()
+print(CategoryBase.to_json())
 
 # convert the object into a dict
 category_base_dict = category_base_instance.to_dict()

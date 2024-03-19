@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of YookassaPaymentBase from a JSON string
 yookassa_payment_base_instance = YookassaPaymentBase.from_json(json)
 # print the JSON string representation of the object
-print YookassaPaymentBase.to_json()
+print(YookassaPaymentBase.to_json())
 
 # convert the object into a dict
 yookassa_payment_base_dict = yookassa_payment_base_instance.to_dict()

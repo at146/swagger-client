@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of DeliveryCdekUpdate from a JSON string
 delivery_cdek_update_instance = DeliveryCdekUpdate.from_json(json)
 # print the JSON string representation of the object
-print DeliveryCdekUpdate.to_json()
+print(DeliveryCdekUpdate.to_json())
 
 # convert the object into a dict
 delivery_cdek_update_dict = delivery_cdek_update_instance.to_dict()

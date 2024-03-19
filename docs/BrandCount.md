@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of BrandCount from a JSON string
 brand_count_instance = BrandCount.from_json(json)
 # print the JSON string representation of the object
-print BrandCount.to_json()
+print(BrandCount.to_json())
 
 # convert the object into a dict
 brand_count_dict = brand_count_instance.to_dict()

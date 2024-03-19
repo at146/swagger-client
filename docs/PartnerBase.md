@@ -23,7 +23,7 @@ json = "{}"
 # create an instance of PartnerBase from a JSON string
 partner_base_instance = PartnerBase.from_json(json)
 # print the JSON string representation of the object
-print PartnerBase.to_json()
+print(PartnerBase.to_json())
 
 # convert the object into a dict
 partner_base_dict = partner_base_instance.to_dict()

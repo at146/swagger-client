@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of DeliveryCdekBase from a JSON string
 delivery_cdek_base_instance = DeliveryCdekBase.from_json(json)
 # print the JSON string representation of the object
-print DeliveryCdekBase.to_json()
+print(DeliveryCdekBase.to_json())
 
 # convert the object into a dict
 delivery_cdek_base_dict = delivery_cdek_base_instance.to_dict()

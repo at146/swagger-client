@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.category_base import CategoryBase
 from swagger_client.models.dimension_base import DimensionBase
@@ -56,11 +56,11 @@ class ItemBaseDb(BaseModel):
     dimension: Optional[DimensionBase] = None
     __properties: ClassVar[List[str]] = ["id", "code", "changed", "active", "brand", "model", "title", "retail_price", "drop_price", "link", "photos", "season", "color", "discount_price", "new", "code_hash", "category_id", "manufacturer_country", "material", "dimension_id", "photo_path_tg", "quantities", "category", "dimension"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

@@ -17,7 +17,7 @@ json = "{}"
 # create an instance of HTTPValidationError from a JSON string
 http_validation_error_instance = HTTPValidationError.from_json(json)
 # print the JSON string representation of the object
-print HTTPValidationError.to_json()
+print(HTTPValidationError.to_json())
 
 # convert the object into a dict
 http_validation_error_dict = http_validation_error_instance.to_dict()

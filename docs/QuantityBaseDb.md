@@ -25,7 +25,7 @@ json = "{}"
 # create an instance of QuantityBaseDb from a JSON string
 quantity_base_db_instance = QuantityBaseDb.from_json(json)
 # print the JSON string representation of the object
-print QuantityBaseDb.to_json()
+print(QuantityBaseDb.to_json())
 
 # convert the object into a dict
 quantity_base_db_dict = quantity_base_db_instance.to_dict()

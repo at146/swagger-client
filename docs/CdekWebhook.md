@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of CdekWebhook from a JSON string
 cdek_webhook_instance = CdekWebhook.from_json(json)
 # print the JSON string representation of the object
-print CdekWebhook.to_json()
+print(CdekWebhook.to_json())
 
 # convert the object into a dict
 cdek_webhook_dict = cdek_webhook_instance.to_dict()

@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of SizeBase from a JSON string
 size_base_instance = SizeBase.from_json(json)
 # print the JSON string representation of the object
-print SizeBase.to_json()
+print(SizeBase.to_json())
 
 # convert the object into a dict
 size_base_dict = size_base_instance.to_dict()

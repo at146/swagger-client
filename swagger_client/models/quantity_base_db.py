@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.centimeter_base import CentimeterBase
 from swagger_client.models.size_base import SizeBase
@@ -40,11 +40,11 @@ class QuantityBaseDb(BaseModel):
     centimeter: Optional[CentimeterBase] = None
     __properties: ClassVar[List[str]] = ["id", "item_id", "stock_id", "size_id", "count", "centimeter_id", "stock", "size", "centimeter"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

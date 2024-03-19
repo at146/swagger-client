@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of StockBase from a JSON string
 stock_base_instance = StockBase.from_json(json)
 # print the JSON string representation of the object
-print StockBase.to_json()
+print(StockBase.to_json())
 
 # convert the object into a dict
 stock_base_dict = stock_base_instance.to_dict()

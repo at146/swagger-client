@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of YookassaPaymentInsert from a JSON string
 yookassa_payment_insert_instance = YookassaPaymentInsert.from_json(json)
 # print the JSON string representation of the object
-print YookassaPaymentInsert.to_json()
+print(YookassaPaymentInsert.to_json())
 
 # convert the object into a dict
 yookassa_payment_insert_dict = yookassa_payment_insert_instance.to_dict()

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, StrictInt
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.message_tg_base import MessageTgBase
 from swagger_client.models.user_bot_base import UserBotBase
@@ -37,11 +37,11 @@ class SchedulerBaseDb(BaseModel):
     messages_tg: Optional[MessageTgBase] = None
     __properties: ClassVar[List[str]] = ["id", "messages_tg_id", "users_bots_id", "trigger_datetime", "users_bots", "messages_tg"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

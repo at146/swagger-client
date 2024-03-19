@@ -26,7 +26,7 @@ json = "{}"
 # create an instance of InsertOrder from a JSON string
 insert_order_instance = InsertOrder.from_json(json)
 # print the JSON string representation of the object
-print InsertOrder.to_json()
+print(InsertOrder.to_json())
 
 # convert the object into a dict
 insert_order_dict = insert_order_instance.to_dict()

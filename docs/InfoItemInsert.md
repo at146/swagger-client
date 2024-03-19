@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of InfoItemInsert from a JSON string
 info_item_insert_instance = InfoItemInsert.from_json(json)
 # print the JSON string representation of the object
-print InfoItemInsert.to_json()
+print(InfoItemInsert.to_json())
 
 # convert the object into a dict
 info_item_insert_dict = info_item_insert_instance.to_dict()

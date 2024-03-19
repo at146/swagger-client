@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.stock_base import StockBase
 from swagger_client.models.user_bot_base import UserBotBase
@@ -36,11 +36,11 @@ class UserBaseDb(BaseModel):
     users_bots: Optional[List[UserBotBase]] = None
     __properties: ClassVar[List[str]] = ["id", "user_id", "first_name", "username", "stock", "users_bots"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

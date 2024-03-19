@@ -37,7 +37,7 @@ json = "{}"
 # create an instance of PurchaseBaseDb from a JSON string
 purchase_base_db_instance = PurchaseBaseDb.from_json(json)
 # print the JSON string representation of the object
-print PurchaseBaseDb.to_json()
+print(PurchaseBaseDb.to_json())
 
 # convert the object into a dict
 purchase_base_db_dict = purchase_base_db_instance.to_dict()

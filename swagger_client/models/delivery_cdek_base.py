@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -42,11 +42,11 @@ class DeliveryCdekBase(BaseModel):
     comment_sender: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "uuid_id", "tariff_code", "delivery_point", "create_datetime", "status", "status_cdek", "cdek_number", "photo_tg_file_id", "invoice_tg_file_id", "courier_to_location", "stock_id", "comment_sender"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:

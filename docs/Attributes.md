@@ -33,7 +33,7 @@ json = "{}"
 # create an instance of Attributes from a JSON string
 attributes_instance = Attributes.from_json(json)
 # print the JSON string representation of the object
-print Attributes.to_json()
+print(Attributes.to_json())
 
 # convert the object into a dict
 attributes_dict = attributes_instance.to_dict()

@@ -17,7 +17,7 @@ from inspect import getfullargspec
 import json
 import pprint
 import re  # noqa: F401
-from pydantic import BaseModel, Field, StrictStr, ValidationError, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Optional
 from swagger_client.models.attributes_order_status import AttributesOrderStatus
 from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser

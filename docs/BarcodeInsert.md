@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of BarcodeInsert from a JSON string
 barcode_insert_instance = BarcodeInsert.from_json(json)
 # print the JSON string representation of the object
-print BarcodeInsert.to_json()
+print(BarcodeInsert.to_json())
 
 # convert the object into a dict
 barcode_insert_dict = barcode_insert_instance.to_dict()

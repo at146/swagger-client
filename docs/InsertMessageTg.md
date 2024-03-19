@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of InsertMessageTg from a JSON string
 insert_message_tg_instance = InsertMessageTg.from_json(json)
 # print the JSON string representation of the object
-print InsertMessageTg.to_json()
+print(InsertMessageTg.to_json())
 
 # convert the object into a dict
 insert_message_tg_dict = insert_message_tg_instance.to_dict()

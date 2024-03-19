@@ -17,18 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CentimeterBase(BaseModel):
+class UserProdavecKrossovokBaseDb(BaseModel):
     """
-    CentimeterBase
+    UserProdavecKrossovokBaseDb
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    value: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "value"]
+    id: Optional[StrictInt] = None
+    user_id: StrictInt
+    first_name: StrictStr
+    username: Optional[StrictStr]
+    subscribe_channel: StrictBool
+    __properties: ClassVar[List[str]] = ["id", "user_id", "first_name", "username", "subscribe_channel"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +51,7 @@ class CentimeterBase(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CentimeterBase from a JSON string"""
+        """Create an instance of UserProdavecKrossovokBaseDb from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -74,16 +77,16 @@ class CentimeterBase(BaseModel):
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
 
-        # set to None if value (nullable) is None
+        # set to None if username (nullable) is None
         # and model_fields_set contains the field
-        if self.value is None and "value" in self.model_fields_set:
-            _dict['value'] = None
+        if self.username is None and "username" in self.model_fields_set:
+            _dict['username'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CentimeterBase from a dict"""
+        """Create an instance of UserProdavecKrossovokBaseDb from a dict"""
         if obj is None:
             return None
 
@@ -92,7 +95,10 @@ class CentimeterBase(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "value": obj.get("value")
+            "user_id": obj.get("user_id"),
+            "first_name": obj.get("first_name"),
+            "username": obj.get("username"),
+            "subscribe_channel": obj.get("subscribe_channel")
         })
         return _obj
 

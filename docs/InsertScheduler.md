@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of InsertScheduler from a JSON string
 insert_scheduler_instance = InsertScheduler.from_json(json)
 # print the JSON string representation of the object
-print InsertScheduler.to_json()
+print(InsertScheduler.to_json())
 
 # convert the object into a dict
 insert_scheduler_dict = insert_scheduler_instance.to_dict()

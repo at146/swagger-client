@@ -32,6 +32,7 @@ from swagger_client.api.quantities_api import QuantitiesApi
 from swagger_client.api.schedulers_api import SchedulersApi
 from swagger_client.api.sizes_api import SizesApi
 from swagger_client.api.users_bots_api import UsersBotsApi
+from swagger_client.api.users_prodavec_krossovok_api import UsersProdavecKrossovokApi
 from swagger_client.api.waybills_api import WaybillsApi
 from swagger_client.api.webhook_api import WebhookApi
 from swagger_client.api.yookassa_payments_api import YookassaPaymentsApi
@@ -71,6 +72,7 @@ from swagger_client.models.insert_basket import InsertBasket
 from swagger_client.models.insert_message_tg import InsertMessageTg
 from swagger_client.models.insert_order import InsertOrder
 from swagger_client.models.insert_scheduler import InsertScheduler
+from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProdavecKrossovok
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.models.location_inner import LocationInner
@@ -93,6 +95,7 @@ from swagger_client.models.user_base_db import UserBaseDb
 from swagger_client.models.user_bot_base import UserBotBase
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
 from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
+from swagger_client.models.user_prodavec_krossovok_base_db import UserProdavecKrossovokBaseDb
 from swagger_client.models.utm_mark_base import UtmMarkBase
 from swagger_client.models.validation_error import ValidationError
 from swagger_client.models.waybill_update import WaybillUpdate

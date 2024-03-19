@@ -28,7 +28,7 @@ json = "{}"
 # create an instance of BotBase from a JSON string
 bot_base_instance = BotBase.from_json(json)
 # print the JSON string representation of the object
-print BotBase.to_json()
+print(BotBase.to_json())
 
 # convert the object into a dict
 bot_base_dict = bot_base_instance.to_dict()

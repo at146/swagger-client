@@ -19,7 +19,7 @@ json = "{}"
 # create an instance of RelatedEntities from a JSON string
 related_entities_instance = RelatedEntities.from_json(json)
 # print the JSON string representation of the object
-print RelatedEntities.to_json()
+print(RelatedEntities.to_json())
 
 # convert the object into a dict
 related_entities_dict = related_entities_instance.to_dict()

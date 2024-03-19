@@ -29,7 +29,7 @@ json = "{}"
 # create an instance of UserBotBaseDb from a JSON string
 user_bot_base_db_instance = UserBotBaseDb.from_json(json)
 # print the JSON string representation of the object
-print UserBotBaseDb.to_json()
+print(UserBotBaseDb.to_json())
 
 # convert the object into a dict
 user_bot_base_db_dict = user_bot_base_db_instance.to_dict()

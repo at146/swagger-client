@@ -18,7 +18,7 @@ json = "{}"
 # create an instance of WaybillUpdate from a JSON string
 waybill_update_instance = WaybillUpdate.from_json(json)
 # print the JSON string representation of the object
-print WaybillUpdate.to_json()
+print(WaybillUpdate.to_json())
 
 # convert the object into a dict
 waybill_update_dict = waybill_update_instance.to_dict()

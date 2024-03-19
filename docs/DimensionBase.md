@@ -20,7 +20,7 @@ json = "{}"
 # create an instance of DimensionBase from a JSON string
 dimension_base_instance = DimensionBase.from_json(json)
 # print the JSON string representation of the object
-print DimensionBase.to_json()
+print(DimensionBase.to_json())
 
 # convert the object into a dict
 dimension_base_dict = dimension_base_instance.to_dict()

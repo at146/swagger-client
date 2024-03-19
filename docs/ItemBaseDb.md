@@ -40,7 +40,7 @@ json = "{}"
 # create an instance of ItemBaseDb from a JSON string
 item_base_db_instance = ItemBaseDb.from_json(json)
 # print the JSON string representation of the object
-print ItemBaseDb.to_json()
+print(ItemBaseDb.to_json())
 
 # convert the object into a dict
 item_base_db_dict = item_base_db_instance.to_dict()

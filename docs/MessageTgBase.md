@@ -21,7 +21,7 @@ json = "{}"
 # create an instance of MessageTgBase from a JSON string
 message_tg_base_instance = MessageTgBase.from_json(json)
 # print the JSON string representation of the object
-print MessageTgBase.to_json()
+print(MessageTgBase.to_json())
 
 # convert the object into a dict
 message_tg_base_dict = message_tg_base_instance.to_dict()

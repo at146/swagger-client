@@ -22,7 +22,7 @@ json = "{}"
 # create an instance of SchedulerBaseDb from a JSON string
 scheduler_base_db_instance = SchedulerBaseDb.from_json(json)
 # print the JSON string representation of the object
-print SchedulerBaseDb.to_json()
+print(SchedulerBaseDb.to_json())
 
 # convert the object into a dict
 scheduler_base_db_dict = scheduler_base_db_instance.to_dict()

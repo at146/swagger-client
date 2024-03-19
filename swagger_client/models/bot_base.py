@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,11 +40,11 @@ class BotBase(BaseModel):
     allowed_updates: Optional[List[StrictStr]] = None
     __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates"]
 
-    model_config = {
-        "populate_by_name": True,
-        "validate_assignment": True,
-        "protected_namespaces": (),
-    }
+    model_config = ConfigDict(
+        populate_by_name=True,
+        validate_assignment=True,
+        protected_namespaces=(),
+    )
 
 
     def to_str(self) -> str:
