@@ -160,7 +160,4 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_insert_user_prodavec_krossovok.py
-test/test_user_prodavec_krossovok_base_db.py
-test/test_users_prodavec_krossovok_api.py
 tox.ini
