@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get**
-> UserProdavecKrossovokBaseDb get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get(user_id, first_name, username=username)
+> UserProdavecKrossovokBaseDb get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get(user_id, first_name, subscribe_channel, username=username)
 
 Get User Prodavec Krossovok
 
@@ -46,11 +46,12 @@ async with swagger_client.ApiClient(configuration) as api_client:
     api_instance = swagger_client.UsersProdavecKrossovokApi(api_client)
     user_id = 56 # int | 
     first_name = 'first_name_example' # str | 
+    subscribe_channel = True # bool | 
     username = 'username_example' # str |  (optional)
 
     try:
         # Get User Prodavec Krossovok
-        api_response = await api_instance.get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get(user_id, first_name, username=username)
+        api_response = await api_instance.get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get(user_id, first_name, subscribe_channel, username=username)
         print("The response of UsersProdavecKrossovokApi->get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -66,6 +67,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | **int**|  | 
  **first_name** | **str**|  | 
+ **subscribe_channel** | **bool**|  | 
  **username** | **str**|  | [optional] 
 
 ### Return type

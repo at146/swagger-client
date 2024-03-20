@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictInt, StrictStr
+from pydantic import StrictBool, StrictInt, StrictStr
 from typing import Optional
 from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProdavecKrossovok
 from swagger_client.models.user_prodavec_krossovok_base_db import UserProdavecKrossovokBaseDb
@@ -44,6 +44,7 @@ class UsersProdavecKrossovokApi:
         self,
         user_id: StrictInt,
         first_name: StrictStr,
+        subscribe_channel: StrictBool,
         username: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -65,6 +66,8 @@ class UsersProdavecKrossovokApi:
         :type user_id: int
         :param first_name: (required)
         :type first_name: str
+        :param subscribe_channel: (required)
+        :type subscribe_channel: bool
         :param username:
         :type username: str
         :param _request_timeout: timeout setting for this request. If one
@@ -92,6 +95,7 @@ class UsersProdavecKrossovokApi:
         _param = self._get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get_serialize(
             user_id=user_id,
             first_name=first_name,
+            subscribe_channel=subscribe_channel,
             username=username,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -119,6 +123,7 @@ class UsersProdavecKrossovokApi:
         self,
         user_id: StrictInt,
         first_name: StrictStr,
+        subscribe_channel: StrictBool,
         username: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -140,6 +145,8 @@ class UsersProdavecKrossovokApi:
         :type user_id: int
         :param first_name: (required)
         :type first_name: str
+        :param subscribe_channel: (required)
+        :type subscribe_channel: bool
         :param username:
         :type username: str
         :param _request_timeout: timeout setting for this request. If one
@@ -167,6 +174,7 @@ class UsersProdavecKrossovokApi:
         _param = self._get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get_serialize(
             user_id=user_id,
             first_name=first_name,
+            subscribe_channel=subscribe_channel,
             username=username,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -194,6 +202,7 @@ class UsersProdavecKrossovokApi:
         self,
         user_id: StrictInt,
         first_name: StrictStr,
+        subscribe_channel: StrictBool,
         username: Optional[StrictStr] = None,
         _request_timeout: Union[
             None,
@@ -215,6 +224,8 @@ class UsersProdavecKrossovokApi:
         :type user_id: int
         :param first_name: (required)
         :type first_name: str
+        :param subscribe_channel: (required)
+        :type subscribe_channel: bool
         :param username:
         :type username: str
         :param _request_timeout: timeout setting for this request. If one
@@ -242,6 +253,7 @@ class UsersProdavecKrossovokApi:
         _param = self._get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get_serialize(
             user_id=user_id,
             first_name=first_name,
+            subscribe_channel=subscribe_channel,
             username=username,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -264,6 +276,7 @@ class UsersProdavecKrossovokApi:
         self,
         user_id,
         first_name,
+        subscribe_channel,
         username,
         _request_auth,
         _content_type,
@@ -290,6 +303,10 @@ class UsersProdavecKrossovokApi:
         if first_name is not None:
             
             _query_params.append(('first_name', first_name))
+            
+        if subscribe_channel is not None:
+            
+            _query_params.append(('subscribe_channel', subscribe_channel))
             
         if username is not None:
             
