@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **first_name** | **str** |  | 
 **username** | **str** |  | 
 **subscribe_channel** | **bool** |  | 
+**date_added** | **datetime** |  | 
+**date_expiration** | **datetime** |  | 
 
 ## Example
 

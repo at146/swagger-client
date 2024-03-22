@@ -136,7 +136,6 @@ Class | Method | HTTP request | Description
 *PartnersApi* | [**get_partners_user_id_api_v1_partners_get**](docs/PartnersApi.md#get_partners_user_id_api_v1_partners_get) | **GET** /api/v1/partners | Get Partners User Id
 *PurchasesApi* | [**delete_purchase_api_v1_purchases_purchase_id_delete**](docs/PurchasesApi.md#delete_purchase_api_v1_purchases_purchase_id_delete) | **DELETE** /api/v1/purchases/{purchase_id} | Delete Purchase
 *PurchasesApi* | [**get_all_api_v1_purchases_get**](docs/PurchasesApi.md#get_all_api_v1_purchases_get) | **GET** /api/v1/purchases | Get All
-*PurchasesApi* | [**get_count_api_v1_purchases_token_status_count_get**](docs/PurchasesApi.md#get_count_api_v1_purchases_token_status_count_get) | **GET** /api/v1/purchases/{token}/{status}/count | Get Count
 *PurchasesApi* | [**get_purchase_by_id_api_v1_purchases_purchase_id_get**](docs/PurchasesApi.md#get_purchase_by_id_api_v1_purchases_purchase_id_get) | **GET** /api/v1/purchases/{purchase_id} | Get Purchase By Id
 *PurchasesApi* | [**update_only_api_v1_purchases_put**](docs/PurchasesApi.md#update_only_api_v1_purchases_put) | **PUT** /api/v1/purchases | Update Only
 *QuantitiesApi* | [**insert_or_update_api_v1_quantities_merge_post**](docs/QuantitiesApi.md#insert_or_update_api_v1_quantities_merge_post) | **POST** /api/v1/quantities/merge | Insert Or Update

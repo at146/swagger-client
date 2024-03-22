@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -30,7 +31,8 @@ class InsertUserProdavecKrossovok(BaseModel):
     first_name: StrictStr
     username: Optional[StrictStr]
     subscribe_channel: StrictBool
-    __properties: ClassVar[List[str]] = ["user_id", "first_name", "username", "subscribe_channel"]
+    date_expiration: Optional[datetime]
+    __properties: ClassVar[List[str]] = ["user_id", "first_name", "username", "subscribe_channel", "date_expiration"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,11 @@ class InsertUserProdavecKrossovok(BaseModel):
         if self.username is None and "username" in self.model_fields_set:
             _dict['username'] = None
 
+        # set to None if date_expiration (nullable) is None
+        # and model_fields_set contains the field
+        if self.date_expiration is None and "date_expiration" in self.model_fields_set:
+            _dict['date_expiration'] = None
+
         return _dict
 
     @classmethod
@@ -91,7 +98,8 @@ class InsertUserProdavecKrossovok(BaseModel):
             "user_id": obj.get("user_id"),
             "first_name": obj.get("first_name"),
             "username": obj.get("username"),
-            "subscribe_channel": obj.get("subscribe_channel")
+            "subscribe_channel": obj.get("subscribe_channel"),
+            "date_expiration": obj.get("date_expiration")
         })
         return _obj
 
