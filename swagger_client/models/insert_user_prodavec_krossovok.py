@@ -31,7 +31,7 @@ class InsertUserProdavecKrossovok(BaseModel):
     first_name: StrictStr
     username: Optional[StrictStr]
     subscribe_channel: StrictBool
-    date_expiration: Optional[datetime]
+    date_expiration: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ["user_id", "first_name", "username", "subscribe_channel", "date_expiration"]
 
     model_config = ConfigDict(

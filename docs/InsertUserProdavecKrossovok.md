@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **first_name** | **str** |  | 
 **username** | **str** |  | 
 **subscribe_channel** | **bool** |  | 
-**date_expiration** | **datetime** |  | 
+**date_expiration** | **datetime** |  | [optional] 
 
 ## Example
 
