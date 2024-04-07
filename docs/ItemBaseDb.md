@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**code** | **str** |  | [optional] 
+**code** | **str** |  | 
 **changed** | **datetime** |  | [optional] 
 **active** | **bool** |  | [optional] 
 **brand** | **str** |  | [optional] 
@@ -20,8 +20,8 @@ Name | Type | Description | Notes
 **color** | **str** |  | [optional] 
 **discount_price** | **int** |  | [optional] 
 **new** | **bool** |  | [optional] 
-**code_hash** | **str** |  | [optional] 
-**category_id** | **str** |  | [optional] 
+**code_hash** | **str** |  | 
+**category_id** | **str** |  | 
 **manufacturer_country** | **str** |  | [optional] 
 **material** | **str** |  | [optional] 
 **dimension_id** | **str** |  | [optional] 

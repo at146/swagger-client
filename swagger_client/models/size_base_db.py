@@ -27,8 +27,8 @@ class SizeBaseDb(BaseModel):
     """
     SizeBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
-    value: Optional[StrictStr] = None
+    id: StrictInt
+    value: StrictStr
     quantities: Optional[List[QuantityBase]] = None
     __properties: ClassVar[List[str]] = ["id", "value", "quantities"]
 
@@ -78,16 +78,6 @@ class SizeBaseDb(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['quantities'] = _items
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
-        # set to None if value (nullable) is None
-        # and model_fields_set contains the field
-        if self.value is None and "value" in self.model_fields_set:
-            _dict['value'] = None
-
         # set to None if quantities (nullable) is None
         # and model_fields_set contains the field
         if self.quantities is None and "quantities" in self.model_fields_set:

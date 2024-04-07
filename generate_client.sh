@@ -1,3 +1,5 @@
+#!/bin/bash
+
 version=`cat VERSION`
 arrIN=(${version//./ })
 

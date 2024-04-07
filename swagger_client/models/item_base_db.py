@@ -31,7 +31,7 @@ class ItemBaseDb(BaseModel):
     ItemBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    code: Optional[StrictStr] = None
+    code: StrictStr
     changed: Optional[datetime] = None
     active: Optional[StrictBool] = None
     brand: Optional[StrictStr] = None
@@ -45,8 +45,8 @@ class ItemBaseDb(BaseModel):
     color: Optional[StrictStr] = None
     discount_price: Optional[StrictInt] = None
     new: Optional[StrictBool] = None
-    code_hash: Optional[StrictStr] = None
-    category_id: Optional[StrictStr] = None
+    code_hash: StrictStr
+    category_id: StrictStr
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
     dimension_id: Optional[StrictStr] = None
@@ -113,11 +113,6 @@ class ItemBaseDb(BaseModel):
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
 
-        # set to None if code (nullable) is None
-        # and model_fields_set contains the field
-        if self.code is None and "code" in self.model_fields_set:
-            _dict['code'] = None
-
         # set to None if changed (nullable) is None
         # and model_fields_set contains the field
         if self.changed is None and "changed" in self.model_fields_set:
@@ -182,16 +177,6 @@ class ItemBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.new is None and "new" in self.model_fields_set:
             _dict['new'] = None
-
-        # set to None if code_hash (nullable) is None
-        # and model_fields_set contains the field
-        if self.code_hash is None and "code_hash" in self.model_fields_set:
-            _dict['code_hash'] = None
-
-        # set to None if category_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.category_id is None and "category_id" in self.model_fields_set:
-            _dict['category_id'] = None
 
         # set to None if manufacturer_country (nullable) is None
         # and model_fields_set contains the field

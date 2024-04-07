@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
-**value** | **str** |  | [optional] 
+**id** | **int** |  | 
+**value** | **str** |  | 
 **quantities** | [**List[QuantityBase]**](QuantityBase.md) |  | [optional] 
 
 ## Example

@@ -73,7 +73,6 @@ docs/WebhookApi.md
 docs/YookassaPaymentBase.md
 docs/YookassaPaymentInsert.md
 docs/YookassaPaymentsApi.md
-git_push.sh
 pyproject.toml
 requirements.txt
 setup.cfg
