@@ -6,21 +6,22 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**code** | **str** |  | [optional] 
-**price** | **int** |  | [optional] 
+**code** | **str** |  | 
+**price** | **int** |  | 
 **pod** | **int** |  | [optional] 
 **invoice** | **str** |  | [optional] 
 **comment** | **str** |  | [optional] 
-**status** | **int** |  | [optional] 
+**status** | **int** |  | 
 **add_info** | **str** |  | [optional] 
 **add_photo** | **str** |  | [optional] 
 **partner** | **bool** |  | [optional] 
 **paid** | **bool** |  | [optional] 
 **delivery_cdek_id** | **int** |  | [optional] 
-**approve_size** | **bool** |  | [optional] 
-**size_id** | **int** |  | [optional] 
-**order_id** | **int** |  | [optional] 
+**approve_size** | **bool** |  | 
+**size_id** | **int** |  | 
+**order_id** | **int** |  | 
 **delivery_cdek_photo_tg_file_id** | **str** |  | [optional] 
+**refund_cdek_id** | **int** |  | [optional] 
 **item** | [**ItemBase**](ItemBase.md) |  | [optional] 
 **order** | [**OrderBase**](OrderBase.md) |  | [optional] 
 **delivery_cdek** | [**DeliveryCdekBase**](DeliveryCdekBase.md) |  | [optional] 

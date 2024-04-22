@@ -31,11 +31,11 @@ class BasketBaseDb(BaseModel):
     BasketBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    created: Optional[datetime] = None
-    item_code: Optional[StrictStr] = None
-    price: Optional[StrictInt] = None
-    user_bot_id: Optional[StrictInt] = None
-    size_id: Optional[StrictInt] = None
+    created: datetime
+    item_code: StrictStr
+    price: StrictInt
+    user_bot_id: StrictInt
+    size_id: StrictInt
     user_bot: Optional[UserBotBase] = None
     size: Optional[SizeBase] = None
     item: Optional[ItemBase] = None
@@ -93,31 +93,6 @@ class BasketBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
-
-        # set to None if created (nullable) is None
-        # and model_fields_set contains the field
-        if self.created is None and "created" in self.model_fields_set:
-            _dict['created'] = None
-
-        # set to None if item_code (nullable) is None
-        # and model_fields_set contains the field
-        if self.item_code is None and "item_code" in self.model_fields_set:
-            _dict['item_code'] = None
-
-        # set to None if price (nullable) is None
-        # and model_fields_set contains the field
-        if self.price is None and "price" in self.model_fields_set:
-            _dict['price'] = None
-
-        # set to None if user_bot_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.user_bot_id is None and "user_bot_id" in self.model_fields_set:
-            _dict['user_bot_id'] = None
-
-        # set to None if size_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.size_id is None and "size_id" in self.model_fields_set:
-            _dict['size_id'] = None
 
         # set to None if user_bot (nullable) is None
         # and model_fields_set contains the field

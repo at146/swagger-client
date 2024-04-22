@@ -31,12 +31,12 @@ class OrderBaseDb(BaseModel):
     """ # noqa: E501
     id: Optional[StrictInt] = None
     created: Optional[datetime] = None
-    user_bot_id: Optional[StrictInt] = None
-    buyer: Optional[StrictStr] = None
+    user_bot_id: StrictInt
+    buyer: StrictStr
     delivery: Optional[StrictStr] = None
     address: Optional[StrictStr] = None
     phone: Optional[StrictStr] = None
-    checking: Optional[StrictBool] = None
+    checking: StrictBool
     payment_receipt: Optional[StrictStr] = None
     comment: Optional[StrictStr] = None
     partner: Optional[StrictBool] = None
@@ -104,16 +104,6 @@ class OrderBaseDb(BaseModel):
         if self.created is None and "created" in self.model_fields_set:
             _dict['created'] = None
 
-        # set to None if user_bot_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.user_bot_id is None and "user_bot_id" in self.model_fields_set:
-            _dict['user_bot_id'] = None
-
-        # set to None if buyer (nullable) is None
-        # and model_fields_set contains the field
-        if self.buyer is None and "buyer" in self.model_fields_set:
-            _dict['buyer'] = None
-
         # set to None if delivery (nullable) is None
         # and model_fields_set contains the field
         if self.delivery is None and "delivery" in self.model_fields_set:
@@ -128,11 +118,6 @@ class OrderBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.phone is None and "phone" in self.model_fields_set:
             _dict['phone'] = None
-
-        # set to None if checking (nullable) is None
-        # and model_fields_set contains the field
-        if self.checking is None and "checking" in self.model_fields_set:
-            _dict['checking'] = None
 
         # set to None if payment_receipt (nullable) is None
         # and model_fields_set contains the field

@@ -7,12 +7,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **created** | **datetime** |  | [optional] 
-**user_bot_id** | **int** |  | [optional] 
-**buyer** | **str** |  | [optional] 
+**user_bot_id** | **int** |  | 
+**buyer** | **str** |  | 
 **delivery** | **str** |  | [optional] 
 **address** | **str** |  | [optional] 
 **phone** | **str** |  | [optional] 
-**checking** | **bool** |  | [optional] 
+**checking** | **bool** |  | 
 **payment_receipt** | **str** |  | [optional] 
 **comment** | **str** |  | [optional] 
 **partner** | **bool** |  | [optional] 

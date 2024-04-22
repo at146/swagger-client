@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.3.0"
+__version__ = "1.4.0"
 
 # import apis into sdk package
 from swagger_client.api.barcodes_api import BarcodesApi
@@ -69,6 +69,7 @@ from swagger_client.models.info_item_insert import InfoItemInsert
 from swagger_client.models.info_item_update import InfoItemUpdate
 from swagger_client.models.info_item_update_new import InfoItemUpdateNew
 from swagger_client.models.insert_basket import InsertBasket
+from swagger_client.models.insert_bot import InsertBot
 from swagger_client.models.insert_message_tg import InsertMessageTg
 from swagger_client.models.insert_order import InsertOrder
 from swagger_client.models.insert_scheduler import InsertScheduler

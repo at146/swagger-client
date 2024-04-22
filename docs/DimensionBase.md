@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**width** | **int** |  | [optional] 
-**height** | **int** |  | [optional] 
-**depth** | **int** |  | [optional] 
+**width** | **float** |  | [optional] 
+**height** | **float** |  | [optional] 
+**depth** | **float** |  | [optional] 
 
 ## Example
 

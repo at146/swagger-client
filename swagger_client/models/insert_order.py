@@ -34,10 +34,9 @@ class InsertOrder(BaseModel):
     checking: StrictBool
     comment: Optional[StrictStr] = None
     partner: Optional[StrictBool] = None
-    user_id: StrictInt
     pod: Optional[StrictInt] = None
     basket: List[BasketBaseDb]
-    __properties: ClassVar[List[str]] = ["buyer", "delivery", "address", "phone", "checking", "comment", "partner", "user_id", "pod", "basket"]
+    __properties: ClassVar[List[str]] = ["buyer", "delivery", "address", "phone", "checking", "comment", "partner", "pod", "basket"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -134,7 +133,6 @@ class InsertOrder(BaseModel):
             "checking": obj.get("checking"),
             "comment": obj.get("comment"),
             "partner": obj.get("partner"),
-            "user_id": obj.get("user_id"),
             "pod": obj.get("pod"),
             "basket": [BasketBaseDb.from_dict(_item) for _item in obj["basket"]] if obj.get("basket") is not None else None
         })

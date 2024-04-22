@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from swagger_client.models.bot_base import BotBase
@@ -32,19 +33,20 @@ class UserBotBaseDb(BaseModel):
     UserBotBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    user_id: Optional[StrictInt] = None
-    bot_token: Optional[StrictStr] = None
-    last_mess: Optional[StrictInt] = None
+    user_id: StrictInt
+    bot_token: StrictStr
+    last_mess: StrictInt
     items: Optional[StrictStr] = None
-    new_user: Optional[StrictBool] = None
-    subscribe_channel: Optional[StrictBool] = None
+    new_user: StrictBool
+    subscribe_channel: StrictBool
     utm_mark_id: Optional[StrictInt] = None
+    date_added: Optional[datetime] = None
     user: Optional[UserBaseDb] = None
     bot: Optional[BotBase] = None
     partner: Optional[PartnerBase] = None
     utm_mark: Optional[UtmMarkBase] = None
     orders: Optional[List[OrderBase]] = None
-    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id", "user", "bot", "partner", "utm_mark", "orders"]
+    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id", "date_added", "user", "bot", "partner", "utm_mark", "orders"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -109,40 +111,20 @@ class UserBotBaseDb(BaseModel):
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
 
-        # set to None if user_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict['user_id'] = None
-
-        # set to None if bot_token (nullable) is None
-        # and model_fields_set contains the field
-        if self.bot_token is None and "bot_token" in self.model_fields_set:
-            _dict['bot_token'] = None
-
-        # set to None if last_mess (nullable) is None
-        # and model_fields_set contains the field
-        if self.last_mess is None and "last_mess" in self.model_fields_set:
-            _dict['last_mess'] = None
-
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:
             _dict['items'] = None
 
-        # set to None if new_user (nullable) is None
-        # and model_fields_set contains the field
-        if self.new_user is None and "new_user" in self.model_fields_set:
-            _dict['new_user'] = None
-
-        # set to None if subscribe_channel (nullable) is None
-        # and model_fields_set contains the field
-        if self.subscribe_channel is None and "subscribe_channel" in self.model_fields_set:
-            _dict['subscribe_channel'] = None
-
         # set to None if utm_mark_id (nullable) is None
         # and model_fields_set contains the field
         if self.utm_mark_id is None and "utm_mark_id" in self.model_fields_set:
             _dict['utm_mark_id'] = None
+
+        # set to None if date_added (nullable) is None
+        # and model_fields_set contains the field
+        if self.date_added is None and "date_added" in self.model_fields_set:
+            _dict['date_added'] = None
 
         # set to None if user (nullable) is None
         # and model_fields_set contains the field
@@ -189,6 +171,7 @@ class UserBotBaseDb(BaseModel):
             "new_user": obj.get("new_user"),
             "subscribe_channel": obj.get("subscribe_channel"),
             "utm_mark_id": obj.get("utm_mark_id"),
+            "date_added": obj.get("date_added"),
             "user": UserBaseDb.from_dict(obj["user"]) if obj.get("user") is not None else None,
             "bot": BotBase.from_dict(obj["bot"]) if obj.get("bot") is not None else None,
             "partner": PartnerBase.from_dict(obj["partner"]) if obj.get("partner") is not None else None,

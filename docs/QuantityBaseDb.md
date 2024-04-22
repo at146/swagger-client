@@ -6,10 +6,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **str** |  | [optional] 
-**item_id** | **str** |  | [optional] 
-**stock_id** | **str** |  | [optional] 
-**size_id** | **int** |  | [optional] 
-**count** | **int** |  | [optional] 
+**item_id** | **str** |  | 
+**stock_id** | **str** |  | 
+**size_id** | **int** |  | 
+**count** | **int** |  | 
 **centimeter_id** | **str** |  | [optional] 
 **stock** | [**StockBase**](StockBase.md) |  | [optional] 
 **size** | [**SizeBase**](SizeBase.md) |  | [optional] 

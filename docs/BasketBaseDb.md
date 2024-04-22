@@ -6,11 +6,11 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**created** | **datetime** |  | [optional] 
-**item_code** | **str** |  | [optional] 
-**price** | **int** |  | [optional] 
-**user_bot_id** | **int** |  | [optional] 
-**size_id** | **int** |  | [optional] 
+**created** | **datetime** |  | 
+**item_code** | **str** |  | 
+**price** | **int** |  | 
+**user_bot_id** | **int** |  | 
+**size_id** | **int** |  | 
 **user_bot** | [**UserBotBase**](UserBotBase.md) |  | [optional] 
 **size** | [**SizeBase**](SizeBase.md) |  | [optional] 
 **item** | [**ItemBase**](ItemBase.md) |  | [optional] 

@@ -34,6 +34,7 @@ from swagger_client.models.info_item_insert import InfoItemInsert
 from swagger_client.models.info_item_update import InfoItemUpdate
 from swagger_client.models.info_item_update_new import InfoItemUpdateNew
 from swagger_client.models.insert_basket import InsertBasket
+from swagger_client.models.insert_bot import InsertBot
 from swagger_client.models.insert_message_tg import InsertMessageTg
 from swagger_client.models.insert_order import InsertOrder
 from swagger_client.models.insert_scheduler import InsertScheduler

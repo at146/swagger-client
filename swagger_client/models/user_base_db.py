@@ -29,8 +29,8 @@ class UserBaseDb(BaseModel):
     UserBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    user_id: Optional[StrictInt] = None
-    first_name: Optional[StrictStr] = None
+    user_id: StrictInt
+    first_name: StrictStr
     username: Optional[StrictStr] = None
     stock: Optional[StockBase] = None
     users_bots: Optional[List[UserBotBase]] = None
@@ -89,16 +89,6 @@ class UserBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
-
-        # set to None if user_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.user_id is None and "user_id" in self.model_fields_set:
-            _dict['user_id'] = None
-
-        # set to None if first_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.first_name is None and "first_name" in self.model_fields_set:
-            _dict['first_name'] = None
 
         # set to None if username (nullable) is None
         # and model_fields_set contains the field

@@ -28,6 +28,7 @@ docs/InfoItemUpdate.md
 docs/InfoItemUpdateNew.md
 docs/InfoItemsApi.md
 docs/InsertBasket.md
+docs/InsertBot.md
 docs/InsertMessageTg.md
 docs/InsertOrder.md
 docs/InsertScheduler.md
@@ -123,6 +124,7 @@ swagger_client/models/info_item_insert.py
 swagger_client/models/info_item_update.py
 swagger_client/models/info_item_update_new.py
 swagger_client/models/insert_basket.py
+swagger_client/models/insert_bot.py
 swagger_client/models/insert_message_tg.py
 swagger_client/models/insert_order.py
 swagger_client/models/insert_scheduler.py
@@ -159,4 +161,5 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
+test/test_insert_bot.py
 tox.ini

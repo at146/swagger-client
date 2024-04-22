@@ -6,9 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**messages_tg_id** | **int** |  | [optional] 
-**users_bots_id** | **int** |  | [optional] 
-**trigger_datetime** | **datetime** |  | [optional] 
+**messages_tg_id** | **int** |  | 
+**users_bots_id** | **int** |  | 
+**trigger_datetime** | **datetime** |  | 
 **users_bots** | [**UserBotBase**](UserBotBase.md) |  | [optional] 
 **messages_tg** | [**MessageTgBase**](MessageTgBase.md) |  | [optional] 
 

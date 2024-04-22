@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **checking** | **bool** |  | 
 **comment** | **str** |  | [optional] 
 **partner** | **bool** |  | [optional] 
-**user_id** | **int** |  | 
 **pod** | **int** |  | [optional] 
 **basket** | [**List[BasketBaseDb]**](BasketBaseDb.md) |  | 
 

@@ -6,16 +6,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**token** | **str** |  | [optional] 
-**full_name** | **str** |  | [optional] 
-**username** | **str** |  | [optional] 
-**id_bot** | **int** |  | [optional] 
-**admin_list** | **List[int]** |  | [optional] 
-**text_channel_url** | **str** |  | [optional] 
-**support_url** | **str** |  | [optional] 
-**channel_url** | **str** |  | [optional] 
-**info_url** | **str** |  | [optional] 
-**comments_url** | **str** |  | [optional] 
+**token** | **str** |  | 
+**full_name** | **str** |  | 
+**username** | **str** |  | 
+**id_bot** | **int** |  | 
+**admin_list** | **List[int]** |  | 
+**text_channel_url** | **str** |  | 
+**support_url** | **str** |  | 
+**channel_url** | **str** |  | 
+**info_url** | **str** |  | 
+**comments_url** | **str** |  | 
 **allowed_updates** | **List[str]** |  | [optional] 
 
 ## Example

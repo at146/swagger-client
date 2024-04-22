@@ -17,8 +17,8 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from swagger_client.models.bot_base import BotBase
 from swagger_client.models.bot_base_db import BotBaseDb
+from swagger_client.models.insert_bot import InsertBot
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -551,7 +551,7 @@ class BotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[object]:
+    ) -> List[str]:
         """Get Tokens Multibot
 
 
@@ -585,7 +585,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[object]",
+            '200': "List[str]",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -613,7 +613,7 @@ class BotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[object]]:
+    ) -> ApiResponse[List[str]]:
         """Get Tokens Multibot
 
 
@@ -647,7 +647,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[object]",
+            '200': "List[str]",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -709,7 +709,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[object]",
+            '200': "List[str]",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -779,7 +779,7 @@ class BotsApi:
     @validate_call
     async def insert_or_nothing_api_v1_bots_post(
         self,
-        bot_base: BotBase,
+        insert_bot: InsertBot,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -796,8 +796,8 @@ class BotsApi:
         """Insert Or Nothing
 
 
-        :param bot_base: (required)
-        :type bot_base: BotBase
+        :param insert_bot: (required)
+        :type insert_bot: InsertBot
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -821,7 +821,7 @@ class BotsApi:
         """ # noqa: E501
 
         _param = self._insert_or_nothing_api_v1_bots_post_serialize(
-            bot_base=bot_base,
+            insert_bot=insert_bot,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -846,7 +846,7 @@ class BotsApi:
     @validate_call
     async def insert_or_nothing_api_v1_bots_post_with_http_info(
         self,
-        bot_base: BotBase,
+        insert_bot: InsertBot,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -863,8 +863,8 @@ class BotsApi:
         """Insert Or Nothing
 
 
-        :param bot_base: (required)
-        :type bot_base: BotBase
+        :param insert_bot: (required)
+        :type insert_bot: InsertBot
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -888,7 +888,7 @@ class BotsApi:
         """ # noqa: E501
 
         _param = self._insert_or_nothing_api_v1_bots_post_serialize(
-            bot_base=bot_base,
+            insert_bot=insert_bot,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -913,7 +913,7 @@ class BotsApi:
     @validate_call
     async def insert_or_nothing_api_v1_bots_post_without_preload_content(
         self,
-        bot_base: BotBase,
+        insert_bot: InsertBot,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -930,8 +930,8 @@ class BotsApi:
         """Insert Or Nothing
 
 
-        :param bot_base: (required)
-        :type bot_base: BotBase
+        :param insert_bot: (required)
+        :type insert_bot: InsertBot
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -955,7 +955,7 @@ class BotsApi:
         """ # noqa: E501
 
         _param = self._insert_or_nothing_api_v1_bots_post_serialize(
-            bot_base=bot_base,
+            insert_bot=insert_bot,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -975,7 +975,7 @@ class BotsApi:
 
     def _insert_or_nothing_api_v1_bots_post_serialize(
         self,
-        bot_base,
+        insert_bot,
         _request_auth,
         _content_type,
         _headers,
@@ -999,8 +999,8 @@ class BotsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if bot_base is not None:
-            _body_params = bot_base
+        if insert_bot is not None:
+            _body_params = insert_bot
 
 
         # set the HTTP header `Accept`

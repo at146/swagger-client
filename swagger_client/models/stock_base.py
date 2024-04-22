@@ -31,7 +31,9 @@ class StockBase(BaseModel):
     user_id: Optional[StrictInt] = None
     number: Optional[StrictInt] = None
     shipment_point: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "name", "user_id", "number", "shipment_point"]
+    full_name: Optional[StrictStr] = None
+    phone: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "name", "user_id", "number", "shipment_point", "full_name", "phone"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +99,16 @@ class StockBase(BaseModel):
         if self.shipment_point is None and "shipment_point" in self.model_fields_set:
             _dict['shipment_point'] = None
 
+        # set to None if full_name (nullable) is None
+        # and model_fields_set contains the field
+        if self.full_name is None and "full_name" in self.model_fields_set:
+            _dict['full_name'] = None
+
+        # set to None if phone (nullable) is None
+        # and model_fields_set contains the field
+        if self.phone is None and "phone" in self.model_fields_set:
+            _dict['phone'] = None
+
         return _dict
 
     @classmethod
@@ -113,7 +125,9 @@ class StockBase(BaseModel):
             "name": obj.get("name"),
             "user_id": obj.get("user_id"),
             "number": obj.get("number"),
-            "shipment_point": obj.get("shipment_point")
+            "shipment_point": obj.get("shipment_point"),
+            "full_name": obj.get("full_name"),
+            "phone": obj.get("phone")
         })
         return _obj
 

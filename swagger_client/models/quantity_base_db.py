@@ -30,10 +30,10 @@ class QuantityBaseDb(BaseModel):
     QuantityBaseDb
     """ # noqa: E501
     id: Optional[StrictStr] = None
-    item_id: Optional[StrictStr] = None
-    stock_id: Optional[StrictStr] = None
-    size_id: Optional[StrictInt] = None
-    count: Optional[StrictInt] = None
+    item_id: StrictStr
+    stock_id: StrictStr
+    size_id: StrictInt
+    count: StrictInt
     centimeter_id: Optional[StrictStr] = None
     stock: Optional[StockBase] = None
     size: Optional[SizeBase] = None
@@ -92,26 +92,6 @@ class QuantityBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
-
-        # set to None if item_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.item_id is None and "item_id" in self.model_fields_set:
-            _dict['item_id'] = None
-
-        # set to None if stock_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.stock_id is None and "stock_id" in self.model_fields_set:
-            _dict['stock_id'] = None
-
-        # set to None if size_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.size_id is None and "size_id" in self.model_fields_set:
-            _dict['size_id'] = None
-
-        # set to None if count (nullable) is None
-        # and model_fields_set contains the field
-        if self.count is None and "count" in self.model_fields_set:
-            _dict['count'] = None
 
         # set to None if centimeter_id (nullable) is None
         # and model_fields_set contains the field

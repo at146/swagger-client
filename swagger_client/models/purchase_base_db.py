@@ -32,27 +32,28 @@ class PurchaseBaseDb(BaseModel):
     PurchaseBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    code: Optional[StrictStr] = None
-    price: Optional[StrictInt] = None
+    code: StrictStr
+    price: StrictInt
     pod: Optional[StrictInt] = None
     invoice: Optional[StrictStr] = None
     comment: Optional[StrictStr] = None
-    status: Optional[StrictInt] = None
+    status: StrictInt
     add_info: Optional[StrictStr] = None
     add_photo: Optional[StrictStr] = None
     partner: Optional[StrictBool] = None
     paid: Optional[StrictBool] = None
     delivery_cdek_id: Optional[StrictInt] = None
-    approve_size: Optional[StrictBool] = None
-    size_id: Optional[StrictInt] = None
-    order_id: Optional[StrictInt] = None
+    approve_size: StrictBool
+    size_id: StrictInt
+    order_id: StrictInt
     delivery_cdek_photo_tg_file_id: Optional[StrictStr] = None
+    refund_cdek_id: Optional[StrictInt] = None
     item: Optional[ItemBase] = None
     order: Optional[OrderBase] = None
     delivery_cdek: Optional[DeliveryCdekBase] = None
     size: Optional[SizeBase] = None
     yookassa_payment: Optional[YookassaPaymentBase] = None
-    __properties: ClassVar[List[str]] = ["id", "code", "price", "pod", "invoice", "comment", "status", "add_info", "add_photo", "partner", "paid", "delivery_cdek_id", "approve_size", "size_id", "order_id", "delivery_cdek_photo_tg_file_id", "item", "order", "delivery_cdek", "size", "yookassa_payment"]
+    __properties: ClassVar[List[str]] = ["id", "code", "price", "pod", "invoice", "comment", "status", "add_info", "add_photo", "partner", "paid", "delivery_cdek_id", "approve_size", "size_id", "order_id", "delivery_cdek_photo_tg_file_id", "refund_cdek_id", "item", "order", "delivery_cdek", "size", "yookassa_payment"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,16 +114,6 @@ class PurchaseBaseDb(BaseModel):
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
 
-        # set to None if code (nullable) is None
-        # and model_fields_set contains the field
-        if self.code is None and "code" in self.model_fields_set:
-            _dict['code'] = None
-
-        # set to None if price (nullable) is None
-        # and model_fields_set contains the field
-        if self.price is None and "price" in self.model_fields_set:
-            _dict['price'] = None
-
         # set to None if pod (nullable) is None
         # and model_fields_set contains the field
         if self.pod is None and "pod" in self.model_fields_set:
@@ -137,11 +128,6 @@ class PurchaseBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.comment is None and "comment" in self.model_fields_set:
             _dict['comment'] = None
-
-        # set to None if status (nullable) is None
-        # and model_fields_set contains the field
-        if self.status is None and "status" in self.model_fields_set:
-            _dict['status'] = None
 
         # set to None if add_info (nullable) is None
         # and model_fields_set contains the field
@@ -168,25 +154,15 @@ class PurchaseBaseDb(BaseModel):
         if self.delivery_cdek_id is None and "delivery_cdek_id" in self.model_fields_set:
             _dict['delivery_cdek_id'] = None
 
-        # set to None if approve_size (nullable) is None
-        # and model_fields_set contains the field
-        if self.approve_size is None and "approve_size" in self.model_fields_set:
-            _dict['approve_size'] = None
-
-        # set to None if size_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.size_id is None and "size_id" in self.model_fields_set:
-            _dict['size_id'] = None
-
-        # set to None if order_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.order_id is None and "order_id" in self.model_fields_set:
-            _dict['order_id'] = None
-
         # set to None if delivery_cdek_photo_tg_file_id (nullable) is None
         # and model_fields_set contains the field
         if self.delivery_cdek_photo_tg_file_id is None and "delivery_cdek_photo_tg_file_id" in self.model_fields_set:
             _dict['delivery_cdek_photo_tg_file_id'] = None
+
+        # set to None if refund_cdek_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.refund_cdek_id is None and "refund_cdek_id" in self.model_fields_set:
+            _dict['refund_cdek_id'] = None
 
         # set to None if item (nullable) is None
         # and model_fields_set contains the field
@@ -241,6 +217,7 @@ class PurchaseBaseDb(BaseModel):
             "size_id": obj.get("size_id"),
             "order_id": obj.get("order_id"),
             "delivery_cdek_photo_tg_file_id": obj.get("delivery_cdek_photo_tg_file_id"),
+            "refund_cdek_id": obj.get("refund_cdek_id"),
             "item": ItemBase.from_dict(obj["item"]) if obj.get("item") is not None else None,
             "order": OrderBase.from_dict(obj["order"]) if obj.get("order") is not None else None,
             "delivery_cdek": DeliveryCdekBase.from_dict(obj["delivery_cdek"]) if obj.get("delivery_cdek") is not None else None,

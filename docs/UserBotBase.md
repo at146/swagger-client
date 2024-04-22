@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **new_user** | **bool** |  | [optional] 
 **subscribe_channel** | **bool** |  | [optional] 
 **utm_mark_id** | **int** |  | [optional] 
+**date_added** | **datetime** |  | [optional] 
 
 ## Example
 

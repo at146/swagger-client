@@ -17,20 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional, Union
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DimensionBase(BaseModel):
+class InsertBot(BaseModel):
     """
-    DimensionBase
+    InsertBot
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    width: Optional[Union[StrictFloat, StrictInt]] = None
-    height: Optional[Union[StrictFloat, StrictInt]] = None
-    depth: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["id", "width", "height", "depth"]
+    token: StrictStr
+    full_name: StrictStr
+    username: StrictStr
+    id_bot: StrictInt
+    allowed_updates: List[StrictStr]
+    __properties: ClassVar[List[str]] = ["token", "full_name", "username", "id_bot", "allowed_updates"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +51,7 @@ class DimensionBase(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DimensionBase from a JSON string"""
+        """Create an instance of InsertBot from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,31 +72,11 @@ class DimensionBase(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
-        # set to None if width (nullable) is None
-        # and model_fields_set contains the field
-        if self.width is None and "width" in self.model_fields_set:
-            _dict['width'] = None
-
-        # set to None if height (nullable) is None
-        # and model_fields_set contains the field
-        if self.height is None and "height" in self.model_fields_set:
-            _dict['height'] = None
-
-        # set to None if depth (nullable) is None
-        # and model_fields_set contains the field
-        if self.depth is None and "depth" in self.model_fields_set:
-            _dict['depth'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DimensionBase from a dict"""
+        """Create an instance of InsertBot from a dict"""
         if obj is None:
             return None
 
@@ -103,10 +84,11 @@ class DimensionBase(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
-            "width": obj.get("width"),
-            "height": obj.get("height"),
-            "depth": obj.get("depth")
+            "token": obj.get("token"),
+            "full_name": obj.get("full_name"),
+            "username": obj.get("username"),
+            "id_bot": obj.get("id_bot"),
+            "allowed_updates": obj.get("allowed_updates")
         })
         return _obj
 

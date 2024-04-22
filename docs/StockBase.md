@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **user_id** | **int** |  | [optional] 
 **number** | **int** |  | [optional] 
 **shipment_point** | **str** |  | [optional] 
+**full_name** | **str** |  | [optional] 
+**phone** | **str** |  | [optional] 
 
 ## Example
 

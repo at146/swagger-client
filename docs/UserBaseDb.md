@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**user_id** | **int** |  | [optional] 
-**first_name** | **str** |  | [optional] 
+**user_id** | **int** |  | 
+**first_name** | **str** |  | 
 **username** | **str** |  | [optional] 
 **stock** | [**StockBase**](StockBase.md) |  | [optional] 
 **users_bots** | [**List[UserBotBase]**](UserBotBase.md) |  | [optional] 

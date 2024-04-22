@@ -17,6 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
+from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
@@ -34,7 +35,8 @@ class UserBotBase(BaseModel):
     new_user: Optional[StrictBool] = None
     subscribe_channel: Optional[StrictBool] = None
     utm_mark_id: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id"]
+    date_added: Optional[datetime] = None
+    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id", "date_added"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,6 +117,11 @@ class UserBotBase(BaseModel):
         if self.utm_mark_id is None and "utm_mark_id" in self.model_fields_set:
             _dict['utm_mark_id'] = None
 
+        # set to None if date_added (nullable) is None
+        # and model_fields_set contains the field
+        if self.date_added is None and "date_added" in self.model_fields_set:
+            _dict['date_added'] = None
+
         return _dict
 
     @classmethod
@@ -134,7 +141,8 @@ class UserBotBase(BaseModel):
             "items": obj.get("items"),
             "new_user": obj.get("new_user"),
             "subscribe_channel": obj.get("subscribe_channel"),
-            "utm_mark_id": obj.get("utm_mark_id")
+            "utm_mark_id": obj.get("utm_mark_id"),
+            "date_added": obj.get("date_added")
         })
         return _obj
 

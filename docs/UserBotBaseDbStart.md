@@ -6,13 +6,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
-**user_id** | **int** |  | [optional] 
-**bot_token** | **str** |  | [optional] 
-**last_mess** | **int** |  | [optional] 
+**user_id** | **int** |  | 
+**bot_token** | **str** |  | 
+**last_mess** | **int** |  | 
 **items** | **str** |  | [optional] 
-**new_user** | **bool** |  | [optional] 
-**subscribe_channel** | **bool** |  | [optional] 
+**new_user** | **bool** |  | 
+**subscribe_channel** | **bool** |  | 
 **utm_mark_id** | **int** |  | [optional] 
+**date_added** | **datetime** |  | [optional] 
 **user** | [**UserBaseDb**](UserBaseDb.md) |  | [optional] 
 **bot** | [**BotBase**](BotBase.md) |  | [optional] 
 **partner** | [**PartnerBase**](PartnerBase.md) |  | [optional] 

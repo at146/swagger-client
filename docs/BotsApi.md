@@ -162,7 +162,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tokens_multibot_api_v1_bots_multibot_tokens_get**
-> List[object] get_tokens_multibot_api_v1_bots_multibot_tokens_get()
+> List[str] get_tokens_multibot_api_v1_bots_multibot_tokens_get()
 
 Get Tokens Multibot
 
@@ -214,7 +214,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**List[object]**
+**List[str]**
 
 ### Authorization
 
@@ -234,7 +234,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_or_nothing_api_v1_bots_post**
-> object insert_or_nothing_api_v1_bots_post(bot_base)
+> object insert_or_nothing_api_v1_bots_post(insert_bot)
 
 Insert Or Nothing
 
@@ -244,7 +244,7 @@ Insert Or Nothing
 
 ```python
 import swagger_client
-from swagger_client.models.bot_base import BotBase
+from swagger_client.models.insert_bot import InsertBot
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -269,11 +269,11 @@ configuration = swagger_client.Configuration(
 async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BotsApi(api_client)
-    bot_base = swagger_client.BotBase() # BotBase | 
+    insert_bot = swagger_client.InsertBot() # InsertBot | 
 
     try:
         # Insert Or Nothing
-        api_response = await api_instance.insert_or_nothing_api_v1_bots_post(bot_base)
+        api_response = await api_instance.insert_or_nothing_api_v1_bots_post(insert_bot)
         print("The response of BotsApi->insert_or_nothing_api_v1_bots_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -287,7 +287,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bot_base** | [**BotBase**](BotBase.md)|  | 
+ **insert_bot** | [**InsertBot**](InsertBot.md)|  | 
 
 ### Return type
 

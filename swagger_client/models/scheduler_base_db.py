@@ -30,9 +30,9 @@ class SchedulerBaseDb(BaseModel):
     SchedulerBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    messages_tg_id: Optional[StrictInt] = None
-    users_bots_id: Optional[StrictInt] = None
-    trigger_datetime: Optional[datetime] = None
+    messages_tg_id: StrictInt
+    users_bots_id: StrictInt
+    trigger_datetime: datetime
     users_bots: Optional[UserBotBase] = None
     messages_tg: Optional[MessageTgBase] = None
     __properties: ClassVar[List[str]] = ["id", "messages_tg_id", "users_bots_id", "trigger_datetime", "users_bots", "messages_tg"]
@@ -86,21 +86,6 @@ class SchedulerBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
-
-        # set to None if messages_tg_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.messages_tg_id is None and "messages_tg_id" in self.model_fields_set:
-            _dict['messages_tg_id'] = None
-
-        # set to None if users_bots_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.users_bots_id is None and "users_bots_id" in self.model_fields_set:
-            _dict['users_bots_id'] = None
-
-        # set to None if trigger_datetime (nullable) is None
-        # and model_fields_set contains the field
-        if self.trigger_datetime is None and "trigger_datetime" in self.model_fields_set:
-            _dict['trigger_datetime'] = None
 
         # set to None if users_bots (nullable) is None
         # and model_fields_set contains the field

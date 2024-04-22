@@ -27,16 +27,16 @@ class BotBaseDb(BaseModel):
     BotBaseDb
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    token: Optional[StrictStr] = None
-    full_name: Optional[StrictStr] = None
-    username: Optional[StrictStr] = None
-    id_bot: Optional[StrictInt] = None
-    admin_list: Optional[List[StrictInt]] = None
-    text_channel_url: Optional[StrictStr] = None
-    support_url: Optional[StrictStr] = None
-    channel_url: Optional[StrictStr] = None
-    info_url: Optional[StrictStr] = None
-    comments_url: Optional[StrictStr] = None
+    token: StrictStr
+    full_name: StrictStr
+    username: StrictStr
+    id_bot: StrictInt
+    admin_list: List[StrictInt]
+    text_channel_url: StrictStr
+    support_url: StrictStr
+    channel_url: StrictStr
+    info_url: StrictStr
+    comments_url: StrictStr
     allowed_updates: Optional[List[StrictStr]] = None
     __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates"]
 
@@ -83,56 +83,6 @@ class BotBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.id is None and "id" in self.model_fields_set:
             _dict['id'] = None
-
-        # set to None if token (nullable) is None
-        # and model_fields_set contains the field
-        if self.token is None and "token" in self.model_fields_set:
-            _dict['token'] = None
-
-        # set to None if full_name (nullable) is None
-        # and model_fields_set contains the field
-        if self.full_name is None and "full_name" in self.model_fields_set:
-            _dict['full_name'] = None
-
-        # set to None if username (nullable) is None
-        # and model_fields_set contains the field
-        if self.username is None and "username" in self.model_fields_set:
-            _dict['username'] = None
-
-        # set to None if id_bot (nullable) is None
-        # and model_fields_set contains the field
-        if self.id_bot is None and "id_bot" in self.model_fields_set:
-            _dict['id_bot'] = None
-
-        # set to None if admin_list (nullable) is None
-        # and model_fields_set contains the field
-        if self.admin_list is None and "admin_list" in self.model_fields_set:
-            _dict['admin_list'] = None
-
-        # set to None if text_channel_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.text_channel_url is None and "text_channel_url" in self.model_fields_set:
-            _dict['text_channel_url'] = None
-
-        # set to None if support_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.support_url is None and "support_url" in self.model_fields_set:
-            _dict['support_url'] = None
-
-        # set to None if channel_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.channel_url is None and "channel_url" in self.model_fields_set:
-            _dict['channel_url'] = None
-
-        # set to None if info_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.info_url is None and "info_url" in self.model_fields_set:
-            _dict['info_url'] = None
-
-        # set to None if comments_url (nullable) is None
-        # and model_fields_set contains the field
-        if self.comments_url is None and "comments_url" in self.model_fields_set:
-            _dict['comments_url'] = None
 
         # set to None if allowed_updates (nullable) is None
         # and model_fields_set contains the field
