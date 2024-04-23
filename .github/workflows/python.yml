@@ -1,6 +1,9 @@
 name: swagger_client Python package
 
-on: [push]
+on:
+  push:
+    tags:        
+      - '*'
 
 jobs:
   test:
