@@ -32,7 +32,7 @@ class UserBotBaseDbStart(BaseModel):
     """
     UserBotBaseDbStart
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     user_id: StrictInt
     bot_token: StrictStr
     last_mess: StrictInt
@@ -107,11 +107,6 @@ class UserBotBaseDbStart(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['orders'] = _items
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if items (nullable) is None
         # and model_fields_set contains the field
         if self.items is None and "items" in self.model_fields_set:

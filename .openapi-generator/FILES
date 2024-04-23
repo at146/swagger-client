@@ -163,5 +163,4 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_message_tg_base_db.py
 tox.ini

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **user_id** | **int** |  | 
 **bot_token** | **str** |  | 
 **last_mess** | **int** |  | 
