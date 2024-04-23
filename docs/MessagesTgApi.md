@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **get_api_v1_messages_tg_name_get**
-> MessageTgBase get_api_v1_messages_tg_name_get(name, token)
+> MessageTgBaseDb get_api_v1_messages_tg_name_get(name, token)
 
 Get
 
@@ -19,7 +19,7 @@ Get
 
 ```python
 import swagger_client
-from swagger_client.models.message_tg_base import MessageTgBase
+from swagger_client.models.message_tg_base_db import MessageTgBaseDb
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MessageTgBase**](MessageTgBase.md)
+[**MessageTgBaseDb**](MessageTgBaseDb.md)
 
 ### Authorization
 

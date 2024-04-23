@@ -38,6 +38,7 @@ docs/ItemBaseDb.md
 docs/ItemsApi.md
 docs/LocationInner.md
 docs/MessageTgBase.md
+docs/MessageTgBaseDb.md
 docs/MessagesTgApi.md
 docs/ModelCount.md
 docs/OrderBase.md
@@ -133,6 +134,7 @@ swagger_client/models/item_base.py
 swagger_client/models/item_base_db.py
 swagger_client/models/location_inner.py
 swagger_client/models/message_tg_base.py
+swagger_client/models/message_tg_base_db.py
 swagger_client/models/model_count.py
 swagger_client/models/order_base.py
 swagger_client/models/order_base_db.py
@@ -161,5 +163,5 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_insert_bot.py
+test/test_message_tg_base_db.py
 tox.ini

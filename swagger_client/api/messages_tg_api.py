@@ -18,7 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from swagger_client.models.insert_message_tg import InsertMessageTg
-from swagger_client.models.message_tg_base import MessageTgBase
+from swagger_client.models.message_tg_base_db import MessageTgBaseDb
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -55,7 +55,7 @@ class MessagesTgApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> MessageTgBase:
+    ) -> MessageTgBaseDb:
         """Get
 
 
@@ -95,7 +95,7 @@ class MessagesTgApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MessageTgBase",
+            '200': "MessageTgBaseDb",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -126,7 +126,7 @@ class MessagesTgApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[MessageTgBase]:
+    ) -> ApiResponse[MessageTgBaseDb]:
         """Get
 
 
@@ -166,7 +166,7 @@ class MessagesTgApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MessageTgBase",
+            '200': "MessageTgBaseDb",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -237,7 +237,7 @@ class MessagesTgApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "MessageTgBase",
+            '200': "MessageTgBaseDb",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

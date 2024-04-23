@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.4.0"
+__version__ = "1.5.0"
 
 # import apis into sdk package
 from swagger_client.api.barcodes_api import BarcodesApi
@@ -78,6 +78,7 @@ from swagger_client.models.item_base import ItemBase
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.models.location_inner import LocationInner
 from swagger_client.models.message_tg_base import MessageTgBase
+from swagger_client.models.message_tg_base_db import MessageTgBaseDb
 from swagger_client.models.model_count import ModelCount
 from swagger_client.models.order_base import OrderBase
 from swagger_client.models.order_base_db import OrderBaseDb
