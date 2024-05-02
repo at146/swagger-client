@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **created** | **datetime** |  | [optional] 
 **user_bot_id** | **int** |  | 
 **buyer** | **str** |  | 

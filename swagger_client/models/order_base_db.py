@@ -29,7 +29,7 @@ class OrderBaseDb(BaseModel):
     """
     OrderBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     created: Optional[datetime] = None
     user_bot_id: StrictInt
     buyer: StrictStr
@@ -94,11 +94,6 @@ class OrderBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of user_bot
         if self.user_bot:
             _dict['user_bot'] = self.user_bot.to_dict()
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if created (nullable) is None
         # and model_fields_set contains the field
         if self.created is None and "created" in self.model_fields_set:
