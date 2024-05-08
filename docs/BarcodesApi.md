@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **insert_api_v1_barcodes_post**
-> object insert_api_v1_barcodes_post(barcode_insert)
+> MessageResponse insert_api_v1_barcodes_post(barcode_insert)
 
 Insert
 
@@ -19,6 +19,7 @@ Insert
 ```python
 import swagger_client
 from swagger_client.models.barcode_insert import BarcodeInsert
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

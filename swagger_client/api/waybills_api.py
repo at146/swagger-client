@@ -16,6 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.waybill_update import WaybillUpdate
 
 from swagger_client.api_client import ApiClient, RequestSerialized
@@ -52,7 +53,7 @@ class WaybillsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Update
 
 
@@ -89,7 +90,7 @@ class WaybillsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -119,7 +120,7 @@ class WaybillsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Update
 
 
@@ -156,7 +157,7 @@ class WaybillsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -223,7 +224,7 @@ class WaybillsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

@@ -22,7 +22,6 @@ docs/DeliveryCdekBase.md
 docs/DeliveryCdekUpdate.md
 docs/DimensionBase.md
 docs/HTTPValidationError.md
-docs/InfoItemInsert.md
 docs/InfoItemUpdate.md
 docs/InfoItemUpdateNew.md
 docs/InfoItemsApi.md
@@ -36,6 +35,7 @@ docs/ItemBase.md
 docs/ItemBaseDb.md
 docs/ItemsApi.md
 docs/LocationInner.md
+docs/MessageResponse.md
 docs/MessageTgBase.md
 docs/MessageTgBaseDb.md
 docs/MessagesTgApi.md
@@ -120,7 +120,6 @@ swagger_client/models/delivery_cdek_base.py
 swagger_client/models/delivery_cdek_update.py
 swagger_client/models/dimension_base.py
 swagger_client/models/http_validation_error.py
-swagger_client/models/info_item_insert.py
 swagger_client/models/info_item_update.py
 swagger_client/models/info_item_update_new.py
 swagger_client/models/insert_basket.py
@@ -132,6 +131,7 @@ swagger_client/models/insert_user_prodavec_krossovok.py
 swagger_client/models/item_base.py
 swagger_client/models/item_base_db.py
 swagger_client/models/location_inner.py
+swagger_client/models/message_response.py
 swagger_client/models/message_tg_base.py
 swagger_client/models/message_tg_base_db.py
 swagger_client/models/model_count.py
@@ -162,4 +162,5 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
+test/test_message_response.py
 tox.ini

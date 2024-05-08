@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **update_api_v1_waybills_put**
-> object update_api_v1_waybills_put(waybill_update)
+> MessageResponse update_api_v1_waybills_put(waybill_update)
 
 Update
 
@@ -18,6 +18,7 @@ Update
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.waybill_update import WaybillUpdate
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -65,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

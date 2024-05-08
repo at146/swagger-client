@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_categories_name_api_v1_categories_get**
-> object get_categories_name_api_v1_categories_get()
+> List[str] get_categories_name_api_v1_categories_get()
 
 Get Categories Name
 
@@ -60,7 +60,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**object**
+**List[str]**
 
 ### Authorization
 

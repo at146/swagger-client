@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **insert_or_update_api_v1_quantities_merge_post**
-> object insert_or_update_api_v1_quantities_merge_post(body)
+> MessageResponse insert_or_update_api_v1_quantities_merge_post(body)
 
 Insert Or Update
 
@@ -18,6 +18,7 @@ Insert Or Update
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -64,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

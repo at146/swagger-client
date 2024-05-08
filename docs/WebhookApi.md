@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **webhook_from_cdek_api_v1_webhook_cdek_post**
-> object webhook_from_cdek_api_v1_webhook_cdek_post(cdek_webhook)
+> MessageResponse webhook_from_cdek_api_v1_webhook_cdek_post(cdek_webhook)
 
 Webhook From Cdek
 
@@ -20,6 +20,7 @@ Webhook From Cdek
 ```python
 import swagger_client
 from swagger_client.models.cdek_webhook import CdekWebhook
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -56,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

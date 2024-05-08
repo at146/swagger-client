@@ -18,6 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictInt, StrictStr
 from typing import Any, Dict, Optional
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.size_base_db import SizeBaseDb
 
 from swagger_client.api_client import ApiClient, RequestSerialized
@@ -572,7 +573,7 @@ class SizesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Insert Or Nothing
 
 
@@ -609,7 +610,7 @@ class SizesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -639,7 +640,7 @@ class SizesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Insert Or Nothing
 
 
@@ -676,7 +677,7 @@ class SizesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -743,7 +744,7 @@ class SizesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

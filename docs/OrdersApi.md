@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **delete_order_api_v1_orders_order_id_delete**
-> object delete_order_api_v1_orders_order_id_delete(order_id)
+> MessageResponse delete_order_api_v1_orders_order_id_delete(order_id)
 
 Delete Order
 
@@ -24,6 +24,7 @@ Delete Order
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

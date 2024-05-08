@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **delete_one_basket_api_v1_baskets_basket_id_delete**
-> object delete_one_basket_api_v1_baskets_basket_id_delete(basket_id)
+> MessageResponse delete_one_basket_api_v1_baskets_basket_id_delete(basket_id)
 
 Delete One Basket
 
@@ -24,6 +24,7 @@ Delete One Basket
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -70,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -91,7 +92,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete**
-> object delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(user_bot_id)
+> MessageResponse delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(user_bot_id)
 
 Delete User Basket
 
@@ -101,6 +102,7 @@ Delete User Basket
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -147,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -488,7 +490,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_api_v1_baskets_post**
-> object insert_api_v1_baskets_post(insert_basket)
+> MessageResponse insert_api_v1_baskets_post(insert_basket)
 
 Insert
 
@@ -499,6 +501,7 @@ Insert
 ```python
 import swagger_client
 from swagger_client.models.insert_basket import InsertBasket
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -545,7 +548,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

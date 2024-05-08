@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **delete_api_v1_schedulers_scheduler_id_delete**
-> object delete_api_v1_schedulers_scheduler_id_delete(scheduler_id)
+> MessageResponse delete_api_v1_schedulers_scheduler_id_delete(scheduler_id)
 
 Delete
 
@@ -20,6 +20,7 @@ Delete
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **delete_purchase_api_v1_purchases_purchase_id_delete**
-> object delete_purchase_api_v1_purchases_purchase_id_delete(purchase_id)
+> MessageResponse delete_purchase_api_v1_purchases_purchase_id_delete(purchase_id)
 
 Delete Purchase
 
@@ -21,6 +21,7 @@ Delete Purchase
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -67,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -254,7 +255,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_only_api_v1_purchases_put**
-> object update_only_api_v1_purchases_put(update_purchase)
+> MessageResponse update_only_api_v1_purchases_put(update_purchase)
 
 Update Only
 
@@ -264,6 +265,7 @@ Update Only
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.update_purchase import UpdatePurchase
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -311,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

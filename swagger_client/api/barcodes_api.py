@@ -17,6 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from swagger_client.models.barcode_insert import BarcodeInsert
+from swagger_client.models.message_response import MessageResponse
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -52,7 +53,7 @@ class BarcodesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Insert
 
 
@@ -89,7 +90,7 @@ class BarcodesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -119,7 +120,7 @@ class BarcodesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Insert
 
 
@@ -156,7 +157,7 @@ class BarcodesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -223,7 +224,7 @@ class BarcodesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

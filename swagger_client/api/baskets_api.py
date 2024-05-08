@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 from pydantic import StrictBool, StrictInt, StrictStr
 from swagger_client.models.basket_base_db import BasketBaseDb
 from swagger_client.models.insert_basket import InsertBasket
+from swagger_client.models.message_response import MessageResponse
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -54,7 +55,7 @@ class BasketsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Delete One Basket
 
 
@@ -91,7 +92,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -121,7 +122,7 @@ class BasketsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Delete One Basket
 
 
@@ -158,7 +159,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -225,7 +226,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -312,7 +313,7 @@ class BasketsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Delete User Basket
 
 
@@ -349,7 +350,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -379,7 +380,7 @@ class BasketsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Delete User Basket
 
 
@@ -416,7 +417,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -483,7 +484,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1693,7 +1694,7 @@ class BasketsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Insert
 
 
@@ -1730,7 +1731,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1760,7 +1761,7 @@ class BasketsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Insert
 
 
@@ -1797,7 +1798,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1864,7 +1865,7 @@ class BasketsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

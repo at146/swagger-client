@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 from pydantic import StrictStr
 from swagger_client.models.bot_base_db import BotBaseDb
 from swagger_client.models.insert_bot import InsertBot
+from swagger_client.models.message_response import MessageResponse
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -54,7 +55,7 @@ class BotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Delete
 
 
@@ -91,7 +92,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -121,7 +122,7 @@ class BotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Delete
 
 
@@ -158,7 +159,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -225,7 +226,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1050,7 +1051,7 @@ class BotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Insert Or Nothing
 
 
@@ -1087,7 +1088,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1117,7 +1118,7 @@ class BotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Insert Or Nothing
 
 
@@ -1154,7 +1155,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1221,7 +1222,7 @@ class BotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

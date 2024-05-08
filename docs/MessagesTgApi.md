@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_or_update_api_v1_messages_tg_post**
-> object insert_or_update_api_v1_messages_tg_post(token, insert_message_tg)
+> MessageResponse insert_or_update_api_v1_messages_tg_post(token, insert_message_tg)
 
 Insert Or Update
 
@@ -100,6 +100,7 @@ Insert Or Update
 ```python
 import swagger_client
 from swagger_client.models.insert_message_tg import InsertMessageTg
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -148,7 +149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

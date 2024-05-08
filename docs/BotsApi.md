@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 
 # **delete_api_v1_bots_token_delete**
-> object delete_api_v1_bots_token_delete(token)
+> MessageResponse delete_api_v1_bots_token_delete(token)
 
 Delete
 
@@ -22,6 +22,7 @@ Delete
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -68,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 
@@ -312,7 +313,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **insert_or_nothing_api_v1_bots_post**
-> object insert_or_nothing_api_v1_bots_post(insert_bot)
+> MessageResponse insert_or_nothing_api_v1_bots_post(insert_bot)
 
 Insert Or Nothing
 
@@ -323,6 +324,7 @@ Insert Or Nothing
 ```python
 import swagger_client
 from swagger_client.models.insert_bot import InsertBot
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -369,7 +371,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

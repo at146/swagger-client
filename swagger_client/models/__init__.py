@@ -30,7 +30,6 @@ from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
 from swagger_client.models.delivery_cdek_update import DeliveryCdekUpdate
 from swagger_client.models.dimension_base import DimensionBase
 from swagger_client.models.http_validation_error import HTTPValidationError
-from swagger_client.models.info_item_insert import InfoItemInsert
 from swagger_client.models.info_item_update import InfoItemUpdate
 from swagger_client.models.info_item_update_new import InfoItemUpdateNew
 from swagger_client.models.insert_basket import InsertBasket
@@ -42,6 +41,7 @@ from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProda
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.models.location_inner import LocationInner
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.message_tg_base import MessageTgBase
 from swagger_client.models.message_tg_base_db import MessageTgBaseDb
 from swagger_client.models.model_count import ModelCount

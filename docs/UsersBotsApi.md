@@ -504,7 +504,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_last_mess_api_v1_users_bots_mess_put**
-> object update_last_mess_api_v1_users_bots_mess_put(update_user_bot_mess)
+> MessageResponse update_last_mess_api_v1_users_bots_mess_put(update_user_bot_mess)
 
 Update Last Mess
 
@@ -514,6 +514,7 @@ Update Last Mess
 
 ```python
 import swagger_client
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -561,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**MessageResponse**](MessageResponse.md)
 
 ### Authorization
 

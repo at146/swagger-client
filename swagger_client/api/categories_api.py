@@ -50,7 +50,7 @@ class CategoriesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> List[str]:
         """Get Categories Name
 
 
@@ -84,7 +84,7 @@ class CategoriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "List[str]",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -112,7 +112,7 @@ class CategoriesApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[List[str]]:
         """Get Categories Name
 
 
@@ -146,7 +146,7 @@ class CategoriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "List[str]",
         }
         response_data = await self.api_client.call_api(
             *_param,
@@ -208,7 +208,7 @@ class CategoriesApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "List[str]",
         }
         response_data = await self.api_client.call_api(
             *_param,

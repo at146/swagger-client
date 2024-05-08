@@ -19,6 +19,7 @@ from typing_extensions import Annotated
 from pydantic import StrictBool, StrictInt, StrictStr
 from typing import Optional
 from swagger_client.models.insert_order import InsertOrder
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.order_base_db import OrderBaseDb
 
 from swagger_client.api_client import ApiClient, RequestSerialized
@@ -55,7 +56,7 @@ class OrdersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Delete Order
 
 
@@ -92,7 +93,7 @@ class OrdersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -122,7 +123,7 @@ class OrdersApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Delete Order
 
 
@@ -159,7 +160,7 @@ class OrdersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -226,7 +227,7 @@ class OrdersApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

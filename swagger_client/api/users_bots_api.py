@@ -18,6 +18,7 @@ from typing_extensions import Annotated
 
 from pydantic import StrictBool, StrictInt, StrictStr
 from typing import Optional
+from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
 from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
@@ -1812,7 +1813,7 @@ class UsersBotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> MessageResponse:
         """Update Last Mess
 
 
@@ -1849,7 +1850,7 @@ class UsersBotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1879,7 +1880,7 @@ class UsersBotsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[MessageResponse]:
         """Update Last Mess
 
 
@@ -1916,7 +1917,7 @@ class UsersBotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -1983,7 +1984,7 @@ class UsersBotsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "MessageResponse",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(

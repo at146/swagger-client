@@ -599,7 +599,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_items_codes_api_v1_items_category_brand_codes_get**
-> List[object] get_items_codes_api_v1_items_category_brand_codes_get(category, brand, model=model)
+> List[str] get_items_codes_api_v1_items_category_brand_codes_get(category, brand, model=model)
 
 Get Items Codes
 
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List[object]**
+**List[str]**
 
 ### Authorization
 
@@ -760,7 +760,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_models_api_v1_items_category_brand_models_get**
-> object get_models_api_v1_items_category_brand_models_get(category, brand)
+> List[str] get_models_api_v1_items_category_brand_models_get(category, brand)
 
 Get Models
 
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**List[str]**
 
 ### Authorization
 

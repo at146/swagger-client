@@ -2167,7 +2167,7 @@ class ItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> List[object]:
+    ) -> List[str]:
         """Get Items Codes
 
 
@@ -2210,7 +2210,7 @@ class ItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[object]",
+            '200': "List[str]",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -2242,7 +2242,7 @@ class ItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[List[object]]:
+    ) -> ApiResponse[List[str]]:
         """Get Items Codes
 
 
@@ -2285,7 +2285,7 @@ class ItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[object]",
+            '200': "List[str]",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -2360,7 +2360,7 @@ class ItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "List[object]",
+            '200': "List[str]",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -2729,7 +2729,7 @@ class ItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> object:
+    ) -> List[str]:
         """Get Models
 
 
@@ -2769,7 +2769,7 @@ class ItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "List[str]",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -2800,7 +2800,7 @@ class ItemsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[object]:
+    ) -> ApiResponse[List[str]]:
         """Get Models
 
 
@@ -2840,7 +2840,7 @@ class ItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "List[str]",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
@@ -2911,7 +2911,7 @@ class ItemsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "object",
+            '200': "List[str]",
             '422': "HTTPValidationError",
         }
         response_data = await self.api_client.call_api(
