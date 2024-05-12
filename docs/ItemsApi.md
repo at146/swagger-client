@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**get_all_api_v1_items_get**](ItemsApi.md#get_all_api_v1_items_get) | **GET** /api/v1/items | Get All
 [**get_brands_and_counts_api_v1_items_category_brands_counts_get**](ItemsApi.md#get_brands_and_counts_api_v1_items_category_brands_counts_get) | **GET** /api/v1/items/{category}/brands-counts | Get Brands And Counts
 [**get_count_brand_api_v1_items_category_brand_count_get**](ItemsApi.md#get_count_brand_api_v1_items_category_brand_count_get) | **GET** /api/v1/items/{category}/{brand}/count | Get Count Brand
+[**get_count_models_api_v1_items_category_brand_count_models_get**](ItemsApi.md#get_count_models_api_v1_items_category_brand_count_models_get) | **GET** /api/v1/items/{category}/{brand}/count-models | Get Count Models
 [**get_item_api_v1_items_code_token_one_get**](ItemsApi.md#get_item_api_v1_items_code_token_one_get) | **GET** /api/v1/items/{code}/{token}/one | Get Item
 [**get_item_new_api_v1_items_code_token_one_new_get**](ItemsApi.md#get_item_new_api_v1_items_code_token_one_new_get) | **GET** /api/v1/items/{code}/{token}/one_new | Get Item New
 [**get_item_selectinload_size_api_v1_items_code_token_load_size_get**](ItemsApi.md#get_item_selectinload_size_api_v1_items_code_token_load_size_get) | **GET** /api/v1/items/{code}/{token}/load-size | Get Item Selectinload Size
@@ -236,6 +237,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 **int**
+
+### Authorization
+
+[HTTPBasic](../README.md#HTTPBasic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_count_models_api_v1_items_category_brand_count_models_get**
+> object get_count_models_api_v1_items_category_brand_count_models_get(category, brand)
+
+Get Count Models
+
+### Example
+
+* Basic Authentication (HTTPBasic):
+
+```python
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = swagger_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: HTTPBasic
+configuration = swagger_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+async with swagger_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = swagger_client.ItemsApi(api_client)
+    category = 'category_example' # str | 
+    brand = 'brand_example' # str | 
+
+    try:
+        # Get Count Models
+        api_response = await api_instance.get_count_models_api_v1_items_category_brand_count_models_get(category, brand)
+        print("The response of ItemsApi->get_count_models_api_v1_items_category_brand_count_models_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ItemsApi->get_count_models_api_v1_items_category_brand_count_models_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **category** | **str**|  | 
+ **brand** | **str**|  | 
+
+### Return type
+
+**object**
 
 ### Authorization
 
