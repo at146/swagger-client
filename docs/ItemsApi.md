@@ -14,7 +14,6 @@ Method | HTTP request | Description
 [**get_items_action_new_codes_api_v1_items_token_all_new_codes_get**](ItemsApi.md#get_items_action_new_codes_api_v1_items_token_all_new_codes_get) | **GET** /api/v1/items/{token}/all_new_codes | Get Items Action New Codes
 [**get_items_codes_api_v1_items_category_brand_codes_get**](ItemsApi.md#get_items_codes_api_v1_items_category_brand_codes_get) | **GET** /api/v1/items/{category}/{brand}/codes | Get Items Codes
 [**get_models_and_counts_api_v1_items_category_brand_models_counts_get**](ItemsApi.md#get_models_and_counts_api_v1_items_category_brand_models_counts_get) | **GET** /api/v1/items/{category}/{brand}/models-counts | Get Models And Counts
-[**get_models_api_v1_items_category_brand_models_get**](ItemsApi.md#get_models_api_v1_items_category_brand_models_get) | **GET** /api/v1/items/{category}/{brand}/models | Get Models
 
 
 # **get_all_api_v1_items_get**
@@ -257,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_count_models_api_v1_items_category_brand_count_models_get**
-> object get_count_models_api_v1_items_category_brand_count_models_get(category, brand)
+> int get_count_models_api_v1_items_category_brand_count_models_get(category, brand)
 
 Get Count Models
 
@@ -315,7 +314,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+**int**
 
 ### Authorization
 
@@ -820,85 +819,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List[ModelCount]**](ModelCount.md)
-
-### Authorization
-
-[HTTPBasic](../README.md#HTTPBasic)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**422** | Validation Error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_models_api_v1_items_category_brand_models_get**
-> List[str] get_models_api_v1_items_category_brand_models_get(category, brand)
-
-Get Models
-
-### Example
-
-* Basic Authentication (HTTPBasic):
-
-```python
-import swagger_client
-from swagger_client.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost
-# See configuration.py for a list of all supported configuration parameters.
-configuration = swagger_client.Configuration(
-    host = "http://localhost"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure HTTP basic authorization: HTTPBasic
-configuration = swagger_client.Configuration(
-    username = os.environ["USERNAME"],
-    password = os.environ["PASSWORD"]
-)
-
-# Enter a context with an instance of the API client
-async with swagger_client.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = swagger_client.ItemsApi(api_client)
-    category = 'category_example' # str | 
-    brand = 'brand_example' # str | 
-
-    try:
-        # Get Models
-        api_response = await api_instance.get_models_api_v1_items_category_brand_models_get(category, brand)
-        print("The response of ItemsApi->get_models_api_v1_items_category_brand_models_get:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ItemsApi->get_models_api_v1_items_category_brand_models_get: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **category** | **str**|  | 
- **brand** | **str**|  | 
-
-### Return type
-
-**List[str]**
 
 ### Authorization
 
