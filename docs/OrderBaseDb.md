@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**created** | **datetime** |  | [optional] 
+**created** | **datetime** |  | 
 **user_bot_id** | **int** |  | 
 **buyer** | **str** |  | 
 **delivery** | **str** |  | [optional] 
