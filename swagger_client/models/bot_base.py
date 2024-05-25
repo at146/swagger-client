@@ -38,7 +38,8 @@ class BotBase(BaseModel):
     info_url: Optional[StrictStr] = None
     comments_url: Optional[StrictStr] = None
     allowed_updates: Optional[List[StrictStr]] = None
-    __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates"]
+    support_username: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates", "support_username"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -139,6 +140,11 @@ class BotBase(BaseModel):
         if self.allowed_updates is None and "allowed_updates" in self.model_fields_set:
             _dict['allowed_updates'] = None
 
+        # set to None if support_username (nullable) is None
+        # and model_fields_set contains the field
+        if self.support_username is None and "support_username" in self.model_fields_set:
+            _dict['support_username'] = None
+
         return _dict
 
     @classmethod
@@ -162,7 +168,8 @@ class BotBase(BaseModel):
             "channel_url": obj.get("channel_url"),
             "info_url": obj.get("info_url"),
             "comments_url": obj.get("comments_url"),
-            "allowed_updates": obj.get("allowed_updates")
+            "allowed_updates": obj.get("allowed_updates"),
+            "support_username": obj.get("support_username")
         })
         return _obj
 

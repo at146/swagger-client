@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **info_url** | **str** |  | 
 **comments_url** | **str** |  | 
 **allowed_updates** | **List[str]** |  | [optional] 
+**support_username** | **str** |  | [optional] 
 
 ## Example
 
