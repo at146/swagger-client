@@ -31,7 +31,12 @@ class InsertBot(BaseModel):
     username: StrictStr
     id_bot: StrictInt
     allowed_updates: List[StrictStr]
-    __properties: ClassVar[List[str]] = ["token", "full_name", "username", "id_bot", "allowed_updates"]
+    admin_list: StrictStr
+    text_channel_url: StrictStr
+    support_url: StrictStr
+    channel_url: StrictStr
+    info_url: StrictStr
+    __properties: ClassVar[List[str]] = ["token", "full_name", "username", "id_bot", "allowed_updates", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +93,12 @@ class InsertBot(BaseModel):
             "full_name": obj.get("full_name"),
             "username": obj.get("username"),
             "id_bot": obj.get("id_bot"),
-            "allowed_updates": obj.get("allowed_updates")
+            "allowed_updates": obj.get("allowed_updates"),
+            "admin_list": obj.get("admin_list"),
+            "text_channel_url": obj.get("text_channel_url"),
+            "support_url": obj.get("support_url"),
+            "channel_url": obj.get("channel_url"),
+            "info_url": obj.get("info_url")
         })
         return _obj
 

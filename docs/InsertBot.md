@@ -10,6 +10,11 @@ Name | Type | Description | Notes
 **username** | **str** |  | 
 **id_bot** | **int** |  | 
 **allowed_updates** | **List[str]** |  | 
+**admin_list** | **str** |  | 
+**text_channel_url** | **str** |  | 
+**support_url** | **str** |  | 
+**channel_url** | **str** |  | 
+**info_url** | **str** |  | 
 
 ## Example
 
