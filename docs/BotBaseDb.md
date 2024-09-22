@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **token** | **str** |  | 
 **full_name** | **str** |  | 
 **username** | **str** |  | 

@@ -17,29 +17,22 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class BotBaseDb(BaseModel):
+class UpdateBot(BaseModel):
     """
-    BotBaseDb
+    UpdateBot
     """ # noqa: E501
-    id: StrictInt
     token: StrictStr
-    full_name: StrictStr
-    username: StrictStr
-    id_bot: StrictInt
-    admin_list: List[StrictInt]
-    text_channel_url: StrictStr
-    support_url: StrictStr
-    channel_url: StrictStr
-    info_url: StrictStr
-    comments_url: StrictStr
-    allowed_updates: Optional[List[StrictStr]] = None
-    support_username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates", "support_username"]
+    text_channel_url: Optional[StrictStr] = None
+    support_url: Optional[StrictStr] = None
+    channel_url: Optional[StrictStr] = None
+    info_url: Optional[StrictStr] = None
+    comments_url: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["token", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -59,7 +52,7 @@ class BotBaseDb(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of BotBaseDb from a JSON string"""
+        """Create an instance of UpdateBot from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -80,21 +73,36 @@ class BotBaseDb(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if allowed_updates (nullable) is None
+        # set to None if text_channel_url (nullable) is None
         # and model_fields_set contains the field
-        if self.allowed_updates is None and "allowed_updates" in self.model_fields_set:
-            _dict['allowed_updates'] = None
+        if self.text_channel_url is None and "text_channel_url" in self.model_fields_set:
+            _dict['text_channel_url'] = None
 
-        # set to None if support_username (nullable) is None
+        # set to None if support_url (nullable) is None
         # and model_fields_set contains the field
-        if self.support_username is None and "support_username" in self.model_fields_set:
-            _dict['support_username'] = None
+        if self.support_url is None and "support_url" in self.model_fields_set:
+            _dict['support_url'] = None
+
+        # set to None if channel_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.channel_url is None and "channel_url" in self.model_fields_set:
+            _dict['channel_url'] = None
+
+        # set to None if info_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.info_url is None and "info_url" in self.model_fields_set:
+            _dict['info_url'] = None
+
+        # set to None if comments_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.comments_url is None and "comments_url" in self.model_fields_set:
+            _dict['comments_url'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of BotBaseDb from a dict"""
+        """Create an instance of UpdateBot from a dict"""
         if obj is None:
             return None
 
@@ -102,19 +110,12 @@ class BotBaseDb(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "id": obj.get("id"),
             "token": obj.get("token"),
-            "full_name": obj.get("full_name"),
-            "username": obj.get("username"),
-            "id_bot": obj.get("id_bot"),
-            "admin_list": obj.get("admin_list"),
             "text_channel_url": obj.get("text_channel_url"),
             "support_url": obj.get("support_url"),
             "channel_url": obj.get("channel_url"),
             "info_url": obj.get("info_url"),
-            "comments_url": obj.get("comments_url"),
-            "allowed_updates": obj.get("allowed_updates"),
-            "support_username": obj.get("support_username")
+            "comments_url": obj.get("comments_url")
         })
         return _obj
 

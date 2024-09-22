@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**get_bots_api_v1_bots_get**](BotsApi.md#get_bots_api_v1_bots_get) | **GET** /api/v1/bots | Get Bots
 [**get_tokens_multibot_api_v1_bots_multibot_tokens_get**](BotsApi.md#get_tokens_multibot_api_v1_bots_multibot_tokens_get) | **GET** /api/v1/bots/multibot/tokens | Get Tokens Multibot
 [**insert_or_nothing_api_v1_bots_post**](BotsApi.md#insert_or_nothing_api_v1_bots_post) | **POST** /api/v1/bots | Insert Or Nothing
+[**update_api_v1_bots_patch**](BotsApi.md#update_api_v1_bots_patch) | **PATCH** /api/v1/bots | Update
 
 
 # **delete_api_v1_bots_token_delete**
@@ -372,6 +373,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**MessageResponse**](MessageResponse.md)
+
+### Authorization
+
+[HTTPBasic](../README.md#HTTPBasic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_api_v1_bots_patch**
+> BotBaseDb update_api_v1_bots_patch(update_bot)
+
+Update
+
+### Example
+
+* Basic Authentication (HTTPBasic):
+
+```python
+import swagger_client
+from swagger_client.models.bot_base_db import BotBaseDb
+from swagger_client.models.update_bot import UpdateBot
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = swagger_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: HTTPBasic
+configuration = swagger_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+async with swagger_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = swagger_client.BotsApi(api_client)
+    update_bot = swagger_client.UpdateBot() # UpdateBot | 
+
+    try:
+        # Update
+        api_response = await api_instance.update_api_v1_bots_patch(update_bot)
+        print("The response of BotsApi->update_api_v1_bots_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling BotsApi->update_api_v1_bots_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_bot** | [**UpdateBot**](UpdateBot.md)|  | 
+
+### Return type
+
+[**BotBaseDb**](BotBaseDb.md)
 
 ### Authorization
 

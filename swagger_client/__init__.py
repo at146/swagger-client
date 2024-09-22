@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.20.0"
+__version__ = "1.21.0"
 
 # import apis into sdk package
 from swagger_client.api.barcodes_api import BarcodesApi
@@ -91,6 +91,7 @@ from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.size_base_db import SizeBaseDb
 from swagger_client.models.stock_base import StockBase
+from swagger_client.models.update_bot import UpdateBot
 from swagger_client.models.update_purchase import UpdatePurchase
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
 from swagger_client.models.user_base_db import UserBaseDb
