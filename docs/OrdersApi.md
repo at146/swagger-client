@@ -11,6 +11,7 @@ Method | HTTP request | Description
 [**get_order_by_id_api_v1_orders_order_id_get**](OrdersApi.md#get_order_by_id_api_v1_orders_order_id_get) | **GET** /api/v1/orders/{order_id} | Get Order By Id
 [**get_user_orders_api_v1_orders_users_user_id_get**](OrdersApi.md#get_user_orders_api_v1_orders_users_user_id_get) | **GET** /api/v1/orders/users/{user_id} | Get User Orders
 [**insert_order_api_v1_orders_post**](OrdersApi.md#insert_order_api_v1_orders_post) | **POST** /api/v1/orders | Insert Order
+[**update_order_api_v1_orders_patch**](OrdersApi.md#update_order_api_v1_orders_patch) | **PATCH** /api/v1/orders | Update Order
 
 
 # **delete_order_api_v1_orders_order_id_delete**
@@ -561,6 +562,85 @@ async with swagger_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **insert_order** | [**InsertOrder**](InsertOrder.md)|  | 
+
+### Return type
+
+[**OrderBaseDb**](OrderBaseDb.md)
+
+### Authorization
+
+[HTTPBasic](../README.md#HTTPBasic)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_order_api_v1_orders_patch**
+> OrderBaseDb update_order_api_v1_orders_patch(update_order)
+
+Update Order
+
+### Example
+
+* Basic Authentication (HTTPBasic):
+
+```python
+import swagger_client
+from swagger_client.models.order_base_db import OrderBaseDb
+from swagger_client.models.update_order import UpdateOrder
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = swagger_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: HTTPBasic
+configuration = swagger_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+async with swagger_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = swagger_client.OrdersApi(api_client)
+    update_order = swagger_client.UpdateOrder() # UpdateOrder | 
+
+    try:
+        # Update Order
+        api_response = await api_instance.update_order_api_v1_orders_patch(update_order)
+        print("The response of OrdersApi->update_order_api_v1_orders_patch:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OrdersApi->update_order_api_v1_orders_patch: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **update_order** | [**UpdateOrder**](UpdateOrder.md)|  | 
 
 ### Return type
 

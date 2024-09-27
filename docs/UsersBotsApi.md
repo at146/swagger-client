@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**get_count_api_v1_users_bots_count_get**](UsersBotsApi.md#get_count_api_v1_users_bots_count_get) | **GET** /api/v1/users_bots/count | Get Count
 [**get_only_user_bot_api_v1_users_bots_user_id_only_get**](UsersBotsApi.md#get_only_user_bot_api_v1_users_bots_user_id_only_get) | **GET** /api/v1/users_bots/{user_id}/only | Get Only User Bot
 [**get_user_bot_api_v1_users_bots_user_id_get**](UsersBotsApi.md#get_user_bot_api_v1_users_bots_user_id_get) | **GET** /api/v1/users_bots/{user_id} | Get User Bot
+[**get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get**](UsersBotsApi.md#get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get) | **GET** /api/v1/users_bots/ids/{user_bot_id} | Get User Bot By Id
 [**get_user_bot_start_api_v1_users_bots_user_id_start_get**](UsersBotsApi.md#get_user_bot_start_api_v1_users_bots_user_id_start_get) | **GET** /api/v1/users_bots/{user_id}/start | Get User Bot Start
 [**get_user_client_bot_api_v1_users_bots_user_id_client_get**](UsersBotsApi.md#get_user_client_bot_api_v1_users_bots_user_id_client_get) | **GET** /api/v1/users_bots/{user_id}/client | Get User Client Bot
 [**update_last_mess_api_v1_users_bots_mess_put**](UsersBotsApi.md#update_last_mess_api_v1_users_bots_mess_put) | **PUT** /api/v1/users_bots/mess | Update Last Mess
@@ -314,6 +315,84 @@ Name | Type | Description  | Notes
  **token** | **str**|  | 
  **first_name** | **str**|  | 
  **username** | **str**|  | [optional] 
+
+### Return type
+
+[**UserBotBaseDb**](UserBotBaseDb.md)
+
+### Authorization
+
+[HTTPBasic](../README.md#HTTPBasic)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**422** | Validation Error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get**
+> UserBotBaseDb get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get(user_bot_id)
+
+Get User Bot By Id
+
+### Example
+
+* Basic Authentication (HTTPBasic):
+
+```python
+import swagger_client
+from swagger_client.models.user_bot_base_db import UserBotBaseDb
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to http://localhost
+# See configuration.py for a list of all supported configuration parameters.
+configuration = swagger_client.Configuration(
+    host = "http://localhost"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure HTTP basic authorization: HTTPBasic
+configuration = swagger_client.Configuration(
+    username = os.environ["USERNAME"],
+    password = os.environ["PASSWORD"]
+)
+
+# Enter a context with an instance of the API client
+async with swagger_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = swagger_client.UsersBotsApi(api_client)
+    user_bot_id = 56 # int | 
+
+    try:
+        # Get User Bot By Id
+        api_response = await api_instance.get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get(user_bot_id)
+        print("The response of UsersBotsApi->get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling UsersBotsApi->get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_bot_id** | **int**|  | 
 
 ### Return type
 
