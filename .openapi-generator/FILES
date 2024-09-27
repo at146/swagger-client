@@ -30,6 +30,7 @@ docs/InsertBot.md
 docs/InsertMessageTg.md
 docs/InsertOrder.md
 docs/InsertScheduler.md
+docs/InsertTBankKassa.md
 docs/InsertUserProdavecKrossovok.md
 docs/ItemBase.md
 docs/ItemBaseDb.md
@@ -57,6 +58,7 @@ docs/SizeBase.md
 docs/SizeBaseDb.md
 docs/SizesApi.md
 docs/StockBase.md
+docs/TbankKassesApi.md
 docs/UpdateBot.md
 docs/UpdateOrder.md
 docs/UpdatePurchase.md
@@ -96,6 +98,7 @@ swagger_client/api/purchases_api.py
 swagger_client/api/quantities_api.py
 swagger_client/api/schedulers_api.py
 swagger_client/api/sizes_api.py
+swagger_client/api/tbank_kasses_api.py
 swagger_client/api/users_bots_api.py
 swagger_client/api/users_prodavec_krossovok_api.py
 swagger_client/api/waybills_api.py
@@ -129,6 +132,7 @@ swagger_client/models/insert_bot.py
 swagger_client/models/insert_message_tg.py
 swagger_client/models/insert_order.py
 swagger_client/models/insert_scheduler.py
+swagger_client/models/insert_t_bank_kassa.py
 swagger_client/models/insert_user_prodavec_krossovok.py
 swagger_client/models/item_base.py
 swagger_client/models/item_base_db.py
@@ -166,5 +170,6 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_update_order.py
+test/test_insert_t_bank_kassa.py
+test/test_tbank_kasses_api.py
 tox.ini

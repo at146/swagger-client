@@ -37,6 +37,7 @@ from swagger_client.models.insert_bot import InsertBot
 from swagger_client.models.insert_message_tg import InsertMessageTg
 from swagger_client.models.insert_order import InsertOrder
 from swagger_client.models.insert_scheduler import InsertScheduler
+from swagger_client.models.insert_t_bank_kassa import InsertTBankKassa
 from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProdavecKrossovok
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.item_base_db import ItemBaseDb
