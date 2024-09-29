@@ -16,6 +16,7 @@ from swagger_client.api.quantities_api import QuantitiesApi
 from swagger_client.api.schedulers_api import SchedulersApi
 from swagger_client.api.sizes_api import SizesApi
 from swagger_client.api.tbank_kasses_api import TbankKassesApi
+from swagger_client.api.tbank_payments_api import TbankPaymentsApi
 from swagger_client.api.users_bots_api import UsersBotsApi
 from swagger_client.api.users_prodavec_krossovok_api import UsersProdavecKrossovokApi
 from swagger_client.api.waybills_api import WaybillsApi
