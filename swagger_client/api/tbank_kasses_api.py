@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from pydantic import StrictInt
+from pydantic import StrictStr
 from swagger_client.models.insert_t_bank_kassa import InsertTBankKassa
 from swagger_client.models.message_response import MessageResponse
 from swagger_client.models.t_bank_kassa_db import TBankKassaDb
@@ -40,9 +40,9 @@ class TbankKassesApi:
 
 
     @validate_call
-    async def get_tbank_kassa_api_v1_tbank_kasses_get(
+    async def get_tbank_kassa_api_v1_tbank_kasses_token_get(
         self,
-        bot_id: StrictInt,
+        token: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -59,8 +59,8 @@ class TbankKassesApi:
         """Get Tbank Kassa
 
 
-        :param bot_id: (required)
-        :type bot_id: int
+        :param token: (required)
+        :type token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -83,8 +83,8 @@ class TbankKassesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tbank_kassa_api_v1_tbank_kasses_get_serialize(
-            bot_id=bot_id,
+        _param = self._get_tbank_kassa_api_v1_tbank_kasses_token_get_serialize(
+            token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -107,9 +107,9 @@ class TbankKassesApi:
 
 
     @validate_call
-    async def get_tbank_kassa_api_v1_tbank_kasses_get_with_http_info(
+    async def get_tbank_kassa_api_v1_tbank_kasses_token_get_with_http_info(
         self,
-        bot_id: StrictInt,
+        token: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -126,8 +126,8 @@ class TbankKassesApi:
         """Get Tbank Kassa
 
 
-        :param bot_id: (required)
-        :type bot_id: int
+        :param token: (required)
+        :type token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -150,8 +150,8 @@ class TbankKassesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tbank_kassa_api_v1_tbank_kasses_get_serialize(
-            bot_id=bot_id,
+        _param = self._get_tbank_kassa_api_v1_tbank_kasses_token_get_serialize(
+            token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -174,9 +174,9 @@ class TbankKassesApi:
 
 
     @validate_call
-    async def get_tbank_kassa_api_v1_tbank_kasses_get_without_preload_content(
+    async def get_tbank_kassa_api_v1_tbank_kasses_token_get_without_preload_content(
         self,
-        bot_id: StrictInt,
+        token: StrictStr,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -193,8 +193,8 @@ class TbankKassesApi:
         """Get Tbank Kassa
 
 
-        :param bot_id: (required)
-        :type bot_id: int
+        :param token: (required)
+        :type token: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -217,8 +217,8 @@ class TbankKassesApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_tbank_kassa_api_v1_tbank_kasses_get_serialize(
-            bot_id=bot_id,
+        _param = self._get_tbank_kassa_api_v1_tbank_kasses_token_get_serialize(
+            token=token,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -236,9 +236,9 @@ class TbankKassesApi:
         return response_data.response
 
 
-    def _get_tbank_kassa_api_v1_tbank_kasses_get_serialize(
+    def _get_tbank_kassa_api_v1_tbank_kasses_token_get_serialize(
         self,
-        bot_id,
+        token,
         _request_auth,
         _content_type,
         _headers,
@@ -258,11 +258,9 @@ class TbankKassesApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        if token is not None:
+            _path_params['token'] = token
         # process the query parameters
-        if bot_id is not None:
-            
-            _query_params.append(('bot_id', bot_id))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -283,7 +281,7 @@ class TbankKassesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/api/v1/tbank-kasses',
+            resource_path='/api/v1/tbank-kasses/{token}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
-**bot_id** | **int** |  | 
+**bot_token** | **str** |  | 
 **terminal_key** | **bytearray** |  | 
 **password** | **bytearray** |  | 
 **create_datetime** | **datetime** |  | 

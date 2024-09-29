@@ -28,11 +28,11 @@ class TBankKassaDb(BaseModel):
     TBankKassaDb
     """ # noqa: E501
     id: StrictInt
-    bot_id: StrictInt
+    bot_token: StrictStr
     terminal_key: Union[StrictBytes, StrictStr]
     password: Union[StrictBytes, StrictStr]
     create_datetime: datetime
-    __properties: ClassVar[List[str]] = ["id", "bot_id", "terminal_key", "password", "create_datetime"]
+    __properties: ClassVar[List[str]] = ["id", "bot_token", "terminal_key", "password", "create_datetime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +86,7 @@ class TBankKassaDb(BaseModel):
 
         _obj = cls.model_validate({
             "id": obj.get("id"),
-            "bot_id": obj.get("bot_id"),
+            "bot_token": obj.get("bot_token"),
             "terminal_key": obj.get("terminal_key"),
             "password": obj.get("password"),
             "create_datetime": obj.get("create_datetime")

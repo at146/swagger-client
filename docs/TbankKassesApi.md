@@ -4,12 +4,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_tbank_kassa_api_v1_tbank_kasses_get**](TbankKassesApi.md#get_tbank_kassa_api_v1_tbank_kasses_get) | **GET** /api/v1/tbank-kasses | Get Tbank Kassa
+[**get_tbank_kassa_api_v1_tbank_kasses_token_get**](TbankKassesApi.md#get_tbank_kassa_api_v1_tbank_kasses_token_get) | **GET** /api/v1/tbank-kasses/{token} | Get Tbank Kassa
 [**insert_api_v1_tbank_kasses_post**](TbankKassesApi.md#insert_api_v1_tbank_kasses_post) | **POST** /api/v1/tbank-kasses | Insert
 
 
-# **get_tbank_kassa_api_v1_tbank_kasses_get**
-> TBankKassaDb get_tbank_kassa_api_v1_tbank_kasses_get(bot_id)
+# **get_tbank_kassa_api_v1_tbank_kasses_token_get**
+> TBankKassaDb get_tbank_kassa_api_v1_tbank_kasses_token_get(token)
 
 Get Tbank Kassa
 
@@ -44,15 +44,15 @@ configuration = swagger_client.Configuration(
 async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.TbankKassesApi(api_client)
-    bot_id = 56 # int | 
+    token = 'token_example' # str | 
 
     try:
         # Get Tbank Kassa
-        api_response = await api_instance.get_tbank_kassa_api_v1_tbank_kasses_get(bot_id)
-        print("The response of TbankKassesApi->get_tbank_kassa_api_v1_tbank_kasses_get:\n")
+        api_response = await api_instance.get_tbank_kassa_api_v1_tbank_kasses_token_get(token)
+        print("The response of TbankKassesApi->get_tbank_kassa_api_v1_tbank_kasses_token_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling TbankKassesApi->get_tbank_kassa_api_v1_tbank_kasses_get: %s\n" % e)
+        print("Exception when calling TbankKassesApi->get_tbank_kassa_api_v1_tbank_kasses_token_get: %s\n" % e)
 ```
 
 
@@ -62,7 +62,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bot_id** | **int**|  | 
+ **token** | **str**|  | 
 
 ### Return type
 

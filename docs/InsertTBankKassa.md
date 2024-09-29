@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bot_id** | **int** |  | 
+**bot_token** | **str** |  | 
 **terminal_key** | **bytearray** |  | 
 **password** | **bytearray** |  | 
 

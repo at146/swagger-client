@@ -178,5 +178,4 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_t_bank_kassa_db.py
 tox.ini

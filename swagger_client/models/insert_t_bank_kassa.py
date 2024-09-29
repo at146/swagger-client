@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBytes, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBytes, StrictStr
 from typing import Any, ClassVar, Dict, List, Union
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,10 +26,10 @@ class InsertTBankKassa(BaseModel):
     """
     InsertTBankKassa
     """ # noqa: E501
-    bot_id: StrictInt
+    bot_token: StrictStr
     terminal_key: Union[StrictBytes, StrictStr]
     password: Union[StrictBytes, StrictStr]
-    __properties: ClassVar[List[str]] = ["bot_id", "terminal_key", "password"]
+    __properties: ClassVar[List[str]] = ["bot_token", "terminal_key", "password"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +82,7 @@ class InsertTBankKassa(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "bot_id": obj.get("bot_id"),
+            "bot_token": obj.get("bot_token"),
             "terminal_key": obj.get("terminal_key"),
             "password": obj.get("password")
         })
