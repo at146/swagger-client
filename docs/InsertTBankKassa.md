@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bot_token** | **str** |  | 
-**terminal_key** | **bytearray** |  | 
-**password** | **bytearray** |  | 
+**crypto_terminal_key** | **bytearray** |  | 
+**crypto_password** | **bytearray** |  | 
 
 ## Example
 

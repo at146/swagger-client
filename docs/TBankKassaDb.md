@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | 
 **bot_token** | **str** |  | 
-**terminal_key** | **bytearray** |  | 
-**password** | **bytearray** |  | 
+**crypto_terminal_key** | **bytearray** |  | 
+**crypto_password** | **bytearray** |  | 
 **create_datetime** | **datetime** |  | 
 
 ## Example

@@ -27,9 +27,9 @@ class InsertTBankKassa(BaseModel):
     InsertTBankKassa
     """ # noqa: E501
     bot_token: StrictStr
-    terminal_key: Union[StrictBytes, StrictStr]
-    password: Union[StrictBytes, StrictStr]
-    __properties: ClassVar[List[str]] = ["bot_token", "terminal_key", "password"]
+    crypto_terminal_key: Union[StrictBytes, StrictStr]
+    crypto_password: Union[StrictBytes, StrictStr]
+    __properties: ClassVar[List[str]] = ["bot_token", "crypto_terminal_key", "crypto_password"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,8 +83,8 @@ class InsertTBankKassa(BaseModel):
 
         _obj = cls.model_validate({
             "bot_token": obj.get("bot_token"),
-            "terminal_key": obj.get("terminal_key"),
-            "password": obj.get("password")
+            "crypto_terminal_key": obj.get("crypto_terminal_key"),
+            "crypto_password": obj.get("crypto_password")
         })
         return _obj
 
