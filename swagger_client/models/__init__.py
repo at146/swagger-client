@@ -58,6 +58,7 @@ from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.size_base_db import SizeBaseDb
 from swagger_client.models.stock_base import StockBase
+from swagger_client.models.t_bank_kassa_db import TBankKassaDb
 from swagger_client.models.t_bank_payment_db import TBankPaymentDb
 from swagger_client.models.update_bot import UpdateBot
 from swagger_client.models.update_order import UpdateOrder

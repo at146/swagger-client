@@ -59,6 +59,7 @@ docs/SizeBase.md
 docs/SizeBaseDb.md
 docs/SizesApi.md
 docs/StockBase.md
+docs/TBankKassaDb.md
 docs/TBankPaymentDb.md
 docs/TbankKassesApi.md
 docs/TbankPaymentsApi.md
@@ -157,6 +158,7 @@ swagger_client/models/scheduler_base_db.py
 swagger_client/models/size_base.py
 swagger_client/models/size_base_db.py
 swagger_client/models/stock_base.py
+swagger_client/models/t_bank_kassa_db.py
 swagger_client/models/t_bank_payment_db.py
 swagger_client/models/update_bot.py
 swagger_client/models/update_order.py
@@ -176,7 +178,5 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_insert_t_bank_payment.py
-test/test_t_bank_payment_db.py
-test/test_tbank_payments_api.py
+test/test_t_bank_kassa_db.py
 tox.ini
