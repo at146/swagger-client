@@ -19,7 +19,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,8 +33,8 @@ class InsertTBankPayment(BaseModel):
     tbank_status: StrictStr
     tbank_order_id: StrictStr
     tbank_amount: StrictInt
-    tbank_payment_url: StrictStr
-    tbank_redirect_due_date: datetime
+    tbank_payment_url: Optional[StrictStr]
+    tbank_redirect_due_date: Optional[datetime]
     __properties: ClassVar[List[str]] = ["tbank_kassa_id", "order_id", "tbank_payment_id", "tbank_status", "tbank_order_id", "tbank_amount", "tbank_payment_url", "tbank_redirect_due_date"]
 
     model_config = ConfigDict(
@@ -76,6 +76,16 @@ class InsertTBankPayment(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if tbank_payment_url (nullable) is None
+        # and model_fields_set contains the field
+        if self.tbank_payment_url is None and "tbank_payment_url" in self.model_fields_set:
+            _dict['tbank_payment_url'] = None
+
+        # set to None if tbank_redirect_due_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.tbank_redirect_due_date is None and "tbank_redirect_due_date" in self.model_fields_set:
+            _dict['tbank_redirect_due_date'] = None
+
         return _dict
 
     @classmethod

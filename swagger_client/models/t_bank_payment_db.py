@@ -34,11 +34,10 @@ class TBankPaymentDb(BaseModel):
     tbank_status: StrictStr
     tbank_order_id: StrictStr
     tbank_amount: StrictInt
-    tbank_payment_url: StrictStr
-    tbank_redirect_due_date: datetime
+    tbank_payment_url: Optional[StrictStr]
+    tbank_redirect_due_date: Optional[datetime]
     create_datetime: datetime
-    update_datetime: Optional[datetime]
-    __properties: ClassVar[List[str]] = ["id", "tbank_kassa_id", "order_id", "tbank_payment_id", "tbank_status", "tbank_order_id", "tbank_amount", "tbank_payment_url", "tbank_redirect_due_date", "create_datetime", "update_datetime"]
+    __properties: ClassVar[List[str]] = ["id", "tbank_kassa_id", "order_id", "tbank_payment_id", "tbank_status", "tbank_order_id", "tbank_amount", "tbank_payment_url", "tbank_redirect_due_date", "create_datetime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,10 +88,15 @@ class TBankPaymentDb(BaseModel):
         if self.order_id is None and "order_id" in self.model_fields_set:
             _dict['order_id'] = None
 
-        # set to None if update_datetime (nullable) is None
+        # set to None if tbank_payment_url (nullable) is None
         # and model_fields_set contains the field
-        if self.update_datetime is None and "update_datetime" in self.model_fields_set:
-            _dict['update_datetime'] = None
+        if self.tbank_payment_url is None and "tbank_payment_url" in self.model_fields_set:
+            _dict['tbank_payment_url'] = None
+
+        # set to None if tbank_redirect_due_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.tbank_redirect_due_date is None and "tbank_redirect_due_date" in self.model_fields_set:
+            _dict['tbank_redirect_due_date'] = None
 
         return _dict
 
@@ -115,8 +119,7 @@ class TBankPaymentDb(BaseModel):
             "tbank_amount": obj.get("tbank_amount"),
             "tbank_payment_url": obj.get("tbank_payment_url"),
             "tbank_redirect_due_date": obj.get("tbank_redirect_due_date"),
-            "create_datetime": obj.get("create_datetime"),
-            "update_datetime": obj.get("update_datetime")
+            "create_datetime": obj.get("create_datetime")
         })
         return _obj
 

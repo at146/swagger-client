@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **tbank_payment_url** | **str** |  | 
 **tbank_redirect_due_date** | **datetime** |  | 
 **create_datetime** | **datetime** |  | 
-**update_datetime** | **datetime** |  | 
 
 ## Example
 
