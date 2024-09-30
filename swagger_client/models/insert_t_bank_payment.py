@@ -33,8 +33,8 @@ class InsertTBankPayment(BaseModel):
     tbank_status: StrictStr
     tbank_order_id: StrictStr
     tbank_amount: StrictInt
-    tbank_payment_url: Optional[StrictStr]
-    tbank_redirect_due_date: Optional[datetime]
+    tbank_payment_url: Optional[StrictStr] = None
+    tbank_redirect_due_date: Optional[datetime] = None
     __properties: ClassVar[List[str]] = ["tbank_kassa_id", "order_id", "tbank_payment_id", "tbank_status", "tbank_order_id", "tbank_amount", "tbank_payment_url", "tbank_redirect_due_date"]
 
     model_config = ConfigDict(

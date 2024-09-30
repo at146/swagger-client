@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **tbank_status** | **str** |  | 
 **tbank_order_id** | **str** |  | 
 **tbank_amount** | **int** |  | 
-**tbank_payment_url** | **str** |  | 
-**tbank_redirect_due_date** | **datetime** |  | 
+**tbank_payment_url** | **str** |  | [optional] 
+**tbank_redirect_due_date** | **datetime** |  | [optional] 
 
 ## Example
 
