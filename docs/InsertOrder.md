@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **phone** | **str** |  | [optional] 
 **checking** | **bool** |  | 
 **comment** | **str** |  | [optional] 
-**partner** | **bool** |  | [optional] 
+**partner** | **bool** |  | 
 **pod** | **int** |  | [optional] 
 **basket** | [**List[BasketBaseDb]**](BasketBaseDb.md) |  | 
 

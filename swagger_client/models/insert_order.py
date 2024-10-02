@@ -33,7 +33,7 @@ class InsertOrder(BaseModel):
     phone: Optional[StrictStr] = None
     checking: StrictBool
     comment: Optional[StrictStr] = None
-    partner: Optional[StrictBool] = None
+    partner: StrictBool
     pod: Optional[StrictInt] = None
     basket: List[BasketBaseDb]
     __properties: ClassVar[List[str]] = ["buyer", "delivery", "address", "phone", "checking", "comment", "partner", "pod", "basket"]
@@ -103,11 +103,6 @@ class InsertOrder(BaseModel):
         # and model_fields_set contains the field
         if self.comment is None and "comment" in self.model_fields_set:
             _dict['comment'] = None
-
-        # set to None if partner (nullable) is None
-        # and model_fields_set contains the field
-        if self.partner is None and "partner" in self.model_fields_set:
-            _dict['partner'] = None
 
         # set to None if pod (nullable) is None
         # and model_fields_set contains the field

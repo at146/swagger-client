@@ -14,9 +14,8 @@ Name | Type | Description | Notes
 **phone** | **str** |  | [optional] 
 **checking** | **bool** |  | 
 **payment_receipt** | **str** |  | [optional] 
-**comment** | **str** |  | [optional] 
-**partner** | **bool** |  | [optional] 
-**paid** | **bool** |  | [optional] 
+**partner** | **bool** |  | 
+**paid** | **bool** |  | 
 **purchases** | [**List[PurchaseBaseDb]**](PurchaseBaseDb.md) |  | [optional] 
 **user_bot** | [**UserBotBaseDb**](UserBotBaseDb.md) |  | [optional] 
 
