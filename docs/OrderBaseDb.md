@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **phone** | **str** |  | [optional] 
 **checking** | **bool** |  | 
 **payment_receipt** | **str** |  | [optional] 
+**comment** | **str** |  | [optional] 
 **partner** | **bool** |  | 
 **paid** | **bool** |  | 
 **purchases** | [**List[PurchaseBaseDb]**](PurchaseBaseDb.md) |  | [optional] 

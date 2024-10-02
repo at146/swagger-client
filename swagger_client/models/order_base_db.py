@@ -38,11 +38,12 @@ class OrderBaseDb(BaseModel):
     phone: Optional[StrictStr] = None
     checking: StrictBool
     payment_receipt: Optional[StrictStr] = None
+    comment: Optional[StrictStr] = None
     partner: StrictBool
     paid: StrictBool
     purchases: Optional[List[PurchaseBaseDb]] = None
     user_bot: Optional[UserBotBaseDb] = None
-    __properties: ClassVar[List[str]] = ["id", "created", "user_bot_id", "buyer", "delivery", "address", "phone", "checking", "payment_receipt", "partner", "paid", "purchases", "user_bot"]
+    __properties: ClassVar[List[str]] = ["id", "created", "user_bot_id", "buyer", "delivery", "address", "phone", "checking", "payment_receipt", "comment", "partner", "paid", "purchases", "user_bot"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +114,11 @@ class OrderBaseDb(BaseModel):
         if self.payment_receipt is None and "payment_receipt" in self.model_fields_set:
             _dict['payment_receipt'] = None
 
+        # set to None if comment (nullable) is None
+        # and model_fields_set contains the field
+        if self.comment is None and "comment" in self.model_fields_set:
+            _dict['comment'] = None
+
         # set to None if purchases (nullable) is None
         # and model_fields_set contains the field
         if self.purchases is None and "purchases" in self.model_fields_set:
@@ -144,6 +150,7 @@ class OrderBaseDb(BaseModel):
             "phone": obj.get("phone"),
             "checking": obj.get("checking"),
             "payment_receipt": obj.get("payment_receipt"),
+            "comment": obj.get("comment"),
             "partner": obj.get("partner"),
             "paid": obj.get("paid"),
             "purchases": [PurchaseBaseDb.from_dict(_item) for _item in obj["purchases"]] if obj.get("purchases") is not None else None,
