@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.32.0"
+__version__ = "1.33.0"
 
 # import apis into sdk package
 from swagger_client.api.barcodes_api import BarcodesApi

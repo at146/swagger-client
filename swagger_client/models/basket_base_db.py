@@ -30,7 +30,7 @@ class BasketBaseDb(BaseModel):
     """
     BasketBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     created: datetime
     item_code: StrictStr
     price: StrictInt
@@ -89,11 +89,6 @@ class BasketBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of item
         if self.item:
             _dict['item'] = self.item.to_dict()
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if user_bot (nullable) is None
         # and model_fields_set contains the field
         if self.user_bot is None and "user_bot" in self.model_fields_set:

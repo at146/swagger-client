@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **created** | **datetime** |  | 
 **item_code** | **str** |  | 
 **price** | **int** |  | 
