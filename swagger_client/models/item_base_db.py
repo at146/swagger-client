@@ -30,7 +30,7 @@ class ItemBaseDb(BaseModel):
     """
     ItemBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     code: StrictStr
     changed: Optional[datetime] = None
     active: Optional[StrictBool] = None
@@ -109,11 +109,6 @@ class ItemBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of dimension
         if self.dimension:
             _dict['dimension'] = self.dimension.to_dict()
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if changed (nullable) is None
         # and model_fields_set contains the field
         if self.changed is None and "changed" in self.model_fields_set:

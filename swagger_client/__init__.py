@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "1.33.0"
+__version__ = "1.34.0"
 
 # import apis into sdk package
 from swagger_client.api.barcodes_api import BarcodesApi
@@ -55,7 +55,6 @@ from swagger_client.models.attributes import Attributes
 from swagger_client.models.attributes_order_status import AttributesOrderStatus
 from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser
 from swagger_client.models.attributes_print_form import AttributesPrintForm
-from swagger_client.models.barcode_insert import BarcodeInsert
 from swagger_client.models.basket_base_db import BasketBaseDb
 from swagger_client.models.bot_base import BotBase
 from swagger_client.models.bot_base_db import BotBaseDb
@@ -64,11 +63,9 @@ from swagger_client.models.category_base import CategoryBase
 from swagger_client.models.cdek_webhook import CdekWebhook
 from swagger_client.models.centimeter_base import CentimeterBase
 from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
-from swagger_client.models.delivery_cdek_update import DeliveryCdekUpdate
 from swagger_client.models.dimension_base import DimensionBase
 from swagger_client.models.http_validation_error import HTTPValidationError
-from swagger_client.models.info_item_update import InfoItemUpdate
-from swagger_client.models.info_item_update_new import InfoItemUpdateNew
+from swagger_client.models.insert_barcode import InsertBarcode
 from swagger_client.models.insert_basket import InsertBasket
 from swagger_client.models.insert_bot import InsertBot
 from swagger_client.models.insert_message_tg import InsertMessageTg
@@ -77,6 +74,7 @@ from swagger_client.models.insert_scheduler import InsertScheduler
 from swagger_client.models.insert_t_bank_kassa import InsertTBankKassa
 from swagger_client.models.insert_t_bank_payment import InsertTBankPayment
 from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProdavecKrossovok
+from swagger_client.models.insert_yookassa_payment import InsertYookassaPayment
 from swagger_client.models.item_base import ItemBase
 from swagger_client.models.item_base_db import ItemBaseDb
 from swagger_client.models.location_inner import LocationInner
@@ -98,9 +96,13 @@ from swagger_client.models.stock_base import StockBase
 from swagger_client.models.t_bank_kassa_db import TBankKassaDb
 from swagger_client.models.t_bank_payment_db import TBankPaymentDb
 from swagger_client.models.update_bot import UpdateBot
+from swagger_client.models.update_delivery_cdek import UpdateDeliveryCdek
+from swagger_client.models.update_info_item import UpdateInfoItem
+from swagger_client.models.update_info_item_new import UpdateInfoItemNew
 from swagger_client.models.update_order import UpdateOrder
 from swagger_client.models.update_purchase import UpdatePurchase
 from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
+from swagger_client.models.update_waybill import UpdateWaybill
 from swagger_client.models.user_base_db import UserBaseDb
 from swagger_client.models.user_bot_base import UserBotBase
 from swagger_client.models.user_bot_base_db import UserBotBaseDb
@@ -108,6 +110,4 @@ from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
 from swagger_client.models.user_prodavec_krossovok_base_db import UserProdavecKrossovokBaseDb
 from swagger_client.models.utm_mark_base import UtmMarkBase
 from swagger_client.models.validation_error import ValidationError
-from swagger_client.models.waybill_update import WaybillUpdate
 from swagger_client.models.yookassa_payment_base import YookassaPaymentBase
-from swagger_client.models.yookassa_payment_insert import YookassaPaymentInsert

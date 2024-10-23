@@ -17,7 +17,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from swagger_client.models.message_response import MessageResponse
-from swagger_client.models.waybill_update import WaybillUpdate
+from swagger_client.models.update_waybill import UpdateWaybill
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -40,7 +40,7 @@ class WaybillsApi:
     @validate_call
     async def update_api_v1_waybills_put(
         self,
-        waybill_update: WaybillUpdate,
+        update_waybill: UpdateWaybill,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,8 +57,8 @@ class WaybillsApi:
         """Update
 
 
-        :param waybill_update: (required)
-        :type waybill_update: WaybillUpdate
+        :param update_waybill: (required)
+        :type update_waybill: UpdateWaybill
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -82,7 +82,7 @@ class WaybillsApi:
         """ # noqa: E501
 
         _param = self._update_api_v1_waybills_put_serialize(
-            waybill_update=waybill_update,
+            update_waybill=update_waybill,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -107,7 +107,7 @@ class WaybillsApi:
     @validate_call
     async def update_api_v1_waybills_put_with_http_info(
         self,
-        waybill_update: WaybillUpdate,
+        update_waybill: UpdateWaybill,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -124,8 +124,8 @@ class WaybillsApi:
         """Update
 
 
-        :param waybill_update: (required)
-        :type waybill_update: WaybillUpdate
+        :param update_waybill: (required)
+        :type update_waybill: UpdateWaybill
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -149,7 +149,7 @@ class WaybillsApi:
         """ # noqa: E501
 
         _param = self._update_api_v1_waybills_put_serialize(
-            waybill_update=waybill_update,
+            update_waybill=update_waybill,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -174,7 +174,7 @@ class WaybillsApi:
     @validate_call
     async def update_api_v1_waybills_put_without_preload_content(
         self,
-        waybill_update: WaybillUpdate,
+        update_waybill: UpdateWaybill,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -191,8 +191,8 @@ class WaybillsApi:
         """Update
 
 
-        :param waybill_update: (required)
-        :type waybill_update: WaybillUpdate
+        :param update_waybill: (required)
+        :type update_waybill: UpdateWaybill
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -216,7 +216,7 @@ class WaybillsApi:
         """ # noqa: E501
 
         _param = self._update_api_v1_waybills_put_serialize(
-            waybill_update=waybill_update,
+            update_waybill=update_waybill,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -236,7 +236,7 @@ class WaybillsApi:
 
     def _update_api_v1_waybills_put_serialize(
         self,
-        waybill_update,
+        update_waybill,
         _request_auth,
         _content_type,
         _headers,
@@ -260,8 +260,8 @@ class WaybillsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if waybill_update is not None:
-            _body_params = waybill_update
+        if update_waybill is not None:
+            _body_params = update_waybill
 
 
         # set the HTTP header `Accept`

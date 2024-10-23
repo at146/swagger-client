@@ -22,16 +22,15 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InfoItemInsert(BaseModel):
+class UpdateInfoItemNew(BaseModel):
     """
-    InfoItemInsert
+    UpdateInfoItemNew
     """ # noqa: E501
     code: StrictStr
     retail_price: Optional[StrictInt] = None
     link: Optional[StrictStr] = None
-    photo_tg_id: Optional[StrictStr] = None
     discount_price: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["code", "retail_price", "link", "photo_tg_id", "discount_price"]
+    __properties: ClassVar[List[str]] = ["code", "retail_price", "link", "discount_price"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +50,7 @@ class InfoItemInsert(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InfoItemInsert from a JSON string"""
+        """Create an instance of UpdateInfoItemNew from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -82,11 +81,6 @@ class InfoItemInsert(BaseModel):
         if self.link is None and "link" in self.model_fields_set:
             _dict['link'] = None
 
-        # set to None if photo_tg_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.photo_tg_id is None and "photo_tg_id" in self.model_fields_set:
-            _dict['photo_tg_id'] = None
-
         # set to None if discount_price (nullable) is None
         # and model_fields_set contains the field
         if self.discount_price is None and "discount_price" in self.model_fields_set:
@@ -96,7 +90,7 @@ class InfoItemInsert(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InfoItemInsert from a dict"""
+        """Create an instance of UpdateInfoItemNew from a dict"""
         if obj is None:
             return None
 
@@ -107,7 +101,6 @@ class InfoItemInsert(BaseModel):
             "code": obj.get("code"),
             "retail_price": obj.get("retail_price"),
             "link": obj.get("link"),
-            "photo_tg_id": obj.get("photo_tg_id"),
             "discount_price": obj.get("discount_price")
         })
         return _obj

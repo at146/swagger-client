@@ -17,20 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InfoItemUpdateNew(BaseModel):
+class UpdateInfoItem(BaseModel):
     """
-    InfoItemUpdateNew
+    UpdateInfoItem
     """ # noqa: E501
     code: StrictStr
-    retail_price: Optional[StrictInt] = None
-    link: Optional[StrictStr] = None
-    discount_price: Optional[StrictInt] = None
-    __properties: ClassVar[List[str]] = ["code", "retail_price", "link", "discount_price"]
+    photo_tg_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["code", "photo_tg_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +48,7 @@ class InfoItemUpdateNew(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InfoItemUpdateNew from a JSON string"""
+        """Create an instance of UpdateInfoItem from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,26 +69,16 @@ class InfoItemUpdateNew(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if retail_price (nullable) is None
+        # set to None if photo_tg_id (nullable) is None
         # and model_fields_set contains the field
-        if self.retail_price is None and "retail_price" in self.model_fields_set:
-            _dict['retail_price'] = None
-
-        # set to None if link (nullable) is None
-        # and model_fields_set contains the field
-        if self.link is None and "link" in self.model_fields_set:
-            _dict['link'] = None
-
-        # set to None if discount_price (nullable) is None
-        # and model_fields_set contains the field
-        if self.discount_price is None and "discount_price" in self.model_fields_set:
-            _dict['discount_price'] = None
+        if self.photo_tg_id is None and "photo_tg_id" in self.model_fields_set:
+            _dict['photo_tg_id'] = None
 
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InfoItemUpdateNew from a dict"""
+        """Create an instance of UpdateInfoItem from a dict"""
         if obj is None:
             return None
 
@@ -99,9 +87,7 @@ class InfoItemUpdateNew(BaseModel):
 
         _obj = cls.model_validate({
             "code": obj.get("code"),
-            "retail_price": obj.get("retail_price"),
-            "link": obj.get("link"),
-            "discount_price": obj.get("discount_price")
+            "photo_tg_id": obj.get("photo_tg_id")
         })
         return _obj
 

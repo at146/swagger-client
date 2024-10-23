@@ -27,7 +27,7 @@ class UserProdavecKrossovokBaseDb(BaseModel):
     """
     UserProdavecKrossovokBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     user_id: StrictInt
     first_name: StrictStr
     username: Optional[StrictStr]
@@ -75,11 +75,6 @@ class UserProdavecKrossovokBaseDb(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if username (nullable) is None
         # and model_fields_set contains the field
         if self.username is None and "username" in self.model_fields_set:

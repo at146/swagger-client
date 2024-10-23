@@ -29,7 +29,7 @@ class SchedulerBaseDb(BaseModel):
     """
     SchedulerBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     messages_tg_id: StrictInt
     users_bots_id: StrictInt
     trigger_datetime: datetime
@@ -82,11 +82,6 @@ class SchedulerBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of messages_tg
         if self.messages_tg:
             _dict['messages_tg'] = self.messages_tg.to_dict()
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if users_bots (nullable) is None
         # and model_fields_set contains the field
         if self.users_bots is None and "users_bots" in self.model_fields_set:

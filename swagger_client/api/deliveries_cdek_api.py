@@ -18,8 +18,8 @@ from typing_extensions import Annotated
 
 from pydantic import StrictInt
 from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
-from swagger_client.models.delivery_cdek_update import DeliveryCdekUpdate
 from swagger_client.models.message_response import MessageResponse
+from swagger_client.models.update_delivery_cdek import UpdateDeliveryCdek
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -302,7 +302,7 @@ class DeliveriesCdekApi:
     @validate_call
     async def update_api_v1_deliveries_cdek_put(
         self,
-        delivery_cdek_update: DeliveryCdekUpdate,
+        update_delivery_cdek: UpdateDeliveryCdek,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -319,8 +319,8 @@ class DeliveriesCdekApi:
         """Update
 
 
-        :param delivery_cdek_update: (required)
-        :type delivery_cdek_update: DeliveryCdekUpdate
+        :param update_delivery_cdek: (required)
+        :type update_delivery_cdek: UpdateDeliveryCdek
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -344,7 +344,7 @@ class DeliveriesCdekApi:
         """ # noqa: E501
 
         _param = self._update_api_v1_deliveries_cdek_put_serialize(
-            delivery_cdek_update=delivery_cdek_update,
+            update_delivery_cdek=update_delivery_cdek,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -369,7 +369,7 @@ class DeliveriesCdekApi:
     @validate_call
     async def update_api_v1_deliveries_cdek_put_with_http_info(
         self,
-        delivery_cdek_update: DeliveryCdekUpdate,
+        update_delivery_cdek: UpdateDeliveryCdek,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -386,8 +386,8 @@ class DeliveriesCdekApi:
         """Update
 
 
-        :param delivery_cdek_update: (required)
-        :type delivery_cdek_update: DeliveryCdekUpdate
+        :param update_delivery_cdek: (required)
+        :type update_delivery_cdek: UpdateDeliveryCdek
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -411,7 +411,7 @@ class DeliveriesCdekApi:
         """ # noqa: E501
 
         _param = self._update_api_v1_deliveries_cdek_put_serialize(
-            delivery_cdek_update=delivery_cdek_update,
+            update_delivery_cdek=update_delivery_cdek,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -436,7 +436,7 @@ class DeliveriesCdekApi:
     @validate_call
     async def update_api_v1_deliveries_cdek_put_without_preload_content(
         self,
-        delivery_cdek_update: DeliveryCdekUpdate,
+        update_delivery_cdek: UpdateDeliveryCdek,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -453,8 +453,8 @@ class DeliveriesCdekApi:
         """Update
 
 
-        :param delivery_cdek_update: (required)
-        :type delivery_cdek_update: DeliveryCdekUpdate
+        :param update_delivery_cdek: (required)
+        :type update_delivery_cdek: UpdateDeliveryCdek
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -478,7 +478,7 @@ class DeliveriesCdekApi:
         """ # noqa: E501
 
         _param = self._update_api_v1_deliveries_cdek_put_serialize(
-            delivery_cdek_update=delivery_cdek_update,
+            update_delivery_cdek=update_delivery_cdek,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -498,7 +498,7 @@ class DeliveriesCdekApi:
 
     def _update_api_v1_deliveries_cdek_put_serialize(
         self,
-        delivery_cdek_update,
+        update_delivery_cdek,
         _request_auth,
         _content_type,
         _headers,
@@ -522,8 +522,8 @@ class DeliveriesCdekApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if delivery_cdek_update is not None:
-            _body_params = delivery_cdek_update
+        if update_delivery_cdek is not None:
+            _body_params = update_delivery_cdek
 
 
         # set the HTTP header `Accept`

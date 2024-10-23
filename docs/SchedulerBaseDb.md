@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **messages_tg_id** | **int** |  | 
 **users_bots_id** | **int** |  | 
 **trigger_datetime** | **datetime** |  | 

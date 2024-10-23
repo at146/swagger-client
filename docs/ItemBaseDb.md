@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **code** | **str** |  | 
 **changed** | **datetime** |  | [optional] 
 **active** | **bool** |  | [optional] 

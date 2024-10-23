@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from swagger_client.models.yookassa_payment_insert import YookassaPaymentInsert
+from swagger_client.models.insert_yookassa_payment import InsertYookassaPayment
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -39,7 +39,7 @@ class YookassaPaymentsApi:
     @validate_call
     async def insert_api_v1_yookassa_payments_post(
         self,
-        yookassa_payment_insert: YookassaPaymentInsert,
+        insert_yookassa_payment: InsertYookassaPayment,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -56,8 +56,8 @@ class YookassaPaymentsApi:
         """Insert
 
 
-        :param yookassa_payment_insert: (required)
-        :type yookassa_payment_insert: YookassaPaymentInsert
+        :param insert_yookassa_payment: (required)
+        :type insert_yookassa_payment: InsertYookassaPayment
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -81,7 +81,7 @@ class YookassaPaymentsApi:
         """ # noqa: E501
 
         _param = self._insert_api_v1_yookassa_payments_post_serialize(
-            yookassa_payment_insert=yookassa_payment_insert,
+            insert_yookassa_payment=insert_yookassa_payment,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -106,7 +106,7 @@ class YookassaPaymentsApi:
     @validate_call
     async def insert_api_v1_yookassa_payments_post_with_http_info(
         self,
-        yookassa_payment_insert: YookassaPaymentInsert,
+        insert_yookassa_payment: InsertYookassaPayment,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -123,8 +123,8 @@ class YookassaPaymentsApi:
         """Insert
 
 
-        :param yookassa_payment_insert: (required)
-        :type yookassa_payment_insert: YookassaPaymentInsert
+        :param insert_yookassa_payment: (required)
+        :type insert_yookassa_payment: InsertYookassaPayment
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -148,7 +148,7 @@ class YookassaPaymentsApi:
         """ # noqa: E501
 
         _param = self._insert_api_v1_yookassa_payments_post_serialize(
-            yookassa_payment_insert=yookassa_payment_insert,
+            insert_yookassa_payment=insert_yookassa_payment,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -173,7 +173,7 @@ class YookassaPaymentsApi:
     @validate_call
     async def insert_api_v1_yookassa_payments_post_without_preload_content(
         self,
-        yookassa_payment_insert: YookassaPaymentInsert,
+        insert_yookassa_payment: InsertYookassaPayment,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -190,8 +190,8 @@ class YookassaPaymentsApi:
         """Insert
 
 
-        :param yookassa_payment_insert: (required)
-        :type yookassa_payment_insert: YookassaPaymentInsert
+        :param insert_yookassa_payment: (required)
+        :type insert_yookassa_payment: InsertYookassaPayment
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -215,7 +215,7 @@ class YookassaPaymentsApi:
         """ # noqa: E501
 
         _param = self._insert_api_v1_yookassa_payments_post_serialize(
-            yookassa_payment_insert=yookassa_payment_insert,
+            insert_yookassa_payment=insert_yookassa_payment,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -235,7 +235,7 @@ class YookassaPaymentsApi:
 
     def _insert_api_v1_yookassa_payments_post_serialize(
         self,
-        yookassa_payment_insert,
+        insert_yookassa_payment,
         _request_auth,
         _content_type,
         _headers,
@@ -259,8 +259,8 @@ class YookassaPaymentsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if yookassa_payment_insert is not None:
-            _body_params = yookassa_payment_insert
+        if insert_yookassa_payment is not None:
+            _body_params = insert_yookassa_payment
 
 
         # set the HTTP header `Accept`

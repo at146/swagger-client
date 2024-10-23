@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **insert_api_v1_barcodes_post**
-> MessageResponse insert_api_v1_barcodes_post(barcode_insert)
+> MessageResponse insert_api_v1_barcodes_post(insert_barcode)
 
 Insert
 
@@ -18,7 +18,7 @@ Insert
 
 ```python
 import swagger_client
-from swagger_client.models.barcode_insert import BarcodeInsert
+from swagger_client.models.insert_barcode import InsertBarcode
 from swagger_client.models.message_response import MessageResponse
 from swagger_client.rest import ApiException
 from pprint import pprint
@@ -44,11 +44,11 @@ configuration = swagger_client.Configuration(
 async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.BarcodesApi(api_client)
-    barcode_insert = swagger_client.BarcodeInsert() # BarcodeInsert | 
+    insert_barcode = swagger_client.InsertBarcode() # InsertBarcode | 
 
     try:
         # Insert
-        api_response = await api_instance.insert_api_v1_barcodes_post(barcode_insert)
+        api_response = await api_instance.insert_api_v1_barcodes_post(insert_barcode)
         print("The response of BarcodesApi->insert_api_v1_barcodes_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -62,7 +62,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **barcode_insert** | [**BarcodeInsert**](BarcodeInsert.md)|  | 
+ **insert_barcode** | [**InsertBarcode**](InsertBarcode.md)|  | 
 
 ### Return type
 

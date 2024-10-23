@@ -28,7 +28,7 @@ class UserBaseDb(BaseModel):
     """
     UserBaseDb
     """ # noqa: E501
-    id: Optional[StrictInt] = None
+    id: StrictInt
     user_id: StrictInt
     first_name: StrictStr
     username: Optional[StrictStr] = None
@@ -85,11 +85,6 @@ class UserBaseDb(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['users_bots'] = _items
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if username (nullable) is None
         # and model_fields_set contains the field
         if self.username is None and "username" in self.model_fields_set:

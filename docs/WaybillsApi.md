@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **update_api_v1_waybills_put**
-> MessageResponse update_api_v1_waybills_put(waybill_update)
+> MessageResponse update_api_v1_waybills_put(update_waybill)
 
 Update
 
@@ -19,7 +19,7 @@ Update
 ```python
 import swagger_client
 from swagger_client.models.message_response import MessageResponse
-from swagger_client.models.waybill_update import WaybillUpdate
+from swagger_client.models.update_waybill import UpdateWaybill
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -44,11 +44,11 @@ configuration = swagger_client.Configuration(
 async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.WaybillsApi(api_client)
-    waybill_update = swagger_client.WaybillUpdate() # WaybillUpdate | 
+    update_waybill = swagger_client.UpdateWaybill() # UpdateWaybill | 
 
     try:
         # Update
-        api_response = await api_instance.update_api_v1_waybills_put(waybill_update)
+        api_response = await api_instance.update_api_v1_waybills_put(update_waybill)
         print("The response of WaybillsApi->update_api_v1_waybills_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -62,7 +62,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **waybill_update** | [**WaybillUpdate**](WaybillUpdate.md)|  | 
+ **update_waybill** | [**UpdateWaybill**](UpdateWaybill.md)|  | 
 
 ### Return type
 

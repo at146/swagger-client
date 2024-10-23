@@ -16,7 +16,7 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from swagger_client.models.barcode_insert import BarcodeInsert
+from swagger_client.models.insert_barcode import InsertBarcode
 from swagger_client.models.message_response import MessageResponse
 
 from swagger_client.api_client import ApiClient, RequestSerialized
@@ -40,7 +40,7 @@ class BarcodesApi:
     @validate_call
     async def insert_api_v1_barcodes_post(
         self,
-        barcode_insert: BarcodeInsert,
+        insert_barcode: InsertBarcode,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -57,8 +57,8 @@ class BarcodesApi:
         """Insert
 
 
-        :param barcode_insert: (required)
-        :type barcode_insert: BarcodeInsert
+        :param insert_barcode: (required)
+        :type insert_barcode: InsertBarcode
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -82,7 +82,7 @@ class BarcodesApi:
         """ # noqa: E501
 
         _param = self._insert_api_v1_barcodes_post_serialize(
-            barcode_insert=barcode_insert,
+            insert_barcode=insert_barcode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -107,7 +107,7 @@ class BarcodesApi:
     @validate_call
     async def insert_api_v1_barcodes_post_with_http_info(
         self,
-        barcode_insert: BarcodeInsert,
+        insert_barcode: InsertBarcode,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -124,8 +124,8 @@ class BarcodesApi:
         """Insert
 
 
-        :param barcode_insert: (required)
-        :type barcode_insert: BarcodeInsert
+        :param insert_barcode: (required)
+        :type insert_barcode: InsertBarcode
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -149,7 +149,7 @@ class BarcodesApi:
         """ # noqa: E501
 
         _param = self._insert_api_v1_barcodes_post_serialize(
-            barcode_insert=barcode_insert,
+            insert_barcode=insert_barcode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -174,7 +174,7 @@ class BarcodesApi:
     @validate_call
     async def insert_api_v1_barcodes_post_without_preload_content(
         self,
-        barcode_insert: BarcodeInsert,
+        insert_barcode: InsertBarcode,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -191,8 +191,8 @@ class BarcodesApi:
         """Insert
 
 
-        :param barcode_insert: (required)
-        :type barcode_insert: BarcodeInsert
+        :param insert_barcode: (required)
+        :type insert_barcode: InsertBarcode
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -216,7 +216,7 @@ class BarcodesApi:
         """ # noqa: E501
 
         _param = self._insert_api_v1_barcodes_post_serialize(
-            barcode_insert=barcode_insert,
+            insert_barcode=insert_barcode,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -236,7 +236,7 @@ class BarcodesApi:
 
     def _insert_api_v1_barcodes_post_serialize(
         self,
-        barcode_insert,
+        insert_barcode,
         _request_auth,
         _content_type,
         _headers,
@@ -260,8 +260,8 @@ class BarcodesApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if barcode_insert is not None:
-            _body_params = barcode_insert
+        if insert_barcode is not None:
+            _body_params = insert_barcode
 
 
         # set the HTTP header `Accept`

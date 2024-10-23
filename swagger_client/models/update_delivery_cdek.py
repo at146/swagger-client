@@ -18,18 +18,19 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class BarcodeInsert(BaseModel):
+class UpdateDeliveryCdek(BaseModel):
     """
-    BarcodeInsert
+    UpdateDeliveryCdek
     """ # noqa: E501
     delivery_cdek_id: StrictInt
-    barcode_id: StrictStr
-    tg_file_id: StrictStr
-    __properties: ClassVar[List[str]] = ["delivery_cdek_id", "barcode_id", "tg_file_id"]
+    status_delivery: Optional[StrictStr] = None
+    photo_tg_file_id: Optional[StrictStr] = None
+    invoice_tg_file_id: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["delivery_cdek_id", "status_delivery", "photo_tg_file_id", "invoice_tg_file_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +50,7 @@ class BarcodeInsert(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of BarcodeInsert from a JSON string"""
+        """Create an instance of UpdateDeliveryCdek from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,11 +71,26 @@ class BarcodeInsert(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if status_delivery (nullable) is None
+        # and model_fields_set contains the field
+        if self.status_delivery is None and "status_delivery" in self.model_fields_set:
+            _dict['status_delivery'] = None
+
+        # set to None if photo_tg_file_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.photo_tg_file_id is None and "photo_tg_file_id" in self.model_fields_set:
+            _dict['photo_tg_file_id'] = None
+
+        # set to None if invoice_tg_file_id (nullable) is None
+        # and model_fields_set contains the field
+        if self.invoice_tg_file_id is None and "invoice_tg_file_id" in self.model_fields_set:
+            _dict['invoice_tg_file_id'] = None
+
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of BarcodeInsert from a dict"""
+        """Create an instance of UpdateDeliveryCdek from a dict"""
         if obj is None:
             return None
 
@@ -83,8 +99,9 @@ class BarcodeInsert(BaseModel):
 
         _obj = cls.model_validate({
             "delivery_cdek_id": obj.get("delivery_cdek_id"),
-            "barcode_id": obj.get("barcode_id"),
-            "tg_file_id": obj.get("tg_file_id")
+            "status_delivery": obj.get("status_delivery"),
+            "photo_tg_file_id": obj.get("photo_tg_file_id"),
+            "invoice_tg_file_id": obj.get("invoice_tg_file_id")
         })
         return _obj
 

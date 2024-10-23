@@ -17,9 +17,9 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from swagger_client.models.info_item_update import InfoItemUpdate
-from swagger_client.models.info_item_update_new import InfoItemUpdateNew
 from swagger_client.models.message_response import MessageResponse
+from swagger_client.models.update_info_item import UpdateInfoItem
+from swagger_client.models.update_info_item_new import UpdateInfoItemNew
 
 from swagger_client.api_client import ApiClient, RequestSerialized
 from swagger_client.api_response import ApiResponse
@@ -43,7 +43,7 @@ class InfoItemsApi:
     async def update_api_v1_info_items_token_put(
         self,
         token: StrictStr,
-        info_item_update: InfoItemUpdate,
+        update_info_item: UpdateInfoItem,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -62,8 +62,8 @@ class InfoItemsApi:
 
         :param token: (required)
         :type token: str
-        :param info_item_update: (required)
-        :type info_item_update: InfoItemUpdate
+        :param update_info_item: (required)
+        :type update_info_item: UpdateInfoItem
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -88,7 +88,7 @@ class InfoItemsApi:
 
         _param = self._update_api_v1_info_items_token_put_serialize(
             token=token,
-            info_item_update=info_item_update,
+            update_info_item=update_info_item,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -114,7 +114,7 @@ class InfoItemsApi:
     async def update_api_v1_info_items_token_put_with_http_info(
         self,
         token: StrictStr,
-        info_item_update: InfoItemUpdate,
+        update_info_item: UpdateInfoItem,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -133,8 +133,8 @@ class InfoItemsApi:
 
         :param token: (required)
         :type token: str
-        :param info_item_update: (required)
-        :type info_item_update: InfoItemUpdate
+        :param update_info_item: (required)
+        :type update_info_item: UpdateInfoItem
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -159,7 +159,7 @@ class InfoItemsApi:
 
         _param = self._update_api_v1_info_items_token_put_serialize(
             token=token,
-            info_item_update=info_item_update,
+            update_info_item=update_info_item,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -185,7 +185,7 @@ class InfoItemsApi:
     async def update_api_v1_info_items_token_put_without_preload_content(
         self,
         token: StrictStr,
-        info_item_update: InfoItemUpdate,
+        update_info_item: UpdateInfoItem,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -204,8 +204,8 @@ class InfoItemsApi:
 
         :param token: (required)
         :type token: str
-        :param info_item_update: (required)
-        :type info_item_update: InfoItemUpdate
+        :param update_info_item: (required)
+        :type update_info_item: UpdateInfoItem
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -230,7 +230,7 @@ class InfoItemsApi:
 
         _param = self._update_api_v1_info_items_token_put_serialize(
             token=token,
-            info_item_update=info_item_update,
+            update_info_item=update_info_item,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -251,7 +251,7 @@ class InfoItemsApi:
     def _update_api_v1_info_items_token_put_serialize(
         self,
         token,
-        info_item_update,
+        update_info_item,
         _request_auth,
         _content_type,
         _headers,
@@ -277,8 +277,8 @@ class InfoItemsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if info_item_update is not None:
-            _body_params = info_item_update
+        if update_info_item is not None:
+            _body_params = update_info_item
 
 
         # set the HTTP header `Accept`
@@ -329,7 +329,7 @@ class InfoItemsApi:
     async def update_new_api_v1_info_items_token_new_put(
         self,
         token: StrictStr,
-        info_item_update_new: InfoItemUpdateNew,
+        update_info_item_new: UpdateInfoItemNew,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -348,8 +348,8 @@ class InfoItemsApi:
 
         :param token: (required)
         :type token: str
-        :param info_item_update_new: (required)
-        :type info_item_update_new: InfoItemUpdateNew
+        :param update_info_item_new: (required)
+        :type update_info_item_new: UpdateInfoItemNew
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -374,7 +374,7 @@ class InfoItemsApi:
 
         _param = self._update_new_api_v1_info_items_token_new_put_serialize(
             token=token,
-            info_item_update_new=info_item_update_new,
+            update_info_item_new=update_info_item_new,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -400,7 +400,7 @@ class InfoItemsApi:
     async def update_new_api_v1_info_items_token_new_put_with_http_info(
         self,
         token: StrictStr,
-        info_item_update_new: InfoItemUpdateNew,
+        update_info_item_new: UpdateInfoItemNew,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -419,8 +419,8 @@ class InfoItemsApi:
 
         :param token: (required)
         :type token: str
-        :param info_item_update_new: (required)
-        :type info_item_update_new: InfoItemUpdateNew
+        :param update_info_item_new: (required)
+        :type update_info_item_new: UpdateInfoItemNew
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -445,7 +445,7 @@ class InfoItemsApi:
 
         _param = self._update_new_api_v1_info_items_token_new_put_serialize(
             token=token,
-            info_item_update_new=info_item_update_new,
+            update_info_item_new=update_info_item_new,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -471,7 +471,7 @@ class InfoItemsApi:
     async def update_new_api_v1_info_items_token_new_put_without_preload_content(
         self,
         token: StrictStr,
-        info_item_update_new: InfoItemUpdateNew,
+        update_info_item_new: UpdateInfoItemNew,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -490,8 +490,8 @@ class InfoItemsApi:
 
         :param token: (required)
         :type token: str
-        :param info_item_update_new: (required)
-        :type info_item_update_new: InfoItemUpdateNew
+        :param update_info_item_new: (required)
+        :type update_info_item_new: UpdateInfoItemNew
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -516,7 +516,7 @@ class InfoItemsApi:
 
         _param = self._update_new_api_v1_info_items_token_new_put_serialize(
             token=token,
-            info_item_update_new=info_item_update_new,
+            update_info_item_new=update_info_item_new,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -537,7 +537,7 @@ class InfoItemsApi:
     def _update_new_api_v1_info_items_token_new_put_serialize(
         self,
         token,
-        info_item_update_new,
+        update_info_item_new,
         _request_auth,
         _content_type,
         _headers,
@@ -563,8 +563,8 @@ class InfoItemsApi:
         # process the header parameters
         # process the form parameters
         # process the body parameter
-        if info_item_update_new is not None:
-            _body_params = info_item_update_new
+        if update_info_item_new is not None:
+            _body_params = update_info_item_new
 
 
         # set the HTTP header `Accept`

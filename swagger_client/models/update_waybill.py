@@ -18,17 +18,17 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class InfoItemUpdate(BaseModel):
+class UpdateWaybill(BaseModel):
     """
-    InfoItemUpdate
+    UpdateWaybill
     """ # noqa: E501
-    code: StrictStr
-    photo_tg_id: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["code", "photo_tg_id"]
+    waybill_id: StrictStr
+    tg_file_id: StrictStr
+    __properties: ClassVar[List[str]] = ["waybill_id", "tg_file_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +48,7 @@ class InfoItemUpdate(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of InfoItemUpdate from a JSON string"""
+        """Create an instance of UpdateWaybill from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,16 +69,11 @@ class InfoItemUpdate(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if photo_tg_id (nullable) is None
-        # and model_fields_set contains the field
-        if self.photo_tg_id is None and "photo_tg_id" in self.model_fields_set:
-            _dict['photo_tg_id'] = None
-
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of InfoItemUpdate from a dict"""
+        """Create an instance of UpdateWaybill from a dict"""
         if obj is None:
             return None
 
@@ -86,8 +81,8 @@ class InfoItemUpdate(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "code": obj.get("code"),
-            "photo_tg_id": obj.get("photo_tg_id")
+            "waybill_id": obj.get("waybill_id"),
+            "tg_file_id": obj.get("tg_file_id")
         })
         return _obj
 

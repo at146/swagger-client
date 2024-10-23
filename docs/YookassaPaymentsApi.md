@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **insert_api_v1_yookassa_payments_post**
-> int insert_api_v1_yookassa_payments_post(yookassa_payment_insert)
+> int insert_api_v1_yookassa_payments_post(insert_yookassa_payment)
 
 Insert
 
@@ -18,7 +18,7 @@ Insert
 
 ```python
 import swagger_client
-from swagger_client.models.yookassa_payment_insert import YookassaPaymentInsert
+from swagger_client.models.insert_yookassa_payment import InsertYookassaPayment
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -43,11 +43,11 @@ configuration = swagger_client.Configuration(
 async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.YookassaPaymentsApi(api_client)
-    yookassa_payment_insert = swagger_client.YookassaPaymentInsert() # YookassaPaymentInsert | 
+    insert_yookassa_payment = swagger_client.InsertYookassaPayment() # InsertYookassaPayment | 
 
     try:
         # Insert
-        api_response = await api_instance.insert_api_v1_yookassa_payments_post(yookassa_payment_insert)
+        api_response = await api_instance.insert_api_v1_yookassa_payments_post(insert_yookassa_payment)
         print("The response of YookassaPaymentsApi->insert_api_v1_yookassa_payments_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -61,7 +61,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **yookassa_payment_insert** | [**YookassaPaymentInsert**](YookassaPaymentInsert.md)|  | 
+ **insert_yookassa_payment** | [**InsertYookassaPayment**](InsertYookassaPayment.md)|  | 
 
 ### Return type
 

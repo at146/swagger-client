@@ -22,15 +22,14 @@ from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
-class YookassaPaymentInsert(BaseModel):
+class InsertBarcode(BaseModel):
     """
-    YookassaPaymentInsert
+    InsertBarcode
     """ # noqa: E501
-    purchase_id: StrictInt
-    payment_id: StrictStr
-    status: StrictStr
-    email: StrictStr
-    __properties: ClassVar[List[str]] = ["purchase_id", "payment_id", "status", "email"]
+    delivery_cdek_id: StrictInt
+    barcode_id: StrictStr
+    tg_file_id: StrictStr
+    __properties: ClassVar[List[str]] = ["delivery_cdek_id", "barcode_id", "tg_file_id"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class YookassaPaymentInsert(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of YookassaPaymentInsert from a JSON string"""
+        """Create an instance of InsertBarcode from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,7 +74,7 @@ class YookassaPaymentInsert(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of YookassaPaymentInsert from a dict"""
+        """Create an instance of InsertBarcode from a dict"""
         if obj is None:
             return None
 
@@ -83,10 +82,9 @@ class YookassaPaymentInsert(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "purchase_id": obj.get("purchase_id"),
-            "payment_id": obj.get("payment_id"),
-            "status": obj.get("status"),
-            "email": obj.get("email")
+            "delivery_cdek_id": obj.get("delivery_cdek_id"),
+            "barcode_id": obj.get("barcode_id"),
+            "tg_file_id": obj.get("tg_file_id")
         })
         return _obj
 

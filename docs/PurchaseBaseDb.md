@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **int** |  | [optional] 
+**id** | **int** |  | 
 **code** | **str** |  | 
 **price** | **int** |  | 
 **pod** | **int** |  | [optional] 

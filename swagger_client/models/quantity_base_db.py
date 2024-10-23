@@ -29,7 +29,7 @@ class QuantityBaseDb(BaseModel):
     """
     QuantityBaseDb
     """ # noqa: E501
-    id: Optional[StrictStr] = None
+    id: StrictStr
     item_id: StrictStr
     stock_id: StrictStr
     size_id: StrictInt
@@ -88,11 +88,6 @@ class QuantityBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of centimeter
         if self.centimeter:
             _dict['centimeter'] = self.centimeter.to_dict()
-        # set to None if id (nullable) is None
-        # and model_fields_set contains the field
-        if self.id is None and "id" in self.model_fields_set:
-            _dict['id'] = None
-
         # set to None if centimeter_id (nullable) is None
         # and model_fields_set contains the field
         if self.centimeter_id is None and "centimeter_id" in self.model_fields_set:

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **update_api_v1_info_items_token_put**
-> MessageResponse update_api_v1_info_items_token_put(token, info_item_update)
+> MessageResponse update_api_v1_info_items_token_put(token, update_info_item)
 
 Update
 
@@ -19,8 +19,8 @@ Update
 
 ```python
 import swagger_client
-from swagger_client.models.info_item_update import InfoItemUpdate
 from swagger_client.models.message_response import MessageResponse
+from swagger_client.models.update_info_item import UpdateInfoItem
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -46,11 +46,11 @@ async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.InfoItemsApi(api_client)
     token = 'token_example' # str | 
-    info_item_update = swagger_client.InfoItemUpdate() # InfoItemUpdate | 
+    update_info_item = swagger_client.UpdateInfoItem() # UpdateInfoItem | 
 
     try:
         # Update
-        api_response = await api_instance.update_api_v1_info_items_token_put(token, info_item_update)
+        api_response = await api_instance.update_api_v1_info_items_token_put(token, update_info_item)
         print("The response of InfoItemsApi->update_api_v1_info_items_token_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -65,7 +65,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **str**|  | 
- **info_item_update** | [**InfoItemUpdate**](InfoItemUpdate.md)|  | 
+ **update_info_item** | [**UpdateInfoItem**](UpdateInfoItem.md)|  | 
 
 ### Return type
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_new_api_v1_info_items_token_new_put**
-> MessageResponse update_new_api_v1_info_items_token_new_put(token, info_item_update_new)
+> MessageResponse update_new_api_v1_info_items_token_new_put(token, update_info_item_new)
 
 Update New
 
@@ -100,8 +100,8 @@ Update New
 
 ```python
 import swagger_client
-from swagger_client.models.info_item_update_new import InfoItemUpdateNew
 from swagger_client.models.message_response import MessageResponse
+from swagger_client.models.update_info_item_new import UpdateInfoItemNew
 from swagger_client.rest import ApiException
 from pprint import pprint
 
@@ -127,11 +127,11 @@ async with swagger_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = swagger_client.InfoItemsApi(api_client)
     token = 'token_example' # str | 
-    info_item_update_new = swagger_client.InfoItemUpdateNew() # InfoItemUpdateNew | 
+    update_info_item_new = swagger_client.UpdateInfoItemNew() # UpdateInfoItemNew | 
 
     try:
         # Update New
-        api_response = await api_instance.update_new_api_v1_info_items_token_new_put(token, info_item_update_new)
+        api_response = await api_instance.update_new_api_v1_info_items_token_new_put(token, update_info_item_new)
         print("The response of InfoItemsApi->update_new_api_v1_info_items_token_new_put:\n")
         pprint(api_response)
     except Exception as e:
@@ -146,7 +146,7 @@ async with swagger_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **token** | **str**|  | 
- **info_item_update_new** | [**InfoItemUpdateNew**](InfoItemUpdateNew.md)|  | 
+ **update_info_item_new** | [**UpdateInfoItemNew**](UpdateInfoItemNew.md)|  | 
 
 ### Return type
 
