@@ -178,10 +178,4 @@ swagger_client/py.typed
 swagger_client/rest.py
 test-requirements.txt
 test/__init__.py
-test/test_insert_barcode.py
-test/test_insert_yookassa_payment.py
-test/test_update_delivery_cdek.py
-test/test_update_info_item.py
-test/test_update_info_item_new.py
-test/test_update_waybill.py
 tox.ini

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **subscribe_channel** | **bool** |  | 
 **utm_mark_id** | **int** |  | [optional] 
 **date_added** | **datetime** |  | [optional] 
+**is_active** | **bool** |  | 
 **user** | [**UserBaseDb**](UserBaseDb.md) |  | [optional] 
 **bot** | [**BotBase**](BotBase.md) |  | [optional] 
 **partner** | [**PartnerBase**](PartnerBase.md) |  | [optional] 

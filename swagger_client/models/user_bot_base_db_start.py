@@ -41,13 +41,14 @@ class UserBotBaseDbStart(BaseModel):
     subscribe_channel: StrictBool
     utm_mark_id: Optional[StrictInt] = None
     date_added: Optional[datetime] = None
+    is_active: StrictBool
     user: Optional[UserBaseDb] = None
     bot: Optional[BotBase] = None
     partner: Optional[PartnerBase] = None
     utm_mark: Optional[UtmMarkBase] = None
     orders: Optional[List[OrderBase]] = None
     new_user_start: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id", "date_added", "user", "bot", "partner", "utm_mark", "orders", "new_user_start"]
+    __properties: ClassVar[List[str]] = ["id", "user_id", "bot_token", "last_mess", "items", "new_user", "subscribe_channel", "utm_mark_id", "date_added", "is_active", "user", "bot", "partner", "utm_mark", "orders", "new_user_start"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -173,6 +174,7 @@ class UserBotBaseDbStart(BaseModel):
             "subscribe_channel": obj.get("subscribe_channel"),
             "utm_mark_id": obj.get("utm_mark_id"),
             "date_added": obj.get("date_added"),
+            "is_active": obj.get("is_active"),
             "user": UserBaseDb.from_dict(obj["user"]) if obj.get("user") is not None else None,
             "bot": BotBase.from_dict(obj["bot"]) if obj.get("bot") is not None else None,
             "partner": PartnerBase.from_dict(obj["partner"]) if obj.get("partner") is not None else None,

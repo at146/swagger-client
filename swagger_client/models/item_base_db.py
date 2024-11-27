@@ -50,12 +50,11 @@ class ItemBaseDb(BaseModel):
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
     dimension_id: Optional[StrictStr] = None
-    photo_path_tg: Optional[StrictStr] = None
     is_original: Optional[StrictBool] = None
     quantities: Optional[List[QuantityBaseDb]] = None
     category: Optional[CategoryBase] = None
     dimension: Optional[DimensionBase] = None
-    __properties: ClassVar[List[str]] = ["id", "code", "changed", "active", "brand", "model", "title", "retail_price", "drop_price", "link", "photos", "season", "color", "discount_price", "new", "code_hash", "category_id", "manufacturer_country", "material", "dimension_id", "photo_path_tg", "is_original", "quantities", "category", "dimension"]
+    __properties: ClassVar[List[str]] = ["id", "code", "changed", "active", "brand", "model", "title", "retail_price", "drop_price", "link", "photos", "season", "color", "discount_price", "new", "code_hash", "category_id", "manufacturer_country", "material", "dimension_id", "is_original", "quantities", "category", "dimension"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -189,11 +188,6 @@ class ItemBaseDb(BaseModel):
         if self.dimension_id is None and "dimension_id" in self.model_fields_set:
             _dict['dimension_id'] = None
 
-        # set to None if photo_path_tg (nullable) is None
-        # and model_fields_set contains the field
-        if self.photo_path_tg is None and "photo_path_tg" in self.model_fields_set:
-            _dict['photo_path_tg'] = None
-
         # set to None if is_original (nullable) is None
         # and model_fields_set contains the field
         if self.is_original is None and "is_original" in self.model_fields_set:
@@ -246,7 +240,6 @@ class ItemBaseDb(BaseModel):
             "manufacturer_country": obj.get("manufacturer_country"),
             "material": obj.get("material"),
             "dimension_id": obj.get("dimension_id"),
-            "photo_path_tg": obj.get("photo_path_tg"),
             "is_original": obj.get("is_original"),
             "quantities": [QuantityBaseDb.from_dict(_item) for _item in obj["quantities"]] if obj.get("quantities") is not None else None,
             "category": CategoryBase.from_dict(obj["category"]) if obj.get("category") is not None else None,
