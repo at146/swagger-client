@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_items_action_new_codes_api_v1_items_token_all_new_codes_get**
-> List[str] get_items_action_new_codes_api_v1_items_token_all_new_codes_get(token, action, category=category, size=size, color=color, season=season, sneaker=sneaker)
+> List[str] get_items_action_new_codes_api_v1_items_token_all_new_codes_get(token, action, category=category, size=size, color=color, season=season, sneaker=sneaker, is_only_original_items=is_only_original_items)
 
 Get Items Action New Codes
 
@@ -630,10 +630,11 @@ async with swagger_client.ApiClient(configuration) as api_client:
     color = 'color_example' # str |  (optional)
     season = 'season_example' # str |  (optional)
     sneaker = False # bool |  (optional) (default to False)
+    is_only_original_items = False # bool |  (optional) (default to False)
 
     try:
         # Get Items Action New Codes
-        api_response = await api_instance.get_items_action_new_codes_api_v1_items_token_all_new_codes_get(token, action, category=category, size=size, color=color, season=season, sneaker=sneaker)
+        api_response = await api_instance.get_items_action_new_codes_api_v1_items_token_all_new_codes_get(token, action, category=category, size=size, color=color, season=season, sneaker=sneaker, is_only_original_items=is_only_original_items)
         print("The response of ItemsApi->get_items_action_new_codes_api_v1_items_token_all_new_codes_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -654,6 +655,7 @@ Name | Type | Description  | Notes
  **color** | **str**|  | [optional] 
  **season** | **str**|  | [optional] 
  **sneaker** | **bool**|  | [optional] [default to False]
+ **is_only_original_items** | **bool**|  | [optional] [default to False]
 
 ### Return type
 

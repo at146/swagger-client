@@ -2072,6 +2072,7 @@ class ItemsApi:
         color: Optional[StrictStr] = None,
         season: Optional[StrictStr] = None,
         sneaker: Optional[StrictBool] = None,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2102,6 +2103,8 @@ class ItemsApi:
         :type season: str
         :param sneaker:
         :type sneaker: bool
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2132,6 +2135,7 @@ class ItemsApi:
             color=color,
             season=season,
             sneaker=sneaker,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2163,6 +2167,7 @@ class ItemsApi:
         color: Optional[StrictStr] = None,
         season: Optional[StrictStr] = None,
         sneaker: Optional[StrictBool] = None,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2193,6 +2198,8 @@ class ItemsApi:
         :type season: str
         :param sneaker:
         :type sneaker: bool
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2223,6 +2230,7 @@ class ItemsApi:
             color=color,
             season=season,
             sneaker=sneaker,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2254,6 +2262,7 @@ class ItemsApi:
         color: Optional[StrictStr] = None,
         season: Optional[StrictStr] = None,
         sneaker: Optional[StrictBool] = None,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2284,6 +2293,8 @@ class ItemsApi:
         :type season: str
         :param sneaker:
         :type sneaker: bool
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2314,6 +2325,7 @@ class ItemsApi:
             color=color,
             season=season,
             sneaker=sneaker,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2340,6 +2352,7 @@ class ItemsApi:
         color,
         season,
         sneaker,
+        is_only_original_items,
         _request_auth,
         _content_type,
         _headers,
@@ -2385,6 +2398,10 @@ class ItemsApi:
         if sneaker is not None:
             
             _query_params.append(('sneaker', sneaker))
+            
+        if is_only_original_items is not None:
+            
+            _query_params.append(('is_only_original_items', is_only_original_items))
             
         # process the header parameters
         # process the form parameters
