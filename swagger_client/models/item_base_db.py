@@ -50,7 +50,7 @@ class ItemBaseDb(BaseModel):
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
     dimension_id: Optional[StrictStr] = None
-    is_original: Optional[StrictBool] = None
+    is_original: StrictBool
     quantities: Optional[List[QuantityBaseDb]] = None
     category: Optional[CategoryBase] = None
     dimension: Optional[DimensionBase] = None
@@ -187,11 +187,6 @@ class ItemBaseDb(BaseModel):
         # and model_fields_set contains the field
         if self.dimension_id is None and "dimension_id" in self.model_fields_set:
             _dict['dimension_id'] = None
-
-        # set to None if is_original (nullable) is None
-        # and model_fields_set contains the field
-        if self.is_original is None and "is_original" in self.model_fields_set:
-            _dict['is_original'] = None
 
         # set to None if quantities (nullable) is None
         # and model_fields_set contains the field

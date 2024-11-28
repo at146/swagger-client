@@ -17,7 +17,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,7 +39,8 @@ class BotBase(BaseModel):
     comments_url: Optional[StrictStr] = None
     allowed_updates: Optional[List[StrictStr]] = None
     support_username: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates", "support_username"]
+    is_only_original_items: Optional[StrictBool] = None
+    __properties: ClassVar[List[str]] = ["id", "token", "full_name", "username", "id_bot", "admin_list", "text_channel_url", "support_url", "channel_url", "info_url", "comments_url", "allowed_updates", "support_username", "is_only_original_items"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -145,6 +146,11 @@ class BotBase(BaseModel):
         if self.support_username is None and "support_username" in self.model_fields_set:
             _dict['support_username'] = None
 
+        # set to None if is_only_original_items (nullable) is None
+        # and model_fields_set contains the field
+        if self.is_only_original_items is None and "is_only_original_items" in self.model_fields_set:
+            _dict['is_only_original_items'] = None
+
         return _dict
 
     @classmethod
@@ -169,7 +175,8 @@ class BotBase(BaseModel):
             "info_url": obj.get("info_url"),
             "comments_url": obj.get("comments_url"),
             "allowed_updates": obj.get("allowed_updates"),
-            "support_username": obj.get("support_username")
+            "support_username": obj.get("support_username"),
+            "is_only_original_items": obj.get("is_only_original_items")
         })
         return _obj
 

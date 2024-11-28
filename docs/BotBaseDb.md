@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **comments_url** | **str** |  | 
 **allowed_updates** | **List[str]** |  | [optional] 
 **support_username** | **str** |  | [optional] 
+**is_only_original_items** | **bool** |  | 
 
 ## Example
 

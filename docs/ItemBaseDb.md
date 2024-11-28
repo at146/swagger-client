@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **manufacturer_country** | **str** |  | [optional] 
 **material** | **str** |  | [optional] 
 **dimension_id** | **str** |  | [optional] 
-**is_original** | **bool** |  | [optional] 
+**is_original** | **bool** |  | 
 **quantities** | [**List[QuantityBaseDb]**](QuantityBaseDb.md) |  | [optional] 
 **category** | [**CategoryBase**](CategoryBase.md) |  | [optional] 
 **dimension** | [**DimensionBase**](DimensionBase.md) |  | [optional] 
