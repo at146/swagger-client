@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_count_brand_api_v1_items_category_brand_count_get**
-> int get_count_brand_api_v1_items_category_brand_count_get(category, brand)
+> int get_count_brand_api_v1_items_category_brand_count_get(category, brand, is_only_original_items=is_only_original_items)
 
 Get Count Brand
 
@@ -215,10 +215,11 @@ async with swagger_client.ApiClient(configuration) as api_client:
     api_instance = swagger_client.ItemsApi(api_client)
     category = 'category_example' # str | 
     brand = 'brand_example' # str | 
+    is_only_original_items = False # bool |  (optional) (default to False)
 
     try:
         # Get Count Brand
-        api_response = await api_instance.get_count_brand_api_v1_items_category_brand_count_get(category, brand)
+        api_response = await api_instance.get_count_brand_api_v1_items_category_brand_count_get(category, brand, is_only_original_items=is_only_original_items)
         print("The response of ItemsApi->get_count_brand_api_v1_items_category_brand_count_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -234,6 +235,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category** | **str**|  | 
  **brand** | **str**|  | 
+ **is_only_original_items** | **bool**|  | [optional] [default to False]
 
 ### Return type
 
@@ -767,7 +769,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_models_and_counts_api_v1_items_category_brand_models_counts_get**
-> List[ModelCount] get_models_and_counts_api_v1_items_category_brand_models_counts_get(category, brand)
+> List[ModelCount] get_models_and_counts_api_v1_items_category_brand_models_counts_get(category, brand, is_only_original_items=is_only_original_items)
 
 Get Models And Counts
 
@@ -804,10 +806,11 @@ async with swagger_client.ApiClient(configuration) as api_client:
     api_instance = swagger_client.ItemsApi(api_client)
     category = 'category_example' # str | 
     brand = 'brand_example' # str | 
+    is_only_original_items = False # bool |  (optional) (default to False)
 
     try:
         # Get Models And Counts
-        api_response = await api_instance.get_models_and_counts_api_v1_items_category_brand_models_counts_get(category, brand)
+        api_response = await api_instance.get_models_and_counts_api_v1_items_category_brand_models_counts_get(category, brand, is_only_original_items=is_only_original_items)
         print("The response of ItemsApi->get_models_and_counts_api_v1_items_category_brand_models_counts_get:\n")
         pprint(api_response)
     except Exception as e:
@@ -823,6 +826,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **category** | **str**|  | 
  **brand** | **str**|  | 
+ **is_only_original_items** | **bool**|  | [optional] [default to False]
 
 ### Return type
 

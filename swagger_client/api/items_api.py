@@ -600,6 +600,7 @@ class ItemsApi:
         self,
         category: StrictStr,
         brand: StrictStr,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -620,6 +621,8 @@ class ItemsApi:
         :type category: str
         :param brand: (required)
         :type brand: str
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -645,6 +648,7 @@ class ItemsApi:
         _param = self._get_count_brand_api_v1_items_category_brand_count_get_serialize(
             category=category,
             brand=brand,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -671,6 +675,7 @@ class ItemsApi:
         self,
         category: StrictStr,
         brand: StrictStr,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -691,6 +696,8 @@ class ItemsApi:
         :type category: str
         :param brand: (required)
         :type brand: str
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -716,6 +723,7 @@ class ItemsApi:
         _param = self._get_count_brand_api_v1_items_category_brand_count_get_serialize(
             category=category,
             brand=brand,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -742,6 +750,7 @@ class ItemsApi:
         self,
         category: StrictStr,
         brand: StrictStr,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -762,6 +771,8 @@ class ItemsApi:
         :type category: str
         :param brand: (required)
         :type brand: str
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -787,6 +798,7 @@ class ItemsApi:
         _param = self._get_count_brand_api_v1_items_category_brand_count_get_serialize(
             category=category,
             brand=brand,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -808,6 +820,7 @@ class ItemsApi:
         self,
         category,
         brand,
+        is_only_original_items,
         _request_auth,
         _content_type,
         _headers,
@@ -832,6 +845,10 @@ class ItemsApi:
         if brand is not None:
             _path_params['brand'] = brand
         # process the query parameters
+        if is_only_original_items is not None:
+            
+            _query_params.append(('is_only_original_items', is_only_original_items))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
@@ -2785,6 +2802,7 @@ class ItemsApi:
         self,
         category: StrictStr,
         brand: StrictStr,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2805,6 +2823,8 @@ class ItemsApi:
         :type category: str
         :param brand: (required)
         :type brand: str
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2830,6 +2850,7 @@ class ItemsApi:
         _param = self._get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
             category=category,
             brand=brand,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2856,6 +2877,7 @@ class ItemsApi:
         self,
         category: StrictStr,
         brand: StrictStr,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2876,6 +2898,8 @@ class ItemsApi:
         :type category: str
         :param brand: (required)
         :type brand: str
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2901,6 +2925,7 @@ class ItemsApi:
         _param = self._get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
             category=category,
             brand=brand,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2927,6 +2952,7 @@ class ItemsApi:
         self,
         category: StrictStr,
         brand: StrictStr,
+        is_only_original_items: Optional[StrictBool] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -2947,6 +2973,8 @@ class ItemsApi:
         :type category: str
         :param brand: (required)
         :type brand: str
+        :param is_only_original_items:
+        :type is_only_original_items: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -2972,6 +3000,7 @@ class ItemsApi:
         _param = self._get_models_and_counts_api_v1_items_category_brand_models_counts_get_serialize(
             category=category,
             brand=brand,
+            is_only_original_items=is_only_original_items,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -2993,6 +3022,7 @@ class ItemsApi:
         self,
         category,
         brand,
+        is_only_original_items,
         _request_auth,
         _content_type,
         _headers,
@@ -3017,6 +3047,10 @@ class ItemsApi:
         if brand is not None:
             _path_params['brand'] = brand
         # process the query parameters
+        if is_only_original_items is not None:
+            
+            _query_params.append(('is_only_original_items', is_only_original_items))
+            
         # process the header parameters
         # process the form parameters
         # process the body parameter
