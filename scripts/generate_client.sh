@@ -13,8 +13,9 @@ PATCH=${arrIN[2]}
 MINOR=$((MINOR + 1))
 
 NEW_VERSION="$MAJOR.$MINOR.$PATCH"
-
-OPENAPI_GENERATOR_VERSION=7.4.0 openapi-generator-cli generate --generator-name python --library asyncio --additional-properties packageVersion="$NEW_VERSION" --input-spec $url_spec --git-repo-id "swagger-client" --git-user-id "AlexName1" --release-note "init" --package-name swagger_client
+# library: asyncio, tornado (deprecated), urllib3, httpx (Default: urllib3)
+# Надо все удалить и заного генерить, так как старые не удаляются сами
+OPENAPI_GENERATOR_VERSION=7.16.0 openapi-generator-cli generate --generator-name python --library asyncio --additional-properties packageVersion="$NEW_VERSION" --input-spec $url_spec --git-repo-id "swagger-client" --git-user-id "at146" --release-note "init" --package-name swagger_client
 
 echo "Current version: $NEW_VERSION"
 echo "$NEW_VERSION" > VERSION

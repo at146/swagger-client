@@ -19,7 +19,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBytes, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Union
+from typing import Any, ClassVar, Dict, List, Tuple, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -29,8 +29,8 @@ class TBankKassaDb(BaseModel):
     """ # noqa: E501
     id: StrictInt
     bot_token: StrictStr
-    crypto_terminal_key: Union[StrictBytes, StrictStr]
-    crypto_password: Union[StrictBytes, StrictStr]
+    crypto_terminal_key: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]
+    crypto_password: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]
     create_datetime: datetime
     __properties: ClassVar[List[str]] = ["id", "bot_token", "crypto_terminal_key", "crypto_password", "create_datetime"]
 

@@ -24,7 +24,7 @@ print(InsertTBankKassa.to_json())
 # convert the object into a dict
 insert_t_bank_kassa_dict = insert_t_bank_kassa_instance.to_dict()
 # create an instance of InsertTBankKassa from a dict
-insert_t_bank_kassa_form_dict = insert_t_bank_kassa.from_dict(insert_t_bank_kassa_dict)
+insert_t_bank_kassa_from_dict = InsertTBankKassa.from_dict(insert_t_bank_kassa_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -30,7 +30,7 @@ print(UserBotBase.to_json())
 # convert the object into a dict
 user_bot_base_dict = user_bot_base_instance.to_dict()
 # create an instance of UserBotBase from a dict
-user_bot_base_form_dict = user_bot_base.from_dict(user_bot_base_dict)
+user_bot_base_from_dict = UserBotBase.from_dict(user_bot_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

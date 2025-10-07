@@ -29,7 +29,7 @@ print(InsertTBankPayment.to_json())
 # convert the object into a dict
 insert_t_bank_payment_dict = insert_t_bank_payment_instance.to_dict()
 # create an instance of InsertTBankPayment from a dict
-insert_t_bank_payment_form_dict = insert_t_bank_payment.from_dict(insert_t_bank_payment_dict)
+insert_t_bank_payment_from_dict = InsertTBankPayment.from_dict(insert_t_bank_payment_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

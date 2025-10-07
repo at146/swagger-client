@@ -17,30 +17,23 @@ import unittest
 from swagger_client.api.deliveries_cdek_api import DeliveriesCdekApi
 
 
-class TestDeliveriesCdekApi(unittest.TestCase):
+class TestDeliveriesCdekApi(unittest.IsolatedAsyncioTestCase):
     """DeliveriesCdekApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = DeliveriesCdekApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_delete_api_v1_deliveries_cdek_delete(self) -> None:
+    async def test_delete_api_v1_deliveries_cdek_delete(self) -> None:
         """Test case for delete_api_v1_deliveries_cdek_delete
 
         Delete
         """
         pass
 
-    def test_insert_api_v1_deliveries_cdek_post(self) -> None:
-        """Test case for insert_api_v1_deliveries_cdek_post
-
-        Insert
-        """
-        pass
-
-    def test_update_api_v1_deliveries_cdek_put(self) -> None:
+    async def test_update_api_v1_deliveries_cdek_put(self) -> None:
         """Test case for update_api_v1_deliveries_cdek_put
 
         Update
@@ -48,5 +41,5 @@ class TestDeliveriesCdekApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

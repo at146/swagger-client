@@ -17,23 +17,23 @@ import unittest
 from swagger_client.api.messages_tg_api import MessagesTgApi
 
 
-class TestMessagesTgApi(unittest.TestCase):
+class TestMessagesTgApi(unittest.IsolatedAsyncioTestCase):
     """MessagesTgApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = MessagesTgApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_get_api_v1_messages_tg_name_get(self) -> None:
+    async def test_get_api_v1_messages_tg_name_get(self) -> None:
         """Test case for get_api_v1_messages_tg_name_get
 
         Get
         """
         pass
 
-    def test_insert_or_update_api_v1_messages_tg_post(self) -> None:
+    async def test_insert_or_update_api_v1_messages_tg_post(self) -> None:
         """Test case for insert_or_update_api_v1_messages_tg_post
 
         Insert Or Update
@@ -41,5 +41,5 @@ class TestMessagesTgApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

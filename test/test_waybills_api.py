@@ -17,16 +17,16 @@ import unittest
 from swagger_client.api.waybills_api import WaybillsApi
 
 
-class TestWaybillsApi(unittest.TestCase):
+class TestWaybillsApi(unittest.IsolatedAsyncioTestCase):
     """WaybillsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = WaybillsApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_update_api_v1_waybills_put(self) -> None:
+    async def test_update_api_v1_waybills_put(self) -> None:
         """Test case for update_api_v1_waybills_put
 
         Update
@@ -34,5 +34,5 @@ class TestWaybillsApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

@@ -23,7 +23,7 @@ print(UpdateWaybill.to_json())
 # convert the object into a dict
 update_waybill_dict = update_waybill_instance.to_dict()
 # create an instance of UpdateWaybill from a dict
-update_waybill_form_dict = update_waybill.from_dict(update_waybill_dict)
+update_waybill_from_dict = UpdateWaybill.from_dict(update_waybill_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

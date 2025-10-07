@@ -87,9 +87,9 @@ class OrderBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in purchases (list)
         _items = []
         if self.purchases:
-            for _item in self.purchases:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_purchases in self.purchases:
+                if _item_purchases:
+                    _items.append(_item_purchases.to_dict())
             _dict['purchases'] = _items
         # override the default output from pydantic by calling `to_dict()` of user_bot
         if self.user_bot:

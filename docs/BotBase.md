@@ -35,7 +35,7 @@ print(BotBase.to_json())
 # convert the object into a dict
 bot_base_dict = bot_base_instance.to_dict()
 # create an instance of BotBase from a dict
-bot_base_form_dict = bot_base.from_dict(bot_base_dict)
+bot_base_from_dict = BotBase.from_dict(bot_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

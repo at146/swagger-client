@@ -14,100 +14,195 @@
 """  # noqa: E501
 
 
-__version__ = "1.39.0"
+__version__ = "1.40.0"
+
+# Define package exports
+__all__ = [
+    "BarcodesApi",
+    "BasketsApi",
+    "BotsApi",
+    "CategoriesApi",
+    "DeliveriesCdekApi",
+    "InfoItemsApi",
+    "ItemsApi",
+    "MessagesTgApi",
+    "OrdersApi",
+    "PartnersApi",
+    "PurchasesApi",
+    "QuantitiesApi",
+    "SchedulersApi",
+    "SizesApi",
+    "TbankKassesApi",
+    "TbankPaymentsApi",
+    "UsersBotsApi",
+    "UsersProdavecKrossovokApi",
+    "WaybillsApi",
+    "WebhookApi",
+    "YookassaPaymentsApi",
+    "ApiResponse",
+    "ApiClient",
+    "Configuration",
+    "OpenApiException",
+    "ApiTypeError",
+    "ApiValueError",
+    "ApiKeyError",
+    "ApiAttributeError",
+    "ApiException",
+    "Attributes",
+    "AttributesOrderStatus",
+    "AttributesPrealertCloser",
+    "AttributesPrintForm",
+    "BasketBaseDb",
+    "BotBase",
+    "BotBaseDb",
+    "BrandCount",
+    "CategoryBase",
+    "CdekWebhook",
+    "CentimeterBase",
+    "DeliveryCdekBase",
+    "DimensionBase",
+    "HTTPValidationError",
+    "InsertBarcode",
+    "InsertBasket",
+    "InsertBot",
+    "InsertMessageTg",
+    "InsertOrder",
+    "InsertScheduler",
+    "InsertTBankKassa",
+    "InsertTBankPayment",
+    "InsertUserProdavecKrossovok",
+    "InsertYookassaPayment",
+    "ItemBase",
+    "ItemBaseDb",
+    "LocationInner",
+    "MessageResponse",
+    "MessageTgBase",
+    "MessageTgBaseDb",
+    "ModelCount",
+    "OrderBase",
+    "OrderBaseDb",
+    "PartnerBase",
+    "PurchaseBaseDb",
+    "QuantityBase",
+    "QuantityBaseDb",
+    "RelatedEntities",
+    "SchedulerBaseDb",
+    "SizeBase",
+    "SizeBaseDb",
+    "StockBase",
+    "TBankKassaDb",
+    "TBankPaymentDb",
+    "UpdateBot",
+    "UpdateDeliveryCdek",
+    "UpdateInfoItem",
+    "UpdateInfoItemNew",
+    "UpdateOrder",
+    "UpdatePurchase",
+    "UpdateUserBotMess",
+    "UpdateWaybill",
+    "UserBaseDb",
+    "UserBotBase",
+    "UserBotBaseDb",
+    "UserBotBaseDbStart",
+    "UserProdavecKrossovokBaseDb",
+    "UtmMarkBase",
+    "ValidationError",
+    "YookassaPaymentBase",
+]
 
 # import apis into sdk package
-from swagger_client.api.barcodes_api import BarcodesApi
-from swagger_client.api.baskets_api import BasketsApi
-from swagger_client.api.bots_api import BotsApi
-from swagger_client.api.categories_api import CategoriesApi
-from swagger_client.api.deliveries_cdek_api import DeliveriesCdekApi
-from swagger_client.api.info_items_api import InfoItemsApi
-from swagger_client.api.items_api import ItemsApi
-from swagger_client.api.messages_tg_api import MessagesTgApi
-from swagger_client.api.orders_api import OrdersApi
-from swagger_client.api.partners_api import PartnersApi
-from swagger_client.api.purchases_api import PurchasesApi
-from swagger_client.api.quantities_api import QuantitiesApi
-from swagger_client.api.schedulers_api import SchedulersApi
-from swagger_client.api.sizes_api import SizesApi
-from swagger_client.api.tbank_kasses_api import TbankKassesApi
-from swagger_client.api.tbank_payments_api import TbankPaymentsApi
-from swagger_client.api.users_bots_api import UsersBotsApi
-from swagger_client.api.users_prodavec_krossovok_api import UsersProdavecKrossovokApi
-from swagger_client.api.waybills_api import WaybillsApi
-from swagger_client.api.webhook_api import WebhookApi
-from swagger_client.api.yookassa_payments_api import YookassaPaymentsApi
+from swagger_client.api.barcodes_api import BarcodesApi as BarcodesApi
+from swagger_client.api.baskets_api import BasketsApi as BasketsApi
+from swagger_client.api.bots_api import BotsApi as BotsApi
+from swagger_client.api.categories_api import CategoriesApi as CategoriesApi
+from swagger_client.api.deliveries_cdek_api import DeliveriesCdekApi as DeliveriesCdekApi
+from swagger_client.api.info_items_api import InfoItemsApi as InfoItemsApi
+from swagger_client.api.items_api import ItemsApi as ItemsApi
+from swagger_client.api.messages_tg_api import MessagesTgApi as MessagesTgApi
+from swagger_client.api.orders_api import OrdersApi as OrdersApi
+from swagger_client.api.partners_api import PartnersApi as PartnersApi
+from swagger_client.api.purchases_api import PurchasesApi as PurchasesApi
+from swagger_client.api.quantities_api import QuantitiesApi as QuantitiesApi
+from swagger_client.api.schedulers_api import SchedulersApi as SchedulersApi
+from swagger_client.api.sizes_api import SizesApi as SizesApi
+from swagger_client.api.tbank_kasses_api import TbankKassesApi as TbankKassesApi
+from swagger_client.api.tbank_payments_api import TbankPaymentsApi as TbankPaymentsApi
+from swagger_client.api.users_bots_api import UsersBotsApi as UsersBotsApi
+from swagger_client.api.users_prodavec_krossovok_api import UsersProdavecKrossovokApi as UsersProdavecKrossovokApi
+from swagger_client.api.waybills_api import WaybillsApi as WaybillsApi
+from swagger_client.api.webhook_api import WebhookApi as WebhookApi
+from swagger_client.api.yookassa_payments_api import YookassaPaymentsApi as YookassaPaymentsApi
 
 # import ApiClient
-from swagger_client.api_response import ApiResponse
-from swagger_client.api_client import ApiClient
-from swagger_client.configuration import Configuration
-from swagger_client.exceptions import OpenApiException
-from swagger_client.exceptions import ApiTypeError
-from swagger_client.exceptions import ApiValueError
-from swagger_client.exceptions import ApiKeyError
-from swagger_client.exceptions import ApiAttributeError
-from swagger_client.exceptions import ApiException
+from swagger_client.api_response import ApiResponse as ApiResponse
+from swagger_client.api_client import ApiClient as ApiClient
+from swagger_client.configuration import Configuration as Configuration
+from swagger_client.exceptions import OpenApiException as OpenApiException
+from swagger_client.exceptions import ApiTypeError as ApiTypeError
+from swagger_client.exceptions import ApiValueError as ApiValueError
+from swagger_client.exceptions import ApiKeyError as ApiKeyError
+from swagger_client.exceptions import ApiAttributeError as ApiAttributeError
+from swagger_client.exceptions import ApiException as ApiException
 
 # import models into sdk package
-from swagger_client.models.attributes import Attributes
-from swagger_client.models.attributes_order_status import AttributesOrderStatus
-from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser
-from swagger_client.models.attributes_print_form import AttributesPrintForm
-from swagger_client.models.basket_base_db import BasketBaseDb
-from swagger_client.models.bot_base import BotBase
-from swagger_client.models.bot_base_db import BotBaseDb
-from swagger_client.models.brand_count import BrandCount
-from swagger_client.models.category_base import CategoryBase
-from swagger_client.models.cdek_webhook import CdekWebhook
-from swagger_client.models.centimeter_base import CentimeterBase
-from swagger_client.models.delivery_cdek_base import DeliveryCdekBase
-from swagger_client.models.dimension_base import DimensionBase
-from swagger_client.models.http_validation_error import HTTPValidationError
-from swagger_client.models.insert_barcode import InsertBarcode
-from swagger_client.models.insert_basket import InsertBasket
-from swagger_client.models.insert_bot import InsertBot
-from swagger_client.models.insert_message_tg import InsertMessageTg
-from swagger_client.models.insert_order import InsertOrder
-from swagger_client.models.insert_scheduler import InsertScheduler
-from swagger_client.models.insert_t_bank_kassa import InsertTBankKassa
-from swagger_client.models.insert_t_bank_payment import InsertTBankPayment
-from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProdavecKrossovok
-from swagger_client.models.insert_yookassa_payment import InsertYookassaPayment
-from swagger_client.models.item_base import ItemBase
-from swagger_client.models.item_base_db import ItemBaseDb
-from swagger_client.models.location_inner import LocationInner
-from swagger_client.models.message_response import MessageResponse
-from swagger_client.models.message_tg_base import MessageTgBase
-from swagger_client.models.message_tg_base_db import MessageTgBaseDb
-from swagger_client.models.model_count import ModelCount
-from swagger_client.models.order_base import OrderBase
-from swagger_client.models.order_base_db import OrderBaseDb
-from swagger_client.models.partner_base import PartnerBase
-from swagger_client.models.purchase_base_db import PurchaseBaseDb
-from swagger_client.models.quantity_base import QuantityBase
-from swagger_client.models.quantity_base_db import QuantityBaseDb
-from swagger_client.models.related_entities import RelatedEntities
-from swagger_client.models.scheduler_base_db import SchedulerBaseDb
-from swagger_client.models.size_base import SizeBase
-from swagger_client.models.size_base_db import SizeBaseDb
-from swagger_client.models.stock_base import StockBase
-from swagger_client.models.t_bank_kassa_db import TBankKassaDb
-from swagger_client.models.t_bank_payment_db import TBankPaymentDb
-from swagger_client.models.update_bot import UpdateBot
-from swagger_client.models.update_delivery_cdek import UpdateDeliveryCdek
-from swagger_client.models.update_info_item import UpdateInfoItem
-from swagger_client.models.update_info_item_new import UpdateInfoItemNew
-from swagger_client.models.update_order import UpdateOrder
-from swagger_client.models.update_purchase import UpdatePurchase
-from swagger_client.models.update_user_bot_mess import UpdateUserBotMess
-from swagger_client.models.update_waybill import UpdateWaybill
-from swagger_client.models.user_base_db import UserBaseDb
-from swagger_client.models.user_bot_base import UserBotBase
-from swagger_client.models.user_bot_base_db import UserBotBaseDb
-from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
-from swagger_client.models.user_prodavec_krossovok_base_db import UserProdavecKrossovokBaseDb
-from swagger_client.models.utm_mark_base import UtmMarkBase
-from swagger_client.models.validation_error import ValidationError
-from swagger_client.models.yookassa_payment_base import YookassaPaymentBase
+from swagger_client.models.attributes import Attributes as Attributes
+from swagger_client.models.attributes_order_status import AttributesOrderStatus as AttributesOrderStatus
+from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser as AttributesPrealertCloser
+from swagger_client.models.attributes_print_form import AttributesPrintForm as AttributesPrintForm
+from swagger_client.models.basket_base_db import BasketBaseDb as BasketBaseDb
+from swagger_client.models.bot_base import BotBase as BotBase
+from swagger_client.models.bot_base_db import BotBaseDb as BotBaseDb
+from swagger_client.models.brand_count import BrandCount as BrandCount
+from swagger_client.models.category_base import CategoryBase as CategoryBase
+from swagger_client.models.cdek_webhook import CdekWebhook as CdekWebhook
+from swagger_client.models.centimeter_base import CentimeterBase as CentimeterBase
+from swagger_client.models.delivery_cdek_base import DeliveryCdekBase as DeliveryCdekBase
+from swagger_client.models.dimension_base import DimensionBase as DimensionBase
+from swagger_client.models.http_validation_error import HTTPValidationError as HTTPValidationError
+from swagger_client.models.insert_barcode import InsertBarcode as InsertBarcode
+from swagger_client.models.insert_basket import InsertBasket as InsertBasket
+from swagger_client.models.insert_bot import InsertBot as InsertBot
+from swagger_client.models.insert_message_tg import InsertMessageTg as InsertMessageTg
+from swagger_client.models.insert_order import InsertOrder as InsertOrder
+from swagger_client.models.insert_scheduler import InsertScheduler as InsertScheduler
+from swagger_client.models.insert_t_bank_kassa import InsertTBankKassa as InsertTBankKassa
+from swagger_client.models.insert_t_bank_payment import InsertTBankPayment as InsertTBankPayment
+from swagger_client.models.insert_user_prodavec_krossovok import InsertUserProdavecKrossovok as InsertUserProdavecKrossovok
+from swagger_client.models.insert_yookassa_payment import InsertYookassaPayment as InsertYookassaPayment
+from swagger_client.models.item_base import ItemBase as ItemBase
+from swagger_client.models.item_base_db import ItemBaseDb as ItemBaseDb
+from swagger_client.models.location_inner import LocationInner as LocationInner
+from swagger_client.models.message_response import MessageResponse as MessageResponse
+from swagger_client.models.message_tg_base import MessageTgBase as MessageTgBase
+from swagger_client.models.message_tg_base_db import MessageTgBaseDb as MessageTgBaseDb
+from swagger_client.models.model_count import ModelCount as ModelCount
+from swagger_client.models.order_base import OrderBase as OrderBase
+from swagger_client.models.order_base_db import OrderBaseDb as OrderBaseDb
+from swagger_client.models.partner_base import PartnerBase as PartnerBase
+from swagger_client.models.purchase_base_db import PurchaseBaseDb as PurchaseBaseDb
+from swagger_client.models.quantity_base import QuantityBase as QuantityBase
+from swagger_client.models.quantity_base_db import QuantityBaseDb as QuantityBaseDb
+from swagger_client.models.related_entities import RelatedEntities as RelatedEntities
+from swagger_client.models.scheduler_base_db import SchedulerBaseDb as SchedulerBaseDb
+from swagger_client.models.size_base import SizeBase as SizeBase
+from swagger_client.models.size_base_db import SizeBaseDb as SizeBaseDb
+from swagger_client.models.stock_base import StockBase as StockBase
+from swagger_client.models.t_bank_kassa_db import TBankKassaDb as TBankKassaDb
+from swagger_client.models.t_bank_payment_db import TBankPaymentDb as TBankPaymentDb
+from swagger_client.models.update_bot import UpdateBot as UpdateBot
+from swagger_client.models.update_delivery_cdek import UpdateDeliveryCdek as UpdateDeliveryCdek
+from swagger_client.models.update_info_item import UpdateInfoItem as UpdateInfoItem
+from swagger_client.models.update_info_item_new import UpdateInfoItemNew as UpdateInfoItemNew
+from swagger_client.models.update_order import UpdateOrder as UpdateOrder
+from swagger_client.models.update_purchase import UpdatePurchase as UpdatePurchase
+from swagger_client.models.update_user_bot_mess import UpdateUserBotMess as UpdateUserBotMess
+from swagger_client.models.update_waybill import UpdateWaybill as UpdateWaybill
+from swagger_client.models.user_base_db import UserBaseDb as UserBaseDb
+from swagger_client.models.user_bot_base import UserBotBase as UserBotBase
+from swagger_client.models.user_bot_base_db import UserBotBaseDb as UserBotBaseDb
+from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart as UserBotBaseDbStart
+from swagger_client.models.user_prodavec_krossovok_base_db import UserProdavecKrossovokBaseDb as UserProdavecKrossovokBaseDb
+from swagger_client.models.utm_mark_base import UtmMarkBase as UtmMarkBase
+from swagger_client.models.validation_error import ValidationError as ValidationError
+from swagger_client.models.yookassa_payment_base import YookassaPaymentBase as YookassaPaymentBase
+

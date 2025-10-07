@@ -25,7 +25,7 @@ print(InsertBasket.to_json())
 # convert the object into a dict
 insert_basket_dict = insert_basket_instance.to_dict()
 # create an instance of InsertBasket from a dict
-insert_basket_form_dict = insert_basket.from_dict(insert_basket_dict)
+insert_basket_from_dict = InsertBasket.from_dict(insert_basket_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

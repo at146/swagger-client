@@ -27,7 +27,7 @@ class TestTBankKassaDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> TBankKassaDb:
         """Test TBankKassaDb
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TBankKassaDb`
@@ -36,17 +36,17 @@ class TestTBankKassaDb(unittest.TestCase):
         if include_optional:
             return TBankKassaDb(
                 id = 56,
-                bot_id = 56,
-                terminal_key = bytes(b'blah'),
-                password = bytes(b'blah'),
+                bot_token = '',
+                crypto_terminal_key = bytes(b'blah'),
+                crypto_password = bytes(b'blah'),
                 create_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return TBankKassaDb(
                 id = 56,
-                bot_id = 56,
-                terminal_key = bytes(b'blah'),
-                password = bytes(b'blah'),
+                bot_token = '',
+                crypto_terminal_key = bytes(b'blah'),
+                crypto_password = bytes(b'blah'),
                 create_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """

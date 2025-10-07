@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.user_bot_base_db_start import UserBotBaseDbStart
 
-
 class TestUserBotBaseDbStart(unittest.TestCase):
     """UserBotBaseDbStart unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestUserBotBaseDbStart(unittest.TestCase):
 
     def make_instance(self, include_optional) -> UserBotBaseDbStart:
         """Test UserBotBaseDbStart
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `UserBotBaseDbStart`
         """
         model = UserBotBaseDbStart()
@@ -44,6 +43,8 @@ class TestUserBotBaseDbStart(unittest.TestCase):
                 new_user = True,
                 subscribe_channel = True,
                 utm_mark_id = 56,
+                date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                is_active = True,
                 user = swagger_client.models.user_base_db.UserBaseDb(
                     id = 56, 
                     user_id = 56, 
@@ -54,7 +55,9 @@ class TestUserBotBaseDbStart(unittest.TestCase):
                         name = '', 
                         user_id = 56, 
                         number = 56, 
-                        shipment_point = '', ), 
+                        shipment_point = '', 
+                        full_name = '', 
+                        phone = '', ), 
                     users_bots = [
                         swagger_client.models.user_bot_base.UserBotBase(
                             id = 56, 
@@ -64,7 +67,8 @@ class TestUserBotBaseDbStart(unittest.TestCase):
                             items = '', 
                             new_user = True, 
                             subscribe_channel = True, 
-                            utm_mark_id = 56, )
+                            utm_mark_id = 56, 
+                            date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                         ], ),
                 bot = swagger_client.models.bot_base.BotBase(
                     id = 56, 
@@ -77,7 +81,12 @@ class TestUserBotBaseDbStart(unittest.TestCase):
                     support_url = '', 
                     channel_url = '', 
                     info_url = '', 
-                    comments_url = '', ),
+                    comments_url = '', 
+                    allowed_updates = [
+                        ''
+                        ], 
+                    support_username = '', 
+                    is_only_original_items = True, ),
                 partner = swagger_client.models.partner_base.PartnerBase(
                     id = 56, 
                     user_bot_id = 56, 
@@ -109,6 +118,13 @@ class TestUserBotBaseDbStart(unittest.TestCase):
             )
         else:
             return UserBotBaseDbStart(
+                id = 56,
+                user_id = 56,
+                bot_token = '',
+                last_mess = 56,
+                new_user = True,
+                subscribe_channel = True,
+                is_active = True,
         )
         """
 
@@ -117,6 +133,5 @@ class TestUserBotBaseDbStart(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.scheduler_base_db import SchedulerBaseDb
 
-
 class TestSchedulerBaseDb(unittest.TestCase):
     """SchedulerBaseDb unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestSchedulerBaseDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> SchedulerBaseDb:
         """Test SchedulerBaseDb
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `SchedulerBaseDb`
         """
         model = SchedulerBaseDb()
@@ -48,7 +47,8 @@ class TestSchedulerBaseDb(unittest.TestCase):
                     items = '', 
                     new_user = True, 
                     subscribe_channel = True, 
-                    utm_mark_id = 56, ),
+                    utm_mark_id = 56, 
+                    date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
                 messages_tg = swagger_client.models.message_tg_base.MessageTgBase(
                     id = 56, 
                     name = '', 
@@ -58,6 +58,10 @@ class TestSchedulerBaseDb(unittest.TestCase):
             )
         else:
             return SchedulerBaseDb(
+                id = 56,
+                messages_tg_id = 56,
+                users_bots_id = 56,
+                trigger_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 
@@ -66,6 +70,5 @@ class TestSchedulerBaseDb(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

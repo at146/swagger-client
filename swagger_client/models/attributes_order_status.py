@@ -84,9 +84,9 @@ class AttributesOrderStatus(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in related_entities (list)
         _items = []
         if self.related_entities:
-            for _item in self.related_entities:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_related_entities in self.related_entities:
+                if _item_related_entities:
+                    _items.append(_item_related_entities.to_dict())
             _dict['related_entities'] = _items
         # set to None if number (nullable) is None
         # and model_fields_set contains the field

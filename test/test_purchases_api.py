@@ -17,44 +17,37 @@ import unittest
 from swagger_client.api.purchases_api import PurchasesApi
 
 
-class TestPurchasesApi(unittest.TestCase):
+class TestPurchasesApi(unittest.IsolatedAsyncioTestCase):
     """PurchasesApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = PurchasesApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_delete_purchase_api_v1_purchases_purchase_id_delete(self) -> None:
+    async def test_delete_purchase_api_v1_purchases_purchase_id_delete(self) -> None:
         """Test case for delete_purchase_api_v1_purchases_purchase_id_delete
 
         Delete Purchase
         """
         pass
 
-    def test_get_all_api_v1_purchases_get(self) -> None:
+    async def test_get_all_api_v1_purchases_get(self) -> None:
         """Test case for get_all_api_v1_purchases_get
 
         Get All
         """
         pass
 
-    def test_get_count_api_v1_purchases_token_status_count_get(self) -> None:
-        """Test case for get_count_api_v1_purchases_token_status_count_get
-
-        Get Count
-        """
-        pass
-
-    def test_get_purchase_by_id_api_v1_purchases_purchase_id_get(self) -> None:
+    async def test_get_purchase_by_id_api_v1_purchases_purchase_id_get(self) -> None:
         """Test case for get_purchase_by_id_api_v1_purchases_purchase_id_get
 
         Get Purchase By Id
         """
         pass
 
-    def test_update_only_api_v1_purchases_put(self) -> None:
+    async def test_update_only_api_v1_purchases_put(self) -> None:
         """Test case for update_only_api_v1_purchases_put
 
         Update Only
@@ -62,5 +55,5 @@ class TestPurchasesApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

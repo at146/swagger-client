@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.dimension_base import DimensionBase
 
-
 class TestDimensionBase(unittest.TestCase):
     """DimensionBase unit test stubs"""
 
@@ -28,18 +27,18 @@ class TestDimensionBase(unittest.TestCase):
 
     def make_instance(self, include_optional) -> DimensionBase:
         """Test DimensionBase
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `DimensionBase`
         """
         model = DimensionBase()
         if include_optional:
             return DimensionBase(
                 id = '',
-                width = 56,
-                height = 56,
-                depth = 56
+                width = 1.337,
+                height = 1.337,
+                depth = 1.337
             )
         else:
             return DimensionBase(
@@ -51,6 +50,5 @@ class TestDimensionBase(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

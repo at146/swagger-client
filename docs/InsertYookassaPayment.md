@@ -25,7 +25,7 @@ print(InsertYookassaPayment.to_json())
 # convert the object into a dict
 insert_yookassa_payment_dict = insert_yookassa_payment_instance.to_dict()
 # create an instance of InsertYookassaPayment from a dict
-insert_yookassa_payment_form_dict = insert_yookassa_payment.from_dict(insert_yookassa_payment_dict)
+insert_yookassa_payment_from_dict = InsertYookassaPayment.from_dict(insert_yookassa_payment_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

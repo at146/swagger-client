@@ -42,7 +42,7 @@ print(ItemBase.to_json())
 # convert the object into a dict
 item_base_dict = item_base_instance.to_dict()
 # create an instance of ItemBase from a dict
-item_base_form_dict = item_base.from_dict(item_base_dict)
+item_base_from_dict = ItemBase.from_dict(item_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

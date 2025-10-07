@@ -27,7 +27,7 @@ print(QuantityBase.to_json())
 # convert the object into a dict
 quantity_base_dict = quantity_base_instance.to_dict()
 # create an instance of QuantityBase from a dict
-quantity_base_form_dict = quantity_base.from_dict(quantity_base_dict)
+quantity_base_from_dict = QuantityBase.from_dict(quantity_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

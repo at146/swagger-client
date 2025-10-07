@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from swagger_client.models.category_base import CategoryBase
 from swagger_client.models.dimension_base import DimensionBase
 from swagger_client.models.quantity_base_db import QuantityBaseDb
@@ -45,11 +46,11 @@ class ItemBaseDb(BaseModel):
     color: Optional[StrictStr] = None
     discount_price: Optional[StrictInt] = None
     new: Optional[StrictBool] = None
-    code_hash: StrictStr
-    category_id: StrictStr
+    code_hash: UUID
+    category_id: UUID
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
-    dimension_id: Optional[StrictStr] = None
+    dimension_id: Optional[UUID] = None
     is_original: StrictBool
     quantities: Optional[List[QuantityBaseDb]] = None
     category: Optional[CategoryBase] = None
@@ -98,9 +99,9 @@ class ItemBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in quantities (list)
         _items = []
         if self.quantities:
-            for _item in self.quantities:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_quantities in self.quantities:
+                if _item_quantities:
+                    _items.append(_item_quantities.to_dict())
             _dict['quantities'] = _items
         # override the default output from pydantic by calling `to_dict()` of category
         if self.category:

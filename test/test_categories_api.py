@@ -17,16 +17,16 @@ import unittest
 from swagger_client.api.categories_api import CategoriesApi
 
 
-class TestCategoriesApi(unittest.TestCase):
+class TestCategoriesApi(unittest.IsolatedAsyncioTestCase):
     """CategoriesApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = CategoriesApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_get_categories_name_api_v1_categories_get(self) -> None:
+    async def test_get_categories_name_api_v1_categories_get(self) -> None:
         """Test case for get_categories_name_api_v1_categories_get
 
         Get Categories Name
@@ -34,5 +34,5 @@ class TestCategoriesApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

@@ -25,7 +25,7 @@ print(CdekWebhook.to_json())
 # convert the object into a dict
 cdek_webhook_dict = cdek_webhook_instance.to_dict()
 # create an instance of CdekWebhook from a dict
-cdek_webhook_form_dict = cdek_webhook.from_dict(cdek_webhook_dict)
+cdek_webhook_from_dict = CdekWebhook.from_dict(cdek_webhook_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class RelatedEntities(BaseModel):
     """ # noqa: E501
     type: StrictStr
     cdek_number: StrictStr
-    uuid: StrictStr
+    uuid: UUID
     __properties: ClassVar[List[str]] = ["type", "cdek_number", "uuid"]
 
     model_config = ConfigDict(

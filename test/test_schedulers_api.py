@@ -17,30 +17,30 @@ import unittest
 from swagger_client.api.schedulers_api import SchedulersApi
 
 
-class TestSchedulersApi(unittest.TestCase):
+class TestSchedulersApi(unittest.IsolatedAsyncioTestCase):
     """SchedulersApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = SchedulersApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_delete_api_v1_schedulers_scheduler_id_delete(self) -> None:
+    async def test_delete_api_v1_schedulers_scheduler_id_delete(self) -> None:
         """Test case for delete_api_v1_schedulers_scheduler_id_delete
 
         Delete
         """
         pass
 
-    def test_get_api_v1_schedulers_get(self) -> None:
+    async def test_get_api_v1_schedulers_get(self) -> None:
         """Test case for get_api_v1_schedulers_get
 
         Get
         """
         pass
 
-    def test_insert_api_v1_schedulers_post(self) -> None:
+    async def test_insert_api_v1_schedulers_post(self) -> None:
         """Test case for insert_api_v1_schedulers_post
 
         Insert
@@ -48,5 +48,5 @@ class TestSchedulersApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

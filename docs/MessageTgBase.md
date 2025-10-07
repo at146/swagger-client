@@ -26,7 +26,7 @@ print(MessageTgBase.to_json())
 # convert the object into a dict
 message_tg_base_dict = message_tg_base_instance.to_dict()
 # create an instance of MessageTgBase from a dict
-message_tg_base_form_dict = message_tg_base.from_dict(message_tg_base_dict)
+message_tg_base_from_dict = MessageTgBase.from_dict(message_tg_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

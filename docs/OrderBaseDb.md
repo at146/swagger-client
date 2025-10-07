@@ -35,7 +35,7 @@ print(OrderBaseDb.to_json())
 # convert the object into a dict
 order_base_db_dict = order_base_db_instance.to_dict()
 # create an instance of OrderBaseDb from a dict
-order_base_db_form_dict = order_base_db.from_dict(order_base_db_dict)
+order_base_db_from_dict = OrderBaseDb.from_dict(order_base_db_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

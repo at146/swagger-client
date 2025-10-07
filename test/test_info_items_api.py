@@ -17,30 +17,23 @@ import unittest
 from swagger_client.api.info_items_api import InfoItemsApi
 
 
-class TestInfoItemsApi(unittest.TestCase):
+class TestInfoItemsApi(unittest.IsolatedAsyncioTestCase):
     """InfoItemsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = InfoItemsApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_insert_or_update_api_v1_info_items_token_post(self) -> None:
-        """Test case for insert_or_update_api_v1_info_items_token_post
-
-        Insert Or Update
-        """
-        pass
-
-    def test_update_api_v1_info_items_token_put(self) -> None:
+    async def test_update_api_v1_info_items_token_put(self) -> None:
         """Test case for update_api_v1_info_items_token_put
 
         Update
         """
         pass
 
-    def test_update_new_api_v1_info_items_token_new_put(self) -> None:
+    async def test_update_new_api_v1_info_items_token_new_put(self) -> None:
         """Test case for update_new_api_v1_info_items_token_new_put
 
         Update New
@@ -48,5 +41,5 @@ class TestInfoItemsApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

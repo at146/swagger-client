@@ -17,43 +17,64 @@ import unittest
 from swagger_client.api.bots_api import BotsApi
 
 
-class TestBotsApi(unittest.TestCase):
+class TestBotsApi(unittest.IsolatedAsyncioTestCase):
     """BotsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = BotsApi()
 
-    def tearDown(self) -> None:
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
+
+    async def test_delete_api_v1_bots_token_delete(self) -> None:
+        """Test case for delete_api_v1_bots_token_delete
+
+        Delete
+        """
         pass
 
-    def test_get_bot_api_v1_bots_token_get(self) -> None:
+    async def test_get_bot_api_v1_bots_token_get(self) -> None:
         """Test case for get_bot_api_v1_bots_token_get
 
         Get Bot
         """
         pass
 
-    def test_get_bots_api_v1_bots_get(self) -> None:
+    async def test_get_bot_by_id_api_v1_bots_ids_bot_id_get(self) -> None:
+        """Test case for get_bot_by_id_api_v1_bots_ids_bot_id_get
+
+        Get Bot By Id
+        """
+        pass
+
+    async def test_get_bots_api_v1_bots_get(self) -> None:
         """Test case for get_bots_api_v1_bots_get
 
         Get Bots
         """
         pass
 
-    def test_get_tokens_multibot_api_v1_bots_multibot_tokens_get(self) -> None:
+    async def test_get_tokens_multibot_api_v1_bots_multibot_tokens_get(self) -> None:
         """Test case for get_tokens_multibot_api_v1_bots_multibot_tokens_get
 
         Get Tokens Multibot
         """
         pass
 
-    def test_insert_or_nothing_api_v1_bots_post(self) -> None:
+    async def test_insert_or_nothing_api_v1_bots_post(self) -> None:
         """Test case for insert_or_nothing_api_v1_bots_post
 
         Insert Or Nothing
         """
         pass
 
+    async def test_update_api_v1_bots_patch(self) -> None:
+        """Test case for update_api_v1_bots_patch
 
-if __name__ == "__main__":
+        Update
+        """
+        pass
+
+
+if __name__ == '__main__':
     unittest.main()

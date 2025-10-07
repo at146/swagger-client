@@ -24,7 +24,7 @@ print(AttributesPrealertCloser.to_json())
 # convert the object into a dict
 attributes_prealert_closer_dict = attributes_prealert_closer_instance.to_dict()
 # create an instance of AttributesPrealertCloser from a dict
-attributes_prealert_closer_form_dict = attributes_prealert_closer.from_dict(attributes_prealert_closer_dict)
+attributes_prealert_closer_from_dict = AttributesPrealertCloser.from_dict(attributes_prealert_closer_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

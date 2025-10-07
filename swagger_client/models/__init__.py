@@ -12,7 +12,6 @@
     Do not edit the class manually.
 """  # noqa: E501
 
-
 # import models into model package
 from swagger_client.models.attributes import Attributes
 from swagger_client.models.attributes_order_status import AttributesOrderStatus
@@ -74,3 +73,4 @@ from swagger_client.models.user_prodavec_krossovok_base_db import UserProdavecKr
 from swagger_client.models.utm_mark_base import UtmMarkBase
 from swagger_client.models.validation_error import ValidationError
 from swagger_client.models.yookassa_payment_base import YookassaPaymentBase
+

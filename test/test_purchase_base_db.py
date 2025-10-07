@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.purchase_base_db import PurchaseBaseDb
 
-
 class TestPurchaseBaseDb(unittest.TestCase):
     """PurchaseBaseDb unit test stubs"""
 
@@ -28,38 +27,31 @@ class TestPurchaseBaseDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> PurchaseBaseDb:
         """Test PurchaseBaseDb
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `PurchaseBaseDb`
         """
         model = PurchaseBaseDb()
         if include_optional:
             return PurchaseBaseDb(
                 id = 56,
-                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                buyer = '',
                 code = '',
                 price = 56,
-                delivery = '',
-                address = '',
-                phone = '',
-                checking = True,
                 pod = 56,
                 invoice = '',
                 comment = '',
                 status = 56,
                 add_info = '',
-                user_id = 56,
                 add_photo = '',
                 partner = True,
                 paid = True,
                 delivery_cdek_id = 56,
                 approve_size = True,
                 size_id = 56,
-                bot_id = 56,
                 order_id = 56,
                 delivery_cdek_photo_tg_file_id = '',
+                refund_cdek_id = 56,
                 item = swagger_client.models.item_base.ItemBase(
                     id = 56, 
                     code = '', 
@@ -80,8 +72,8 @@ class TestPurchaseBaseDb(unittest.TestCase):
                     category_id = '', 
                     manufacturer_country = '', 
                     material = '', 
-                    dimension_id = 56, 
-                    photo_path_tg = '', ),
+                    dimension_id = '', 
+                    is_original = True, ),
                 order = swagger_client.models.order_base.OrderBase(
                     id = 56, 
                     created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -122,6 +114,13 @@ class TestPurchaseBaseDb(unittest.TestCase):
             )
         else:
             return PurchaseBaseDb(
+                id = 56,
+                code = '',
+                price = 56,
+                status = 56,
+                approve_size = True,
+                size_id = 56,
+                order_id = 56,
         )
         """
 
@@ -130,6 +129,5 @@ class TestPurchaseBaseDb(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

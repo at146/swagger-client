@@ -25,7 +25,7 @@ print(UpdateInfoItemNew.to_json())
 # convert the object into a dict
 update_info_item_new_dict = update_info_item_new_instance.to_dict()
 # create an instance of UpdateInfoItemNew from a dict
-update_info_item_new_form_dict = update_info_item_new.from_dict(update_info_item_new_dict)
+update_info_item_new_from_dict = UpdateInfoItemNew.from_dict(update_info_item_new_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from swagger_client.models.centimeter_base import CentimeterBase
 from swagger_client.models.size_base import SizeBase
 from swagger_client.models.stock_base import StockBase
@@ -29,12 +30,12 @@ class QuantityBaseDb(BaseModel):
     """
     QuantityBaseDb
     """ # noqa: E501
-    id: StrictStr
-    item_id: StrictStr
-    stock_id: StrictStr
+    id: UUID
+    item_id: UUID
+    stock_id: UUID
     size_id: StrictInt
     count: StrictInt
-    centimeter_id: Optional[StrictStr] = None
+    centimeter_id: Optional[UUID] = None
     stock: Optional[StockBase] = None
     size: Optional[SizeBase] = None
     centimeter: Optional[CentimeterBase] = None

@@ -43,7 +43,7 @@ print(PurchaseBaseDb.to_json())
 # convert the object into a dict
 purchase_base_db_dict = purchase_base_db_instance.to_dict()
 # create an instance of PurchaseBaseDb from a dict
-purchase_base_db_form_dict = purchase_base_db.from_dict(purchase_base_db_dict)
+purchase_base_db_from_dict = PurchaseBaseDb.from_dict(purchase_base_db_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

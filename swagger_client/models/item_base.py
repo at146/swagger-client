@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,11 +43,11 @@ class ItemBase(BaseModel):
     color: Optional[StrictStr] = None
     discount_price: Optional[StrictInt] = None
     new: Optional[StrictBool] = None
-    code_hash: Optional[StrictStr] = None
-    category_id: Optional[StrictStr] = None
+    code_hash: Optional[UUID] = None
+    category_id: Optional[UUID] = None
     manufacturer_country: Optional[StrictStr] = None
     material: Optional[StrictStr] = None
-    dimension_id: Optional[StrictStr] = None
+    dimension_id: Optional[UUID] = None
     is_original: Optional[StrictBool] = None
     __properties: ClassVar[List[str]] = ["id", "code", "changed", "active", "brand", "model", "title", "retail_price", "drop_price", "link", "photos", "season", "color", "discount_price", "new", "code_hash", "category_id", "manufacturer_country", "material", "dimension_id", "is_original"]
 

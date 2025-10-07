@@ -27,7 +27,7 @@ print(UpdateBot.to_json())
 # convert the object into a dict
 update_bot_dict = update_bot_instance.to_dict()
 # create an instance of UpdateBot from a dict
-update_bot_form_dict = update_bot.from_dict(update_bot_dict)
+update_bot_from_dict = UpdateBot.from_dict(update_bot_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -80,9 +80,9 @@ class InsertOrder(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in basket (list)
         _items = []
         if self.basket:
-            for _item in self.basket:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_basket in self.basket:
+                if _item_basket:
+                    _items.append(_item_basket.to_dict())
             _dict['basket'] = _items
         # set to None if delivery (nullable) is None
         # and model_fields_set contains the field

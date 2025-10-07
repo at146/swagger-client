@@ -81,9 +81,9 @@ class UserBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in users_bots (list)
         _items = []
         if self.users_bots:
-            for _item in self.users_bots:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_users_bots in self.users_bots:
+                if _item_users_bots:
+                    _items.append(_item_users_bots.to_dict())
             _dict['users_bots'] = _items
         # set to None if username (nullable) is None
         # and model_fields_set contains the field

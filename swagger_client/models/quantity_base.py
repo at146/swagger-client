@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,12 +27,12 @@ class QuantityBase(BaseModel):
     """
     QuantityBase
     """ # noqa: E501
-    id: Optional[StrictStr] = None
-    item_id: Optional[StrictStr] = None
-    stock_id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
+    item_id: Optional[UUID] = None
+    stock_id: Optional[UUID] = None
     size_id: Optional[StrictInt] = None
     count: Optional[StrictInt] = None
-    centimeter_id: Optional[StrictStr] = None
+    centimeter_id: Optional[UUID] = None
     __properties: ClassVar[List[str]] = ["id", "item_id", "stock_id", "size_id", "count", "centimeter_id"]
 
     model_config = ConfigDict(

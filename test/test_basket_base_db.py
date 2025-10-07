@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.basket_base_db import BasketBaseDb
 
-
 class TestBasketBaseDb(unittest.TestCase):
     """BasketBaseDb unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestBasketBaseDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> BasketBaseDb:
         """Test BasketBaseDb
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `BasketBaseDb`
         """
         model = BasketBaseDb()
@@ -50,7 +49,8 @@ class TestBasketBaseDb(unittest.TestCase):
                     items = '', 
                     new_user = True, 
                     subscribe_channel = True, 
-                    utm_mark_id = 56, ),
+                    utm_mark_id = 56, 
+                    date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
                 size = swagger_client.models.size_base.SizeBase(
                     id = 56, 
                     value = '', ),
@@ -74,11 +74,17 @@ class TestBasketBaseDb(unittest.TestCase):
                     category_id = '', 
                     manufacturer_country = '', 
                     material = '', 
-                    dimension_id = 56, 
-                    photo_path_tg = '', )
+                    dimension_id = '', 
+                    is_original = True, )
             )
         else:
             return BasketBaseDb(
+                id = 56,
+                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                item_code = '',
+                price = 56,
+                user_bot_id = 56,
+                size_id = 56,
         )
         """
 
@@ -87,6 +93,5 @@ class TestBasketBaseDb(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

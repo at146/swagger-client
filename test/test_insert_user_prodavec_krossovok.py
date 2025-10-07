@@ -27,7 +27,7 @@ class TestInsertUserProdavecKrossovok(unittest.TestCase):
 
     def make_instance(self, include_optional) -> InsertUserProdavecKrossovok:
         """Test InsertUserProdavecKrossovok
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `InsertUserProdavecKrossovok`
@@ -38,7 +38,8 @@ class TestInsertUserProdavecKrossovok(unittest.TestCase):
                 user_id = 56,
                 first_name = '',
                 username = '',
-                subscribe_channel = True
+                subscribe_channel = True,
+                date_expiration = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return InsertUserProdavecKrossovok(

@@ -18,7 +18,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, StrictBytes, StrictStr
-from typing import Any, ClassVar, Dict, List, Union
+from typing import Any, ClassVar, Dict, List, Tuple, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,8 +27,8 @@ class InsertTBankKassa(BaseModel):
     InsertTBankKassa
     """ # noqa: E501
     bot_token: StrictStr
-    crypto_terminal_key: Union[StrictBytes, StrictStr]
-    crypto_password: Union[StrictBytes, StrictStr]
+    crypto_terminal_key: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]
+    crypto_password: Union[StrictBytes, StrictStr, Tuple[StrictStr, StrictBytes]]
     __properties: ClassVar[List[str]] = ["bot_token", "crypto_terminal_key", "crypto_password"]
 
     model_config = ConfigDict(

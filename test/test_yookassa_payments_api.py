@@ -17,16 +17,16 @@ import unittest
 from swagger_client.api.yookassa_payments_api import YookassaPaymentsApi
 
 
-class TestYookassaPaymentsApi(unittest.TestCase):
+class TestYookassaPaymentsApi(unittest.IsolatedAsyncioTestCase):
     """YookassaPaymentsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = YookassaPaymentsApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_insert_api_v1_yookassa_payments_post(self) -> None:
+    async def test_insert_api_v1_yookassa_payments_post(self) -> None:
         """Test case for insert_api_v1_yookassa_payments_post
 
         Insert
@@ -34,5 +34,5 @@ class TestYookassaPaymentsApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

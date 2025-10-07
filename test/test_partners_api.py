@@ -17,16 +17,16 @@ import unittest
 from swagger_client.api.partners_api import PartnersApi
 
 
-class TestPartnersApi(unittest.TestCase):
+class TestPartnersApi(unittest.IsolatedAsyncioTestCase):
     """PartnersApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = PartnersApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_get_partners_user_id_api_v1_partners_get(self) -> None:
+    async def test_get_partners_user_id_api_v1_partners_get(self) -> None:
         """Test case for get_partners_user_id_api_v1_partners_get
 
         Get Partners User Id

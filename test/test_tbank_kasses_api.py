@@ -17,16 +17,23 @@ import unittest
 from swagger_client.api.tbank_kasses_api import TbankKassesApi
 
 
-class TestTbankKassesApi(unittest.TestCase):
+class TestTbankKassesApi(unittest.IsolatedAsyncioTestCase):
     """TbankKassesApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = TbankKassesApi()
 
-    def tearDown(self) -> None:
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
+
+    async def test_get_tbank_kassa_api_v1_tbank_kasses_token_get(self) -> None:
+        """Test case for get_tbank_kassa_api_v1_tbank_kasses_token_get
+
+        Get Tbank Kassa
+        """
         pass
 
-    def test_insert_api_v1_tbank_kasses_post(self) -> None:
+    async def test_insert_api_v1_tbank_kasses_post(self) -> None:
         """Test case for insert_api_v1_tbank_kasses_post
 
         Insert

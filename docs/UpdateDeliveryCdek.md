@@ -25,7 +25,7 @@ print(UpdateDeliveryCdek.to_json())
 # convert the object into a dict
 update_delivery_cdek_dict = update_delivery_cdek_instance.to_dict()
 # create an instance of UpdateDeliveryCdek from a dict
-update_delivery_cdek_form_dict = update_delivery_cdek.from_dict(update_delivery_cdek_dict)
+update_delivery_cdek_from_dict = UpdateDeliveryCdek.from_dict(update_delivery_cdek_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

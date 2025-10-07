@@ -17,58 +17,65 @@ import unittest
 from swagger_client.api.users_bots_api import UsersBotsApi
 
 
-class TestUsersBotsApi(unittest.TestCase):
+class TestUsersBotsApi(unittest.IsolatedAsyncioTestCase):
     """UsersBotsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = UsersBotsApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_get_all_ids_users_api_v1_users_bots_ids_get(self) -> None:
+    async def test_get_all_ids_users_api_v1_users_bots_ids_get(self) -> None:
         """Test case for get_all_ids_users_api_v1_users_bots_ids_get
 
         Get All Ids Users
         """
         pass
 
-    def test_get_count_api_v1_users_bots_count_get(self) -> None:
+    async def test_get_count_api_v1_users_bots_count_get(self) -> None:
         """Test case for get_count_api_v1_users_bots_count_get
 
         Get Count
         """
         pass
 
-    def test_get_only_user_bot_api_v1_users_bots_user_id_only_get(self) -> None:
+    async def test_get_only_user_bot_api_v1_users_bots_user_id_only_get(self) -> None:
         """Test case for get_only_user_bot_api_v1_users_bots_user_id_only_get
 
         Get Only User Bot
         """
         pass
 
-    def test_get_user_bot_api_v1_users_bots_user_id_get(self) -> None:
+    async def test_get_user_bot_api_v1_users_bots_user_id_get(self) -> None:
         """Test case for get_user_bot_api_v1_users_bots_user_id_get
 
         Get User Bot
         """
         pass
 
-    def test_get_user_bot_start_api_v1_users_bots_user_id_start_get(self) -> None:
+    async def test_get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get(self) -> None:
+        """Test case for get_user_bot_by_id_api_v1_users_bots_ids_user_bot_id_get
+
+        Get User Bot By Id
+        """
+        pass
+
+    async def test_get_user_bot_start_api_v1_users_bots_user_id_start_get(self) -> None:
         """Test case for get_user_bot_start_api_v1_users_bots_user_id_start_get
 
         Get User Bot Start
         """
         pass
 
-    def test_get_user_client_bot_api_v1_users_bots_user_id_client_get(self) -> None:
+    async def test_get_user_client_bot_api_v1_users_bots_user_id_client_get(self) -> None:
         """Test case for get_user_client_bot_api_v1_users_bots_user_id_client_get
 
         Get User Client Bot
         """
         pass
 
-    def test_update_last_mess_api_v1_users_bots_mess_put(self) -> None:
+    async def test_update_last_mess_api_v1_users_bots_mess_put(self) -> None:
         """Test case for update_last_mess_api_v1_users_bots_mess_put
 
         Update Last Mess
@@ -76,5 +83,5 @@ class TestUsersBotsApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

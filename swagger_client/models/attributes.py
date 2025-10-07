@@ -22,7 +22,7 @@ from typing import Optional
 from swagger_client.models.attributes_order_status import AttributesOrderStatus
 from swagger_client.models.attributes_prealert_closer import AttributesPrealertCloser
 from swagger_client.models.attributes_print_form import AttributesPrintForm
-from typing import Union, Any, List, TYPE_CHECKING, Optional, Dict
+from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field
 
@@ -43,7 +43,7 @@ class Attributes(BaseModel):
         actual_instance: Optional[Union[AttributesOrderStatus, AttributesPrealertCloser, AttributesPrintForm]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: List[str] = Field(default=Literal["AttributesOrderStatus", "AttributesPrealertCloser", "AttributesPrintForm"])
+    any_of_schemas: Set[str] = { "AttributesOrderStatus", "AttributesPrealertCloser", "AttributesPrintForm" }
 
     model_config = {
         "validate_assignment": True,

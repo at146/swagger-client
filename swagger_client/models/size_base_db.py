@@ -74,9 +74,9 @@ class SizeBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in quantities (list)
         _items = []
         if self.quantities:
-            for _item in self.quantities:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_quantities in self.quantities:
+                if _item_quantities:
+                    _items.append(_item_quantities.to_dict())
             _dict['quantities'] = _items
         # set to None if quantities (nullable) is None
         # and model_fields_set contains the field

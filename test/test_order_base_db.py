@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.order_base_db import OrderBaseDb
 
-
 class TestOrderBaseDb(unittest.TestCase):
     """OrderBaseDb unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestOrderBaseDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> OrderBaseDb:
         """Test OrderBaseDb
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `OrderBaseDb`
         """
         model = OrderBaseDb()
@@ -51,29 +50,22 @@ class TestOrderBaseDb(unittest.TestCase):
                 purchases = [
                     swagger_client.models.purchase_base_db.PurchaseBaseDb(
                         id = 56, 
-                        created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
-                        buyer = '', 
                         code = '', 
                         price = 56, 
-                        delivery = '', 
-                        address = '', 
-                        phone = '', 
-                        checking = True, 
                         pod = 56, 
                         invoice = '', 
                         comment = '', 
                         status = 56, 
                         add_info = '', 
-                        user_id = 56, 
                         add_photo = '', 
                         partner = True, 
                         paid = True, 
                         delivery_cdek_id = 56, 
                         approve_size = True, 
                         size_id = 56, 
-                        bot_id = 56, 
                         order_id = 56, 
                         delivery_cdek_photo_tg_file_id = '', 
+                        refund_cdek_id = 56, 
                         item = swagger_client.models.item_base.ItemBase(
                             id = 56, 
                             code = '', 
@@ -94,8 +86,8 @@ class TestOrderBaseDb(unittest.TestCase):
                             category_id = '', 
                             manufacturer_country = '', 
                             material = '', 
-                            dimension_id = 56, 
-                            photo_path_tg = '', ), 
+                            dimension_id = '', 
+                            is_original = True, ), 
                         order = swagger_client.models.order_base.OrderBase(
                             id = 56, 
                             created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
@@ -143,6 +135,8 @@ class TestOrderBaseDb(unittest.TestCase):
                     new_user = True, 
                     subscribe_channel = True, 
                     utm_mark_id = 56, 
+                    date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                    is_active = True, 
                     user = swagger_client.models.user_base_db.UserBaseDb(
                         id = 56, 
                         user_id = 56, 
@@ -153,7 +147,9 @@ class TestOrderBaseDb(unittest.TestCase):
                             name = '', 
                             user_id = 56, 
                             number = 56, 
-                            shipment_point = '', ), 
+                            shipment_point = '', 
+                            full_name = '', 
+                            phone = '', ), 
                         users_bots = [
                             swagger_client.models.user_bot_base.UserBotBase(
                                 id = 56, 
@@ -163,7 +159,8 @@ class TestOrderBaseDb(unittest.TestCase):
                                 items = '', 
                                 new_user = True, 
                                 subscribe_channel = True, 
-                                utm_mark_id = 56, )
+                                utm_mark_id = 56, 
+                                date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
                             ], ), 
                     bot = swagger_client.models.bot_base.BotBase(
                         id = 56, 
@@ -176,7 +173,12 @@ class TestOrderBaseDb(unittest.TestCase):
                         support_url = '', 
                         channel_url = '', 
                         info_url = '', 
-                        comments_url = '', ), 
+                        comments_url = '', 
+                        allowed_updates = [
+                            ''
+                            ], 
+                        support_username = '', 
+                        is_only_original_items = True, ), 
                     partner = swagger_client.models.partner_base.PartnerBase(
                         id = 56, 
                         user_bot_id = 56, 
@@ -206,6 +208,13 @@ class TestOrderBaseDb(unittest.TestCase):
             )
         else:
             return OrderBaseDb(
+                id = 56,
+                created = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                user_bot_id = 56,
+                buyer = '',
+                checking = True,
+                partner = True,
+                paid = True,
         )
         """
 
@@ -214,6 +223,5 @@ class TestOrderBaseDb(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

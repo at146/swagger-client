@@ -17,30 +17,30 @@ import unittest
 from swagger_client.api.sizes_api import SizesApi
 
 
-class TestSizesApi(unittest.TestCase):
+class TestSizesApi(unittest.IsolatedAsyncioTestCase):
     """SizesApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = SizesApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_get_size_by_id_api_v1_sizes_size_id_get(self) -> None:
+    async def test_get_size_by_id_api_v1_sizes_size_id_get(self) -> None:
         """Test case for get_size_by_id_api_v1_sizes_size_id_get
 
         Get Size By Id
         """
         pass
 
-    def test_get_sizes_api_v1_sizes_get(self) -> None:
+    async def test_get_sizes_api_v1_sizes_get(self) -> None:
         """Test case for get_sizes_api_v1_sizes_get
 
         Get Sizes
         """
         pass
 
-    def test_insert_or_nothing_api_v1_sizes_post(self) -> None:
+    async def test_insert_or_nothing_api_v1_sizes_post(self) -> None:
         """Test case for insert_or_nothing_api_v1_sizes_post
 
         Insert Or Nothing
@@ -48,5 +48,5 @@ class TestSizesApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

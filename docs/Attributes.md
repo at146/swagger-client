@@ -38,7 +38,7 @@ print(Attributes.to_json())
 # convert the object into a dict
 attributes_dict = attributes_instance.to_dict()
 # create an instance of Attributes from a dict
-attributes_form_dict = attributes.from_dict(attributes_dict)
+attributes_from_dict = Attributes.from_dict(attributes_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

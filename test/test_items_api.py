@@ -17,86 +17,85 @@ import unittest
 from swagger_client.api.items_api import ItemsApi
 
 
-class TestItemsApi(unittest.TestCase):
+class TestItemsApi(unittest.IsolatedAsyncioTestCase):
     """ItemsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = ItemsApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_get_all_api_v1_items_get(self) -> None:
+    async def test_get_all_api_v1_items_get(self) -> None:
         """Test case for get_all_api_v1_items_get
 
         Get All
         """
         pass
 
-    def test_get_brands_and_counts_api_v1_items_category_brands_counts_get(
-        self,
-    ) -> None:
+    async def test_get_brands_and_counts_api_v1_items_category_brands_counts_get(self) -> None:
         """Test case for get_brands_and_counts_api_v1_items_category_brands_counts_get
 
         Get Brands And Counts
         """
         pass
 
-    def test_get_item_api_v1_items_code_token_one_get(self) -> None:
+    async def test_get_count_brand_api_v1_items_category_brand_count_get(self) -> None:
+        """Test case for get_count_brand_api_v1_items_category_brand_count_get
+
+        Get Count Brand
+        """
+        pass
+
+    async def test_get_count_models_api_v1_items_category_brand_count_models_get(self) -> None:
+        """Test case for get_count_models_api_v1_items_category_brand_count_models_get
+
+        Get Count Models
+        """
+        pass
+
+    async def test_get_item_api_v1_items_code_token_one_get(self) -> None:
         """Test case for get_item_api_v1_items_code_token_one_get
 
         Get Item
         """
         pass
 
-    def test_get_item_new_api_v1_items_code_token_one_new_get(self) -> None:
+    async def test_get_item_new_api_v1_items_code_token_one_new_get(self) -> None:
         """Test case for get_item_new_api_v1_items_code_token_one_new_get
 
         Get Item New
         """
         pass
 
-    def test_get_item_selectinload_size_api_v1_items_code_token_load_size_get(
-        self,
-    ) -> None:
+    async def test_get_item_selectinload_size_api_v1_items_code_token_load_size_get(self) -> None:
         """Test case for get_item_selectinload_size_api_v1_items_code_token_load_size_get
 
         Get Item Selectinload Size
         """
         pass
 
-    def test_get_items_action_new_codes_api_v1_items_token_all_new_codes_get(
-        self,
-    ) -> None:
+    async def test_get_items_action_new_codes_api_v1_items_token_all_new_codes_get(self) -> None:
         """Test case for get_items_action_new_codes_api_v1_items_token_all_new_codes_get
 
         Get Items Action New Codes
         """
         pass
 
-    def test_get_items_codes_api_v1_items_category_brand_codes_get(self) -> None:
+    async def test_get_items_codes_api_v1_items_category_brand_codes_get(self) -> None:
         """Test case for get_items_codes_api_v1_items_category_brand_codes_get
 
         Get Items Codes
         """
         pass
 
-    def test_get_models_and_counts_api_v1_items_category_brand_models_counts_get(
-        self,
-    ) -> None:
+    async def test_get_models_and_counts_api_v1_items_category_brand_models_counts_get(self) -> None:
         """Test case for get_models_and_counts_api_v1_items_category_brand_models_counts_get
 
         Get Models And Counts
         """
         pass
 
-    def test_get_models_api_v1_items_category_brand_models_get(self) -> None:
-        """Test case for get_models_api_v1_items_category_brand_models_get
 
-        Get Models
-        """
-        pass
-
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

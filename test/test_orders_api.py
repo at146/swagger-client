@@ -17,66 +17,71 @@ import unittest
 from swagger_client.api.orders_api import OrdersApi
 
 
-class TestOrdersApi(unittest.TestCase):
+class TestOrdersApi(unittest.IsolatedAsyncioTestCase):
     """OrdersApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = OrdersApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_delete_order_api_v1_orders_order_id_delete(self) -> None:
+    async def test_delete_order_api_v1_orders_order_id_delete(self) -> None:
         """Test case for delete_order_api_v1_orders_order_id_delete
 
         Delete Order
         """
         pass
 
-    def test_get_active_orders_api_v1_orders_get(self) -> None:
+    async def test_get_active_orders_api_v1_orders_get(self) -> None:
         """Test case for get_active_orders_api_v1_orders_get
 
         Get Active Orders
         """
         pass
 
-    def test_get_count_orders_api_v1_orders_count_get(self) -> None:
+    async def test_get_count_orders_api_v1_orders_count_get(self) -> None:
         """Test case for get_count_orders_api_v1_orders_count_get
 
         Get Count Orders
         """
         pass
 
-    def test_get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(
-        self,
-    ) -> None:
+    async def test_get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get(self) -> None:
         """Test case for get_count_orders_by_user_id_api_v1_orders_users_user_id_count_get
 
         Get Count Orders By User Id
         """
         pass
 
-    def test_get_order_by_id_api_v1_orders_order_id_get(self) -> None:
+    async def test_get_order_by_id_api_v1_orders_order_id_get(self) -> None:
         """Test case for get_order_by_id_api_v1_orders_order_id_get
 
         Get Order By Id
         """
         pass
 
-    def test_get_user_orders_api_v1_orders_users_user_id_get(self) -> None:
+    async def test_get_user_orders_api_v1_orders_users_user_id_get(self) -> None:
         """Test case for get_user_orders_api_v1_orders_users_user_id_get
 
         Get User Orders
         """
         pass
 
-    def test_insert_order_api_v1_orders_post(self) -> None:
+    async def test_insert_order_api_v1_orders_post(self) -> None:
         """Test case for insert_order_api_v1_orders_post
 
         Insert Order
         """
         pass
 
+    async def test_update_order_api_v1_orders_patch(self) -> None:
+        """Test case for update_order_api_v1_orders_patch
 
-if __name__ == "__main__":
+        Update Order
+        """
+        pass
+
+
+if __name__ == '__main__':
     unittest.main()

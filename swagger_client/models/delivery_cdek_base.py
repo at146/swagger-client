@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class DeliveryCdekBase(BaseModel):
     DeliveryCdekBase
     """ # noqa: E501
     id: Optional[StrictInt] = None
-    uuid_id: Optional[StrictStr] = None
+    uuid_id: Optional[UUID] = None
     tariff_code: Optional[StrictInt] = None
     delivery_point: Optional[StrictStr] = None
     create_datetime: Optional[datetime] = None
@@ -38,7 +39,7 @@ class DeliveryCdekBase(BaseModel):
     photo_tg_file_id: Optional[StrictStr] = None
     invoice_tg_file_id: Optional[StrictStr] = None
     courier_to_location: Optional[StrictStr] = None
-    stock_id: Optional[StrictStr] = None
+    stock_id: Optional[UUID] = None
     comment_sender: Optional[StrictStr] = None
     __properties: ClassVar[List[str]] = ["id", "uuid_id", "tariff_code", "delivery_point", "create_datetime", "status", "status_cdek", "cdek_number", "photo_tg_file_id", "invoice_tg_file_id", "courier_to_location", "stock_id", "comment_sender"]
 

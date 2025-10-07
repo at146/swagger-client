@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.insert_order import InsertOrder
 
-
 class TestInsertOrder(unittest.TestCase):
     """InsertOrder unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestInsertOrder(unittest.TestCase):
 
     def make_instance(self, include_optional) -> InsertOrder:
         """Test InsertOrder
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `InsertOrder`
         """
         model = InsertOrder()
@@ -43,7 +42,6 @@ class TestInsertOrder(unittest.TestCase):
                 checking = True,
                 comment = '',
                 partner = True,
-                user_id = 56,
                 pod = 56,
                 basket = [
                     swagger_client.models.basket_base_db.BasketBaseDb(
@@ -61,7 +59,8 @@ class TestInsertOrder(unittest.TestCase):
                             items = '', 
                             new_user = True, 
                             subscribe_channel = True, 
-                            utm_mark_id = 56, ), 
+                            utm_mark_id = 56, 
+                            date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                         size = swagger_client.models.size_base.SizeBase(
                             id = 56, 
                             value = '', ), 
@@ -85,15 +84,15 @@ class TestInsertOrder(unittest.TestCase):
                             category_id = '', 
                             manufacturer_country = '', 
                             material = '', 
-                            dimension_id = 56, 
-                            photo_path_tg = '', ), )
+                            dimension_id = '', 
+                            is_original = True, ), )
                     ]
             )
         else:
             return InsertOrder(
                 buyer = '',
                 checking = True,
-                user_id = 56,
+                partner = True,
                 basket = [
                     swagger_client.models.basket_base_db.BasketBaseDb(
                         id = 56, 
@@ -110,7 +109,8 @@ class TestInsertOrder(unittest.TestCase):
                             items = '', 
                             new_user = True, 
                             subscribe_channel = True, 
-                            utm_mark_id = 56, ), 
+                            utm_mark_id = 56, 
+                            date_added = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ), 
                         size = swagger_client.models.size_base.SizeBase(
                             id = 56, 
                             value = '', ), 
@@ -134,8 +134,8 @@ class TestInsertOrder(unittest.TestCase):
                             category_id = '', 
                             manufacturer_country = '', 
                             material = '', 
-                            dimension_id = 56, 
-                            photo_path_tg = '', ), )
+                            dimension_id = '', 
+                            is_original = True, ), )
                     ],
         )
         """
@@ -145,6 +145,5 @@ class TestInsertOrder(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

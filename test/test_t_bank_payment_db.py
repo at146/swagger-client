@@ -27,7 +27,7 @@ class TestTBankPaymentDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> TBankPaymentDb:
         """Test TBankPaymentDb
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `TBankPaymentDb`
@@ -44,8 +44,7 @@ class TestTBankPaymentDb(unittest.TestCase):
                 tbank_amount = 56,
                 tbank_payment_url = '',
                 tbank_redirect_due_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                create_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
+                create_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
         else:
             return TBankPaymentDb(
@@ -59,7 +58,6 @@ class TestTBankPaymentDb(unittest.TestCase):
                 tbank_payment_url = '',
                 tbank_redirect_due_date = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 create_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
-                update_datetime = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )
         """
 

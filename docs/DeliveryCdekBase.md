@@ -34,7 +34,7 @@ print(DeliveryCdekBase.to_json())
 # convert the object into a dict
 delivery_cdek_base_dict = delivery_cdek_base_instance.to_dict()
 # create an instance of DeliveryCdekBase from a dict
-delivery_cdek_base_form_dict = delivery_cdek_base.from_dict(delivery_cdek_base_dict)
+delivery_cdek_base_from_dict = DeliveryCdekBase.from_dict(delivery_cdek_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

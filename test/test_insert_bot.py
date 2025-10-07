@@ -27,7 +27,7 @@ class TestInsertBot(unittest.TestCase):
 
     def make_instance(self, include_optional) -> InsertBot:
         """Test InsertBot
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `InsertBot`
@@ -41,7 +41,12 @@ class TestInsertBot(unittest.TestCase):
                 id_bot = 56,
                 allowed_updates = [
                     ''
-                    ]
+                    ],
+                admin_list = '',
+                text_channel_url = '',
+                support_url = '',
+                channel_url = '',
+                info_url = ''
             )
         else:
             return InsertBot(
@@ -52,6 +57,11 @@ class TestInsertBot(unittest.TestCase):
                 allowed_updates = [
                     ''
                     ],
+                admin_list = '',
+                text_channel_url = '',
+                support_url = '',
+                channel_url = '',
+                info_url = '',
         )
         """
 

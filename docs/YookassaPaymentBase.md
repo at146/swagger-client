@@ -27,7 +27,7 @@ print(YookassaPaymentBase.to_json())
 # convert the object into a dict
 yookassa_payment_base_dict = yookassa_payment_base_instance.to_dict()
 # create an instance of YookassaPaymentBase from a dict
-yookassa_payment_base_form_dict = yookassa_payment_base.from_dict(yookassa_payment_base_dict)
+yookassa_payment_base_from_dict = YookassaPaymentBase.from_dict(yookassa_payment_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

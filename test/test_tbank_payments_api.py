@@ -17,23 +17,30 @@ import unittest
 from swagger_client.api.tbank_payments_api import TbankPaymentsApi
 
 
-class TestTbankPaymentsApi(unittest.TestCase):
+class TestTbankPaymentsApi(unittest.IsolatedAsyncioTestCase):
     """TbankPaymentsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = TbankPaymentsApi()
 
-    def tearDown(self) -> None:
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
+
+    async def test_get_new_tbank_payment_api_v1_tbank_payments_tbank_kasses_tbank_kassa_id_order_id_get(self) -> None:
+        """Test case for get_new_tbank_payment_api_v1_tbank_payments_tbank_kasses_tbank_kassa_id_order_id_get
+
+        Get New Tbank Payment
+        """
         pass
 
-    def test_get_tbank_payment_api_v1_tbank_payments_get(self) -> None:
+    async def test_get_tbank_payment_api_v1_tbank_payments_get(self) -> None:
         """Test case for get_tbank_payment_api_v1_tbank_payments_get
 
         Get Tbank Payment
         """
         pass
 
-    def test_insert_api_v1_tbank_payments_post(self) -> None:
+    async def test_insert_api_v1_tbank_payments_post(self) -> None:
         """Test case for insert_api_v1_tbank_payments_post
 
         Insert

@@ -17,8 +17,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +27,7 @@ class DimensionBase(BaseModel):
     """
     DimensionBase
     """ # noqa: E501
-    id: Optional[StrictStr] = None
+    id: Optional[UUID] = None
     width: Optional[Union[StrictFloat, StrictInt]] = None
     height: Optional[Union[StrictFloat, StrictInt]] = None
     depth: Optional[Union[StrictFloat, StrictInt]] = None

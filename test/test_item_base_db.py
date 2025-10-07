@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.item_base_db import ItemBaseDb
 
-
 class TestItemBaseDb(unittest.TestCase):
     """ItemBaseDb unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestItemBaseDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> ItemBaseDb:
         """Test ItemBaseDb
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `ItemBaseDb`
         """
         model = ItemBaseDb()
@@ -55,8 +54,8 @@ class TestItemBaseDb(unittest.TestCase):
                 category_id = '',
                 manufacturer_country = '',
                 material = '',
-                dimension_id = 56,
-                photo_path_tg = '',
+                dimension_id = '',
+                is_original = True,
                 quantities = [
                     swagger_client.models.quantity_base_db.QuantityBaseDb(
                         id = '', 
@@ -70,7 +69,9 @@ class TestItemBaseDb(unittest.TestCase):
                             name = '', 
                             user_id = 56, 
                             number = 56, 
-                            shipment_point = '', ), 
+                            shipment_point = '', 
+                            full_name = '', 
+                            phone = '', ), 
                         size = swagger_client.models.size_base.SizeBase(
                             id = 56, 
                             value = '', ), 
@@ -83,12 +84,17 @@ class TestItemBaseDb(unittest.TestCase):
                     name = '', ),
                 dimension = swagger_client.models.dimension_base.DimensionBase(
                     id = '', 
-                    width = 56, 
-                    height = 56, 
-                    depth = 56, )
+                    width = 1.337, 
+                    height = 1.337, 
+                    depth = 1.337, )
             )
         else:
             return ItemBaseDb(
+                id = 56,
+                code = '',
+                code_hash = '',
+                category_id = '',
+                is_original = True,
         )
         """
 
@@ -97,6 +103,5 @@ class TestItemBaseDb(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

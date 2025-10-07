@@ -103,9 +103,9 @@ class UserBotBaseDb(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of each item in orders (list)
         _items = []
         if self.orders:
-            for _item in self.orders:
-                if _item:
-                    _items.append(_item.to_dict())
+            for _item_orders in self.orders:
+                if _item_orders:
+                    _items.append(_item_orders.to_dict())
             _dict['orders'] = _items
         # set to None if items (nullable) is None
         # and model_fields_set contains the field

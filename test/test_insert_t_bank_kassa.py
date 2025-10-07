@@ -27,7 +27,7 @@ class TestInsertTBankKassa(unittest.TestCase):
 
     def make_instance(self, include_optional) -> InsertTBankKassa:
         """Test InsertTBankKassa
-            include_option is a boolean, when False only required
+            include_optional is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `InsertTBankKassa`
@@ -35,15 +35,15 @@ class TestInsertTBankKassa(unittest.TestCase):
         model = InsertTBankKassa()
         if include_optional:
             return InsertTBankKassa(
-                bot_id = 56,
-                terminal_key = bytes(b'blah'),
-                password = bytes(b'blah')
+                bot_token = '',
+                crypto_terminal_key = bytes(b'blah'),
+                crypto_password = bytes(b'blah')
             )
         else:
             return InsertTBankKassa(
-                bot_id = 56,
-                terminal_key = bytes(b'blah'),
-                password = bytes(b'blah'),
+                bot_token = '',
+                crypto_terminal_key = bytes(b'blah'),
+                crypto_password = bytes(b'blah'),
         )
         """
 

@@ -20,6 +20,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
+from uuid import UUID
 from swagger_client.models.attributes import Attributes
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +31,7 @@ class CdekWebhook(BaseModel):
     """ # noqa: E501
     type: StrictStr
     date_time: datetime
-    uuid: StrictStr
+    uuid: UUID
     attributes: Attributes
     __properties: ClassVar[List[str]] = ["type", "date_time", "uuid", "attributes"]
 

@@ -17,60 +17,58 @@ import unittest
 from swagger_client.api.baskets_api import BasketsApi
 
 
-class TestBasketsApi(unittest.TestCase):
+class TestBasketsApi(unittest.IsolatedAsyncioTestCase):
     """BasketsApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = BasketsApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_delete_one_basket_api_v1_baskets_basket_id_delete(self) -> None:
+    async def test_delete_one_basket_api_v1_baskets_basket_id_delete(self) -> None:
         """Test case for delete_one_basket_api_v1_baskets_basket_id_delete
 
         Delete One Basket
         """
         pass
 
-    def test_delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(
-        self,
-    ) -> None:
+    async def test_delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete(self) -> None:
         """Test case for delete_user_basket_api_v1_baskets_users_bots_user_bot_id_delete
 
         Delete User Basket
         """
         pass
 
-    def test_get_basket_api_v1_baskets_get(self) -> None:
+    async def test_get_basket_api_v1_baskets_get(self) -> None:
         """Test case for get_basket_api_v1_baskets_get
 
         Get Basket
         """
         pass
 
-    def test_get_count_basket_api_v1_baskets_all_count_get(self) -> None:
+    async def test_get_count_basket_api_v1_baskets_all_count_get(self) -> None:
         """Test case for get_count_basket_api_v1_baskets_all_count_get
 
         Get Count Basket
         """
         pass
 
-    def test_get_list_id_basket_api_v1_baskets_all_list_id_get(self) -> None:
+    async def test_get_list_id_basket_api_v1_baskets_all_list_id_get(self) -> None:
         """Test case for get_list_id_basket_api_v1_baskets_all_list_id_get
 
         Get List Id Basket
         """
         pass
 
-    def test_get_one_basket_api_v1_baskets_basket_id_get(self) -> None:
+    async def test_get_one_basket_api_v1_baskets_basket_id_get(self) -> None:
         """Test case for get_one_basket_api_v1_baskets_basket_id_get
 
         Get One Basket
         """
         pass
 
-    def test_insert_api_v1_baskets_post(self) -> None:
+    async def test_insert_api_v1_baskets_post(self) -> None:
         """Test case for insert_api_v1_baskets_post
 
         Insert
@@ -78,5 +76,5 @@ class TestBasketsApi(unittest.TestCase):
         pass
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

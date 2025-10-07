@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class InsertYookassaPayment(BaseModel):
     InsertYookassaPayment
     """ # noqa: E501
     purchase_id: StrictInt
-    payment_id: StrictStr
+    payment_id: UUID
     status: StrictStr
     email: StrictStr
     __properties: ClassVar[List[str]] = ["purchase_id", "payment_id", "status", "email"]

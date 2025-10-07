@@ -26,7 +26,7 @@ print(TBankKassaDb.to_json())
 # convert the object into a dict
 t_bank_kassa_db_dict = t_bank_kassa_db_instance.to_dict()
 # create an instance of TBankKassaDb from a dict
-t_bank_kassa_db_form_dict = t_bank_kassa_db.from_dict(t_bank_kassa_db_dict)
+t_bank_kassa_db_from_dict = TBankKassaDb.from_dict(t_bank_kassa_db_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

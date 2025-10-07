@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +29,7 @@ class YookassaPaymentBase(BaseModel):
     """ # noqa: E501
     id: Optional[StrictInt] = None
     purchase_id: Optional[StrictInt] = None
-    payment_id: Optional[StrictStr] = None
+    payment_id: Optional[UUID] = None
     status: Optional[StrictStr] = None
     captured_at: Optional[StrictStr] = None
     email: Optional[StrictStr] = None

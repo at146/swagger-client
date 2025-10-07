@@ -28,7 +28,7 @@ print(PartnerBase.to_json())
 # convert the object into a dict
 partner_base_dict = partner_base_instance.to_dict()
 # create an instance of PartnerBase from a dict
-partner_base_form_dict = partner_base.from_dict(partner_base_dict)
+partner_base_from_dict = PartnerBase.from_dict(partner_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

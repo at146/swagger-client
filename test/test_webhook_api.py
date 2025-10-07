@@ -17,16 +17,16 @@ import unittest
 from swagger_client.api.webhook_api import WebhookApi
 
 
-class TestWebhookApi(unittest.TestCase):
+class TestWebhookApi(unittest.IsolatedAsyncioTestCase):
     """WebhookApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = WebhookApi()
 
-    def tearDown(self) -> None:
-        pass
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
 
-    def test_webhook_from_cdek_api_v1_webhook_cdek_post(self) -> None:
+    async def test_webhook_from_cdek_api_v1_webhook_cdek_post(self) -> None:
         """Test case for webhook_from_cdek_api_v1_webhook_cdek_post
 
         Webhook From Cdek

@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.stock_base import StockBase
 
-
 class TestStockBase(unittest.TestCase):
     """StockBase unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestStockBase(unittest.TestCase):
 
     def make_instance(self, include_optional) -> StockBase:
         """Test StockBase
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `StockBase`
         """
         model = StockBase()
@@ -40,7 +39,9 @@ class TestStockBase(unittest.TestCase):
                 name = '',
                 user_id = 56,
                 number = 56,
-                shipment_point = ''
+                shipment_point = '',
+                full_name = '',
+                phone = ''
             )
         else:
             return StockBase(
@@ -52,6 +53,5 @@ class TestStockBase(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

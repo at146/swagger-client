@@ -16,7 +16,6 @@ import unittest
 
 from swagger_client.models.quantity_base_db import QuantityBaseDb
 
-
 class TestQuantityBaseDb(unittest.TestCase):
     """QuantityBaseDb unit test stubs"""
 
@@ -28,9 +27,9 @@ class TestQuantityBaseDb(unittest.TestCase):
 
     def make_instance(self, include_optional) -> QuantityBaseDb:
         """Test QuantityBaseDb
-        include_option is a boolean, when False only required
-        params are included, when True both required and
-        optional params are included"""
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
         # uncomment below to create an instance of `QuantityBaseDb`
         """
         model = QuantityBaseDb()
@@ -47,7 +46,9 @@ class TestQuantityBaseDb(unittest.TestCase):
                     name = '', 
                     user_id = 56, 
                     number = 56, 
-                    shipment_point = '', ),
+                    shipment_point = '', 
+                    full_name = '', 
+                    phone = '', ),
                 size = swagger_client.models.size_base.SizeBase(
                     id = 56, 
                     value = '', ),
@@ -57,6 +58,11 @@ class TestQuantityBaseDb(unittest.TestCase):
             )
         else:
             return QuantityBaseDb(
+                id = '',
+                item_id = '',
+                stock_id = '',
+                size_id = 56,
+                count = 56,
         )
         """
 
@@ -65,6 +71,5 @@ class TestQuantityBaseDb(unittest.TestCase):
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     unittest.main()

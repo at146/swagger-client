@@ -17,26 +17,40 @@ import unittest
 from swagger_client.api.users_prodavec_krossovok_api import UsersProdavecKrossovokApi
 
 
-class TestUsersProdavecKrossovokApi(unittest.TestCase):
+class TestUsersProdavecKrossovokApi(unittest.IsolatedAsyncioTestCase):
     """UsersProdavecKrossovokApi unit test stubs"""
 
-    def setUp(self) -> None:
+    async def asyncSetUp(self) -> None:
         self.api = UsersProdavecKrossovokApi()
 
-    def tearDown(self) -> None:
+    async def asyncTearDown(self) -> None:
+        await self.api.api_client.close()
+
+    async def test_get_all_ids_users_api_v1_users_prodavec_krossovok_ids_get(self) -> None:
+        """Test case for get_all_ids_users_api_v1_users_prodavec_krossovok_ids_get
+
+        Get All Ids Users
+        """
         pass
 
-    def test_get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get(self) -> None:
+    async def test_get_count_api_v1_users_prodavec_krossovok_count_get(self) -> None:
+        """Test case for get_count_api_v1_users_prodavec_krossovok_count_get
+
+        Get Count
+        """
+        pass
+
+    async def test_get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get(self) -> None:
         """Test case for get_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_user_id_get
 
         Get User Prodavec Krossovok
         """
         pass
 
-    def test_insert_order_api_v1_users_prodavec_krossovok_post(self) -> None:
-        """Test case for insert_order_api_v1_users_prodavec_krossovok_post
+    async def test_insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post(self) -> None:
+        """Test case for insert_user_prodavec_krossovok_api_v1_users_prodavec_krossovok_post
 
-        Insert Order
+        Insert User Prodavec Krossovok
         """
         pass
 
